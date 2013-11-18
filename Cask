@@ -11,6 +11,7 @@
 (depends-on "f")
 (depends-on "grizzl")
 (depends-on "highlight-indentation")
+(depends-on "magit")
 (depends-on "multiple-cursors")
 (depends-on "pallet")
 (depends-on "projectile")
@@ -21,4 +22,5 @@
 (depends-on "scss-mode")
 (depends-on "smartparens")
 (depends-on "textmate")
+(depends-on "web-mode")
 (depends-on "yasnippet")
