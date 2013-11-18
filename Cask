@@ -10,6 +10,7 @@
 (depends-on "epl")
 (depends-on "f")
 (depends-on "grizzl")
+(depends-on "highlight-indentation")
 (depends-on "pallet")
 (depends-on "projectile")
 (depends-on "rainbow-mode")
