@@ -11,3 +11,4 @@
 (depends-on "f")
 (depends-on "pallet")
 (depends-on "s")
+(depends-on "smartparens")
