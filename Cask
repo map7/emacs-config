@@ -14,6 +14,7 @@
 (depends-on "flymake-coffee")
 (depends-on "gist")
 (depends-on "grizzl")
+(depends-on "haml-mode")
 (depends-on "highlight-indentation")
 (depends-on "magit")
 (depends-on "multiple-cursors")
