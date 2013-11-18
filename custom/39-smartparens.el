@@ -2,7 +2,3 @@
 (require 'smartparens-ruby)
 (smartparens-global-mode)
 (show-smartparens-global-mode t)
-(sp-with-modes '(web-mode)
-  (sp-local-pair "<" ">")
-  (sp-local-pair "<%=" "%>")
-  (sp-local-pair "<%" "%>"))
