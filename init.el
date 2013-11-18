@@ -19,13 +19,13 @@
 (load "39-smartparens.el")   ; Inserts closing parethesis, tags, end’s
 (load "40-projectile.el")    ; Manage projects
 (load "41-rainbow.el")	     ; Highlight colours in scss files
-(load "42-robe.el")	     ; Ruby documentation
+(load "42-robe.el")			 ; Ruby documentation
 (load "43-highlight-indentation.el")	; Highlight tabs
-(load "44-flyspell.el")			; Spelling
-(load "45-multiple-cursors.el")		; Edit multiple lines at the same time.
-(load "46-web-mode.el")		; Mixed mode in web frontend
+(load "44-flyspell.el")					; Spelling
+(load "45-multiple-cursors.el")	; Edit multiple lines at the same time.
+(load "46-web-mode.el")			; Mixed mode in web frontend
 (load "47-twittering-mode.el")	; Twitter client
-(load "48-undo-tree.el")	; Undo tree
-(load "49-rbenv.el")		; Ruby version manager
+(load "48-undo-tree.el")		; Undo tree
+(load "49-rbenv.el")			; Ruby version manager
 
 
