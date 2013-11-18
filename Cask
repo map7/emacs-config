@@ -12,6 +12,7 @@
 (depends-on "epl")
 (depends-on "f")
 (depends-on "flymake-coffee")
+(depends-on "gist")
 (depends-on "grizzl")
 (depends-on "highlight-indentation")
 (depends-on "magit")
