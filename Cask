@@ -17,6 +17,7 @@
 (depends-on "grizzl")
 (depends-on "haml-mode")
 (depends-on "highlight-indentation")
+(depends-on "js2-mode")
 (depends-on "magit")
 (depends-on "multiple-cursors")
 (depends-on "pallet")
