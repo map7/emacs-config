@@ -15,6 +15,7 @@
 (depends-on "f")
 (depends-on "feature-mode")
 (depends-on "flymake-coffee")
+(depends-on "flymake-yaml")
 (depends-on "gist")
 (depends-on "grizzl")
 (depends-on "haml-mode")
@@ -38,4 +39,5 @@
 (depends-on "twittering-mode")
 (depends-on "undo-tree")
 (depends-on "web-mode")
+(depends-on "yaml-mode")
 (depends-on "yasnippet")
