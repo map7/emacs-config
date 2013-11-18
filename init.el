@@ -9,7 +9,7 @@
 (load "02-ruby.el")	     ; Ruby programming language
 (load "04-yasnippet.el")     ; Yasnippets
 (load "06-rinari.el")	     ; Ruby on rails mode
-(load "07-rsense.el")	     ; Command Lookup
+(load "17-rsense.el")	     ; Command Lookup
 (load "18-auto-complete.el") ; Auto complete
 (load "28-magit.el")	     ; Git
 (load "39-smartparens.el")   ; Inserts closing parethesis, tags, end’s
