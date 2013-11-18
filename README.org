@@ -28,3 +28,10 @@ Add the following to your ~/.emacs.d/init.el file
 Initialise your cask file from within emacs
 : M-x pallet-init
    
+** Yasnippet + ruby
+
+To get this working you must create a link from the ruby-mode snippets to
+enh-ruby-mode
+: cd ~/.emacs.d/.cask/24.3.1/elpa/yasnippet-20131031.628/snippets
+: ln -s ruby-mode enh-ruby-mode
+
