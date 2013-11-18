@@ -14,3 +14,4 @@
 (load "41-rainbow.el")	     ; Highlight colours in scss files
 (load "42-robe.el")	     ; Ruby documentation
 (load "43-highlight-indentation.el")	; Highlight tabs
+(load "44-flyspell.el")	; 
