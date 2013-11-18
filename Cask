@@ -12,6 +12,7 @@
 (depends-on "epl")
 (depends-on "expand-region")
 (depends-on "f")
+(depends-on "feature-mode")
 (depends-on "flymake-coffee")
 (depends-on "gist")
 (depends-on "grizzl")
