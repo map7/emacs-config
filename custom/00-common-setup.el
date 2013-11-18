@@ -11,6 +11,10 @@
 (global-set-key [f10] 'undo-tree-visualize)
 (global-set-key [f12] 'switch-full-screen)
 
+;; key bindings for dictionary
+(global-set-key "\C-cs" 'dictionary-search)
+(global-set-key "\C-cm" 'dictionary-match-words)
+
 ;; Set color
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

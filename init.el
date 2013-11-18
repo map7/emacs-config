@@ -18,4 +18,5 @@
 (load "43-highlight-indentation.el")	; Highlight tabs
 (load "44-flyspell.el")			; Spelling
 (load "45-multiple-cursors.el")		; Edit multiple lines at the same time.
-(load "46-web-mode.el")		; 
+(load "46-web-mode.el")		; Mixed mode in web frontend
+(load "47-twittering-mode.el")	; Twitter client
