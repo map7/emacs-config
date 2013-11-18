@@ -28,6 +28,7 @@
 (depends-on "rinari")
 (depends-on "robe")
 (depends-on "rsense")
+(depends-on "rspec-mode")
 (depends-on "s")
 (depends-on "scss-mode")
 (depends-on "smartparens")

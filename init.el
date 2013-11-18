@@ -17,6 +17,7 @@
 (load "21-coffeescript.el")	 ; Coffeescript mode
 (load "28-magit.el")		 ; Git
 (load "29-save_hooks.el")	 ; Processes to perform on save.
+(load "30-rspec_mode.el")	 ; Rspec testing mode for ruby projects
 (load "39-smartparens.el")   ; Inserts closing parethesis, tags, end’s
 (load "40-projectile.el")    ; Manage projects
 (load "41-rainbow.el")		 ; Highlight colours in scss files
