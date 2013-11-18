@@ -10,5 +10,8 @@
 (add-hook 'org-mode-hook
 	  (lambda () (flyspell-prog-mode)))
 
+(add-hook 'haml-mode-hook
+	  (lambda () ('flymake-haml-load)))
+
 ;; flyspell mode breaks auto-complete mode without this.
 (ac-flyspell-workaround)
