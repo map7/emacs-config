@@ -9,3 +9,4 @@
 (load "02org.el")	     ; Org mode
 (load "18auto-complete.el")  ; Auto complete
 (load "39smartparens.el")    ; Inserts closing parethesis, tags, end’s
+(load "40projectile.el")     ; Manage projects

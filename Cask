@@ -9,6 +9,8 @@
 (depends-on "enh-ruby-mode")
 (depends-on "epl")
 (depends-on "f")
+(depends-on "grizzl")
 (depends-on "pallet")
+(depends-on "projectile")
 (depends-on "s")
 (depends-on "smartparens")
