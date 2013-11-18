@@ -3,3 +3,5 @@ elpa
 .cask
 *~
 .*~
+url
+ac-comphist.dat

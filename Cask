@@ -2,6 +2,7 @@
 (source gnu)
 (source marmalade)
 
+(depends-on "auto-complete")
 (depends-on "cask")
 (depends-on "dash")
 (depends-on "epl")
