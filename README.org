@@ -14,7 +14,7 @@ Add the following to ~/.emacs.d/Cask
 : (source melpa)
 : (source gnu)
 : (source marmalade)
-:
+:  
 : (depends-on "pallet")
 
 Run cask which will install the [[https://github.com/rdallasgray/pallet][pallet package management tool]]
