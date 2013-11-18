@@ -7,8 +7,10 @@
 (load "00-common-setup.el")
 (load "01-org.el")	     ; Org mode
 (load "02-ruby.el")	     ; Ruby programming language
+(load "03-html-mode.el") ; html mode & json.
 (load "04-yasnippet.el")     ; Yasnippets
 (load "06-rinari.el")	     ; Ruby on rails mode
+(load "08-ide-mode.el")		 ; IDO mode for moving around dirs & buffers
 (load "17-rsense.el")	     ; Command Lookup
 (load "18-auto-complete.el") ; Auto complete
 (load "28-magit.el")	     ; Git
