@@ -20,4 +20,5 @@
 (depends-on "s")
 (depends-on "scss-mode")
 (depends-on "smartparens")
+(depends-on "textmate")
 (depends-on "yasnippet")
