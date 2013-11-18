@@ -14,4 +14,5 @@
 (depends-on "projectile")
 (depends-on "rainbow-mode")
 (depends-on "s")
+(depends-on "scss-mode")
 (depends-on "smartparens")

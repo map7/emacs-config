@@ -10,3 +10,5 @@
 (load "18auto-complete.el")  ; Auto complete
 (load "39smartparens.el")    ; Inserts closing parethesis, tags, end’s
 (load "40projectile.el")     ; Manage projects
+(load "41rainbow.el")	     ; Highlight colours in scss files
+
