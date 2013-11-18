@@ -12,5 +12,6 @@
 (depends-on "grizzl")
 (depends-on "pallet")
 (depends-on "projectile")
+(depends-on "rainbow-mode")
 (depends-on "s")
 (depends-on "smartparens")
