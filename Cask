@@ -13,6 +13,7 @@
 (depends-on "pallet")
 (depends-on "projectile")
 (depends-on "rainbow-mode")
+(depends-on "robe")
 (depends-on "s")
 (depends-on "scss-mode")
 (depends-on "smartparens")
