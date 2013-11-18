@@ -14,6 +14,7 @@
 (load "15-markdown.el")		 ; for md files.
 (load "17-rsense.el")	     ; Command Lookup
 (load "18-auto-complete.el") ; Auto complete
+(load "21-coffeescript.el")	 ; Coffeescript mode
 (load "28-magit.el")	     ; Git
 (load "39-smartparens.el")   ; Inserts closing parethesis, tags, end’s
 (load "40-projectile.el")    ; Manage projects
