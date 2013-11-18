@@ -29,5 +29,6 @@
 (depends-on "smartparens")
 (depends-on "textmate")
 (depends-on "twittering-mode")
+(depends-on "undo-tree")
 (depends-on "web-mode")
 (depends-on "yasnippet")

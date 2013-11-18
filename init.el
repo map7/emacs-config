@@ -21,3 +21,4 @@
 (load "45-multiple-cursors.el")		; Edit multiple lines at the same time.
 (load "46-web-mode.el")		; Mixed mode in web frontend
 (load "47-twittering-mode.el")	; Twitter client
+(load "48-undo-tree.el")	; Undo tree
