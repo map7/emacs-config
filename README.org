@@ -7,7 +7,8 @@ Install cask
 : curl -fsSkL https://raw.github.com/cask/cask/master/go | python
    
 Add path to your ~/.zshenv file
-: export PATH="$HOME/.cask/bin:$PATH"'
+: # Add Cask to the path
+: export PATH="$HOME/.cask/bin:$PATH"
    
 Add the following to ~/.emacs.d/Cask
 : (source melpa)
