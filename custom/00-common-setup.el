@@ -15,6 +15,9 @@
 (global-set-key "\C-cs" 'dictionary-search)
 (global-set-key "\C-cm" 'dictionary-match-words)
 
+;; Expand region shortcut
+(global-set-key (kbd "C-=") 'er/expand-region)
+
 ;; Set color
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

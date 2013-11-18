@@ -22,3 +22,6 @@
 (load "46-web-mode.el")		; Mixed mode in web frontend
 (load "47-twittering-mode.el")	; Twitter client
 (load "48-undo-tree.el")	; Undo tree
+(load "49-rbenv.el")		; Ruby version manager
+
+
