@@ -2,9 +2,11 @@
 (source gnu)
 (source marmalade)
 
+(depends-on "ag")
 (depends-on "auto-complete")
 (depends-on "cask")
 (depends-on "dash")
+(depends-on "enh-ruby-mode")
 (depends-on "epl")
 (depends-on "f")
 (depends-on "pallet")
