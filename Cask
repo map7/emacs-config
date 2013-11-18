@@ -11,6 +11,7 @@
 (depends-on "f")
 (depends-on "grizzl")
 (depends-on "highlight-indentation")
+(depends-on "multiple-cursors")
 (depends-on "pallet")
 (depends-on "projectile")
 (depends-on "rainbow-mode")
