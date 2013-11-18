@@ -9,4 +9,6 @@
 			    (yas-load-directory "~/.emacs.d/.cask/24.3.1/elpa/yasnippet-20131031.628/snippets/enh-ruby-mode")
 			    ))
 
+;; Personal snippets
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 
