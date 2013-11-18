@@ -2,6 +2,7 @@
 (source gnu)
 (source marmalade)
 
+(depends-on "ace-jump-mode")
 (depends-on "ag")
 (depends-on "auto-complete")
 (depends-on "cask")
