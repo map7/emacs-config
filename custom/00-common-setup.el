@@ -97,3 +97,6 @@
 
 ; Auto revert unless there is unsaved data
 (global-auto-revert-mode t)
+
+;; Don't ask to save abbrevs
+(setq save-abbrevs 'silently)
