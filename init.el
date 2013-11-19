@@ -24,6 +24,7 @@
 (load "18-auto-complete.el") ; Auto complete
 (load "19-smart-mode-line.el")	; Configure the mode line at the bottom
 (load "21-coffeescript.el")	 ; Coffeescript mode
+(load "22-smex.el")			 ; smex (quick narrow down commands)
 (load "28-magit.el")		 ; Git
 (load "29-save_hooks.el")	 ; Processes to perform on save.
 (load "30-rspec_mode.el")	 ; Rspec testing mode for ruby projects

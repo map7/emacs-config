@@ -68,6 +68,7 @@
 (depends-on "slime")
 (depends-on "smart-mode-line")
 (depends-on "smartparens")
+(depends-on "smex")
 (depends-on "switch-window")
 (depends-on "textmate")
 (depends-on "twittering-mode")
