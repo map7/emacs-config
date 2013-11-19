@@ -9,3 +9,4 @@ projectile*
 .mc-lists.el
 tramp
 var
+*.plstore

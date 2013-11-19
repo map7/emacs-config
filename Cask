@@ -47,6 +47,7 @@
 (depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "multiple-cursors")
+(depends-on "mwe-log-commands")
 (depends-on "pallet")
 (depends-on "projectile")
 (depends-on "rainbow-mode")
