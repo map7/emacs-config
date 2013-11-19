@@ -18,6 +18,20 @@
 ;; Expand region shortcut
 (global-set-key (kbd "C-=") 'er/expand-region)
 
+
+;; Using 's' for work computer and 'H' for notebook as there is a
+;; difference in mapping the super key.
+(global-set-key (kbd "s-e") 'eval-buffer)
+
+(global-set-key (kbd "s-RET") 'google-maps)
+
+(global-set-key (kbd "C-c I") 'irc)
+
+;; Speed up common functions
+(global-set-key (kbd "s-2") 'split-window-vertically)
+(global-set-key (kbd "s-3") 'split-window-horizontally)
+
+
 ; General settings
 (setq-default tab-width 4)
 
@@ -79,3 +93,7 @@
 (dolist (project (directory-files elisp-external-dir t "\\w+"))
   (when (file-directory-p project)
 	(add-to-list 'load-path project)))
+
+
+; Auto revert unless there is unsaved data
+(global-auto-revert-mode t)
