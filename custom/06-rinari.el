@@ -66,5 +66,5 @@
 	(define-key pd-rinari-map2 "z" 'rinari-find-rspec-fixture)
 	))
 
-(add-hook 'enh-ruby-mode-hook 'rinari-minor-mode)
-(add-hook 'haml-mode-hook 'rinari-minor-mode)
+;; Turn on rinari mode everywhere.
+(global-rinari-mode +1)
