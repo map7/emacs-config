@@ -17,11 +17,15 @@
 ;;   (setq auto-save-interval 20))
 
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
-(setq org-agenda-files '("~/org/"))
+
 (setq org-directory "~/org")
+(setq org-agenda-files '("~/org/"))
 (setq org-mobile-inbox-for-pull "~/org/inbox.org");; new notes will be stored here
+
+;; Sync with my mobile phone.
 (setq org-mobile-directory "~/MobileOrg")         ;; Set to ~/MobileOrg (This is linked to my Dropbox).
 
 ;; Set more workflow states than TODO
