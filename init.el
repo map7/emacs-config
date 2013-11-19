@@ -4,6 +4,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 
+;; All custom files have a number at the front so they don't clash with the library files.
 (load "00-common-setup.el")
 (load "01-org.el")		 ; Org mode
 (load "02-ruby.el")		 ; Ruby programming language
