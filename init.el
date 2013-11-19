@@ -13,6 +13,8 @@
 (load "06-rinari.el")		 ; Ruby on rails mode
 (load "07-dired-details.el") ; Hide/show details in directory mode
 (load "08-ido-mode.el")		 ; IDO mode for moving around dirs & buffers
+(load "09-drag-stuff.el")	 ; Drag stuff around
+(load "10-circe.el")		 ; IRC settings
 (load "15-markdown.el")		 ; for md files.
 (load "17-rsense.el")		 ; Command Lookup
 (load "18-auto-complete.el") ; Auto complete

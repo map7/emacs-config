@@ -18,6 +18,7 @@
 (depends-on "dash")
 (depends-on "dictionary")
 (depends-on "dired-details")
+(depends-on "drag-stuff")
 (depends-on "enh-ruby-mode")
 (depends-on "epl")
 (depends-on "expand-region")
