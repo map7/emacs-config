@@ -22,6 +22,7 @@
 (load "15-markdown.el")		 ; for md files.
 (load "17-rsense.el")		 ; Command Lookup
 (load "18-auto-complete.el") ; Auto complete
+(load "19-smart-mode-line.el")	; Configure the mode line at the bottom
 (load "21-coffeescript.el")	 ; Coffeescript mode
 (load "28-magit.el")		 ; Git
 (load "29-save_hooks.el")	 ; Processes to perform on save.
