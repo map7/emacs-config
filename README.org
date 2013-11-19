@@ -1,20 +1,22 @@
 * emacs config
 
-Based upon Cask & Pallet.   
+Emacs Version tested: 24.3.1 (stable)
+
+Based upon Cask & Pallet.
 
 
 Install cask
 : curl -fsSkL https://raw.github.com/cask/cask/master/go | python
-   
+
 Add path to your ~/.zshenv file
 : # Add Cask to the path
 : export PATH="$HOME/.cask/bin:$PATH"
-   
+
 Add the following to ~/.emacs.d/Cask
 : (source melpa)
 : (source gnu)
 : (source marmalade)
-:  
+:
 : (depends-on "pallet")
 
 Run cask which will install the [[https://github.com/rdallasgray/pallet][pallet package management tool]]
@@ -27,7 +29,7 @@ Add the following to your ~/.emacs.d/init.el file
 
 Initialise your cask file from within emacs
 : M-x pallet-init
-   
+
 ** Requirements
 
 ag - Compile [[https://github.com/ggreer/the_silver_searcher][the silver searcher]], first check if you already have the 'ag' command
