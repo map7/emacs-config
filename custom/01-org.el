@@ -9,8 +9,7 @@
 (defun do-org-show-all-inline-images ()
   (interactive)
   (org-display-inline-images t t))
-(global-set-key (kbd "C-c C-x C v")
-                'do-org-show-all-inline-images)
+(global-set-key (kbd "C-c C-x C-v") 'do-org-show-all-inline-images)
 
 ;; (add-hook 'org-mode-hook 'my-org-mode-autosave-settings)
 ;; (defun my-org-mode-autosave-settings ()
@@ -23,31 +22,31 @@
 (setq org-agenda-files '("~/org/"))
 (setq org-directory "~/org")
 (setq org-mobile-inbox-for-pull "~/org/inbox.org");; new notes will be stored here
-(setq org-mobile-directory "~/MobileOrg")         ;; Set to <your ownCloud root directory>/MobileOrg.
+(setq org-mobile-directory "~/MobileOrg")         ;; Set to ~/MobileOrg (This is linked to my Dropbox).
 
 ;; Set more workflow states than TODO
 (setq org-todo-keywords
 	  '((sequence "TODO(t)" "|" "DONE(d)" "DELEGATED(>)" "REDUNDANT(r)" )
 		(sequence "GONNA(g)" "|" "DONE(d)" )))
 
-(setq org-support-shift-select t)		
+(setq org-support-shift-select t)
 
 ;; Automatically push changes
 (defvar org-mobile-push-timer nil
   "Timer that `org-mobile-push-timer' used to reschedule itself, or nil.")
 
-(defun org-mobile-push-with-delay (secs) 
+(defun org-mobile-push-with-delay (secs)
   (when org-mobile-push-timer
-    (cancel-timer org-mobile-push-timer))
+	(cancel-timer org-mobile-push-timer))
   (setq org-mobile-push-timer
-        (run-with-idle-timer
-         (* 1 secs) nil 'org-mobile-push)))
+		(run-with-idle-timer
+		 (* 1 secs) nil 'org-mobile-push)))
 
 
 ;; org publish options
 (require 'org-publish)
 (setq org-publish-project-alist
-      '(
+	  '(
 		;; ... add all the components here (see below)...
 
 		;; All org files (notes)
@@ -70,11 +69,11 @@
 		 :recursive t
 		 :publishing-function org-publish-attachment
 		 )
-		
+
 		;; Publish component
 		("org" :components ("org-notes" "org-static"))
 
-      ))
+	  ))
 
  '(org-archive-location "~/org/archive/%s_archive::")
  '(org-stuck-projects (quote ("hard" ("REDUNDANT" "DONE" "NEXT" "NEXTACTION") nil "")))
@@ -83,7 +82,7 @@
 ; Examples
 ; http://ergoemacs.org/emacs/emacs_hyper_super_keys.html
 ;
-; C-<f12> = Use control function keys 
+; C-<f12> = Use control function keys
 ; s-h     = Use windows key (super), this example is super & h
 ;
 
@@ -128,8 +127,8 @@
 ;;
 
 ;; TODO - put this into the background somehow.
-;; (add-hook 'after-save-hook 
-;;  (lambda () 
+;; (add-hook 'after-save-hook
+;;  (lambda ()
 ;;    (when (eq major-mode 'org-mode)
 ;;      (dolist (file (org-mobile-files-alist))
 ;;        (if (string= (expand-file-name (car file)) (buffer-file-name))
