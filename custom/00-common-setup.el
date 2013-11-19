@@ -21,7 +21,7 @@
 
 ;; Using 's' for work computer and 'H' for notebook as there is a
 ;; difference in mapping the super key.
-(global-set-key (kbd "s-e") 'eval-buffer)
+(global-set-key (kbd "C-s-e") 'eval-buffer)
 
 (global-set-key (kbd "s-RET") 'google-maps)
 
