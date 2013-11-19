@@ -11,6 +11,7 @@
 (load "04-yasnippet.el")     ; Yasnippets
 (load "05-yaml_mode.el")	 ; yaml mode.
 (load "06-rinari.el")		 ; Ruby on rails mode
+(load "07-dired-details.el") ; Hide/show details in directory mode
 (load "08-ido-mode.el")		 ; IDO mode for moving around dirs & buffers
 (load "15-markdown.el")		 ; for md files.
 (load "17-rsense.el")		 ; Command Lookup
