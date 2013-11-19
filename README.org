@@ -30,7 +30,8 @@ Initialise your cask file from within emacs
    
 ** Requirements
 
-ag - Compile [[https://github.com/ggreer/the_silver_searcher][the silver searcher]]
+ag - Compile [[https://github.com/ggreer/the_silver_searcher][the silver searcher]], first check if you already have the 'ag' command
+
 flyspell - install 'ispell'
 
 ** Yasnippet + ruby
