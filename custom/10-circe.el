@@ -22,3 +22,12 @@
 			  rcirc-default-user-name
 			  rcirc-default-full-name
 			  channels))))
+
+;; Shortcut to connect to IRC
+(defun irc ()
+  "Connect to IRC"
+  (interactive)
+  (circe "Freenode"))
+
+;; Enable chanop commands
+(eval-after-load 'circe '(require 'circe-chanop))
