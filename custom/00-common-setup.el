@@ -28,7 +28,7 @@
  '(inhibit-startup-screen t)
  '(max-lisp-eval-depth 3000)
  '(max-specpdl-size 3000)
- '(menu-bar-mode 1) 
+ '(menu-bar-mode 1)
 
  '(rails-ws:default-server-type "mongrel")
  '(send-mail-function (quote smtpmail-send-it))
@@ -62,9 +62,20 @@
 
 ;; set scroll to step by 1 instead of half a page.
 (setq scroll-step            1
-      scroll-conservatively  10000)
+	  scroll-conservatively  10000)
 
 ;fullscreen mode
 (defun switch-full-screen ()
   (interactive)
   (shell-command "wmctrl -r :ACTIVE: -btoggle,fullscreen"))
+
+;; Setup external directory variable
+(setq elisp-external-dir
+	  (expand-file-name "external" user-emacs-directory))
+
+;; Add external projects to load path
+(add-to-list 'load-path elisp-external-dir)
+
+(dolist (project (directory-files elisp-external-dir t "\\w+"))
+  (when (file-directory-p project)
+	(add-to-list 'load-path project)))
