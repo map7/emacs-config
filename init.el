@@ -16,6 +16,7 @@
 (load "09-drag-stuff.el")	 ; Drag stuff around
 (load "10-circe.el")		 ; IRC settings
 (load "11-multi-term.el")	 ; Handle multiple terminals in emacs nicely.
+(load "12-haml.el")			 ; haml mode
 (load "15-markdown.el")		 ; for md files.
 (load "17-rsense.el")		 ; Command Lookup
 (load "18-auto-complete.el") ; Auto complete
