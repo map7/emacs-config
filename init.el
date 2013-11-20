@@ -14,6 +14,7 @@
 (load "06-rinari.el")		 ; Ruby on rails mode
 (load "07-dired-details.el") ; Hide/show details in directory mode
 (load "08-ido-mode.el")		 ; IDO mode for moving around dirs & buffers
+(load "09-winner-mode.el")	 ; Undo/redo window layouts
 (load "10-circe.el")		 ; IRC settings
 (load "11-multi-term.el")	 ; Handle multiple terminals in emacs nicely.
 (load "12-haml.el")			 ; haml mode
