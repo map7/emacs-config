@@ -14,7 +14,6 @@
 (load "06-rinari.el")		 ; Ruby on rails mode
 (load "07-dired-details.el") ; Hide/show details in directory mode
 (load "08-ido-mode.el")		 ; IDO mode for moving around dirs & buffers
-(load "09-drag-stuff.el")	 ; Drag stuff around
 (load "10-circe.el")		 ; IRC settings
 (load "11-multi-term.el")	 ; Handle multiple terminals in emacs nicely.
 (load "12-haml.el")			 ; haml mode
@@ -26,6 +25,7 @@
 (load "19-smart-mode-line.el")	; Configure the mode line at the bottom
 (load "21-coffeescript.el")	 ; Coffeescript mode
 (load "22-smex.el")			 ; smex (quick narrow down commands)
+(load "23-speedbar.el")		 ; Speedbar customisations
 (load "28-magit.el")		 ; Git
 (load "29-save_hooks.el")	 ; Processes to perform on save.
 (load "30-rspec_mode.el")	 ; Rspec testing mode for ruby projects
