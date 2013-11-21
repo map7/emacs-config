@@ -28,7 +28,7 @@
 (load "22-smex.el")			 ; smex (quick narrow down commands)
 (load "23-speedbar.el")		 ; Speedbar customisations
 (load "28-magit.el")		 ; Git
-(load "29-save_hooks.el")	 ; Processes to perform on save.
+;; (load "29-save_hooks.el")	 ; Processes to perform on save.
 (load "30-rspec_mode.el")	 ; Rspec testing mode for ruby projects
 (load "31-feature_mode.el")	 ; Cucumber mode for BDD
 (load "32-ace_jump.el")		 ; Jump around quickly in a file
