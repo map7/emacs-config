@@ -35,6 +35,7 @@
 (depends-on "flymake-less")
 (depends-on "flymake-sass")
 (depends-on "flymake-yaml")
+(depends-on "free-keys")
 (depends-on "gist")
 (depends-on "github-browse-file")
 (depends-on "go-mode")

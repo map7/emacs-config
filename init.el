@@ -32,6 +32,7 @@
 (load "30-rspec_mode.el")	 ; Rspec testing mode for ruby projects
 (load "31-feature_mode.el")	 ; Cucumber mode for BDD
 (load "32-ace_jump.el")		 ; Jump around quickly in a file
+(load "33-emacs-server.el")	 ; Config relating to emacs server
 (load "36-xml.el")			 ; edit xml files
 (load "39-smartparens.el")   ; Inserts closing parethesis, tags, end’s
 (load "40-projectile.el")    ; Manage projects
