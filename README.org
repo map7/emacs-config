@@ -42,7 +42,11 @@ To get this working you must create a link from the ruby-mode snippets to
 enh-ruby-mode
 : cd ~/.emacs.d/.cask/24.3.1/elpa/yasnippet-20131031.628/snippets
 : ln -s ruby-mode enh-ruby-mode
-
-
 ** References
 http://crypt.codemancers.com/posts/2013-09-26-setting-up-emacs-as-development-environment-on-osx/
+
+** Issues
+*** Projectile not finding files
+
+Try to invalidate the project cache, first sit in a file within a project dir
+: C-c p i
