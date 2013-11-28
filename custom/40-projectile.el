@@ -8,3 +8,6 @@
 
 ;; Press Super-b for fuzzy switch buffer
 (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
+
+;; Setup projectile-rails
+(add-hook 'projectile-mode-hook 'projectile-rails-on)
