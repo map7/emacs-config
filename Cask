@@ -53,6 +53,7 @@
 (depends-on "less-css-mode")
 (depends-on "magit")
 (depends-on "markdown-mode")
+(depends-on "mew")
 (depends-on "multi-term")
 (depends-on "multiple-cursors")
 (depends-on "mwe-log-commands")
