@@ -49,6 +49,7 @@
 (depends-on "jade-mode")
 (depends-on "jinja2-mode")
 (depends-on "js2-mode")
+(depends-on "ledger-mode")
 (depends-on "less-css-mode")
 (depends-on "magit")
 (depends-on "markdown-mode")
