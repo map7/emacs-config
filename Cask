@@ -43,6 +43,7 @@
 (depends-on "google-contacts")
 (depends-on "google-maps")
 (depends-on "grizzl")
+(depends-on "guide-key")
 (depends-on "haml-mode")
 (depends-on "hexrgb")
 (depends-on "highlight-indentation")

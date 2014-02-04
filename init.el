@@ -27,6 +27,8 @@
 (load "21-coffeescript.el")	 ; Coffeescript mode
 (load "22-smex.el")			 ; smex (quick narrow down commands)
 (load "23-speedbar.el")		 ; Speedbar customisations
+(load "24-guide-key.el")	 ; Show keyboard shortcuts at certian points
+(load "25-scss-mode.el")	 ; SCSS mode
 (load "28-magit.el")		 ; Git
 ;; (load "29-save_hooks.el")	 ; Processes to perform on save.
 (load "30-rspec_mode.el")	 ; Rspec testing mode for ruby projects
