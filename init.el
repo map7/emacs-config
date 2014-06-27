@@ -47,3 +47,4 @@
 (load "47-twittering-mode.el")	; Twitter client
 (load "48-undo-tree.el")		; Undo tree
 (load "49-rbenv.el")			; Ruby version manager
+(load "50-org2blog.el")		 ; Org2blog mode
