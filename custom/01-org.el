@@ -141,3 +141,5 @@
 
 ;; This runs directly after you start emacs, it takes too long.
 ;; (run-at-time "00:05" 86400 '(lambda () (org-mobile-push-with-delay 1))) ;; refreshes agenda file each day
+
+

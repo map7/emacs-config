@@ -56,6 +56,7 @@
 (depends-on "multi-term")
 (depends-on "multiple-cursors")
 (depends-on "mwe-log-commands")
+(depends-on "org2blog")
 (depends-on "pallet")
 (depends-on "projectile")
 (depends-on "projectile-rails")
