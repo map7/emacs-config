@@ -10,4 +10,5 @@
 (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
 
 ;; Setup projectile-rails
+;; This is stuffing around with tramp mode.
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
