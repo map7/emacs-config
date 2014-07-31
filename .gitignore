@@ -11,3 +11,5 @@ projectile*
 tramp
 var
 *.plstore
+session*
+.org-id-locations
