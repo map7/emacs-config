@@ -135,8 +135,8 @@
 			 (setq i (1+ i)))))))
 
 ;; Set browser
-(setq browse-url-browser-function 'browse-url-generic
-	  browse-url-generic-program "chromium-browser")
+;; (setq browse-url-browser-function 'browse-url-generic
+;; 	  browse-url-generic-program "chromium-browser")
 
 ;; Use highlight colors
 (global-font-lock-mode t)
