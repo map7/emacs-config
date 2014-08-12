@@ -26,24 +26,29 @@
 (load "13-css.el")			 ; css mode
 (load "14-jinja2.el")		 ; Ansible templates
 (load "15-markdown.el")		 ; for md files.
+
 (load "17-rsense.el")		 ; Command Lookup
 (load "18-auto-complete.el") ; Auto complete
-
 ;; 21/07/2014 disabled due to issues with loading the theme
 ;; (load "19-smart-mode-line.el")	; Configure the mode line at the bottom
+
 (load "21-coffeescript.el")	 ; Coffeescript mode
 (load "22-smex.el")			 ; smex (quick narrow down commands)
 (load "23-speedbar.el")		 ; Speedbar customisations
 (load "24-guide-key.el")	 ; Show keyboard shortcuts at certian points
 (load "25-scss-mode.el")	 ; SCSS mode
+
 (load "28-magit.el")		 ; Git
 ;; (load "29-save_hooks.el")	 ; Processes to perform on save.
 (load "30-rspec_mode.el")	 ; Rspec testing mode for ruby projects
 (load "31-feature_mode.el")	 ; Cucumber mode for BDD
 (load "32-ace_jump.el")		 ; Jump around quickly in a file
 (load "33-emacs-server.el")	 ; Config relating to emacs server
+
 (load "36-xml.el")			 ; edit xml files
+
 (load "39-smartparens.el")   ; Inserts closing parethesis, tags, end’s
+
 (load "40-projectile.el")    ; Manage projects
 (load "41-rainbow.el")		 ; Highlight colours in scss files
 (load "42-robe.el")			 ; Ruby documentation
