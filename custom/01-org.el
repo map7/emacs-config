@@ -30,7 +30,8 @@
 
 ;; Set more workflow states than TODO
 (setq org-todo-keywords
-	  '((sequence "TODO(t)" "|" "DONE(d)" "DELEGATED(>)" "REDUNDANT(r)" )
+	  '((sequence "TODO(t)" "|" "DONE(d)" "REDUNDANT(r)" )
+		(sequence "DELEGATED(<)" "|" "DONE(d)")
 		(sequence "GONNA(g)" "|" "DONE(d)" )))
 
 (setq org-support-shift-select t)
