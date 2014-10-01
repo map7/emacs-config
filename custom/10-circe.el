@@ -34,10 +34,14 @@
 
 ;; Circe (IRC) configuration
 ;; Put your configuration in a ~/.private.el file with permissions 0600
-(load-file "~/.private.el")
-(setq circe-network-options
-	  `(("Freenode"
-		 :nick ,freenode-user
-		 :channels ("#mlug-au")
-		 :nickserv-password ,freenode-password
-		 )))
+(if (file-exists-p "~/.private.el")
+	(load-file "~/.private.el"))
+
+(if (file-exists-p "~/.private.el")
+  (setq circe-network-options
+		`(("Freenode"
+		   :nick ,freenode-user
+		   :channels ("#mlug-au")
+		   :nickserv-password ,freenode-password
+		   )))
+)
