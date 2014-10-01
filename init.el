@@ -26,7 +26,7 @@
 (load "13-css.el")			 ; css mode
 (load "14-jinja2.el")		 ; Ansible templates
 (load "15-markdown.el")		 ; for md files.
-
+(load "16-sudo-edit.el")	 ; editing files as root
 (load "17-rsense.el")		 ; Command Lookup
 (load "18-auto-complete.el") ; Auto complete
 ;; 21/07/2014 disabled due to issues with loading the theme
@@ -94,4 +94,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
+
+
+
 

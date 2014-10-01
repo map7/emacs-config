@@ -91,6 +91,7 @@
 (depends-on "smart-mode-line")
 (depends-on "smartparens")
 (depends-on "smex")
+(depends-on "sudo-edit")
 (depends-on "switch-window")
 (depends-on "sws-mode")
 (depends-on "textmate")
