@@ -61,7 +61,7 @@
 		 :publishing-directory "~/org_html/"
 		 :style "<link rel=\"stylesheet\" href=\"css/stylesheet.css\" type=\"text/css\" />"
 		 :recursive t
-		 :publishing-function org-publish-org-to-html
+		 :publishing-function org-html-publish-to-html
 		 :headline-levels 4             ; Just the default for this project.
 		 :auto-preamble t
 		 )
