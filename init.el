@@ -31,7 +31,7 @@
 (load "18-auto-complete.el") ; Auto complete
 ;; 21/07/2014 disabled due to issues with loading the theme
 ;; (load "19-smart-mode-line.el")	; Configure the mode line at the bottom
-
+(load "20-epa-file.el")			   ; Encryption
 (load "21-coffeescript.el")	 ; Coffeescript mode
 (load "22-smex.el")			 ; smex (quick narrow down commands)
 (load "23-speedbar.el")		 ; Speedbar customisations
