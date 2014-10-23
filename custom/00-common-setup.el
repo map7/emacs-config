@@ -33,10 +33,11 @@
 ;; Unset minimize so I stop hitting it
 (global-unset-key (kbd "C-x C-z"))
 
+;; Tab settings
+(setq-default tab-width 2)
+(setq-default indent-tabs-mode nil)
 
 ; General settings
-(setq-default tab-width 4)
-
 (custom-set-variables
  '(column-number-mode t)
  '(display-time-mode t)

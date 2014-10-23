@@ -37,7 +37,8 @@
 (load "23-speedbar.el")		 ; Speedbar customisations
 (load "24-guide-key.el")	 ; Show keyboard shortcuts at certian points
 (load "25-scss-mode.el")	 ; SCSS mode
-
+(load "26-moz-controller.el")			; Control firefox within emacs
+(load "27-real-auto-save.el")     ; Autosave files
 (load "28-magit.el")		 ; Git
 ;; (load "29-save_hooks.el")	 ; Processes to perform on save.
 (load "30-rspec_mode.el")	 ; Rspec testing mode for ruby projects
@@ -100,3 +101,4 @@
 
 (require 'discover)
 (global-discover-mode 1)
+
