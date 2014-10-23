@@ -13,3 +13,5 @@ var
 *.plstore
 session*
 .org-id-locations
+image-dired
+notes
