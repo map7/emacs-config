@@ -41,7 +41,26 @@
   (setq circe-network-options
 		`(("Freenode"
 		   :nick ,freenode-user
-		   :channels ("#mlug-au")
+		   :channels ("#ltsp" "#angularjs" "#roro" "#luv" "#mlug-au")
 		   :nickserv-password ,freenode-password
 		   )))
 )
+
+;; Filter out some of the crap join,part & quit messages for lurkers
+(setq circe-reduce-lurker-spam t)
+
+;; Channel Name in the Prompt				
+(add-hook 'circe-chat-mode-hook 'my-circe-prompt)
+(defun my-circe-prompt ()
+  (lui-set-prompt
+   (concat (propertize (concat (buffer-name) ">")
+                       'face 'circe-prompt-face)
+           " ")))
+
+;; Setup a shortcut '/j' like xchat has.
+(defun circe-command-J (&optional channel)
+  (circe-command-JOIN channel))
+
+(setq lui-flyspell-p t
+        lui-flyspell-alist '(("#hamburg" "german8")
+                             (".*" "american")))

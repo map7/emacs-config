@@ -47,7 +47,6 @@
 		(run-with-idle-timer
 		 (* 1 secs) nil 'org-mobile-push)))
 
-
 ;; org publish options
 (require 'org-publish)
 (setq org-publish-project-alist
@@ -64,6 +63,7 @@
 		 :publishing-function org-html-publish-to-html
 		 :headline-levels 4             ; Just the default for this project.
 		 :auto-preamble t
+		 :html-head "<link rel=\"stylesheet\" href=\"css/stylesheet.css\" type=\"text/css\" />"
 		 )
 
 		;; Attachments

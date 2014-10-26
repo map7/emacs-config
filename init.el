@@ -31,13 +31,14 @@
 (load "18-auto-complete.el") ; Auto complete
 ;; 21/07/2014 disabled due to issues with loading the theme
 ;; (load "19-smart-mode-line.el")	; Configure the mode line at the bottom
-
+(load "20-epa-file.el")			   ; Encryption
 (load "21-coffeescript.el")	 ; Coffeescript mode
 (load "22-smex.el")			 ; smex (quick narrow down commands)
 (load "23-speedbar.el")		 ; Speedbar customisations
 (load "24-guide-key.el")	 ; Show keyboard shortcuts at certian points
 (load "25-scss-mode.el")	 ; SCSS mode
-
+(load "26-moz-controller.el")			; Control firefox within emacs
+(load "27-real-auto-save.el")     ; Autosave files
 (load "28-magit.el")		 ; Git
 ;; (load "29-save_hooks.el")	 ; Processes to perform on save.
 (load "30-rspec_mode.el")	 ; Rspec testing mode for ruby projects
@@ -100,3 +101,4 @@
 
 (require 'discover)
 (global-discover-mode 1)
+
