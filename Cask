@@ -19,6 +19,7 @@
 (depends-on "csv-mode")
 (depends-on "csv-nav")
 (depends-on "dash")
+(depends-on "discover")
 (depends-on "dictionary")
 (depends-on "dired-details")
 (depends-on "drag-stuff")
