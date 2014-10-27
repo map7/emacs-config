@@ -47,7 +47,7 @@
 (load "32-ace_jump.el")      ; Jump around quickly in a file
 (load "33-emacs-server.el")	 ; Config relating to emacs server
 (load "34-org-expiry.el")    ; Org expiry <-- add created property on todo items
-(load "35-discover.el")
+(load "35-discover.el")   ; Discover more of emacs using context menus
 
 (load "36-xml.el")			 ; edit xml files
 
