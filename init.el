@@ -48,8 +48,8 @@
 (load "33-emacs-server.el")	 ; Config relating to emacs server
 (load "34-org-expiry.el")    ; Org expiry <-- add created property on todo items
 (load "35-discover.el")   ; Discover more of emacs using context menus
-
 (load "36-xml.el")			 ; edit xml files
+(load "37-midnight.el")  ; Automate tasks at midnight
 
 (load "39-smartparens.el")   ; Inserts closing parethesis, tags, end’s
 
