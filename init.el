@@ -8,6 +8,7 @@
 (require 'pallet)
 
 (add-to-list 'load-path "~/.emacs.d/custom")
+(add-to-list 'load-path "~/.emacs.d/external") ; Plugins not in the repo
 
 ;; All custom files have a number at the front so they don't clash with the library files.
 (load "00-common-setup.el")
@@ -41,10 +42,12 @@
 (load "27-real-auto-save.el")     ; Autosave files
 (load "28-magit.el")		 ; Git
 ;; (load "29-save_hooks.el")	 ; Processes to perform on save.
-(load "30-rspec_mode.el")	 ; Rspec testing mode for ruby projects
+(load "30-rspec_mode.el")       ; Rspec testing mode for ruby projects
 (load "31-feature_mode.el")	 ; Cucumber mode for BDD
-(load "32-ace_jump.el")		 ; Jump around quickly in a file
+(load "32-ace_jump.el")      ; Jump around quickly in a file
 (load "33-emacs-server.el")	 ; Config relating to emacs server
+(load "34-org-expiry.el")    ; Org expiry <-- add created property on todo items
+(load "35-discover.el")
 
 (load "36-xml.el")			 ; edit xml files
 
@@ -98,7 +101,4 @@
 
 
 
-
-(require 'discover)
-(global-discover-mode 1)
 
