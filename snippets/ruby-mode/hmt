@@ -1,0 +1,5 @@
+#name : has_many : ... :through
+#group: ActiveRecord
+# key: hmt
+# --
+has_many :${class} :through => :${relationship}

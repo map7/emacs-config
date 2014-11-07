@@ -3,7 +3,6 @@
 ;; Snippets
 (setq yas-snippet-dirs
       '("~/.emacs.d/snippets"
-        "~/.emacs.d/yasnippet-snippets"
         ))
 
 ;; Load rails snippets
