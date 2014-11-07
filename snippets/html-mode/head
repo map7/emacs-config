@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-#name : html
+#name : head
 # --
-<html>
+<head>
   $0
-</html>
+</head>

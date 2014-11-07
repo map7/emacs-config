@@ -1,4 +1,4 @@
 # -*- mode: snippet -*-
-#name : th
+#name : <%= ... %>
 # --
-<th>$0</th>
+<%= $0 %>

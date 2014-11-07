@@ -1,4 +1,4 @@
 # -*- mode: snippet -*-
-#name : th
+#name : same
 # --
-<th>$0</th>
+padding: $1px

@@ -1,4 +1,4 @@
 # -*- mode: snippet -*-
-#name : th
+#name : width
 # --
-<th>$0</th>
+width: $1px

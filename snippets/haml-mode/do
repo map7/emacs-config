@@ -1,4 +1,5 @@
 # -*- mode: snippet -*-
-#name : th
+#name : do block
 # --
-<th>$0</th>
+- $1 do
+  $0

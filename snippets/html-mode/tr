@@ -1,4 +1,6 @@
 # -*- mode: snippet -*-
-#name : th
+#name : tr
 # --
-<th>$0</th>
+<tr>
+  $0
+</tr>

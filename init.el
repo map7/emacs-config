@@ -51,7 +51,6 @@
 (load "36-xml.el")			 ; edit xml files
 
 (load "39-smartparens.el")   ; Inserts closing parethesis, tags, end’s
-
 (load "40-projectile.el")    ; Manage projects
 (load "41-rainbow.el")		 ; Highlight colours in scss files
 (load "42-robe.el")			 ; Ruby documentation

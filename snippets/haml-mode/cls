@@ -1,4 +1,4 @@
 # -*- mode: snippet -*-
-#name : th
+#name : class
 # --
-<th>$0</th>
+:class => '$0'

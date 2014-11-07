@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-#name : html
+#name : tfoot
 # --
-<html>
+<tfoot>
   $0
-</html>
+</tfoot>

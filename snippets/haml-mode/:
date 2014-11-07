@@ -1,4 +1,4 @@
 # -*- mode: snippet -*-
-#name : th
+#name : :symbol => 
 # --
-<th>$0</th>
+:$1 => 

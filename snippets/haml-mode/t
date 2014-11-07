@@ -1,4 +1,4 @@
 # -*- mode: snippet -*-
-#name : th
+#name : translate
 # --
-<th>$0</th>
+t('$0')

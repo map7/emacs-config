@@ -1,4 +1,4 @@
 # -*- mode: snippet -*-
-#name : th
+#name : value
 # --
-<th>$0</th>
+value="$0"

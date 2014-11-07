@@ -1,4 +1,4 @@
 # -*- mode: snippet -*-
-#name : th
+#name : yield
 # --
-<th>$0</th>
+= yield $0

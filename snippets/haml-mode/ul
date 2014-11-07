@@ -1,4 +1,5 @@
 # -*- mode: snippet -*-
-#name : th
+#name : ul
 # --
-<th>$0</th>
+%ul
+  $0

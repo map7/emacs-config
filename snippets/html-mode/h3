@@ -1,4 +1,4 @@
 # -*- mode: snippet -*-
-#name : th
+#name : h3
 # --
-<th>$0</th>
+<h3>$0</h3>

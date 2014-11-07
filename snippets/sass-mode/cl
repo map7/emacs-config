@@ -1,4 +1,4 @@
 # -*- mode: snippet -*-
-#name : th
+#name : clear
 # --
-<th>$0</th>
+clear: $1

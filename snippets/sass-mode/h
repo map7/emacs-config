@@ -1,4 +1,4 @@
 # -*- mode: snippet -*-
-#name : th
+#name : height
 # --
-<th>$0</th>
+height: $1px
