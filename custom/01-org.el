@@ -1,24 +1,26 @@
+;; Org mode shortcuts
+(global-set-key (kbd "C-c C-x C-v") 'do-org-show-all-inline-images)
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key (kbd "s-h") 'puborg)
+(global-set-key (kbd "s-u") 'org-mobile-push)
+(global-set-key (kbd "s-i") 'org-clock-in)
+(global-set-key (kbd "s-o") 'org-clock-out)
+
 ;; Org-mode options
 (add-hook 'org-mode-hook 'turn-on-visual-line-mode)
 (setq org-clock-out-remove-zero-time-clocks t)
-;; Problem with this is I like to see the clock and how many hours I've spent on the last
-;; item. Maybe if we could show the last 5 before putting the history into the drawer.
-;; (setq org-clock-into-drawer "CLOCK")
+(setq org-directory "~/org")
+(setq org-agenda-files '("~/org/"))
+(setq org-mobile-inbox-for-pull "~/org/inbox.org");; new notes will be stored here
 
 ;; Display inline images
 (defun do-org-show-all-inline-images ()
   (interactive)
   (org-display-inline-images t t))
-(global-set-key (kbd "C-c C-x C-v") 'do-org-show-all-inline-images)
 
+;; Assign mode to .org files
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-
-(setq org-directory "~/org")
-(setq org-agenda-files '("~/org/"))
-(setq org-mobile-inbox-for-pull "~/org/inbox.org");; new notes will be stored here
 
 ;; Sync with my mobile phone.
 (setq org-mobile-directory "~/MobileOrg")         ;; Set to ~/MobileOrg (This is linked to my Dropbox).
@@ -78,14 +80,6 @@
  '(org-archive-location "~/org/archive/%s_archive::")
  '(org-stuck-projects (quote ("hard" ("REDUNDANT" "DONE" "NEXT" "NEXTACTION") nil "")))
 
-;
-; Examples
-; http://ergoemacs.org/emacs/emacs_hyper_super_keys.html
-;
-; C-<f12> = Use control function keys
-; s-h     = Use windows key (super), this example is super & h
-;
-
 ;; Allow divs in org-publish
 (require 'org-special-blocks)
 
@@ -94,11 +88,6 @@
   (interactive)
   (org-publish-project "org")
 )
-
-(global-set-key (kbd "s-h") 'puborg)
-(global-set-key (kbd "s-u") 'org-mobile-push)
-(global-set-key (kbd "s-i") 'org-clock-in)
-(global-set-key (kbd "s-o") 'org-clock-out)
 
 ;; Put email links in org mode :) - currently broken :(
 ;; (setq ffap-url-regexp (replace-regexp-in-string "mailto:" "thunderlink: \ \ \ \ | mailto:" ffap-url-regexp));; for ThunderLink
@@ -120,7 +109,6 @@
 ;;                (org-make-link-regexps)
 ;;                (add-hook 'org-open-link-functions' browse-url-thunderlink)
 ;;                ))
-
 
 ;; mobile org options
 ;; http://kenmankoff.com/2012/08/17/emacs-org-mode-and-mobileorg-auto-sync

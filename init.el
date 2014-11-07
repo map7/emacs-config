@@ -64,7 +64,9 @@
 (load "49-rbenv.el")			; Ruby version manager
 (load "50-org2blog.el")		 ; Org2blog mode
 (load "51-packages.el")		 ; Package related tasks
+(load "52-scroll-settings.el")          ; Settings for scrolling
 
+(load "99-shortcuts.el")                ; Keyboard shortcuts
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
