@@ -11,11 +11,6 @@
   (org-display-inline-images t t))
 (global-set-key (kbd "C-c C-x C-v") 'do-org-show-all-inline-images)
 
-;; (add-hook 'org-mode-hook 'my-org-mode-autosave-settings)
-;; (defun my-org-mode-autosave-settings ()
-;;   (set (make-local-variable 'auto-save-visited-file-name) t)
-;;   (setq auto-save-interval 20))
-
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 
 (global-set-key "\C-cl" 'org-store-link)
