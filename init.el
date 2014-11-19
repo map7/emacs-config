@@ -66,6 +66,7 @@
 (load "51-packages.el")		 ; Package related tasks
 (load "52-scroll-settings.el")          ; Settings for scrolling
 
+(load "98-mode-line.el")                ; Format my mode line
 (load "99-shortcuts.el")                ; Keyboard shortcuts
 
 (custom-set-variables
