@@ -18,7 +18,7 @@
 (global-set-key [f5] 'magit-status)
 (global-set-key [f6] 'multi-term)
 (global-set-key [f7] 'split-window-vertically)
-(global-set-key [f8] 'ace-window)
+(global-set-key [f8] 'other-window)
 ;; f9 is taken by git-status somewhere.
 (global-set-key [f10] 'undo-tree-visualize)
 (global-set-key [f12] 'switch-full-screen)
