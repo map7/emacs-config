@@ -10,7 +10,7 @@
                 ; mode-line-frame-identification
                 mode-line-buffer-identification
                 ;"  "
-                ; mode-line-position
+                mode-line-position
                 (vc-mode basic-vc-mode-line)
 
                 "  "
