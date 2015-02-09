@@ -101,6 +101,7 @@
 (depends-on "sunshine")
 (depends-on "switch-window")
 (depends-on "sws-mode")
+(depends-on "symon")
 (depends-on "textmate")
 (depends-on "tracking")
 (depends-on "twittering-mode")

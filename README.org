@@ -54,4 +54,4 @@ Try to invalidate the project cache, first sit in a file within a project dir
 *** 09/02/2015
 Added
 - sunshine - weather
-
+- symon - system monitor, replaces gkrellm
