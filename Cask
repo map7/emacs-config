@@ -72,11 +72,8 @@
 (depends-on "oauth2")
 (depends-on "org")
 (depends-on "org-cliplink")
-<<<<<<< HEAD
 (depends-on "org2blog")
-=======
 (depends-on "ox-reveal")
->>>>>>> 00dcf46a18de8033037aa6b00679be4a9c0cde2c
 (depends-on "pallet")
 (depends-on "pcache")
 (depends-on "pkg-info")
