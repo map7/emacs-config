@@ -55,3 +55,4 @@ Try to invalidate the project cache, first sit in a file within a project dir
 Added
 - sunshine - weather
 - symon - system monitor, replaces gkrellm
+- ox-reveal - reveal.js presentation tool

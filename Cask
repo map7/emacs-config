@@ -73,6 +73,7 @@
 (depends-on "org")
 (depends-on "org2blog")
 (depends-on "org-cliplink")
+(depends-on "ox-reveal")
 (depends-on "pallet")
 (depends-on "pcache")
 (depends-on "pkg-info")
