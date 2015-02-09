@@ -72,7 +72,11 @@
 (depends-on "oauth2")
 (depends-on "org")
 (depends-on "org-cliplink")
+<<<<<<< HEAD
 (depends-on "org2blog")
+=======
+(depends-on "ox-reveal")
+>>>>>>> 00dcf46a18de8033037aa6b00679be4a9c0cde2c
 (depends-on "pallet")
 (depends-on "pcache")
 (depends-on "pkg-info")
@@ -98,8 +102,10 @@
 (depends-on "smartparens")
 (depends-on "smex")
 (depends-on "sudo-edit")
+(depends-on "sunshine")
 (depends-on "switch-window")
 (depends-on "sws-mode")
+(depends-on "symon")
 (depends-on "sx")
 (depends-on "textmate")
 (depends-on "tracking")
