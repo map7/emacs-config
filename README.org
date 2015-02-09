@@ -48,3 +48,10 @@ http://crypt.codemancers.com/posts/2013-09-26-setting-up-emacs-as-development-en
 
 Try to invalidate the project cache, first sit in a file within a project dir
 : C-c p i
+
+** changelog
+
+*** 09/02/2015
+Added
+- sunshine - weather
+

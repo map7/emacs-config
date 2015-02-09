@@ -50,7 +50,7 @@
 (load "35-discover.el")   ; Discover more of emacs using context menus
 (load "36-xml.el")			 ; edit xml files
 (load "37-eshell.el")    ; eshell customisations
-
+(load "38-sunshine.el")  ; Weather
 (load "39-smartparens.el")   ; Inserts closing parethesis, tags, end’s
 (load "40-projectile.el")    ; Manage projects
 (load "41-rainbow.el")		 ; Highlight colours in scss files
@@ -100,5 +100,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
-
 
