@@ -127,3 +127,19 @@
 ;; (run-at-time "00:05" 86400 '(lambda () (org-mobile-push-with-delay 1))) ;; refreshes agenda file each day
 
 
+
+
+;; Custom searches
+(setq org-agenda-custom-commands
+      '(("Q" . "Custom queries") ;; gives label to "Q" 
+        ("Qa" "Archive search" search ""
+         ((org-agenda-files (file-expand-wildcards "~/org/archive/*.org_archive")))) 
+        ;; ("Qw" "Website search" search ""
+        ;;  ((org-agenda-files (file-expand-wildcards "~/website/*.org"))))
+        ("Qb" "Projects and Archive" search ""
+         ((org-agenda-text-search-extra-files (file-expand-wildcards "~/org/archive/*.org_archive"))))
+        ;; searches both projects and org/archive directories
+        ("QA" "Archive tags search" org-tags-view "" 
+         ((org-agenda-files (file-expand-wildcards "~/org/archive/*.org_archive"))))
+        ;; ...other commands here
+        ))
