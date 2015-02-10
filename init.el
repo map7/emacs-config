@@ -65,6 +65,7 @@
 (load "50-org2blog.el")		 ; Org2blog mode
 (load "51-packages.el")		 ; Package related tasks
 (load "52-scroll-settings.el")          ; Settings for scrolling
+(load "53-revealjs.el")                 ; Reveal.js settings
 
 (load "98-mode-line.el")                ; Format my mode line
 (load "99-shortcuts.el")                ; Keyboard shortcuts
@@ -101,3 +102,4 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
 
+(setq user-mail-address "michael@dtcorp.com.au")
