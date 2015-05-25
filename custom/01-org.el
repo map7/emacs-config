@@ -46,6 +46,7 @@
 
 ;; org publish options
 ;;(require 'org-publish)
+;;(require 'ox-publish)
 (setq org-publish-project-alist
 	  '(
 		;; ... add all the components here (see below)...
