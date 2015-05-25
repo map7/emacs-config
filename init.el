@@ -80,6 +80,7 @@
  '(ecb-options-version "2.32")
  '(inhibit-startup-screen t)
  '(js-indent-level 2)
+ '(jsx-indent-level 2)
  '(max-lisp-eval-depth 3000)
  '(max-specpdl-size 3000)
  '(menu-bar-mode 1)
