@@ -66,6 +66,7 @@
 (load "51-packages.el")		 ; Package related tasks
 (load "52-scroll-settings.el")          ; Settings for scrolling
 (load "53-revealjs.el")                 ; Reveal.js settings
+(load "54-slime.el")                    ; Slime Superior Lisp Interaction Mode for Emacs
 
 (load "98-mode-line.el")                ; Format my mode line
 (load "99-shortcuts.el")                ; Keyboard shortcuts
