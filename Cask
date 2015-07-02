@@ -23,6 +23,7 @@
 (depends-on "diminish")
 (depends-on "dired-details")
 (depends-on "discover")
+(depends-on "dockerfile-mode")
 (depends-on "drag-stuff")
 (depends-on "enh-ruby-mode")
 (depends-on "epl")
