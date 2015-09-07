@@ -31,7 +31,7 @@
 (setq battery-mode-line-format "%p%%") ; Default: "[%b%p%%]"
 
 ;; Remove the listing of minor modes
-(diminish 'yas-minor-mode)
+;; (diminish 'yas-minor-mode)
 (diminish 'abbrev-mode)
 (diminish 'rinari-minor-mode)
 (diminish 'smartparens-mode)
