@@ -3,7 +3,6 @@
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key (kbd "s-h") 'puborg)
-(global-set-key (kbd "s-u") 'org-mobile-push)
 (global-set-key (kbd "s-i") 'org-clock-in)
 (global-set-key (kbd "s-o") 'org-clock-out)
 
@@ -12,7 +11,6 @@
 (setq org-clock-out-remove-zero-time-clocks t)
 (setq org-directory "~/org")
 (setq org-agenda-files '("~/org/"))
-(setq org-mobile-inbox-for-pull "~/org/inbox.org");; new notes will be stored here
 
 ;; Display inline images
 (defun do-org-show-all-inline-images ()
@@ -22,8 +20,6 @@
 ;; Assign mode to .org files
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 
-;; Sync with my mobile phone.
-(setq org-mobile-directory "~/MobileOrg")         ;; Set to ~/MobileOrg (This is linked to my Dropbox).
 
 ;; Set more workflow states than TODO
 (setq org-todo-keywords
@@ -33,16 +29,6 @@
 
 (setq org-support-shift-select t)
 
-;; Automatically push changes
-(defvar org-mobile-push-timer nil
-  "Timer that `org-mobile-push-timer' used to reschedule itself, or nil.")
-
-(defun org-mobile-push-with-delay (secs)
-  (when org-mobile-push-timer
-	(cancel-timer org-mobile-push-timer))
-  (setq org-mobile-push-timer
-		(run-with-idle-timer
-		 (* 1 secs) nil 'org-mobile-push)))
 
 ;; org publish options
 ;;(require 'org-publish)
@@ -111,21 +97,6 @@
 ;;                (add-hook 'org-open-link-functions' browse-url-thunderlink)
 ;;                ))
 
-;; mobile org options
-;; http://kenmankoff.com/2012/08/17/emacs-org-mode-and-mobileorg-auto-sync
-;;
-
-;; TODO - put this into the background somehow.
-;; (add-hook 'after-save-hook
-;;  (lambda ()
-;;    (when (eq major-mode 'org-mode)
-;;      (dolist (file (org-mobile-files-alist))
-;;        (if (string= (expand-file-name (car file)) (buffer-file-name))
-;;            (org-mobile-push-with-delay 10)))
-;;    )))
-
-;; This runs directly after you start emacs, it takes too long.
-;; (run-at-time "00:05" 86400 '(lambda () (org-mobile-push-with-delay 1))) ;; refreshes agenda file each day
 
 
 
