@@ -1,6 +1,9 @@
 ;; Enable the built in pair mode
 (electric-pair-mode 1)
 
+;; auto-indent
+(define-key global-map (kbd "C-j") 'newline-and-indent)
+
 ;; Tab settings
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
