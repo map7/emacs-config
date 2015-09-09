@@ -34,7 +34,6 @@
 ;; (diminish 'yas-minor-mode)
 (diminish 'abbrev-mode)
 (diminish 'rinari-minor-mode)
-(diminish 'smartparens-mode)
 (diminish 'guide-key-mode)
 (diminish 'auto-complete-mode)
 

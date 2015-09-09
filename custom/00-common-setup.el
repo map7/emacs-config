@@ -1,3 +1,6 @@
+;; Enable the built in pair mode
+(electric-pair-mode 1)
+
 ;; Tab settings
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)

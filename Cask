@@ -99,7 +99,6 @@
 (depends-on "simple-mode-line")
 (depends-on "slime")
 (depends-on "smart-mode-line")
-(depends-on "smartparens")
 (depends-on "smex")
 (depends-on "sudo-edit")
 (depends-on "sunshine")
