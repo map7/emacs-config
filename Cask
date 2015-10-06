@@ -93,6 +93,8 @@
 (depends-on "rsense")
 (depends-on "rspec-mode")
 (depends-on "ruby-compilation")
+(depends-on "ruby-end")
+(depends-on "ruby-refactor")
 (depends-on "s")
 (depends-on "scss-mode")
 (depends-on "shorten")
