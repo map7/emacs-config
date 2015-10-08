@@ -2,40 +2,40 @@
 
 (setq-default mode-line-format
               '("%e" ; print error message about full memory.
-                mode-line-front-space
+                mode-line-front-space   ; space
                 ; mode-line-mule-info
                 ; mode-line-client
-                mode-line-modified
+                mode-line-modified      ; modified
                 mode-line-remote
-                ; mode-line-frame-identification
-                mode-line-buffer-identification
-                ;"  "
-                mode-line-position
-                (vc-mode basic-vc-mode-line)
-
                 "  "
+                ; mode-line-frame-identification
+                mode-line-buffer-identification ; filename
+                ;"  "
+                (list 'line-number-mode "(%l,") ; line number
+                (list 'column-number-mode "%c) ") ; column number
+                " "
+              
+                ;; (vc-mode basic-vc-mode-line)
+
+                ;; "  "
                 mode-line-modes
                 "  "
                 ; mode-line-misc-info
-                display-time-string
-                "  "
-                battery-mode-line-string
-                mode-line-end-spaces))
+                display-time-string     ; Display the time.
+                ;; "  "
+                ;; battery-mode-line-string
+                ;; mode-line-end-spaces
+                ))
 
 ;; Time format
-(display-time-mode 1)
-(setq display-time-format "%t%R")
+(display-time-mode 1)                        ; Enable time
+(setq display-time-format "%t%R")            ; Format the time
+(setq display-time-default-load-average nil) ; Remove the load
+(setq display-time-mail-string "")           ; Remove the mail
 
 ;; Battery format
 (display-battery-mode 1)
 (setq battery-mode-line-format "%p%%") ; Default: "[%b%p%%]"
-
-;; Remove the listing of minor modes
-;; (diminish 'yas-minor-mode)
-(diminish 'abbrev-mode)
-(diminish 'rinari-minor-mode)
-(diminish 'guide-key-mode)
-(diminish 'auto-complete-mode)
 
 ;; Remove the 'git' component
 ;; http://www.lunaryorn.com/2014/07/26/make-your-emacs-mode-line-more-useful.html
