@@ -79,6 +79,7 @@
 (depends-on "ox-reveal")
 (depends-on "pallet")
 (depends-on "pcache")
+(depends-on "pdf-tools")
 (depends-on "pkg-info")
 (depends-on "popup")
 (depends-on "popwin")

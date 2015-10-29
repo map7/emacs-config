@@ -97,7 +97,7 @@
  '(org-archive-location "~/org/archive/%s_archive::")
  '(package-selected-packages
    (quote
-    (org-alert yasnippet yaml-mode web-mode undo-tree textmate symon sx sws-mode switch-window sunshine sudo-edit smex smart-mode-line slime simple-mode-line shorten scss-mode ruby-refactor ruby-end rspec-mode rsense robe rinari regex-tool real-auto-save rbenv rainbow-mode projectile-rails pallet ox-reveal org2blog org-cliplink mwe-log-commands multiple-cursors multi-term moz-controller mew magit lui ledger-mode jsx-mode js2-mode jinja2-mode jade-mode highlight-indentation hexrgb haml-mode guide-key grizzl google-maps google-contacts go-mode github-browse-file gist free-keys flymake-yaml flymake-sass flymake-less flymake-json flymake-jslint flymake-jshint flymake-haml flymake-csslint flymake-css flymake-coffee firestarter feature-mode expand-region enh-ruby-mode drag-stuff dockerfile-mode discover dired-details diminish dictionary csv-nav csv-mode crontab-mode color-theme-railscasts coffee-mode circe auto-complete ascii arduino-mode apache-mode angular-snippets android-mode ag ace-jump-mode)))
+    (pdf-tools org-alert yasnippet yaml-mode web-mode undo-tree textmate symon sx sws-mode switch-window sunshine sudo-edit smex smart-mode-line slime simple-mode-line shorten scss-mode ruby-refactor ruby-end rspec-mode rsense robe rinari regex-tool real-auto-save rbenv rainbow-mode projectile-rails pallet ox-reveal org2blog org-cliplink mwe-log-commands multiple-cursors multi-term moz-controller mew magit lui ledger-mode jsx-mode js2-mode jinja2-mode jade-mode highlight-indentation hexrgb haml-mode guide-key grizzl google-maps google-contacts go-mode github-browse-file gist free-keys flymake-yaml flymake-sass flymake-less flymake-json flymake-jslint flymake-jshint flymake-haml flymake-csslint flymake-css flymake-coffee firestarter feature-mode expand-region enh-ruby-mode drag-stuff dockerfile-mode discover dired-details diminish dictionary csv-nav csv-mode crontab-mode color-theme-railscasts coffee-mode circe auto-complete ascii arduino-mode apache-mode angular-snippets android-mode ag ace-jump-mode)))
  '(rails-ws:default-server-type "mongrel")
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "smtp.googlemail.com")
@@ -120,3 +120,5 @@
 
 (setq user-mail-address "michael@dtcorp.com.au")
 
+;; pdf-tools for viewing PDFs
+(pdf-tools-install)
