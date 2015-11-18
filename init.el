@@ -22,7 +22,7 @@
 (load "01-org.el")		 ; Org mode
 (load "02-ruby.el")		 ; Ruby programming language
 (load "03-html-mode.el") ; html mode & json.
-(load "04-yasnippet.el")     ; Yasnippets
+(load "04-yasnippet.el")     ; Yasnippets BUG: https://github.com/capitaomorte/yasnippet/issues/631
 (load "05-yaml_mode.el")	 ; yaml mode.
 (load "06-rinari.el")		 ; Ruby on rails mode
 (load "07-dired-details.el") ; Hide/show details in directory mode
@@ -58,7 +58,7 @@
 (load "36-xml.el")			 ; edit xml files
 (load "37-eshell.el")    ; eshell customisations
 (load "38-sunshine.el")  ; Weather
-
+(load "39-pdf-tools.el")  ; PDF tools
 (load "40-projectile.el")    ; Manage projects
 (load "41-rainbow.el")		 ; Highlight colours in scss files
 (load "42-robe.el")			 ; Ruby documentation
@@ -76,7 +76,7 @@
 (load "54-slime.el")                    ; Slime Superior Lisp Interaction Mode for Emacs
 (load "55-org-mobile.el")               ; Org sync with MobileOrg for Android devices
 (load "56-ruby-refactor.el")
-
+(load "57-bpr.el")                      ; Background Process Runner
 (load "98-mode-line.el")                ; Format my mode line
 (load "99-shortcuts.el")                ; Keyboard shortcuts
 
@@ -97,7 +97,7 @@
  '(org-archive-location "~/org/archive/%s_archive::")
  '(package-selected-packages
    (quote
-    (pdf-tools org-alert yasnippet yaml-mode web-mode undo-tree textmate symon sx sws-mode switch-window sunshine sudo-edit smex smart-mode-line slime simple-mode-line shorten scss-mode ruby-refactor ruby-end rspec-mode rsense robe rinari regex-tool real-auto-save rbenv rainbow-mode projectile-rails pallet ox-reveal org2blog org-cliplink mwe-log-commands multiple-cursors multi-term moz-controller mew magit lui ledger-mode jsx-mode js2-mode jinja2-mode jade-mode highlight-indentation hexrgb haml-mode guide-key grizzl google-maps google-contacts go-mode github-browse-file gist free-keys flymake-yaml flymake-sass flymake-less flymake-json flymake-jslint flymake-jshint flymake-haml flymake-csslint flymake-css flymake-coffee firestarter feature-mode expand-region enh-ruby-mode drag-stuff dockerfile-mode discover dired-details diminish dictionary csv-nav csv-mode crontab-mode color-theme-railscasts coffee-mode circe auto-complete ascii arduino-mode apache-mode angular-snippets android-mode ag ace-jump-mode)))
+    (bpr projectile eruby-mode pdf-tools org-alert yasnippet yaml-mode web-mode undo-tree textmate symon sx sws-mode switch-window sunshine sudo-edit smex smart-mode-line slime simple-mode-line shorten scss-mode ruby-refactor ruby-end rspec-mode rsense robe rinari regex-tool real-auto-save rbenv rainbow-mode projectile-rails pallet ox-reveal org2blog org-cliplink mwe-log-commands multiple-cursors multi-term moz-controller mew magit lui ledger-mode jsx-mode js2-mode jinja2-mode jade-mode highlight-indentation hexrgb haml-mode guide-key grizzl google-maps google-contacts go-mode github-browse-file gist free-keys flymake-yaml flymake-sass flymake-less flymake-json flymake-jslint flymake-jshint flymake-haml flymake-csslint flymake-css flymake-coffee firestarter feature-mode expand-region enh-ruby-mode drag-stuff dockerfile-mode discover dired-details diminish dictionary csv-nav csv-mode crontab-mode color-theme-railscasts coffee-mode circe auto-complete ascii arduino-mode apache-mode angular-snippets android-mode ag ace-jump-mode)))
  '(rails-ws:default-server-type "mongrel")
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "smtp.googlemail.com")
@@ -120,5 +120,5 @@
 
 (setq user-mail-address "michael@dtcorp.com.au")
 
-;; pdf-tools for viewing PDFs
-(pdf-tools-install)
+
+

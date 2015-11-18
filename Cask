@@ -10,6 +10,7 @@
 (depends-on "arduino-mode")
 (depends-on "ascii")
 (depends-on "auto-complete")
+(depends-on "bpr")
 (depends-on "cask")
 (depends-on "circe")
 (depends-on "coffee-mode")
