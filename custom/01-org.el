@@ -115,3 +115,6 @@
          ((org-agenda-files (file-expand-wildcards "~/org/archive/*.org_archive"))))
         ;; ...other commands here
         ))
+
+;; Display images inline automatically
+(setq org-startup-with-inline-images t)
