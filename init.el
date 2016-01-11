@@ -79,7 +79,7 @@
 (load "57-bpr.el")                      ; Background Process Runner
 (load "58-togetherly.el")               ; Work together with someone in the same file.
 (load "59-diredful.el")                 ; Color files in dired listing
-(load "60-org-ac.el")                   ; org mode autocomplete
+;; (load "60-org-ac.el")                   ; org mode autocomplete
 
 (load "98-mode-line.el")                ; Format my mode line
 (load "99-shortcuts.el")                ; Keyboard shortcuts
