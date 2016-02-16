@@ -73,6 +73,7 @@
 (depends-on "multi-term")
 (depends-on "multiple-cursors")
 (depends-on "mwe-log-commands")
+(depends-on "nlinum")
 (depends-on "oauth2")
 (depends-on "org")
 (depends-on "org-cliplink")

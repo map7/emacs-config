@@ -1,8 +1,6 @@
 ;; Enable the built in pair mode
 (electric-pair-mode 1)
 
-;; Line Number
-(global-linum-mode)
 
 ;; auto-indent
 (define-key global-map (kbd "C-j") 'newline-and-indent)
