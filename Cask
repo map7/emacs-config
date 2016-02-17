@@ -64,6 +64,7 @@
 (depends-on "ledger-mode")
 (depends-on "less-css-mode")
 (depends-on "link")
+(depends-on "linum-off")
 (depends-on "lui")
 (depends-on "magit")
 (depends-on "markdown-mode")
