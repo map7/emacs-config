@@ -79,5 +79,5 @@
         (kill-append (buffer-substring beg end) (< end beg))
       (kill-ring-save beg end)))
   (kill-append "\n" nil)
-  (arg (1+ arg)) 2))
-(if (arg (not (= 1 arg))) (message "%d lines copied" arg)))
+  (arg (1+ arg)) 2
+  (if (arg (not (= 1 arg))) (message "%d lines copied" arg))))
