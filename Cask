@@ -6,6 +6,7 @@
 (depends-on "ag")
 (depends-on "android-mode")
 (depends-on "angular-snippets")
+(depends-on "ansible")
 (depends-on "apache-mode")
 (depends-on "arduino-mode")
 (depends-on "ascii")
