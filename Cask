@@ -58,6 +58,7 @@
 (depends-on "haml-mode")
 (depends-on "hexrgb")
 (depends-on "highlight-indentation")
+(depends-on "highlight-parentheses")
 (depends-on "inf-ruby")
 (depends-on "jade-mode")
 (depends-on "jinja2-mode")
