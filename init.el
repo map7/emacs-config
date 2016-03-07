@@ -79,7 +79,9 @@
 (load "57-bpr.el")                      ; Background Process Runner
 (load "58-togetherly.el")               ; Work together with someone in the same file.
 (load "59-diredful.el")                 ; Color files in dired listing
-(load "60-org-ac.el")                   ; org mode autocomplete
+;; (load "60-org-ac.el")                   ; org mode autocomplete
+(load "60-nlinum.el")                   ; Line number mode (faster than standard package)
+(load "61-highlight-parentheses.el") ; Highlights start and end of parentheses.
 
 (load "98-mode-line.el")                ; Format my mode line
 (load "99-shortcuts.el")                ; Keyboard shortcuts
@@ -101,7 +103,7 @@
  '(org-archive-location "~/org/archive/%s_archive::")
  '(package-selected-packages
    (quote
-    (picpocket diredful togetherly bpr projectile eruby-mode pdf-tools org-alert yasnippet yaml-mode web-mode undo-tree textmate symon sx sws-mode switch-window sunshine sudo-edit smex smart-mode-line slime simple-mode-line shorten scss-mode ruby-refactor ruby-end rspec-mode rsense robe rinari regex-tool real-auto-save rbenv rainbow-mode projectile-rails pallet ox-reveal org2blog org-cliplink mwe-log-commands multiple-cursors multi-term moz-controller mew magit lui ledger-mode jsx-mode js2-mode jinja2-mode jade-mode highlight-indentation hexrgb haml-mode guide-key grizzl google-maps google-contacts go-mode github-browse-file gist free-keys flymake-yaml flymake-sass flymake-less flymake-json flymake-jslint flymake-jshint flymake-haml flymake-csslint flymake-css flymake-coffee firestarter feature-mode expand-region enh-ruby-mode drag-stuff dockerfile-mode discover dired-details diminish dictionary csv-nav csv-mode crontab-mode color-theme-railscasts coffee-mode circe auto-complete ascii arduino-mode apache-mode angular-snippets android-mode ag ace-jump-mode)))
+    (highlight-parentheses ansible linum-off nlinum picpocket diredful togetherly bpr projectile eruby-mode pdf-tools org-alert yasnippet yaml-mode web-mode undo-tree textmate symon sx sws-mode switch-window sunshine sudo-edit smex smart-mode-line slime simple-mode-line shorten scss-mode ruby-refactor ruby-end rspec-mode rsense robe rinari regex-tool real-auto-save rbenv rainbow-mode projectile-rails pallet ox-reveal org2blog org-cliplink mwe-log-commands multiple-cursors multi-term moz-controller mew magit lui ledger-mode jsx-mode js2-mode jinja2-mode jade-mode highlight-indentation hexrgb haml-mode guide-key grizzl google-maps google-contacts go-mode github-browse-file gist free-keys flymake-yaml flymake-sass flymake-less flymake-json flymake-jslint flymake-jshint flymake-haml flymake-csslint flymake-css flymake-coffee firestarter feature-mode expand-region enh-ruby-mode drag-stuff dockerfile-mode discover dired-details diminish dictionary csv-nav csv-mode crontab-mode color-theme-railscasts coffee-mode circe auto-complete ascii arduino-mode apache-mode angular-snippets android-mode ag ace-jump-mode)))
  '(rails-ws:default-server-type "mongrel")
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "smtp.googlemail.com")
@@ -128,6 +130,7 @@
 ;; (defun custom-startup ()
 ;;   (org-todo-list t))
 ;; (add-hook 'window-setup-hook 'custom-startup
+
 
 
 
