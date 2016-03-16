@@ -2,6 +2,10 @@
 
 Emacs Version tested: 24.3.1 (stable) & 25.0.50.2 (dev branch)
 
+** Installation
+
+: git clone https://github.com/map7/emacs-config.git ~/.emacs.d
+
 Based upon Cask & Pallet.
 
 Install cask
