@@ -80,6 +80,7 @@
 (depends-on "nlinum")
 (depends-on "oauth2")
 (depends-on "org")
+(depends-on "org-ac")
 (depends-on "org-cliplink")
 (depends-on "org-screenshot")
 (depends-on "org2blog")
