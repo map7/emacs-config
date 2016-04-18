@@ -20,3 +20,4 @@ external/yasnippet
 rake.cache
 ido.last
 smex-items
+eshell
