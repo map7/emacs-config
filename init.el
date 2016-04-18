@@ -85,6 +85,7 @@
 
 (load "98-mode-line.el")                ; Format my mode line
 (load "99-shortcuts.el")                ; Keyboard shortcuts
+(load "100-exwm.el")                    ; Emacs X Windows Manager
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -130,7 +131,6 @@
 ;; (defun custom-startup ()
 ;;   (org-todo-list t))
 ;; (add-hook 'window-setup-hook 'custom-startup
-
 
 
 
