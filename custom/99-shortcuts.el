@@ -1,7 +1,7 @@
 ;; General shortcut keys
 
-;; Remap hyper key as super
-(setq x-hyper-keysym 'super)
+;; ;; Remap hyper key as super
+;; (setq x-hyper-keysym 'super)
 ;
 ; Examples
 ; http://ergoemacs.org/emacs/emacs_hyper_super_keys.html
@@ -60,6 +60,9 @@
 
 ;; Duplicate whole line
 (global-set-key (kbd "\C-c\C-k") 'copy-line)
+
+;; Start terminal
+(global-set-key (kbd "s-t") 'eshell)
 
 (defun copy-line (arg)
   "Copy lines (as many as prefix argument) in the kill ring.
