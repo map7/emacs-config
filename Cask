@@ -31,6 +31,7 @@
 (depends-on "enh-ruby-mode")
 (depends-on "epl")
 (depends-on "expand-region")
+(depends-on "exwm")
 (depends-on "f")
 (depends-on "feature-mode")
 (depends-on "firestarter")
