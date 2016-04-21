@@ -1,9 +1,9 @@
 ;; Add paths (not required if EXWM is installed from GNU ELPA)
 ;; (add-to-list 'load-path "/home/map7/.emacs.d/elpa/xelb-0.6/")
 ;;(add-to-list 'load-path "/home/map7/.emacs.d/elpa/exwm-0.4/")
-(add-to-list 'load-path "/home/map7/.emacs.d/external/xelb/")
-(add-to-list 'load-path "/home/map7/.emacs.d/external/exwm/")
-(add-to-list 'load-path "/home/map7/.emacs.d/elpa/cl-generic-0.2/")
+(add-to-list 'load-path "~/.emacs.d/external/xelb/")
+(add-to-list 'load-path "~/.emacs.d/external/exwm/")
+(add-to-list 'load-path "~/.emacs.d/elpa/cl-generic-0.2/")
 
 ;; Enable workspace
 (setq exwm-workspace-number 10)
@@ -17,9 +17,8 @@
              "xrandr" nil "xrandr --output VGA1 --right-of LVDS1 --auto")))
 (exwm-randr-enable)
 
-;; ;; Start server - helps with opening files
-;; (server-start)
-
+;; Start server - helps with opening files
+(server-start)
 
 ;; Load EXWM
 (require 'exwm)
