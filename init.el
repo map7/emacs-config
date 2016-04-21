@@ -58,7 +58,7 @@
 (load "36-xml.el")			 ; edit xml files
 (load "37-eshell.el")    ; eshell customisations
 (load "38-sunshine.el")  ; Weather
-;;(load "39-pdf-tools.el")  ; PDF tools
+(load "39-pdf-tools.el")  ; PDF tools
 (load "40-projectile.el")    ; Manage projects
 (load "41-rainbow.el")		 ; Highlight colours in scss files
 (load "42-robe.el")			 ; Ruby documentation
@@ -87,31 +87,32 @@
 (load "99-shortcuts.el")                ; Keyboard shortcuts
 (load "100-exwm.el")                    ; Emacs X Windows Manager
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(display-time-mode t)
- '(ecb-options-version "2.32")
- '(inhibit-startup-screen t)
- '(js-indent-level 2)
- '(jsx-indent-level 2)
- '(max-lisp-eval-depth 3000)
- '(max-specpdl-size 3000)
- '(menu-bar-mode 1)
- '(org-archive-location "~/org/archive/%s_archive::")
- '(package-selected-packages
-   (quote
-    (highlight-parentheses ansible linum-off nlinum picpocket diredful togetherly bpr projectile eruby-mode pdf-tools org-alert yasnippet yaml-mode web-mode undo-tree textmate symon sx sws-mode switch-window sunshine sudo-edit smex smart-mode-line slime simple-mode-line shorten scss-mode ruby-refactor ruby-end rspec-mode rsense robe rinari regex-tool real-auto-save rbenv rainbow-mode projectile-rails pallet ox-reveal org2blog org-cliplink mwe-log-commands multiple-cursors multi-term moz-controller mew magit lui ledger-mode jsx-mode js2-mode jinja2-mode jade-mode highlight-indentation hexrgb haml-mode guide-key grizzl google-maps google-contacts go-mode github-browse-file gist free-keys flymake-yaml flymake-sass flymake-less flymake-json flymake-jslint flymake-jshint flymake-haml flymake-csslint flymake-css flymake-coffee firestarter feature-mode expand-region enh-ruby-mode drag-stuff dockerfile-mode discover dired-details diminish dictionary csv-nav csv-mode crontab-mode color-theme-railscasts coffee-mode circe auto-complete ascii arduino-mode apache-mode angular-snippets android-mode ag ace-jump-mode)))
- '(rails-ws:default-server-type "mongrel")
- '(send-mail-function (quote smtpmail-send-it))
- '(smtpmail-smtp-server "smtp.googlemail.com")
- '(smtpmail-smtp-service "smtp")
- '(speedbar-show-unknown-files t)
- '(tool-bar-mode nil)
- '(tooltip-mode nil))
+;; (custom-set-variables
+;;  ;; custom-set-variables was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(column-number-mode t)
+;;  '(display-time-mode t)
+;;  '(ecb-options-version "2.32")
+;;  '(inhibit-startup-screen t)
+;;  '(js-indent-level 2)
+;;  '(jsx-indent-level 2)
+;;  '(max-lisp-eval-depth 3000)
+;;  '(max-specpdl-size 3000)
+;;  '(menu-bar-mode 1)
+;;  '(org-archive-location "~/org/archive/%s_archive::")
+;;  '(package-selected-packages
+;;    (quote
+;;     (highlight-parentheses ansible linum-off nlinum picpocket diredful togetherly bpr projectile eruby-mode pdf-tools org-alert yasnippet yaml-mode web-mode undo-tree textmate symon sx sws-mode switch-window sunshine sudo-edit smex smart-mode-line slime simple-mode-line shorten scss-mode ruby-refactor ruby-end rspec-mode rsense robe rinari regex-tool real-auto-save rbenv rainbow-mode projectile-rails pallet ox-reveal org2blog org-cliplink mwe-log-commands multiple-cursors multi-term moz-controller mew magit lui ledger-mode jsx-mode js2-mode jinja2-mode jade-mode highlight-indentation hexrgb haml-mode guide-key grizzl google-maps google-contacts go-mode github-browse-file gist free-keys flymake-yaml flymake-sass flymake-less flymake-json flymake-jslint flymake-jshint flymake-haml flymake-csslint flymake-css flymake-coffee firestarter feature-mode expand-region enh-ruby-mode drag-stuff dockerfile-mode discover dired-details diminish dictionary csv-nav csv-mode crontab-mode color-theme-railscasts coffee-mode circe auto-complete ascii arduino-mode apache-mode angular-snippets android-mode ag ace-jump-mode)))
+;;  '(rails-ws:default-server-type "mongrel")
+;;  '(send-mail-function (quote smtpmail-send-it))
+;;  '(smtpmail-smtp-server "smtp.googlemail.com")
+;;  '(smtpmail-smtp-service "smtp")
+;;  '(speedbar-show-unknown-files t)
+;;  '(tool-bar-mode nil)
+;;  '(tooltip-mode nil))
+
 ;; (custom-set-faces
 ;;  ;; custom-set-faces was added by Custom.
 ;;  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -131,7 +132,6 @@
 ;; (defun custom-startup ()
 ;;   (org-todo-list t))
 ;; (add-hook 'window-setup-hook 'custom-startup
-
 
 
 
