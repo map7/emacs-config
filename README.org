@@ -4,7 +4,11 @@ Emacs Version tested: 24.3.1 (stable) & 25.0.50.2 (dev branch)
 
 ** Installation
 
+Clone my repo
 : git clone https://github.com/map7/emacs-config.git ~/.emacs.d
+
+Install my sub modules
+: git submodule init
 
 Based upon Cask & Pallet.
 

@@ -1,0 +1,6 @@
+[submodule "external/exwm"]
+	path = external/exwm
+	url = https://github.com/ch11ng/exwm.git
+[submodule "external/xelb"]
+	path = external/xelb
+	url = https://github.com/ch11ng/xelb.git
