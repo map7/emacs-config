@@ -17,7 +17,7 @@
  '(inhibit-startup-screen t)
  '(max-lisp-eval-depth 3000)
  '(max-specpdl-size 3000)
- '(menu-bar-mode 1)
+ '(menu-bar-mode 0)
  '(org-archive-location "~/org/archive/%s_archive::")
  '(rails-ws:default-server-type "mongrel")
  '(send-mail-function (quote smtpmail-send-it))
