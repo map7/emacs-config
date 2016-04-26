@@ -5,8 +5,6 @@
 (add-to-list 'load-path "~/.emacs.d/external/exwm/")
 (add-to-list 'load-path "~/.emacs.d/elpa/cl-generic-0.2/")
 
-;; Enable workspace
-(setq exwm-workspace-number 10)
 
 ;; RandR (multi-screen support)
 (require 'exwm-randr)
@@ -33,6 +31,9 @@
 ;; Suspend nicely
 (exwm-input-set-key (kbd "s-<f12>")
                     (lambda () (interactive) (start-process "" nil "gksudo" "pm-suspend")))
+
+;; Enable workspace
+(setq exwm-workspace-number 10)
 
 ;; System tray
 (require 'exwm-systemtray)
