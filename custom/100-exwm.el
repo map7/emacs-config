@@ -5,6 +5,8 @@
 (add-to-list 'load-path "~/.emacs.d/external/exwm/")
 (add-to-list 'load-path "~/.emacs.d/elpa/cl-generic-0.2/")
 
+;; Start server - helps with opening files
+(server-start)
 
 ;; RandR (multi-screen support)
 (require 'exwm-randr)
@@ -14,9 +16,6 @@
             (start-process-shell-command
              "xrandr" nil "xrandr --output VGA1 --right-of LVDS1 --auto")))
 (exwm-randr-enable)
-
-;; Start server - helps with opening files
-(server-start)
 
 ;; Load EXWM
 (require 'exwm)
