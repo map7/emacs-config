@@ -10,11 +10,11 @@
 
 ;; RandR (multi-screen support)
 (require 'exwm-randr)
-(setq exwm-randr-workspace-output-plist '(0 "VGA1"))
+(setq exwm-randr-workspace-output-plist '(0 "LVDS1" 1 "LVDS1" 2 "DP2"))
 (add-hook 'exwm-randr-screen-change-hook
           (lambda ()
             (start-process-shell-command
-             "xrandr" nil "xrandr --output VGA1 --right-of LVDS1 --auto")))
+             "xrandr" nil "xrandr --output DP2 --right-of LVDS1 --output DP2 --mode 1920x1080")))
 (exwm-randr-enable)
 
 ;; Load EXWM
@@ -37,4 +37,3 @@
 ;; System tray
 (require 'exwm-systemtray)
 (exwm-systemtray-enable)
-
