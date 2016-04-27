@@ -68,6 +68,7 @@
 (depends-on "linum-off")
 (depends-on "lui")
 (depends-on "magit")
+(depends-on "magit-gh-pulls")
 (depends-on "markdown-mode")
 (depends-on "mew")
 (depends-on "moz")
