@@ -87,7 +87,10 @@
 
 (load "98-mode-line.el")                ; Format my mode line
 (load "99-shortcuts.el")                ; Keyboard shortcuts
-(load "100-exwm.el")                    ; Emacs X Windows Manager
+
+(if (file-exists-p "~/.xinitrc")
+    (load "100-exwm.el")                    ; Emacs X Windows Manager
+)
 
 (if (file-exists-p "~/.emacs.autostart.el")
     (load "~/.emacs.autostart.el")
