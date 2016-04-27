@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#
+# Install my emacs setup
+#
+
+export PATH="$HOME/.cask/bin:$PATH"
+
+cd ~/.emacs.d
+
+# Update submodule
+git submodule init
+git submodule update
+
+# Install everything using cask
+curl -fsSkL https://raw.github.com/cask/cask/master/go | python
+cask install
