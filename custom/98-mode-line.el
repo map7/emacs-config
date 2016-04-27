@@ -24,6 +24,10 @@
                 ;; mode-line-end-spaces
                 ))
 
+(require 'spaceline-config)                  ; Themes inc powerline & modeline config 
+(spaceline-spacemacs-theme)
+
+
 (setq display-time-default-load-average nil) ; Remove the load
 (setq display-time-mail-string "")           ; Remove the mail
 

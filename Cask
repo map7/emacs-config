@@ -110,6 +110,7 @@
 (depends-on "slime")
 (depends-on "smart-mode-line")
 (depends-on "smex")
+(depends-on "spaceline")
 (depends-on "sudo-edit")
 (depends-on "sunshine")
 (depends-on "switch-window")
