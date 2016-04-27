@@ -88,6 +88,10 @@
 (load "100-exwm.el")                    ; Emacs X Windows Manager
 
 (load "101-powerline-mode-line.el")     ; Theme for mode-line
+(load "102-symbolised-mode-line.el")    ; Save on valuable modeline realestate & use symbols
+;; (setq fancy-battery-mode-line
+;;       '(:eval (unless (equal (cdr (assq ?b fancy-battery-last-status)) "+")
+;;                 (fancy-battery-default-mode-line))))
 ;; (custom-set-variables
 ;;  ;; custom-set-variables was added by Custom.
 ;;  ;; If you edit it by hand, you could mess it up, so be careful.
