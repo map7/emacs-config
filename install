@@ -10,6 +10,9 @@ cd ~/.emacs.d
 # Install emacs
 sudo apt-get install emacs
 
+# Install packages for epdfinfo pdf-tools
+sudo apt-get install libpng-dev libz-dev libpoppler-glib-dev libpoppler-private-dev
+
 # Update submodule
 git submodule init
 git submodule update
