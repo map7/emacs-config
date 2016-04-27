@@ -89,6 +89,7 @@
 (load "98-mode-line.el")                ; Format my mode line
 (load "99-shortcuts.el")                ; Keyboard shortcuts
 
+
 (if (file-exists-p "~/.xinitrc")
     (load "100-exwm.el")                    ; Emacs X Windows Manager
 )
@@ -97,6 +98,11 @@
     (load "~/.emacs.autostart.el")
 )
 
+(load "102-symbolised-mode-line.el")    ; Save on valuable modeline realestate & use symbols
+
+;; (setq fancy-battery-mode-line
+;;       '(:eval (unless (equal (cdr (assq ?b fancy-battery-last-status)) "+")
+;;                 (fancy-battery-default-mode-line))))
 
 (load "102-symbolised-mode-line.el")    ; Save on valuable modeline realestate & use symbols
 ;; (setq fancy-battery-mode-line
