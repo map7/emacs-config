@@ -11,7 +11,7 @@ cd ~/.emacs.d
 sudo apt-get install emacs
 
 # Install packages for epdfinfo pdf-tools
-sudo apt-get install libpng-dev libz-dev libpoppler-glib-dev libpoppler-private-dev
+sudo apt-get install libpng-dev libz-dev libpoppler-glib-dev libpoppler-private-dev gcc g++ make automake autoconf 
 
 # Update submodule
 git submodule init
