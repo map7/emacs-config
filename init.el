@@ -125,7 +125,6 @@
  '(inhibit-startup-screen t)
  '(max-lisp-eval-depth 3000)
  '(max-specpdl-size 3000)
- '(menu-bar-mode 0)
  '(org-archive-location "~/org/archive/%s_archive::")
  '(package-selected-packages
    (quote
@@ -137,3 +136,4 @@
  '(speedbar-show-unknown-files t)
  '(tool-bar-mode nil)
  '(tooltip-mode nil))
+
