@@ -3,9 +3,12 @@
 # Install my emacs setup
 #
 
+# Set environment
 export PATH="$HOME/.cask/bin:$PATH"
-
 cd ~/.emacs.d
+
+# Install emacs
+sudo apt-get install emacs
 
 # Update submodule
 git submodule init
