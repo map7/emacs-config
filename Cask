@@ -119,6 +119,7 @@
 (depends-on "textmate")
 (depends-on "togetherly")
 (depends-on "tracking")
+(depends-on "twittering-mode")
 (depends-on "undo-tree")
 (depends-on "web-mode")
 (depends-on "yaml-mode")
