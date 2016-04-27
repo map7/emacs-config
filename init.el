@@ -87,6 +87,7 @@
 (load "99-shortcuts.el")                ; Keyboard shortcuts
 (load "100-exwm.el")                    ; Emacs X Windows Manager
 
+(load "101-powerline-mode-line.el")     ; Theme for mode-line
 ;; (custom-set-variables
 ;;  ;; custom-set-variables was added by Custom.
 ;;  ;; If you edit it by hand, you could mess it up, so be careful.
