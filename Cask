@@ -47,8 +47,6 @@
 (depends-on "free-keys")
 (depends-on "gh")
 (depends-on "gist")
-(depends-on "git-commit-mode")
-(depends-on "git-rebase-mode")
 (depends-on "github-browse-file")
 (depends-on "go-mode")
 (depends-on "google-contacts")
