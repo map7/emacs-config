@@ -83,6 +83,8 @@
 (load "60-nlinum.el")                   ; Line number mode (faster than standard package)
 (load "61-highlight-parentheses.el") ; Highlights start and end of parentheses.
 
+(load "70-spotify.el")                  ; Control spotify from emacs
+
 (load "98-mode-line.el")                ; Format my mode line
 (load "99-shortcuts.el")                ; Keyboard shortcuts
 
