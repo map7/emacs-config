@@ -31,7 +31,7 @@
 
 ;; (display-battery-mode)
 (setq column-number-mode t)
-(display-time)
+;;(display-time)
 (setq backup-inhibited t) ;; disable backup
 
 ;fullscreen mode (Redundant in Emacs 24.4)
