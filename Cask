@@ -86,6 +86,7 @@
 (depends-on "org2blog")
 (depends-on "ox-reveal")
 (depends-on "pallet")
+(depends-on "paradox")
 (depends-on "pcache")
 (depends-on "pdf-tools")
 (depends-on "pkg-info")

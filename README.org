@@ -35,16 +35,24 @@ Here is an example of starting dropbox & spideroak
 : (call-process-shell-command "(sleep 10s && ~/.dropbox-dist/dropboxd) &" nil 0)
 : (call-process-shell-command "(sleep 10s && SpiderOakONE) &" nil 0)
 
-
 ** Requirements
 
 ag - Compile [[https://github.com/ggreer/the_silver_searcher][the silver searcher]], first check if you already have the 'ag' command
 
 flyspell - install 'ispell'
 
-** Yasnippet + ruby
+** Specific package notes
+*** paradox
 
-For ruby mode I use enh-ruby-mode, which is just a symlink of ruby-mode snippets. I've also added all the rails snippets to this as well.
+ If you want to use the paradox package list instead of the normal boring listing then you have to make a file ~/.emacs.paradox.el and add the following
+
+ : (setq paradox-github-token TOKEN)
+
+ Where TOKEN is your github token.
+
+*** Yasnippet + ruby
+
+ For ruby mode I use enh-ruby-mode, which is just a symlink of ruby-mode snippets. I've also added all the rails snippets to this as well.
 
 ** References
 http://crypt.codemancers.com/posts/2013-09-26-setting-up-emacs-as-development-environment-on-osx/

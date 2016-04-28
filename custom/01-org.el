@@ -60,7 +60,8 @@
 		 )
 
 		;; Publish component
-		("org" :components ("org-notes" "org-static"))
+		("org"
+     :components ("org-notes" "org-static"))
 
 	  ))
 
