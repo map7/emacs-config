@@ -1,6 +1,8 @@
 ;; Enable the built in pair mode
 (electric-pair-mode 1)
 
+;; Turn off menubar
+(menu-bar-mode -1)
 
 ;; auto-indent
 (define-key global-map (kbd "C-j") 'newline-and-indent)
@@ -9,22 +11,6 @@
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 
-; General settings
-(custom-set-variables
- '(column-number-mode t)
- '(display-time-mode t)
- '(ecb-options-version "2.32")
- '(inhibit-startup-screen t)
- '(max-lisp-eval-depth 3000)
- '(max-specpdl-size 3000)
- '(menu-bar-mode 0)
- '(org-archive-location "~/org/archive/%s_archive::")
- '(rails-ws:default-server-type "mongrel")
- '(send-mail-function (quote smtpmail-send-it))
- '(smtpmail-smtp-server "smtp.googlemail.com")
- '(smtpmail-smtp-service "smtp")
- '(tool-bar-mode nil)
- '(tooltip-mode nil))
 
 ; stop emacs from contaminating each directory with semantic.cache
 (setq semanticdb-default-save-directory "/tmp")
