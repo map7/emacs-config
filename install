@@ -11,7 +11,10 @@ cd ~/.emacs.d
 sudo apt-get install emacs
 
 # Install packages for epdfinfo pdf-tools
-sudo apt-get install libpng-dev libz-dev libpoppler-glib-dev libpoppler-private-dev gcc g++ make automake autoconf 
+sudo apt-get install libpng-dev libz-dev libpoppler-glib-dev libpoppler-private-dev gcc g++ make automake autoconf
+
+# Install optional packages for exwm
+sudo apt-get install volti udiskie numlockx redshift-gtk network-manager network-manager-gnome
 
 # Update submodule
 git submodule init
