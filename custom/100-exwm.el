@@ -27,6 +27,18 @@
 (exwm-input-set-key (kbd "s-l")
                     (lambda () (interactive) (start-process "" nil "slock")))
 
+;; Redshift off
+(exwm-input-set-key (kbd "s-x")
+                    (lambda () (interactive) (start-process "" nil "redshift" "-x" )))
+
+;; Redshift on
+(exwm-input-set-key (kbd "s-z")
+                    (lambda () (interactive) (start-process "" nil "redshift" "-O" "3500")))
+
+;; Turn on capslock
+(exwm-input-set-key (kbd "s-c")
+                    (lambda () (interactive) (start-process "" nil "setxkbmap" "-layout" "us" "-option" "ctrl:nocaps")))
+
 ;; Suspend nicely
 (exwm-input-set-key (kbd "s-<f12>")
                     (lambda () (interactive) (start-process "" nil "gksudo" "pm-suspend")))
