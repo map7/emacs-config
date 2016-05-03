@@ -20,6 +20,7 @@
                 ;; "  "
                 ;;mode-line-modes"  "                    ; mode-line-misc-info
                 
+                " "
                 (display-time-string t)                ; Display the time.
                 ;; mode-line-end-spaces
                 ))
