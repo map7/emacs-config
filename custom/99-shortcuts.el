@@ -14,7 +14,7 @@
 (global-set-key [f1] 'rotate-windows)
 (global-set-key [f2] 'gist-region-or-buffer)
 (global-set-key [f3] 'switch-window)
-(global-set-key [f4] 'magit-log)
+(global-set-key [f4] 'magit-log-all)
 (global-set-key [f5] 'magit-status)
 (global-set-key [f6] 'get-term)
 (global-set-key [f7] 'split-window-vertically)
@@ -40,7 +40,7 @@
 
 ;; Speed up common functions
 (global-set-key (kbd "s-`") 'switch-window)
-(global-set-key (kbd "s-<tab>") 'other-window)
+(global-set-key (kbd "M-<tab>") 'other-window)
 (global-set-key (kbd "s-1") 'delete-other-windows)
 (global-set-key (kbd "s-2") 'split-window-vertically)
 (global-set-key (kbd "s-3") 'split-window-horizontally)
