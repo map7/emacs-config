@@ -3,6 +3,8 @@
 (global-set-key (kbd "C-x <up>") 'multi-term-next)
 (global-set-key (kbd "C-x <down>") 'multi-term-prev)
 
+(setq term-term-name "xterm")
+
 ;; Fix UTF8 characters in terminals
 (add-hook 'term-exec-hook
           (function
