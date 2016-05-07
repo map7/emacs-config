@@ -34,6 +34,7 @@ numlockx off                    # Turn off numlock
 xfce4-power-manager &
 xscreensaver -no-splash &
 nm-applet &                     # Network Manager
+pulseaudio --start &            # Start pulseaudio
 volti &                         # Volume manager
 udiskie --tray &                # Disk mount utility
 
