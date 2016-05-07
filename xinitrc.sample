@@ -19,7 +19,6 @@ setxkbmap -layout us -option ctrl:nocaps
 # to edit files in place (used by e.g. `git commit`)
 export VISUAL=emacsclient
 export EDITOR="$VISUAL"
-export TERM="xterm-256color"
 export DISPLAY=:0
 
 xset b off &
