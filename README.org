@@ -49,6 +49,21 @@ Link it to .xsession to work with a desktop manager like lightdm as the default 
  : (call-process-shell-command "(sleep 10s && ~/.dropbox-dist/dropboxd) &" nil 0)
  : (call-process-shell-command "(sleep 10s && SpiderOakONE) &" nil 0)
 
+
+
+*** Multiple screens
+
+Create a ~/.emacs.randr.el file and put the following
+
+: (setq exwm-randr-workspace-output-plist '(0 "LVDS1" 1 "LVDS1" 2 "DP2"))
+: (add-hook 'exwm-randr-screen-change-hook
+:          (lambda ()
+:            (start-process-shell-command
+:             "xrandr" nil "xrandr --output DP2 --right-of LVDS1 --output DP2 --mode 1920x1080")))
+: (exwm-randr-enable)
+
+Remember to change the LVDS1 & DP2 to your screens which you can find out by typing in xrandr at the command line and looking for the active screens.
+
 ** Requirements
 
 ag - Compile [[https://github.com/ggreer/the_silver_searcher][the silver searcher]], first check if you already have the 'ag' command
