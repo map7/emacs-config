@@ -22,6 +22,11 @@
 (require 'exwm-config)
 (exwm-config-default)
 
+;; Allow sending special keys by hitting C-q
+;; This can be used for using standard C-c & C-v sequences on programs like Inkscape
+(push ?\C-q exwm-input-prefix-keys)
+(define-key exwm-mode-map [?\C-q] 'exwm-input-send-next-key)
+
 ;; + 'slock' is a simple X display locker provided by suckless tools. 'i3lock'
 ;;   is a more feature-rich alternative.
 (exwm-input-set-key (kbd "s-l")
