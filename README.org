@@ -7,24 +7,29 @@ Emacs Version tested: 24.3.1 (stable) & 25.0.50.2 (dev branch)
 Clone my repo
 : git clone https://github.com/map7/emacs-config.git ~/.emacs.d
 
-Install my sub modules
-: git submodule init
-
-Based upon Cask & Pallet.
-
-Install cask
-: curl -fsSkL https://raw.github.com/cask/cask/master/go | python
-
-Add path to your ~/.zshenv or ~/.bashrc file
-: # Add Cask to the path
-: export PATH="$HOME/.cask/bin:$PATH"
-
-Run cask which will install the [[https://github.com/rdallasgray/pallet][pallet package management tool]]
+Run installation script
 : cd ~/.emacs.d
-: cask install
+: ./install
 
-Optional - Initialise your cask file from within emacs
-: M-x pallet-init
+*** Manually
+ Install my sub modules
+ : git submodule init
+
+ Based upon Cask & Pallet.
+
+ Install cask
+ : curl -fsSkL https://raw.github.com/cask/cask/master/go | python
+
+ Add path to your ~/.zshenv or ~/.bashrc file
+ : # Add Cask to the path
+ : export PATH="$HOME/.cask/bin:$PATH"
+
+ Run cask which will install the [[https://github.com/rdallasgray/pallet][pallet package management tool]]
+ : cd ~/.emacs.d
+ : cask install
+
+ Optional - Initialise your cask file from within emacs
+ : M-x pallet-init
 
 ** exwm - Emacs X Windows Manager notes
 *** Setup the session
@@ -43,6 +48,21 @@ Link it to .xsession to work with a desktop manager like lightdm as the default 
  : ;; Autostart Dropbox
  : (call-process-shell-command "(sleep 10s && ~/.dropbox-dist/dropboxd) &" nil 0)
  : (call-process-shell-command "(sleep 10s && SpiderOakONE) &" nil 0)
+
+
+
+*** Multiple screens
+
+Create a ~/.emacs.randr.el file and put the following
+
+: (setq exwm-randr-workspace-output-plist '(0 "LVDS1" 1 "LVDS1" 2 "DP2"))
+: (add-hook 'exwm-randr-screen-change-hook
+:          (lambda ()
+:            (start-process-shell-command
+:             "xrandr" nil "xrandr --output DP2 --right-of LVDS1 --output DP2 --mode 1920x1080")))
+: (exwm-randr-enable)
+
+Remember to change the LVDS1 & DP2 to your screens which you can find out by typing in xrandr at the command line and looking for the active screens.
 
 ** Requirements
 
