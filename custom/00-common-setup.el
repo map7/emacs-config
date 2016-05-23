@@ -1,3 +1,6 @@
+;; Enable the built in pair mode
+(electric-pair-mode 1)
+
 ;; Turn off menubar
 (menu-bar-mode -1)
 
