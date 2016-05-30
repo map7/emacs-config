@@ -41,7 +41,7 @@
 		("org-notes"
 		 :base-directory "~/org/"
 		 :base-extension "org"
-		 :publishing-directory "~/org_html/"
+		 :publishing-directory "/var/www/manual/"
 		 :style "<link rel=\"stylesheet\" href=\"css/stylesheet.css\" type=\"text/css\" />"
 		 :recursive t
 		 :publishing-function org-html-publish-to-html
