@@ -16,6 +16,7 @@
 (depends-on "circe")
 (depends-on "coffee-mode")
 (depends-on "color-theme-railscasts")
+(depends-on "company-ansible")
 (depends-on "company-mode")
 (depends-on "company-statistics")
 (depends-on "connection")
