@@ -82,6 +82,8 @@
 ;; (load "60-org-ac.el")                   ; org mode autocomplete
 (load "60-nlinum.el")                   ; Line number mode (faster than standard package)
 (load "61-highlight-parentheses.el") ; Highlights start and end of parentheses.
+(load "62-tide.el")                  ; Typescript Interactive Dev Environment
+(load "63-company-mode.el")   ; Autocomplete
 
 (load "70-spotify.el")                  ; Control spotify from emacs
 (load "71-volume.el")                  ; Control volume from emacs

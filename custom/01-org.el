@@ -10,7 +10,7 @@
 (add-hook 'org-mode-hook 'turn-on-visual-line-mode)
 (setq org-clock-out-remove-zero-time-clocks t)
 (setq org-directory "~/org")
-(setq org-agenda-files '("~/org/"))
+(setq org-agenda-files '("~/org/" "~/org/business"))
 
 ;; Display inline images
 (defun do-org-show-all-inline-images ()
@@ -39,7 +39,7 @@
 
 		;; All org files (notes)
 		("org-notes"
-		 :base-directory "~/org/"
+		 :base-directory "~/org/business"
 		 :base-extension "org"
 		 :publishing-directory "/var/www/manual/"
 		 :style "<link rel=\"stylesheet\" href=\"css/stylesheet.css\" type=\"text/css\" />"
@@ -54,7 +54,7 @@
 		("org-static"
 		 :base-directory "~/org/"
 		 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|htaccess"
-		 :publishing-directory "~/org_html/"
+		 :publishing-directory "/var/www/manual/"
 		 :recursive t
 		 :publishing-function org-publish-attachment
 		 )
