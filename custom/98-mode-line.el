@@ -28,6 +28,8 @@
 (require 'spaceline-config)                  ; Themes inc powerline & modeline config 
 (spaceline-spacemacs-theme)
 
+;; Turn buffer size off
+(spaceline-toggle-buffer-size-off)
 
 ;; Remove the load
 (setq display-time-default-load-average nil) 
