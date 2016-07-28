@@ -28,13 +28,27 @@
 (require 'spaceline-config)                  ; Themes inc powerline & modeline config 
 (spaceline-spacemacs-theme)
 
+;; Turn buffer size off
+(spaceline-toggle-buffer-size-off)
 
-(setq display-time-default-load-average nil) ; Remove the load
-(setq display-time-mail-string "")           ; Remove the mail
+;; Remove the load
+(setq display-time-default-load-average nil) 
+
+;; Remove the mail
+(setq display-time-mail-string "")           
+
+;; Display the time.
+(display-time-mode t)               
 
 ;; Battery format
 (display-battery-mode 1)
-;;(setq battery-mode-line-format "%p%%") ; Default: "[%b%p%%]"
+(setq battery-mode-line-format "%b%p%%%") ; Default: "[%b%p%%]"
+
+;; Turn ruby version off in modeline
+(global-rbenv-mode -1)
+
+;; Turn off buffer position 'All'
+(spaceline-toggle-buffer-position-off)
 
 ;; Remove the 'git' component
 ;; http://www.lunaryorn.com/2014/07/26/make-your-emacs-mode-line-more-useful.html
