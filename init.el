@@ -95,11 +95,11 @@
     (load "100-exwm.el")                    ; Emacs X Windows Manager
 )
 
-(if (file-exists-p "~/.emacs.autostart.el")
+(if (file-exists-p "~/.emacs.d/.emacs.autostart.el")
     (load "~/.emacs.d/.emacs.autostart.el")
 )
 
-(if (file-exists-p "~/.emacs.paradox.el")
+(if (file-exists-p "~/.emacs.d/.emacs.paradox.el")
     (load "~/.emacs.d/.emacs.paradox.el")
   )
 (load "102-symbolised-mode-line.el")    ; Save on valuable modeline realestate & use symbols
