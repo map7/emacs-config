@@ -128,7 +128,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
- '(display-time-mode t)
  '(ecb-options-version "2.32")
  '(inhibit-startup-screen t)
  '(magit-log-arguments (quote ("--graph" "--color" "--decorate")))
