@@ -44,6 +44,9 @@
 (display-battery-mode 1)
 (setq battery-mode-line-format "%b%p%%%") ; Default: "[%b%p%%]"
 
+;; Turn ruby version off in modeline
+(global-rbenv-mode -1)
+
 ;; Remove the 'git' component
 ;; http://www.lunaryorn.com/2014/07/26/make-your-emacs-mode-line-more-useful.html
 (defvar basic-vc-mode-line
