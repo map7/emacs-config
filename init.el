@@ -104,46 +104,18 @@
   )
 (load "102-symbolised-mode-line.el")    ; Save on valuable modeline realestate & use symbols
 
+;; Default theme settings
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "unknown"))))
  '(term-color-blue ((t (:background "blue2" :foreground "deep sky blue"))))
  '(term-color-cyan ((t (:background "cyan3" :foreground "cyan2"))))
  '(term-color-green ((t (:background "DarkSeaGreen1" :foreground "green3")))))
 
-(setq user-mail-address "michael@dtcorp.com.au")
-
-;; Takes too long, doesn't seem to be a way to do this in the background.
-;; (defun custom-startup ()
-;;   (org-todo-list t))
-;; (add-hook 'window-setup-hook 'custom-startup
-
-;; Leave here for now.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(display-time-mode t)
- '(ecb-options-version "2.32")
- '(inhibit-startup-screen t)
- '(magit-log-arguments (quote ("--graph" "--color" "--decorate")))
- '(max-lisp-eval-depth 3000)
- '(max-specpdl-size 3000)
- '(org-archive-location "~/org/archive/%s_archive::")
- '(package-selected-packages
-   (quote
-    (neotree magit bundler coverage company-restclient restclient cl-lib company-ansible aggressive-indent paradox yasnippet yaml-mode web-mode volume undo-tree twittering-mode togetherly textmate symon sx sws-mode switch-window sunshine sudo-edit spotify spaceline smex smart-mode-line slime simple-mode-line shorten scss-mode ruby-refactor ruby-end rspec-mode rsense robe rinari regex-tool real-auto-save rbenv ranger rainbow-mode projectile-rails picpocket pg pdf-tools pallet ox-reveal org2blog org-sync org-screenshot org-cliplink org-alert org-ac nlinum mwe-log-commands multiple-cursors multi-term moz-controller mew magit-gh-pulls lui linum-off ledger-mode jsx-mode js2-mode jinja2-mode jade-mode highlight-parentheses highlight-indentation hexrgb haml-mode guide-key grizzl google-maps google-contacts go-mode github-browse-file gist free-keys flymake-yaml flymake-sass flymake-less flymake-json flymake-jslint flymake-jshint flymake-haml flymake-csslint flymake-css flymake-coffee firestarter feature-mode expand-region eruby-mode enh-ruby-mode drag-stuff dockerfile-mode discover diredful dired-details diminish dictionary csv-nav csv-mode crontab-mode color-theme-railscasts coffee-mode circe bpr ascii arduino-mode apache-mode ansible angular-snippets android-mode ag ace-jump-mode)))
- '(paradox-automatically-star t)
- '(rails-ws:default-server-type "mongrel")
- '(send-mail-function (quote smtpmail-send-it))
- '(smtpmail-smtp-server "smtp.googlemail.com")
- '(smtpmail-smtp-service "smtp")
- '(speedbar-show-unknown-files t)
- '(tool-bar-mode nil)
- '(tooltip-mode nil))
+;; Read in custom settings for the user
+(setq custom-file "~/.emacs.d/.emacs.custom.el")
+(load custom-file)
 
