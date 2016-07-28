@@ -29,8 +29,14 @@
 (spaceline-spacemacs-theme)
 
 
-(setq display-time-default-load-average nil) ; Remove the load
-(setq display-time-mail-string "")           ; Remove the mail
+;; Remove the load
+(setq display-time-default-load-average nil) 
+
+;; Remove the mail
+(setq display-time-mail-string "")           
+
+;; Display the time.
+(display-time-mode t)               
 
 ;; Battery format
 (display-battery-mode 1)
