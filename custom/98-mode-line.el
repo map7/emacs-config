@@ -50,6 +50,9 @@
 ;; Turn off buffer position 'All'
 (spaceline-toggle-buffer-position-off)
 
+;;Disable annoying bell & replace with visible mode-line bell only
+(setq visible-bell 1)
+
 ;; Remove the 'git' component
 ;; http://www.lunaryorn.com/2014/07/26/make-your-emacs-mode-line-more-useful.html
 (defvar basic-vc-mode-line
