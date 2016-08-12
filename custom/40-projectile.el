@@ -1,5 +1,11 @@
 (require 'grizzl)
-(projectile-global-mode)
+
+;; FIX hange issue with tramp
+;; https://github.com/bbatsov/prelude/issues/594
+;; (projectile-global-mode 1)
+(add-hook 'text-mode-hook 'projectile-mode)
+(add-hook 'prog-mode-hook 'projectile-mode)
+
 (setq projectile-enable-caching t)
 (setq projectile-completion-system 'grizzl)
 
