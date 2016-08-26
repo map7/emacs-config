@@ -84,6 +84,7 @@
 (load "61-highlight-parentheses.el") ; Highlights start and end of parentheses.
 (load "62-tide.el")                  ; Typescript Interactive Dev Environment
 (load "63-company-mode.el")   ; Autocomplete
+(load "64-async.el")          ; Asynchronous abilities
 
 (load "70-spotify.el")                  ; Control spotify from emacs
 (load "71-volume.el")                  ; Control volume from emacs
@@ -118,3 +119,6 @@
  '(term-color-blue ((t (:background "blue2" :foreground "deep sky blue"))))
  '(term-color-cyan ((t (:background "cyan3" :foreground "cyan2"))))
  '(term-color-green ((t (:background "DarkSeaGreen1" :foreground "green3")))))
+
+;; Turn this on for debug messages
+;;(setq debug-on-error t)
