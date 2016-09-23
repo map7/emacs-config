@@ -86,6 +86,7 @@
 (depends-on "org")
 (depends-on "org-ac")
 (depends-on "org-cliplink")
+(depends-on "org-clock-csv")
 (depends-on "org-attach-screenshot")
 (depends-on "org2blog")
 (depends-on "ox-reveal")
