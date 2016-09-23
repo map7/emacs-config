@@ -83,9 +83,14 @@ flyspell - install 'ispell'
 
  For ruby mode I use enh-ruby-mode, which is just a symlink of ruby-mode snippets. I've also added all the rails snippets to this as well.
 
+*** org-clock-csv
+
+Add the following to your crontab
+: # Export all my timesheets to a csv file
+: 00 5    * * *   map7    /usr/bin/emacs -batch -l ~/.emacs.d/init.el -eval "(org-clock-csv-batch (org-agenda-files nil t))" > /home/map7/timesheets.csv
+
 ** References
 http://crypt.codemancers.com/posts/2013-09-26-setting-up-emacs-as-development-environment-on-osx/
-
 ** Issues
 *** Projectile not finding files
 
