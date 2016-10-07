@@ -2,19 +2,19 @@
 ;; Resizing splits
 (defun win-resize-up ()
   (interactive)
-  (enlarge-window 10))
+  (enlarge-window 7))
 
 (defun win-resize-right ()
   (interactive)
-  (enlarge-window-horizontally 10))
+  (enlarge-window-horizontally 7))
 
 (defun win-resize-down ()
   (interactive)
-  (shrink-window 10))
+  (shrink-window 7))
 
 (defun win-resize-left ()
   (interactive)
-  (shrink-window-horizontally 10))
+  (shrink-window-horizontally 7))
 
 (global-set-key [s-right] 'win-resize-right)
 (global-set-key [s-up] 'win-resize-up)
