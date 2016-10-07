@@ -89,6 +89,7 @@
 (load "70-spotify.el")                  ; Control spotify from emacs
 (load "71-volume.el")                  ; Control volume from emacs
 
+(load "97-resize-buffer.el")            ; Resize buffer
 (load "98-mode-line.el")                ; Format my mode line
 (load "99-shortcuts.el")                ; Keyboard shortcuts
 
