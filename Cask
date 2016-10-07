@@ -133,5 +133,6 @@
 (depends-on "twittering-mode")
 (depends-on "undo-tree")
 (depends-on "web-mode")
+(depends-on "yafolding")
 (depends-on "yaml-mode")
 (depends-on "yasnippet")
