@@ -10,7 +10,7 @@
 (add-hook 'org-mode-hook 'turn-on-visual-line-mode)
 (setq org-clock-out-remove-zero-time-clocks t)
 (setq org-directory "~/org")
-(setq org-agenda-files '("~/org/" "~/org/business"))
+(setq org-agenda-files '("~/org/" "~/org/business" "~/org/projects"))
 
 ;; Display inline images
 (defun do-org-show-all-inline-images ()
