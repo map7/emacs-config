@@ -85,7 +85,6 @@
 (load "62-tide.el")                  ; Typescript Interactive Dev Environment
 (load "63-company-mode.el")   ; Autocomplete
 (load "64-async.el")          ; Asynchronous abilities
-(load "65-yafolding.el")      ; yafolding
 
 (load "70-spotify.el")                  ; Control spotify from emacs
 (load "71-volume.el")                  ; Control volume from emacs
