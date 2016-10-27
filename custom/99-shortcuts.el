@@ -90,3 +90,10 @@
 ;; Expanding & Hiding org mode sections
 (global-set-key (kbd "s-,") 'hide-sublevels)
 (global-set-key (kbd "s-.") 'show-all)
+
+
+;; Toggle
+(global-set-key (kbd "s-t") 'exwm-input-toggle-keyboard)
+
+;; find and replace
+(global-set-key (kbd "s-r") 'find-name-dired)
