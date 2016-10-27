@@ -28,36 +28,36 @@
 (load "07-dired-details.el") ; Hide/show details in directory mode
 (load "08-ido-mode.el")		 ; IDO mode for moving around dirs & buffers
 (load "09-winner-mode.el")	 ; Undo/redo window layouts
-(load "10-circe.el")		 ; IRC settings
+;(load "10-circe.el")		 ; IRC settings
 (load "11-multi-term.el")	 ; Handle multiple terminals in emacs nicely.
 (load "12-haml.el")			 ; haml mode
 (load "13-css.el")			 ; css mode
-(load "14-jinja2.el")		 ; Ansible templates
-(load "15-markdown.el")		 ; for md files.
+;(load "14-jinja2.el")		 ; Ansible templates
+;(load "15-markdown.el")		 ; for md files.
 (load "16-sudo-edit.el")	 ; editing files as root
 (load "17-rsense.el")		 ; Command Lookup
 (load "18-auto-complete.el") ; Auto complete
 ;; 21/07/2014 disabled due to issues with loading the theme
 ;; (load "19-smart-mode-line.el")	; Configure the mode line at the bottom
-(load "20-epa-file.el")			   ; Encryption
+;(load "20-epa-file.el")			   ; Encryption
 (load "21-coffeescript.el")	 ; Coffeescript mode
-(load "22-smex.el")			 ; smex (quick narrow down commands)
-(load "23-speedbar.el")		 ; Speedbar customisations
-(load "24-guide-key.el")	 ; Show keyboard shortcuts at certian points
+;(load "22-smex.el")			 ; smex (quick narrow down commands)
+;(load "23-speedbar.el")		 ; Speedbar customisations
+;(load "24-guide-key.el")	 ; Show keyboard shortcuts at certian points
 (load "25-scss-mode.el")	 ; SCSS mode
-(load "26-moz-controller.el")			; Control firefox within emacs
+;(load "26-moz-controller.el")			; Control firefox within emacs
 (load "27-real-auto-save.el")     ; Autosave files
 (load "28-magit.el")		 ; Git
 ;; (load "29-save_hooks.el")	 ; Processes to perform on save.
 (load "30-rspec_mode.el")       ; Rspec testing mode for ruby projects
-(load "31-feature_mode.el")	 ; Cucumber mode for BDD
-(load "32-ace_jump.el")      ; Jump around quickly in a file
+;;(load "31-feature_mode.el")	 ; Cucumber mode for BDD
+;;(load "32-ace_jump.el")      ; Jump around quickly in a file
 (load "33-emacs-server.el")	 ; Config relating to emacs server
 (load "34-org-expiry.el")    ; Org expiry <-- add created property on todo items
-(load "35-discover.el")   ; Discover more of emacs using context menus
+;;(load "35-discover.el")   ; Discover more of emacs using context menus
 (load "36-xml.el")			 ; edit xml files
 (load "37-eshell.el")    ; eshell customisations
-(load "38-sunshine.el")  ; Weather
+;;(load "38-sunshine.el")  ; Weather
 (load "39-pdf-tools.el")  ; PDF tools
 (load "40-projectile.el")    ; Manage projects
 (load "41-rainbow.el")		 ; Highlight colours in scss files
@@ -68,13 +68,13 @@
 (load "46-web-mode.el")			; Mixed mode in web frontend
 ;; (load "47-twittering-mode.el")          ; Twitter client
 (load "48-undo-tree.el")		; Undo tree
-(load "49-rbenv.el")			; Ruby version manager
+;;(load "49-rbenv.el")			; Ruby version manager
 (load "50-org2blog.el")		 ; Org2blog mode
 (load "51-packages.el")		 ; Package related tasks
 (load "52-scroll-settings.el")          ; Settings for scrolling
 (load "53-revealjs.el")                 ; Reveal.js settings
-(load "54-slime.el")                    ; Slime Superior Lisp Interaction Mode for Emacs
-(load "55-org-mobile.el")               ; Org sync with MobileOrg for Android devices
+;;(load "54-slime.el")                    ; Slime Superior Lisp Interaction Mode for Emacs
+;(load "55-org-mobile.el")               ; Org sync with MobileOrg for Android devices
 (load "56-ruby-refactor.el")
 (load "57-bpr.el")                      ; Background Process Runner
 (load "58-togetherly.el")               ; Work together with someone in the same file.
@@ -82,7 +82,8 @@
 ;; (load "60-org-ac.el")                   ; org mode autocomplete
 (load "60-nlinum.el")                   ; Line number mode (faster than standard package)
 (load "61-highlight-parentheses.el") ; Highlights start and end of parentheses.
-(load "62-tide.el")                  ; Typescript Interactive Dev Environment
+;; Issues sometimes with slowing down Emacs
+;; (load "62-tide.el")                  ; Typescript Interactive Dev Environment
 (load "63-company-mode.el")   ; Autocomplete
 (load "64-async.el")          ; Asynchronous abilities
 (load "65-yafolding.el")      ; yafolding
@@ -124,3 +125,5 @@
 
 ;; Turn this on for debug messages
 ;;(setq debug-on-error t)
+
+
