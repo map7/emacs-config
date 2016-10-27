@@ -3,6 +3,7 @@
 ;;(add-to-list 'load-path "/home/map7/.emacs.d/elpa/exwm-0.4/")
 ;; (add-to-list 'load-path "~/.emacs.d/external/xelb/")
 ;; (add-to-list 'load-path "~/.emacs.d/external/exwm/")
+
 (add-to-list 'load-path "~/.emacs.d/elpa/cl-generic-0.2/")
 
 ;; Start server - helps with opening files
@@ -12,7 +13,7 @@
 (require 'exwm-randr)
 (if (file-exists-p "~/.emacs.randr.el")
     (load "~/.emacs.randr.el")
-  )
+)
 
 ;; Load EXWM
 (require 'exwm)

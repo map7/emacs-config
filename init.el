@@ -101,7 +101,7 @@
 
 (if (file-exists-p "~/.emacs.d/.emacs.paradox.el")
     (load "~/.emacs.d/.emacs.paradox.el")
-  )
+)
 (load "102-symbolised-mode-line.el")    ; Save on valuable modeline realestate & use symbols
 
 ;; Read in custom settings for the user
