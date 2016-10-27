@@ -27,3 +27,5 @@ games
 
 .emacs.*.el
 network-security.data
+/.emacs.desktop
+/.emacs.desktop.lock
