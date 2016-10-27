@@ -45,7 +45,7 @@
 (setq battery-mode-line-format "%b%p%%%") ; Default: "[%b%p%%]"
 
 ;; Turn ruby version off in modeline
-(global-rbenv-mode -1)
+;;(global-rbenv-mode -1)
 
 ;; Turn off buffer position 'All'
 (spaceline-toggle-buffer-position-off)
