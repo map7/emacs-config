@@ -63,8 +63,8 @@
 (load "41-org2blog.el")		 ; Org2blog mode
 (load "42-org-expiry.el")    ; Org expiry <-- add created property on todo items
 (load "43-revealjs.el")                 ; Reveal.js settings
-;(load "44-org-ac.el")                   ; org mode autocomplete
-;(load "45-org-mobile.el")               ; Org sync with MobileOrg for Android devices
+;(load "48-org-ac.el")                   ; org mode autocomplete
+;(load "49-org-mobile.el")               ; Org sync with MobileOrg for Android devices
 
 ;; --------------------------------------------------------------------------------
 ;; Programming tools (50-69)
