@@ -41,8 +41,8 @@
 (load "16-sudo-edit.el")	 ; editing files as root
 (load "17-emacs-server.el")	 ; Config relating to emacs server
 (load "18-flyspell.el")					; Spelling
-(load "19-spotify.el")                  ; Control spotify from emacs
-(load "20-volume.el")                  ; Control volume from emacs
+;(load "19-spotify.el")                  ; Control spotify from emacs
+;(load "20-volume.el")                  ; Control volume from emacs
 ;(load "21-circe.el")		 ; IRC settings
 ;(load "22-epa-file.el")			   ; Encryption
 ;(load "23-markdown.el")		 ; for md files.
