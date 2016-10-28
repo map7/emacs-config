@@ -1,6 +1,3 @@
-;; Set font
-(set-frame-font "Droid Sans Mono-11" nil t)
-
 ;; Enable the built in pair mode
 (electric-pair-mode 1)
 

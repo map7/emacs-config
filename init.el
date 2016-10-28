@@ -77,7 +77,7 @@
 (load "54-yasnippet.el")             ; Yasnippets BUG: https://github.com/capitaomorte/yasnippet/issues/631
 (load "55-rinari.el")                ; Ruby on rails mode
 (load "56-rsense.el")                ; Command Lookup
-(load "57-auto-complete.el")         ; Auto complete
+;(load "57-auto-complete.el")         ; Auto complete
 (load "58-highlight-indentation.el") ; Highlight tabs
 (load "59-highlight-parentheses.el") ; Highlights start and end of parentheses.
 (load "60-yafolding.el")             ; yafolding
@@ -122,6 +122,9 @@
     (load "~/.emacs.d/.emacs.paradox.el")
   )
 (load "99-symbolised-mode-line.el")    ; Save on valuable modeline realestate & use symbols
+
+;; Set font
+(set-frame-font "Droid Sans Mono-10" nil t)
 
 ;; Read in custom settings for the user
 (setq custom-file "~/.emacs.d/.emacs.custom.el")
