@@ -110,7 +110,7 @@
 (depends-on "ruby-compilation")
 (depends-on "ruby-end")
 (depends-on "ruby-refactor")
-(depends-on "s")
+;(depends-on "s")
 (depends-on "scss-mode")
 (depends-on "shorten")
 (depends-on "simple-mode-line")
