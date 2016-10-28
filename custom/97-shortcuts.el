@@ -86,12 +86,14 @@
   (if (arg (not (= 1 arg))) (message "%d lines copied" arg)))
 
 
-;; Resizing splits
-(global-set-key (kbd "s-<up>") 'enlarge-window)
-(global-set-key (kbd "s-<down>") 'shrink-window)
-(global-set-key (kbd "s-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "s-<left>") 'shrink-window-horizontally)
 
 ;; Expanding & Hiding org mode sections
 (global-set-key (kbd "s-,") 'hide-sublevels)
 (global-set-key (kbd "s-.") 'show-all)
+
+
+;; Toggle
+(global-set-key (kbd "s-t") 'exwm-input-toggle-keyboard)
+
+;; find and replace
+(global-set-key (kbd "s-r") 'find-name-dired)

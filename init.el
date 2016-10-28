@@ -18,81 +18,100 @@
 (add-to-list 'load-path "~/.emacs.d/external") ; Plugins not in the repo
 
 ;; All custom files have a number at the front so they don't clash with the library files.
+
+;;--------------------------------------------------------------------------------
+;;-Base emacs related (0-39)
+;;--------------------------------------------------------------------------------
 (load "00-common-setup.el")
-(load "01-org.el")		 ; Org mode
-(load "02-ruby.el")		 ; Ruby programming language
-(load "03-html-mode.el") ; html mode & json.
-(load "04-yasnippet.el")     ; Yasnippets BUG: https://github.com/capitaomorte/yasnippet/issues/631
-(load "05-yaml_mode.el")	 ; yaml mode.
-(load "06-rinari.el")		 ; Ruby on rails mode
-(load "07-dired-details.el") ; Hide/show details in directory mode
-(load "08-ido-mode.el")		 ; IDO mode for moving around dirs & buffers
-(load "09-winner-mode.el")	 ; Undo/redo window layouts
-(load "10-circe.el")		 ; IRC settings
-(load "11-multi-term.el")	 ; Handle multiple terminals in emacs nicely.
-(load "12-haml.el")			 ; haml mode
-(load "13-css.el")			 ; css mode
-(load "14-jinja2.el")		 ; Ansible templates
-(load "15-markdown.el")		 ; for md files.
-(load "16-sudo-edit.el")	 ; editing files as root
-(load "17-rsense.el")		 ; Command Lookup
-(load "18-auto-complete.el") ; Auto complete
-;; 21/07/2014 disabled due to issues with loading the theme
-;; (load "19-smart-mode-line.el")	; Configure the mode line at the bottom
-(load "20-epa-file.el")			   ; Encryption
-(load "21-coffeescript.el")	 ; Coffeescript mode
-(load "22-smex.el")			 ; smex (quick narrow down commands)
-(load "23-speedbar.el")		 ; Speedbar customisations
-(load "24-guide-key.el")	 ; Show keyboard shortcuts at certian points
-(load "25-scss-mode.el")	 ; SCSS mode
-(load "26-moz-controller.el")			; Control firefox within emacs
-(load "27-real-auto-save.el")     ; Autosave files
-(load "28-magit.el")		 ; Git
-;; (load "29-save_hooks.el")	 ; Processes to perform on save.
-(load "30-rspec_mode.el")       ; Rspec testing mode for ruby projects
-(load "31-feature_mode.el")	 ; Cucumber mode for BDD
-(load "32-ace_jump.el")      ; Jump around quickly in a file
-(load "33-emacs-server.el")	 ; Config relating to emacs server
-(load "34-org-expiry.el")    ; Org expiry <-- add created property on todo items
-(load "35-discover.el")   ; Discover more of emacs using context menus
-(load "36-xml.el")			 ; edit xml files
-(load "37-eshell.el")    ; eshell customisations
-(load "38-sunshine.el")  ; Weather
-(load "39-pdf-tools.el")  ; PDF tools
-(load "40-projectile.el")    ; Manage projects
-(load "41-rainbow.el")		 ; Highlight colours in scss files
-(load "42-robe.el")			 ; Ruby documentation
-(load "43-highlight-indentation.el")	; Highlight tabs
-(load "44-flyspell.el")					; Spelling
-(load "45-multiple-cursors.el")	; Edit multiple lines at the same time.
-(load "46-web-mode.el")			; Mixed mode in web frontend
-;; (load "47-twittering-mode.el")          ; Twitter client
-(load "48-undo-tree.el")		; Undo tree
-(load "49-rbenv.el")			; Ruby version manager
-(load "50-org2blog.el")		 ; Org2blog mode
-(load "51-packages.el")		 ; Package related tasks
-(load "52-scroll-settings.el")          ; Settings for scrolling
-(load "53-revealjs.el")                 ; Reveal.js settings
-(load "54-slime.el")                    ; Slime Superior Lisp Interaction Mode for Emacs
-(load "55-org-mobile.el")               ; Org sync with MobileOrg for Android devices
-(load "56-ruby-refactor.el")
-(load "57-bpr.el")                      ; Background Process Runner
-(load "58-togetherly.el")               ; Work together with someone in the same file.
-(load "59-diredful.el")                 ; Color files in dired listing
-;; (load "60-org-ac.el")                   ; org mode autocomplete
-(load "60-nlinum.el")                   ; Line number mode (faster than standard package)
-(load "61-highlight-parentheses.el") ; Highlights start and end of parentheses.
-(load "62-tide.el")                  ; Typescript Interactive Dev Environment
-(load "63-company-mode.el")   ; Autocomplete
+(load "01-pdf-tools.el")             ; PDF tools
+(load "02-bpr.el")                   ; Background Process Runner
+(load "03-async.el")                 ; Asynchronous abilities
+(load "04-packages.el")              ; Package related tasks
+(load "05-scroll-settings.el")       ; Settings for scrolling
+(load "06-togetherly.el")            ; Work together with someone in the same file.
+(load "07-diredful.el")              ; Color files in dired listing
+(load "08-nlinum.el")                ; Line number mode (faster than standard package)
+(load "09-real-auto-save.el")        ; Autosave files
+(load "10-multi-term.el")            ; Handle multiple terminals in emacs nicely.
+(load "11-eshell.el")                ; eshell customisations
+(load "12-projectile.el")            ; Manage projects
+(load "13-dired-details.el")         ; Hide/show details in directory mode
+(load "14-ido-mode.el")              ; IDO mode for moving around dirs & buffers
+(load "15-winner-mode.el")           ; Undo/redo window layouts
+(load "16-sudo-edit.el")             ; editing files as root
+(load "17-emacs-server.el")          ; Config relating to emacs server
+(load "18-flyspell.el")              ; Spelling
+;(load "19-spotify.el")              ; Control spotify from emacs
+;(load "20-volume.el")               ; Control volume from emacs
+;(load "21-circe.el")                ; IRC settings
+;(load "22-epa-file.el")             ; Encryption
+;(load "23-markdown.el")             ; for md files.
+;(load "24-smex.el")                 ; smex (quick narrow down commands)
+;(load "25-speedbar.el")             ; Speedbar customisations
+;(load "26-guide-key.el")            ; Show keyboard shortcuts at certian points
+;(load "27-moz-controller.el")       ; Control firefox within emacs
+;(load "28-save_hooks.el")           ; Processes to perform on save.
+;(load "29-ace_jump.el")             ; Jump around quickly in a file
+;(load "30-discover.el")             ; Discover more of emacs using context menus
+;(load "31-sunshine.el")             ; Weather
+;(load "32-twittering-mode.el")      ; Twitter client
 
-(load "70-spotify.el")                  ; Control spotify from emacs
-(load "71-volume.el")                  ; Control volume from emacs
+;;--------------------------------------------------------------------------------
+;;-Org-mode related (40-49)
+;;--------------------------------------------------------------------------------
+(load "40-org.el")                   ; Org mode
+(load "41-org2blog.el")              ; Org2blog mode
+(load "42-org-expiry.el")            ; Org expiry <-- add created property on todo items
+(load "43-revealjs.el")              ; Reveal.js settings
+(load "44-org-publish.el")           ; Org publish setup
+;(load "48-org-ac.el")               ; org mode autocomplete
+;(load "49-org-mobile.el")           ; Org sync with MobileOrg for Android devices
 
-(load "98-mode-line.el")                ; Format my mode line
-(load "99-shortcuts.el")                ; Keyboard shortcuts
+;;--------------------------------------------------------------------------------
+;;-Programming tools (50-69)
+;;--------------------------------------------------------------------------------
+(load "50-multiple-cursors.el")      ; Edit multiple lines at the same time.
+(load "51-undo-tree.el")             ; Undo tree
+(load "52-rainbow.el")               ; Highlight colours in scss files
+(load "53-magit.el")                 ; Git
+(load "54-yasnippet.el")             ; Yasnippets BUG: https://github.com/capitaomorte/yasnippet/issues/631
+(load "55-rinari.el")                ; Ruby on rails mode
+(load "56-rsense.el")                ; Command Lookup
+;(load "57-auto-complete.el")         ; Auto complete
+(load "58-highlight-indentation.el") ; Highlight tabs
+(load "59-highlight-parentheses.el") ; Highlights start and end of parentheses.
+(load "60-yafolding.el")             ; yafolding
+(load "61-ruby-refactor.el")
+(load "62-robe.el")                  ; Ruby documentation
+;(load "63-tide.el")                 ; Typescript Interactive Dev Environment
+;(load "64-rbenv.el")                ; Ruby version manager
+;(load "65-slime.el")                ; Slime Superior Lisp Interaction Mode for Emacs
+
+;;--------------------------------------------------------------------------------
+;;-Programming modes (75-94)
+;;--------------------------------------------------------------------------------
+(load "75-scss-mode.el")             ; SCSS mode
+(load "76-rspec_mode.el")            ; Rspec testing mode for ruby projects
+(load "77-company-mode.el")          ; Autocomplete
+(load "78-haml.el")                  ; haml mode
+(load "79-css.el")                   ; css mode
+(load "80-coffeescript.el")          ; Coffeescript mode
+(load "81-ruby.el")                  ; Ruby programming language
+(load "82-xml.el")                   ; edit xml files
+(load "83-web-mode.el")              ; Mixed mode in web frontend
+(load "84-html-mode.el")             ; html mode & json.
+(load "85-yaml_mode.el")             ; yaml mode.
+;(load "86-jinja2.el")               ; Ansible templates
+
+;;--------------------------------------------------------------------------------
+;;-EXWM, appearance and shortcut keys
+;;--------------------------------------------------------------------------------
+(load "95-resize-buffer.el")         ; Resize buffer
+(load "96-mode-line.el")             ; Format my mode line
+(load "97-shortcuts.el")             ; Keyboard shortcuts
 
 (if (file-exists-p "~/.xinitrc")
-    (load "100-exwm.el")                    ; Emacs X Windows Manager
+    (load "98-exwm.el")                    ; Emacs X Windows Manager
 )
 
 (if (file-exists-p "~/.emacs.d/.emacs.autostart.el")
@@ -101,20 +120,11 @@
 
 (if (file-exists-p "~/.emacs.d/.emacs.paradox.el")
     (load "~/.emacs.d/.emacs.paradox.el")
-)
-(load "102-symbolised-mode-line.el")    ; Save on valuable modeline realestate & use symbols
+  )
+(load "99-symbolised-mode-line.el")    ; Save on valuable modeline realestate & use symbols
+(load "100-theme.el")                  ; Load theme and setup font
+
 
 ;; Read in custom settings for the user
 (setq custom-file "~/.emacs.d/.emacs.custom.el")
 (load custom-file)
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
- '(font-lock-comment-face ((t (:foreground "chocolate1"))))
- '(term-color-blue ((t (:background "blue2" :foreground "deep sky blue"))))
- '(term-color-cyan ((t (:background "cyan3" :foreground "cyan2"))))
- '(term-color-green ((t (:background "DarkSeaGreen1" :foreground "green3")))))

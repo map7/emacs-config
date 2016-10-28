@@ -1,11 +1,3 @@
-;; Add paths (not required if EXWM is installed from GNU ELPA)
-;; (add-to-list 'load-path "/home/map7/.emacs.d/elpa/xelb-0.6/")
-;;(add-to-list 'load-path "/home/map7/.emacs.d/elpa/exwm-0.4/")
-;; (add-to-list 'load-path "~/.emacs.d/external/xelb/")
-;; (add-to-list 'load-path "~/.emacs.d/external/exwm/")
-
-(add-to-list 'load-path "~/.emacs.d/elpa/cl-generic-0.2/")
-
 ;; Start server - helps with opening files
 (server-start)
 
@@ -52,3 +44,11 @@
 ;; System tray
 (require 'exwm-systemtray)
 (exwm-systemtray-enable)
+
+;; Composition manager
+(require 'exwm-cm)
+;; Make all Emacs frames opaque.
+(setq window-system-default-frame-alist '((x . ((alpha . 100)))))
+;; Assign everything else a 80% opacity.
+(setq exwm-cm-opacity 80)
+;;(exwm-cm-enable)                        ; This is pretty slow so I've left it off for now. You can put it on at any time with exwm-cm-start
