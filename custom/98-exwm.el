@@ -36,7 +36,7 @@
 
 ;; Suspend nicely
 (exwm-input-set-key (kbd "s-<f12>")
-                    (lambda () (interactive) (start-process "" nil "gksudo" "pm-suspend")))
+                    (lambda () (interactive) (start-process "" nil "sudo" "pm-suspend")))
 
 ;; Enable workspace
 (setq exwm-workspace-number 10)
