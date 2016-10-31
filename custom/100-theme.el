@@ -2,10 +2,10 @@
 ;; (set-frame-font "Droid Sans Mono-10" nil t)
 
 ;; Load Theme
-;; Install base16-theme & jazz-theme through package manager
+;; Install base16-theme, danneskjold-theme & jazz-theme through package manager
 
-(load-theme 'jazz t) ;; Best looking theme, just needs black bg to be perfect
-
+;; (load-theme 'jazz t) ;; Best looking theme, just needs black bg to be perfect
+(load-theme 'danneskjold t) ;; great simple black bg, high contrast theme
 ;; (load-theme 'base16-isotope t) ;; black bg, high contrast, great bright text
 ;; (load-theme 'base16-pop t) ;; black bg, high contrast, nice
 ;; (load-theme 'base16-pico t) ;; black bg, interesting, high contrast
