@@ -1,5 +1,5 @@
 ;; Set font
-;; (set-frame-font "Droid Sans Mono-10" nil t)
+(set-frame-font "Droid Sans Mono-10" nil t)
 
 ;; Load Theme
 ;; Install base16-theme & jazz-theme through package manager
