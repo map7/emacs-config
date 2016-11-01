@@ -5,7 +5,7 @@
 (require 'exwm-randr)
 (if (file-exists-p "~/.emacs.randr.el")
     (load "~/.emacs.randr.el")
-  )
+)
 
 ;; Load EXWM
 (require 'exwm)
