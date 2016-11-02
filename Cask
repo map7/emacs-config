@@ -1,4 +1,4 @@
-(source gnu)
+source gnu)
 (source marmalade)
 (source melpa)
 
@@ -60,6 +60,7 @@
 (depends-on "pdf-tools")
 (depends-on "projectile-rails")
 (depends-on "rainbow-mode")
+(depends-on "rbenv")
 (depends-on "real-auto-save")
 (depends-on "rinari")
 (depends-on "robe")
