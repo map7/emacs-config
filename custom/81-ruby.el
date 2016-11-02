@@ -13,6 +13,4 @@
 (require 'ruby-end)
 (add-hook 'enh-ruby-mode-hook (lambda () (ruby-end-mode)))
 
-;; Load cmopany mode
-(add-hook 'enh-ruby-mode-hook (lambda () (company-mode)))
 

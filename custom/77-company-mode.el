@@ -4,3 +4,10 @@
 
 ;; company ansible
 (add-to-list 'company-backend 'company-ansible)
+
+;; Load for ruby
+(add-hook 'enh-ruby-mode-hook (lambda () (company-mode)))
+
+;; Use in all buffers
+(add-hook 'after-init-hook 'global-company-mode)
+
