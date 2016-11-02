@@ -1,11 +1,6 @@
 ;; (autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
-(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.rabl" . ruby-mode))
+(add-to-list 'auto-mode-alist
+             '("\\(?:\\.rb\\|ru\\|rabl\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode))
 
 (add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
  
@@ -15,6 +10,9 @@
 (require 'cl) ; If you don't have it already
 
 ;; Add ruby-end
-(add-hook 'ruby-mode-hook
-          (lambda ()
-            (require 'ruby-end-mode)))
+(require 'ruby-end)
+(add-hook 'enh-ruby-mode-hook (lambda () (ruby-end-mode)))
+
+;; Load cmopany mode
+(add-hook 'enh-ruby-mode-hook (lambda () (company-mode)))
+
