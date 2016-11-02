@@ -1,4 +1,4 @@
-source gnu)
+(source gnu)
 (source marmalade)
 (source melpa)
 
