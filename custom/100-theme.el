@@ -26,6 +26,10 @@
 
 ;; Initialise powerline-moe-theme
 (powerline-moe-theme)
+
+;; Set background colour to black
+(set-face-background 'default "#000000")
+
 ;; Load theme with customisations applied
 (moe-dark) 
 
