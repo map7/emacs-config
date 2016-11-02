@@ -37,6 +37,7 @@
 (custom-set-faces
  '(mouse ((t (:background "grey")))))
 
+
 ;; OKAY THEMES
 ;; (load-theme 'ample t) ;;black bg, good normal colours, ok
 ;; (load-theme 'sanityinc-tomorrow-bright t) ;;black bg, good normal colours
