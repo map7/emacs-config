@@ -16,6 +16,9 @@
 
 (require 'moe-theme)
 
+;; Load theme with customisations applied
+(moe-dark) 
+
 ;; Choose a color for mode-line.(Default: blue)
 (moe-theme-set-color 'w/b)
 
