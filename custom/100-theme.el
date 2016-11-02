@@ -1,5 +1,5 @@
 ;; Set font
-;; (set-frame-font "Droid Sans Mono-10" nil t)
+(set-frame-font "Droid Sans Mono-10" nil t)
 
 ;; Load Theme(s)
 ;; Through package manager first install following themes:
