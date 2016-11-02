@@ -45,12 +45,12 @@
  '(magit-diff-removed ((t (:foreground "#FF0000"))))
 
  ;; Set Magit Branch Local
- '(magit-branch-local (((class color)
-                        (background light))
-                       (:foreground "#SkyBlue4"))
-                      ((class color)
-                       (background dark))
-                      (:foreground "#1FBED6"))
+ '(magit-branch-local ((t (((class color)
+                            (background light))
+                           (:foreground "#SkyBlue4"))
+                          ((class color)
+                           (background dark))
+                          (:foreground "#1FBED6"))))
 
  ;; Set Magit Current Branch Face
  '(magit-branch-current ((t (:box
