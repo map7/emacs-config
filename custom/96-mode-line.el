@@ -5,6 +5,8 @@
                 (list 'line-number-mode "(%l,") ; line number
                 (list 'column-number-mode "%c) ") ; column number
                 ))
+;; Hide ruby version from mode line
+(global-rbenv-mode -1)
 
 ;;Initalise powerline mode line theme. Used with moe-theme
 (require 'powerline)
