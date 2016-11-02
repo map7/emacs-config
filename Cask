@@ -41,6 +41,7 @@
 ;(depends-on "ledger-mode")
 (depends-on "linum-off")
 (depends-on "magit")
+(depends-on "markdown-mode")
 ;(depends-on "magithub")
 (depends-on "moe-theme")
 ;(depends-on "moz-controller")
