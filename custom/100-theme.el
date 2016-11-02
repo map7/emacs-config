@@ -14,18 +14,20 @@
 ;; BEST THEME: Moe-theme best documentation, easily customisable & documented
 ;; Add proper powerline integration
 
-  (require 'moe-theme) 
+(require 'moe-theme)
+
 ;; Choose a color for mode-line.(Default: blue)
-  (moe-theme-set-color 'w/b)
+(moe-theme-set-color 'w/b)
+
 ;; Resize titles
-  (setq moe-theme-resize-markdown-title '(2.0 1.7 1.5 1.3 1.0 1.0))
-  (setq moe-theme-resize-org-title '(2.2 1.8 1.6 1.4 1.2 1.0 1.0 1.0 1.0))
-  (setq moe-theme-resize-rst-title '(2.0 1.7 1.5 1.3 1.1 1.0))
+(setq moe-theme-resize-markdown-title '(2.0 1.7 1.5 1.3 1.0 1.0))
+(setq moe-theme-resize-org-title '(2.2 1.8 1.6 1.4 1.2 1.0 1.0 1.0 1.0))
+(setq moe-theme-resize-rst-title '(2.0 1.7 1.5 1.3 1.1 1.0))
 
 ;; Initialise powerline-moe-theme
-  (powerline-moe-theme)
+(powerline-moe-theme)
 ;; Load theme with customisations applied
-  (moe-dark) 
+(moe-dark) 
 
 ;; OKAY THEMES
 ;; (load-theme 'ample t) ;;black bg, good normal colours, ok
