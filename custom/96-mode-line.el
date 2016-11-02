@@ -2,34 +2,24 @@
 
 (setq-default mode-line-format
               '("%e" ; print error message about full memory.
-                mode-line-front-space   ; space
+                ;;mode-line-front-space   ; space
                                         ; mode-line-mule-info
                                         ; mode-line-client
-                mode-line-modified      ; modified
-                mode-line-remote
-                "  "
+                ;;mode-line-modified      ; modified
+                ;;mode-line-remote
+               ;; "  "
                                         ; mode-line-frame-identification
                 mode-line-buffer-identification ; filename
                                         ;"  "
                 (list 'line-number-mode "(%l,") ; line number
                 (list 'column-number-mode "%c) ") ; column number
-                " "
-                
-                ;; (vc-mode basic-vc-mode-line)
-
-                ;; "  "
-                ;;mode-line-modes"  "                    ; mode-line-misc-info
-                
-                " "
-                (display-time-string t)                ; Display the time.
-                ;; mode-line-end-spaces
+                ;;" "
                 ))
-
-(require 'spaceline-config)                  ; Themes inc powerline & modeline config 
-(spaceline-spacemacs-theme)
+;;Initalise powerline mode line theme. Used with moe-theme
+(require 'powerline)
 
 ;; Turn buffer size off
-(spaceline-toggle-buffer-size-off)
+(setq size-indication-mode "")
 
 ;; Remove the load
 (setq display-time-default-load-average nil) 
@@ -38,17 +28,16 @@
 (setq display-time-mail-string "")           
 
 ;; Display the time.
-(display-time-mode t)               
+(setq display-time-day-and-date t
+      display-time-24hr-format t)
+(display-time)
 
 ;; Battery format
 (display-battery-mode 1)
 (setq battery-mode-line-format "%b%p%%%") ; Default: "[%b%p%%]"
 
-;; Turn ruby version off in modeline
-;;(global-rbenv-mode -1)
-
-;; Turn off buffer position 'All'
-(spaceline-toggle-buffer-position-off)
+;;Disable annoying bell & replace with visible mode-line bell only
+(setq visible-bell 1)
 
 ;; Remove the 'git' component
 ;; http://www.lunaryorn.com/2014/07/26/make-your-emacs-mode-line-more-useful.html
