@@ -13,4 +13,8 @@
 (setq ruby-hanging-brace-indent-level 2)
  
 (require 'cl) ; If you don't have it already
- 
+
+;; Add ruby-end
+(add-hook 'ruby-mode-hook
+          (lambda ()
+            (require 'ruby-end-mode)))
