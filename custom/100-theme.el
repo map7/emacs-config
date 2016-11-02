@@ -16,6 +16,9 @@
 
 (require 'moe-theme)
 
+;; Load theme with customisations applied
+(moe-dark) 
+
 ;; Choose a color for mode-line.(Default: blue)
 (moe-theme-set-color 'w/b)
 
@@ -30,13 +33,9 @@
 ;; Set background colour to black
 (set-face-background 'default "#000000")
 
-;; Load theme with customisations applied
-(moe-dark) 
-
 ;; Set the default mouse face.
 (custom-set-faces
  '(mouse ((t (:background "grey")))))
-
 
 ;; OKAY THEMES
 ;; (load-theme 'ample t) ;;black bg, good normal colours, ok
