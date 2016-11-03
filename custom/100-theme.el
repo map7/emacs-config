@@ -37,6 +37,9 @@
 ;; ;; Set the default mouse face.
 '(mouse ((t (:background "grey"))))
 
+;;---Flyspell---
+'(flyspell-incorrect ((t (:underline (:color "Red1" :style wave) :weight normal :foreground nil :background nil))))
+
 
 ;;---Magit---
  ;; Set Magit Diff Added
