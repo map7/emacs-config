@@ -66,24 +66,6 @@
 '(linum ((t (:background "black" :foreground "#b2b2b2"))))
 
 ;;---Magit---
- ;; Set Magit Diff Added
- '(magit-diff-added ((t (:foreground "#2BFF00"))))
-
-  ;; Set Magit Diff Removed
- '(magit-diff-removed ((t (:foreground "#FF0000"))))
-
- ;; Set Magit Branch Local
- '(magit-branch-local (((class color)
-                        (background light))
-                       (:foreground "#SkyBlue4"))
-                      ((class color)
-                       (background dark))
-                      (:foreground "#1FBED6"))
-
- ;; Set Magit Current Branch Face
- '(magit-branch-current ((t (:box
-                             (:line-width 1 :color nil :style nil)
-                             :inherit (magit-branch-local)))))
 )
 
 ;; OKAY THEMES
