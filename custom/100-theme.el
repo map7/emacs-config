@@ -30,9 +30,6 @@
 ;; Initialise powerline-moe-theme
 (powerline-moe-theme)
 
-;; Set background colour to black
-(set-face-background 'default "#000000")
-
 (custom-set-faces
 ;; Set the default mouse face.
  '(mouse ((t (:background "grey"))))
