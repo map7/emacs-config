@@ -1,7 +1,15 @@
 ;;Initalise powerline mode line theme. Used with moe-theme
 (require 'powerline)
 
+;; Time & Date
+(display-time-mode)
+(defpowerline display-time display-time-string)
+(setq display-time-format "%H:%M") 
 
+;; Display battery
+(display-battery-mode)
+(defpowerline display-battery display-battery-string)
+(setq battery-mode-line-format "%L %b%p%%") ; "[%L %b%p%% %t]"
 
 
 ;; Remove the 'git' component
