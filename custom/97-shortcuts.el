@@ -93,7 +93,7 @@
 
 
 ;; Toggle
-(global-set-key (kbd "s-t") 'exwm-input-toggle-keyboard)
+;;(global-set-key (kbd "s-t") 'exwm-input-toggle-keyboard)
 
 ;; find and replace
 (global-set-key (kbd "s-r") 'find-name-dired)

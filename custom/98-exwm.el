@@ -20,7 +20,9 @@
 ;; + 'slock' is a simple X display locker provided by suckless tools. 'i3lock'
 ;;   is a more feature-rich alternative.
 (exwm-input-set-key (kbd "s-l")
-                    (lambda () (interactive) (start-process "" nil "slock")))
+                    (lambda () (interactive)
+                      (start-process "" nil "slock")
+                      (start-process "" nil "sudo" "pm-suspend")))
 
 ;; Redshift off
 (exwm-input-set-key (kbd "s-x")
@@ -36,7 +38,7 @@
 
 ;; Suspend nicely
 (exwm-input-set-key (kbd "s-<f12>")
-                    (lambda () (interactive) (start-process "" nil "gksudo" "pm-suspend")))
+                    (lambda () (interactive) (start-process "" nil "sudo" "pm-suspend")))
 
 ;; Enable workspace
 (setq exwm-workspace-number 10)

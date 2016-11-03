@@ -1,20 +1,13 @@
 ;; Setup my mode line
-
 (setq-default mode-line-format
               '("%e" ; print error message about full memory.
-                ;;mode-line-front-space   ; space
-                                        ; mode-line-mule-info
-                                        ; mode-line-client
-                ;;mode-line-modified      ; modified
-                ;;mode-line-remote
-               ;; "  "
-                                        ; mode-line-frame-identification
                 mode-line-buffer-identification ; filename
-                                        ;"  "
                 (list 'line-number-mode "(%l,") ; line number
                 (list 'column-number-mode "%c) ") ; column number
-                ;;" "
                 ))
+;; Hide ruby version from mode line
+(global-rbenv-mode -1)
+
 ;;Initalise powerline mode line theme. Used with moe-theme
 (require 'powerline)
 
