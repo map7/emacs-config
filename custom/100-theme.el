@@ -56,6 +56,12 @@
 '(font-lock-type-face ((t (:foreground "cyan" :weight semibold))))
 '(font-lock-variable-name-face ((t (:foreground "chartreuse"))))
  
+;;-lisp-
+'(font-lock-builtin-face ((t (:foreground "red2"))))
+'(font-lock-string-face ((t (:foreground "orange1"))))
+'(font-lock-keyword-face ((t (:foreground "chartreuse" :weight semibold))))
+'(font-lock-constant-face ((t (:foreground "DodgerBlue1"))))
+
 
 ;;---Magit---
  ;; Set Magit Diff Added
