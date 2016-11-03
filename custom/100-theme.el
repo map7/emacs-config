@@ -43,6 +43,10 @@
 ;;---Highlighting-Text---
  '(region ((t (:background "dim gray"))))
 
+;;---Ido---
+'(ido-first-match ((t (:foreground "dark orange" :weight semibold))))
+'(ido-subdir ((t (:foreground "deep sky blue"))))
+
 
 ;;---Magit---
  ;; Set Magit Diff Added
