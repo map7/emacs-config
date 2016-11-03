@@ -41,20 +41,20 @@
 (load "16-sudo-edit.el")             ; editing files as root
 (load "17-emacs-server.el")          ; Config relating to emacs server
 (load "18-flyspell.el")              ; Spelling
-;(load "19-spotify.el")              ; Control spotify from emacs
-;(load "20-volume.el")               ; Control volume from emacs
-;(load "21-circe.el")                ; IRC settings
-;(load "22-epa-file.el")             ; Encryption
-;(load "23-markdown.el")             ; for md files.
-;(load "24-smex.el")                 ; smex (quick narrow down commands)
-;(load "25-speedbar.el")             ; Speedbar customisations
-;(load "26-guide-key.el")            ; Show keyboard shortcuts at certian points
-;(load "27-moz-controller.el")       ; Control firefox within emacs
-;(load "28-save_hooks.el")           ; Processes to perform on save.
-;(load "29-ace_jump.el")             ; Jump around quickly in a file
-;(load "30-discover.el")             ; Discover more of emacs using context menus
-;(load "31-sunshine.el")             ; Weather
-;(load "32-twittering-mode.el")      ; Twitter client
+;;(load "19-spotify.el")              ; Control spotify from emacs
+;;(load "20-volume.el")               ; Control volume from emacs
+;;(load "21-circe.el")                ; IRC settings
+;;(load "22-epa-file.el")             ; Encryption
+;;(load "23-markdown.el")             ; for md files.
+;;(load "24-smex.el")                 ; smex (quick narrow down commands)
+;;(load "25-speedbar.el")             ; Speedbar customisations
+;;(load "26-guide-key.el")            ; Show keyboard shortcuts at certian points
+;;(load "27-moz-controller.el")       ; Control firefox within emacs
+;;(load "28-save_hooks.el")           ; Processes to perform on save.
+;;(load "29-ace_jump.el")             ; Jump around quickly in a file
+;;(load "30-discover.el")             ; Discover more of emacs using context menus
+;;(load "31-sunshine.el")             ; Weather
+;;(load "32-twittering-mode.el")      ; Twitter client
 
 ;;--------------------------------------------------------------------------------
 ;;-Org-mode related (40-49)
@@ -77,15 +77,17 @@
 (load "54-yasnippet.el")             ; Yasnippets BUG: https://github.com/capitaomorte/yasnippet/issues/631
 (load "55-rinari.el")                ; Ruby on rails mode
 (load "56-rsense.el")                ; Command Lookup
-;(load "57-auto-complete.el")         ; Auto complete
+;;(load "57-auto-complete.el")       ; Auto complete
 (load "58-highlight-indentation.el") ; Highlight tabs
 (load "59-highlight-parentheses.el") ; Highlights start and end of parentheses.
 (load "60-yafolding.el")             ; yafolding
 (load "61-ruby-refactor.el")
 (load "62-robe.el")                  ; Ruby documentation
-;(load "63-tide.el")                 ; Typescript Interactive Dev Environment
-(load "64-rbenv.el")                ; Ruby version manager
-;(load "65-slime.el")                ; Slime Superior Lisp Interaction Mode for Emacs
+;;(load "63-tide.el")                ; Typescript Interactive Dev Environment
+(load "64-rbenv.el")                 ; Ruby version manager
+;;(load "65-slime.el")               ; Slime Superior Lisp Interaction Mode for Emacs
+(load "66-flycheck.el")              ; Syntax checking (better than built in flymake)
+
 
 ;;--------------------------------------------------------------------------------
 ;;-Programming modes (75-94)
