@@ -137,6 +137,12 @@
 '(magit-signature-good ((t (:foreground "green"))))
 '(magit-signature-untrusted ((t (:foreground "cyan"))))
 '(magit-tag ((t (:foreground "LightGoldenrod2" :background nil))))
+
+;;---Mode-Line---
+'(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
+'(mode-line-inactive ((t (:background "gray30" :foreground "#f9f9f9" :box nil))))
+'(mode-line-buffer-id ((t (:foreground "black" :box nil :weight bold))))
+
 )
 
 ;; OKAY THEMES
