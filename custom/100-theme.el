@@ -31,6 +31,12 @@
 (powerline-moe-theme)
 
 (custom-set-faces
+;;---Set Background To Black---
+'(default ((t (:background "#000000" :foreground "#ffffff"))))
+
+;; ;; Set the default mouse face.
+'(mouse ((t (:background "grey"))))
+
 
 ;;---Magit---
  ;; Set Magit Diff Added
