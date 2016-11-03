@@ -62,6 +62,8 @@
 '(font-lock-keyword-face ((t (:foreground "chartreuse" :weight semibold))))
 '(font-lock-constant-face ((t (:foreground "DodgerBlue1"))))
 
+;;---Linum---
+'(linum ((t (:background "black" :foreground "#b2b2b2"))))
 
 ;;---Magit---
  ;; Set Magit Diff Added
