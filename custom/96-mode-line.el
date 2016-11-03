@@ -46,3 +46,25 @@
                   (powerline-make-text       " "    nil)))
             )))))
 
+;; Remove & Hide from Mode-line
+;; Hide ruby version from mode line
+(global-rbenv-mode -1)
+
+;; Remove the load
+(setq display-time-default-load-average nil)
+
+;; Remove the mail
+(setq display-time-mail-string "")
+(setq display-time-use-mail-icon nil)
+
+;; Turn buffer size off
+(setq size-indication-mode "")
+
+;;Disable annoying bell & replace with visible mode-line bell only
+(setq visible-bell 1)
+
+(force-mode-line-update)
+  ;; Apparently force-mode-line-update is not always enough to
+  ;; redisplay the mode-line
+;;(redraw-display)
+
