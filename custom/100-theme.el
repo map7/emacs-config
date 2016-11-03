@@ -40,6 +40,9 @@
 ;;---Flyspell---
 '(flyspell-incorrect ((t (:underline (:color "Red1" :style wave) :weight normal :foreground nil :background nil))))
 
+;;---Highlighting-Text---
+ '(region ((t (:background "dim gray"))))
+
 
 ;;---Magit---
  ;; Set Magit Diff Added
