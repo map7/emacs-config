@@ -51,15 +51,15 @@
  '(font-lock-comment-delimiter-face ((t (:foreground "chocolate1" :slant italic))))
  '(font-lock-comment-face ((t (:foreground "chocolate1" :slant italic))))
  '(font-lock-doc-face ((t (:foreground "orange1"))))
- '(font-lock-function-name-face ((t (:foreground "yellow2" :weight semibold))))
+ '(font-lock-function-name-face ((t (:foreground "yellow2" :weight normal))))
  '(font-lock-preprocessor-face ((t (:foreground "LightSkyBlue1"))))
- '(font-lock-type-face ((t (:foreground "cyan" :weight semibold))))
+ '(font-lock-type-face ((t (:foreground "cyan" :weight normal))))
  '(font-lock-variable-name-face ((t (:foreground "chartreuse"))))
  
  ;;-lisp-
  '(font-lock-builtin-face ((t (:foreground "red2"))))
  '(font-lock-string-face ((t (:foreground "orange1"))))
- '(font-lock-keyword-face ((t (:foreground "chartreuse" :weight semibold))))
+ '(font-lock-keyword-face ((t (:foreground "chartreuse" :weight normal))))
  '(font-lock-constant-face ((t (:foreground "DodgerBlue1"))))
 
  ;;---Linum---
