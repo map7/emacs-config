@@ -64,6 +64,22 @@ Create a ~/.emacs.randr.el file and put the following
 
 Remember to change the LVDS1 & DP2 to your screens which you can find out by typing in xrandr at the command line and looking for the active screens.
 
+** flycheck configure
+
+Installing
+: npm install -g coffeelint eslint
+: gem install scss_lint rubocop
+
+Add this to your ~/.emacs.d/.emacs.custom.el file.
+: (custom-set-variables
+:  '(flycheck-ruby-rubocop-executable "/usr/local/rbenv/shims/rubocop" )
+:  '(flycheck-javascript-eslint-executable "/opt/node-v5.5.0-linux-x64/bin/eslint")
+:  '(flycheck-coffee-coffeelint-executable "/opt/node-v5.5.0-linux-x64/bin/coffeelint")
+:  '(flycheck-coffeelintrc "~/coffeelint.json"))
+
+Make the config file for coffeelint
+: coffeelint --makeconfig > coffeelint.json
+
 ** Requirements
 
 ag - Compile [[https://github.com/ggreer/the_silver_searcher][the silver searcher]], first check if you already have the 'ag' command
