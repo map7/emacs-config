@@ -21,6 +21,8 @@
 (depends-on "exwm")
 ;(depends-on "firestarter")
 (depends-on "flycheck")
+
+;;flymake is getting replaced with flycheck
 ; (depends-on "flymake-coffee")
 ; (depends-on "flymake-css")
 ; (depends-on "flymake-csslint")
@@ -31,6 +33,7 @@
 ; (depends-on "flymake-less")
 ; (depends-on "flymake-sass")
 ; (depends-on "flymake-yaml")
+
 ;(depends-on "gist")
 ;(depends-on "github-browse-file")
 (depends-on "grizzl")
