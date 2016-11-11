@@ -175,3 +175,4 @@
 ;;OTHER THEMES
 ;;https://github.com/emacs-jp/replace-colorthemes
 
+(set-frame-font "Droid Sans Mono-10" nil t)
