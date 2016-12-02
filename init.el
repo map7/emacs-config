@@ -19,6 +19,10 @@
 
 ;; All custom files have a number at the front so they don't clash with the library files.
 
+;; Test use-package
+(setq use-package-always-ensure t)
+(use-package xkcd)
+
 ;;--------------------------------------------------------------------------------
 ;;-Base emacs related (0-39)
 ;;--------------------------------------------------------------------------------
