@@ -1,3 +1,5 @@
+(use-package ox-reveal)
+
 ;; Export to reveal.js for presentations
 ;;
 ;; examples: 

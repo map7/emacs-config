@@ -1,3 +1,5 @@
+(use-package yasnippet)
+
 (require 'yasnippet)
 
 ;; Snippets

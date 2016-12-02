@@ -1,4 +1,4 @@
-
+(use-package magit)
 ;; C-c C-a to amend without any prompt
 
 (defun magit-just-amend ()

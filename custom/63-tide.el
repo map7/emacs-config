@@ -1,3 +1,4 @@
+(use-package tide)
 ;; TIDE setup
 (defun setup-tide-mode ()
   (interactive)

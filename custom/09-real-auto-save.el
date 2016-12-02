@@ -1,3 +1,4 @@
+(use-package real-auto-save)
 ;; Automatically save the file
 ;; 
 (require 'real-auto-save)

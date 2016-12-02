@@ -1,3 +1,4 @@
+(use-package slime)
 (setq inferior-lisp-program "/usr/bin/sbcl")
 ;; Setup Common Lisp
 (require 'slime)

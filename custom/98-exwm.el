@@ -1,3 +1,5 @@
+(use-package exwm)
+
 ;; Start server - helps with opening files
 (server-start)
 

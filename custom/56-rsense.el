@@ -1,3 +1,4 @@
+(use-package rsense)
 ;; -------------------- Autocomplete --------------------
 ;; Use with Rsense for Ruby autocomplete:
 ;; http://cx4a.org/software/rsense/

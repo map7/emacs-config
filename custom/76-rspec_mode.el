@@ -1,3 +1,5 @@
+(use-package rspec-mode)
+
 (require 'rspec-mode)
 (setq rspec-use-rvm nil)
 (setq rspec-use-bundler-when-possible t)

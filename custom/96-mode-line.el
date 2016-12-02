@@ -1,3 +1,5 @@
+(use-package powerline)
+
 ;;Initalise powerline mode line theme. Used with moe-theme
 (require 'powerline)
 

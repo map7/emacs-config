@@ -1,3 +1,4 @@
+(use-package moe-theme)
 ;; Set font
 ;(set-frame-font "Droid Sans Mono-10" nil t)
 

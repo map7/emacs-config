@@ -1,3 +1,5 @@
+(use-package multi-term)
+
 (setq multi-term-program "/bin/zsh")
 
 (global-set-key (kbd "C-x <up>") 'multi-term-next)

@@ -1,3 +1,5 @@
+(use-package linum-off)
+
 ;; Use the standard line number
 (global-linum-mode 1)
 (setq linum-format "%4d \u2502 ")

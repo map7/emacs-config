@@ -8,20 +8,39 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
-
-(require 'cask "~/.cask/cask.el")
-(cask-initialize)
-(require 'pallet)
+(require 'package)
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")))
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 (add-to-list 'load-path "~/.emacs.d/external") ; Plugins not in the repo
 
-;; All custom files have a number at the front so they don't clash with the library files.
+(package-initialize)
 
-;; Test use-package
+;; ;; OLD cask
+;; (require 'cask "~/.cask/cask.el")
+;; (cask-initialize)
+;; (require 'pallet)
+
+;; Package configuration (NEW way as of 02/12/2016)
 (setq use-package-always-ensure t)
 (use-package xkcd)
+(use-package ansible)
+(use-package circe)
+(use-package company)
+(use-package csv-mode)
+(use-package enh-ruby-mode)
+(use-package expand-region)
+(use-package js2-mode)
+(use-package jsx-mode)
+(use-package markdown-mode)
+(use-package org-cliplink)
+(use-package org-clock-csv)
+(use-package paradox)
+(use-package switch-window)
+(use-package tramp-term)
+(use-package twittering-mode)
 
 ;;--------------------------------------------------------------------------------
 ;;-Base emacs related (0-39)

@@ -1,3 +1,5 @@
+(use-package coffee-mode)
+
 ;; coffee-mode
 (require 'coffee-mode)
 

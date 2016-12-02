@@ -1,3 +1,5 @@
+(use-package org2blog)
+
 ;; Org2blog mode
 (require 'org2blog-autoloads)
 

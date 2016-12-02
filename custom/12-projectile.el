@@ -1,3 +1,6 @@
+(use-package projectile-rails)
+(use-package grizzl)
+
 (require 'grizzl)
 
 ;; FIX hange issue with tramp

@@ -1,3 +1,5 @@
+(use-package rinari)
+
 ;; Rinari - Rails plugin
 (require 'rinari)
 
