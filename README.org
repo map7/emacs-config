@@ -11,6 +11,17 @@ Run installation script
 : cd ~/.emacs.d
 : ./install
 
+Start emacs
+: emacs
+
+List packages (Note: M-x is emacs way of saying Alt + x)
+: M-x list-packages
+
+Install use-package with 
+: M-x package-install use-package
+
+Then restart emacs and it should start building the packages, if it asks you to build pdf-tools say yes and in the compile buffer it will show the results. If this compile is needed then after the compile is finished you will need to restart emacs again for the final run of packages.
+
 *** Manually
  Install my sub modules
  : git submodule init
