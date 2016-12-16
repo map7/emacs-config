@@ -13,7 +13,6 @@
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("marmalade" . "https://marmalade-repo.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
-(use-package all-the-icons)
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 (add-to-list 'load-path "~/.emacs.d/external") ; Plugins not in the repo
@@ -27,6 +26,7 @@
 
 ;; Package configuration (NEW way as of 02/12/2016)
 (setq use-package-always-ensure t)
+(use-package all-the-icons)
 (use-package findr)
 (use-package xkcd)
 (use-package ansible)
@@ -44,6 +44,9 @@
 (use-package switch-window)
 (use-package tramp-term)
 (use-package twittering-mode)
+
+;; All custom files have a number at the front so they don't clash with the library files.
+(require 'dark-lord-theme)
 
 ;;--------------------------------------------------------------------------------
 ;;-Base emacs related (0-39)
