@@ -97,3 +97,6 @@
 
 ;; find and replace
 (global-set-key (kbd "s-r") 'find-name-dired)
+
+;; tab
+(global-set-key (kbd "s-<tab>") 'indent-rigidly)
