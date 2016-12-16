@@ -79,6 +79,7 @@
 ;;(load "30-discover.el")             ; Discover more of emacs using context menus
 ;;(load "31-sunshine.el")             ; Weather
 ;;(load "32-twittering-mode.el")      ; Twitter client
+;;(load "33-ivy.el")                      ; ivy-mode (not convinced yet)
 
 ;;--------------------------------------------------------------------------------
 ;;-Org-mode related (40-49)
