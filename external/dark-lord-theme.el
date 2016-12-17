@@ -216,11 +216,10 @@ The result is cached for one second to avoid hiccups."
       (green-light (if (true-color-p) "#b3de81" "#b3de81"))
 
       ;; Blue Shades
-      (cyan (if (true-color-p) "cyan" "#5fafff"))
+      (cyan (if (true-color-p) "cyan" "cyan"))
       (blue-light (if (true-color-p) "LightSkyblue1" "LightSkyblue1"))
-      (blue-dodgerblue (if (true-color-p) "dodgerblue1" "#005f87"))
-
       (light (if (true-color-p) "#ccd4e3" "#d7d7d7"))
+      (blue-dodgerblue (if (true-color-p) "dodgerblue1" "dodgerblue1"))
 
       ;; Diffs
       (diff-added-background (if (true-color-p) "#284437" "#284437"))
