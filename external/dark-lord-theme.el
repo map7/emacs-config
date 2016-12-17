@@ -163,8 +163,6 @@ The result is cached for one second to avoid hiccups."
 
 
 (let ((class '((class color) (min-colors 89)))
-      
-      (light (if (true-color-p) "#ccd4e3" "#d7d7d7"))
 
       ;; Backgrounds
       (background (if (true-color-p) "#000000" "#000000"))
@@ -223,6 +221,7 @@ The result is cached for one second to avoid hiccups."
 
       ;; White
       (white (if (true-color-p) "ffffff" "ffffff"))
+      (light (if (true-color-p) "#ccd4e3" "#d7d7d7"))
 
       ;; Diffs
       (diff-added-background (if (true-color-p) "#284437" "#284437"))
