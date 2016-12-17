@@ -187,6 +187,7 @@ The result is cached for one second to avoid hiccups."
 
       ;; White - Default font color
       (default (if (true-color-p) "#ffffff" "#ffffff"))
+      (white (if (true-color-p) "#ffffff" "#ffffff"))
 
       ;; Grey Shades
       (anthracite (if (true-color-p) "#3a3f4b" "#3a3f4b"))
@@ -219,8 +220,6 @@ The result is cached for one second to avoid hiccups."
       (blue-light (if (true-color-p) "LightSkyblue1" "LightSkyblue1"))
       (blue-dodgerblue (if (true-color-p) "dodgerblue1" "#005f87"))
 
-      ;; White
-      (white (if (true-color-p) "ffffff" "ffffff"))
       (light (if (true-color-p) "#ccd4e3" "#d7d7d7"))
 
       ;; Diffs
