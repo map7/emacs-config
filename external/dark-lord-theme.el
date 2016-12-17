@@ -387,25 +387,25 @@ The result is cached for one second to avoid hiccups."
    `(ediff-current-diff-C ((,class (:background ,background-navyblue :foreground ,cyan))))
 
    ;; magit
-   `(magit-diff-context-highlight ((,class (:background ,background-darker))))
+   `(magit-diff-context-highlight ((,class (:background ,background))))
    `(magit-diff-file-heading ((,class (:weight bold :foreground ,cyan))))
    `(magit-diff-file-heading-highlight ((,class (:weight bold :foreground ,cyan :background ,background-navyblue))))
    `(magit-diff-removed-highlight ((,class (:inherit diff-removed))))
    `(magit-diff-removed ((,class (:inherit diff-removed))))
    `(magit-diff-added-highlight ((,class (:inherit diff-added))))
    `(magit-diff-added ((,class (:inherit diff-added))))
-   `(magit-diff-lines-heading ((,class (:background ,blue-dodgerblue :foreground "white"))))
+   `(magit-diff-lines-heading ((,class (:background ,blue-dodgerblue :foreground ,white))))
    `(magit-diff-hunk-heading ((,class (:background ,background-lighter))))
    `(magit-diff-hunk-heading-highlight ((,class (:background ,blue-dodgerblue))))
    `(magit-diff-hunk-heading ((,class (:background ,background-lighter))))
 
    `(magit-process-ok ((,class (:foreground ,green :weight bold))))
 
-   `(magit-section-highlight ((,class (:background ,background-darker))))
+   `(magit-section-highlight ((,class (:background ,background))))
    `(magit-section-heading ((,class (:foreground ,grey :weight bold))))
-   `(magit-branch-current ((,class (:foreground ,cyan :background ,background-darker :box 1))))
-   `(magit-branch-local ((,class (:foreground ,blue-light :background ,background-darker :box 1))))
-   `(magit-branch-remote ((,class (:foreground ,green :background ,background-darker :box 1))))
+   `(magit-branch-current ((,class (:foreground ,cyan :background ,background :box 1))))
+   `(magit-branch-local ((,class (:foreground ,orange :background ,background :box 1))))
+   `(magit-branch-remote ((,class (:foreground ,green :background ,background :box 1))))
 
    `(magit-reflog-reset ((,class (:background ,background-red :foreground ,red :weight bold))))
    `(magit-reflog-amend ((,class (:background ,background-navyblue :foreground ,cyan :weight bold))))
