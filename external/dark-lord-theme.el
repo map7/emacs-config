@@ -97,16 +97,6 @@
 (defvar dark-lord-buffer-coding '(:eval (unless (eq buffer-file-coding-system (default-value 'buffer-file-coding-system))
                                          mode-line-mule-info)))
 
-(defvar dark-lord-modeline-vc '(vc-mode ("   "
-                                        (:eval (all-the-icons-faicon "code-fork"
-                                                                     :height 0.9
-                                                                     :v-adjust 0
-                                                                     :face (when (dark-lord--active-window-p)
-                                                                             (dark-lord-git-face))))
-                                        (:eval (propertize (truncate-string-to-width vc-mode 25 nil nil "...")
-                                                           'face (when (dark-lord--active-window-p)
-                                                                   (dark-lord-git-face)))))))
-
 (defun dark-lord-modeline-flycheck-status ()
   "Return the status of flycheck to be displayed in the mode-line."
   (when flycheck-mode
