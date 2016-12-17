@@ -96,6 +96,68 @@
 
 (defvar dark-lord-buffer-coding '(:eval (unless (eq buffer-file-coding-system (default-value 'buffer-file-coding-system))
                                          mode-line-mule-info)))
+;; --------------------------------
+;; TO WORK ON THIS
+;; --------------------------------
+;; (defun custom-modeline-modified
+;;     ((let* ((config-alist
+;;              '(("*" all-the-icons-faicon-family all-the-icons-faicon "chain-broken" :height 1.2 :v-adjust -0.0)
+;;                ("-" all-the-icons-faicon-family all-the-icons-faicon "link" :height 1.2 :v-adjust -0.0)
+;;                ("%" all-the-icons-octicon-family all-the-icons-octicon "lock" :height 1.2 :v-adjust 0.1)))
+;;             (result (cdr (assoc (format-mode-line "%*") config-alist))))
+;;        (propertize (format "%s" (apply (cadr result) (cddr result)))
+;;                    'face `(:family ,(funcall (car result))) ))))
+
+;; (defun custom-modeline-window-number ()
+;;   (propertize (format " %c" (+ 9311 (window-numbering-get-number)))
+;;               'face `(:height ,(/ (* 0.90 powerline/default-height) 100.0))
+;;               'display '(raise 0.0)))
+
+;; (defun dark-lord-modeline-battery ()
+;;  "Show battery information"
+;;     (let* ((charging? (equal "AC" (cdr (assoc ?L battery-mode-line-format))))
+;;            (percentage (string-to-int (cdr (assoc ?p battery-mode-line-format))))
+;;            (time (format "%s" (cdr (assoc ?t battery-mode-line-format))))
+;;            (icon-set (if charging? 'alltheicon 'faicon))
+;;            (icon-alist
+;;             (cond
+;;              (charging? '((icon . "charging") (inherit . success) (height . 1.3) (raise . -0.1)))
+;;              ((> percentage 95) '((icon . "full") (inherit . success)))
+;;              ((> percentage 70) '((icon . "three-quarters")))
+;;              ((> percentage 35) '((icon . "half")))
+;;              ((> percentage 15) '((icon . "quarter") (inherit . warning)))
+;;              (t '((icon . "empty") (inherit . error)))))
+;;            (icon-f (all-the-icons--function-name icon-set))
+;;            (family (funcall (all-the-icons--family-name icon-set))))
+;;       (let-alist icon-alist
+;;         (concat
+;;          (if .inherit
+;;              (let ((fg (face-attribute .inherit :foreground)))
+;;                (propertize (funcall icon-f (format "battery-%s" .icon))
+;;                            'face `(:height ,(or .height 1.0) :family ,family :foreground ,fg)
+;;                            'display `(raise ,(or .raise 0.0))))
+;;              (propertize (funcall icon-f (format "battery-%s" .icon))
+;;                          'face `(:family ,family :inherit)
+;;                          'display '(raise 0.0)))
+;;          " "
+;;          (if .inherit
+;;              (let ((fg (face-attribute .inherit :foreground)))
+;;                (propertize (if charging? (format "%s%%%%" percentage) time) 'face `(:height 0.9 :foreground ,fg)))
+;;            (propertize time 'face '(:height 0.9 :inherit)))
+;;          )))
+;;     :global-override battery-mode-line-format :when (and active (fboundp 'battery-mode-line-format) battery-mode-line-format))
+
+;; (defun custom-modeline-region-info ()
+;;   (when mark-active
+;;     (let ((words (count-lines (region-beginning) (region-end)))
+;;           (chars (count-words (region-end) (region-beginning))))
+;;       (concat
+;;        (propertize (format " %s" (all-the-icons-octicon "pencil") words chars)
+;;                    'face `(:family ,(all-the-icons-octicon-family))
+;;                    'display '(raise -0.0))
+;;        (propertize (format "%s:%s" words chars)
+;;                    'face `(:height 0.9))))))
+ 
 
 (defun dark-lord-modeline-flycheck-status ()
   "Return the status of flycheck to be displayed in the mode-line."
