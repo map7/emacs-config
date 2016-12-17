@@ -12,7 +12,7 @@
     (hl-line-mode . "")
     (isearch-mode . " iS")
     (js-mode . " js")
-    (flyspell-mode . " F")
+    (flycheck-mode . "")
     (lisp-interaction-mode . " λ")
     (paredit-mode . " π")
     (projectile-mode . "")
