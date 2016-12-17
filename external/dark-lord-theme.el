@@ -844,22 +844,29 @@ The result is cached for one second to avoid hiccups."
                                                 :box ,(when dark-lord-use-paddings-in-mode-line
                                                         (list :line-width 6 :color mode-line))))))
      `(anzu-mode-line ((,class :inherit mode-line :foreground ,cyan :weight bold)))
-  (setq-default mode-line-format
-                `("%e"
-                  " "
-                  ,dark-lord-modeline-ro " "
-                  ,dark-lord-buffer-coding
-                  mode-line-frame-identification " "
-                  " "
-                  ,dark-lord-modeline-modified
-                  " "
-                  ,dark-lord-modeline-buffer-identification
-                  ,dark-lord-modeline-position
-                  ,dark-lord-modeline-vc
-                  "  "
-                  (:eval (dark-lord-modeline-flycheck-status))
-                  "  " mode-line-modes mode-line-misc-info mode-line-end-spaces
-                  )))
+     )))
+
+(setq-default mode-line-format
+              `("%e"
+                ,dark-lord-modeline-ro
+                ;; " "
+                ,dark-lord-buffer-coding
+                ;; mode-line-frame-identification
+                ;; " "
+                ,dark-lord-modeline-modified
+                " "
+                ,dark-lord-modeline-buffer-identification
+                ,dark-lord-modeline-position
+                (:eval (dark-lord-modeline-icon-vc))
+                " "
+                (:eval (dark-lord-modeline-flycheck-status))
+                " "
+                (:eval (dark-lord-modeline-time))
+                " "
+                (:eval (dark-lord-modeline-battery))
+                " "
+                mode-line-modes mode-line-misc-info mode-line-end-spaces
+                ))
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)
