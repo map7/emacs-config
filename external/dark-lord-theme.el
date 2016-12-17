@@ -698,11 +698,13 @@ The result is cached for one second to avoid hiccups."
   (custom-theme-set-variables
    'dark-lord
    `(ansi-color-names-vector [,background
+                              ,comment
+                              ,white
                               ,red
                               ,green
                               ,orange
                               ,cyan
-                              ,cyan
+                              ,light
                               ,blue-dodgerblue
                               ,default])))
 
