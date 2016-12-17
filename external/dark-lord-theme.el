@@ -260,10 +260,10 @@ The result is cached for one second to avoid hiccups."
    `(font-lock-warning-face ((,class (:foreground ,red :weight bold :background ,background-red))))
 
    ;; Mode line faces
-      `(mode-line ((,class (:background ,background-navyblue :height 0.9 :foreground ,cyan
+      `(mode-line ((,class (:background ,background-darker :height 0.9 :foreground ,white
                                      :box ,(when dark-lord-use-paddings-in-mode-line
-                                              (list :line-width 6 :color background-navyblue))))))
-      `(mode-line-inactive ((,class (:background ,background-darker :height 0.9 :foreground ,default
+                                              (list :line-width 6 :color background-darker))))))
+      `(mode-line-inactive ((,class (:background ,background-darker :height 0.9 :foreground ,grey-dark
                                                  :box ,(when dark-lord-use-paddings-in-mode-line
                                                          (list :line-width 6 :color background-darker))))))
       `(header-line ((,class (:inherit mode-line-inactive))))
