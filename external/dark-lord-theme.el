@@ -175,6 +175,13 @@
      ((string-match "Git[:-]" vc-mode) (-dark-lord-modeline-github-vc))
      (t (format "%s" vc-mode)))))
 
+(defun dark-lord-modeline-time ()
+  (let* ((hour (string-to-number (format-time-string "%I")))
+         (icon (all-the-icons-wicon (format "time-%s" hour) :height 1.3 :v-adjust 0.0)))
+    (concat
+     (propertize (format-time-string " %H:%M ") 'face `(:height 0.9))
+     (propertize (format "%s " icon) 'face `(:height 1.0 :family ,(all-the-icons-wicon-family)) 'display '(raise -0.0)))))
+
 
 (defun dark-lord-modeline-flycheck-status ()
   "Return the status of flycheck to be displayed in the mode-line."
