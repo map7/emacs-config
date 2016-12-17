@@ -182,6 +182,14 @@
      (propertize (format-time-string " %H:%M ") 'face `(:height 0.9))
      (propertize (format "%s " icon) 'face `(:height 1.0 :family ,(all-the-icons-wicon-family)) 'display '(raise -0.0)))))
 
+(defun dark-lord-modeline-battery ()
+  "Display battery status in modeline [%L %b%p%% %t]."
+  (require 'battery)
+  (when (and battery-status-function
+             (not (string-match-p "N/A"
+                                  (battery-format "%L %b%p%%"
+                                                  (funcall battery-status-function)))))
+    (display-battery-mode 1)))
 
 (defun dark-lord-modeline-flycheck-status ()
   "Return the status of flycheck to be displayed in the mode-line."
