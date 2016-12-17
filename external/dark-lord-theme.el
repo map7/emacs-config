@@ -741,26 +741,25 @@ The result is cached for one second to avoid hiccups."
   (require 'flycheck)
   (require 'magit)
   (let ((class '((class color) (min-colors 89)))
-        (light (if (true-color-p) "#ccd4e3" "#d7d7d7"))
-        (comment (if (true-color-p) "#687080" "#707070"))
+        (white (if (true-color-p) "#ffffff" "#ffffff"))
+        (cyan (if (true-color-p) "cyan" "cyan"))
+        (grey-dark (if (true-color-p) "#666666" "#666666"))
         (mode-line (if "#1c2129" "#222222")))
     (custom-theme-set-faces
      'dark-lord
 
-     ;; Mode line faces
+     ;; ;; mode line faces
      `(mode-line ((,class (:background ,mode-line
                                        :height 0.9
-                                       :foreground ,light
+                                       :foreground ,white
                                        :box ,(when dark-lord-use-paddings-in-mode-line
                                                (list :line-width 6 :color mode-line))))))
      `(mode-line-inactive ((,class (:background ,mode-line
                                                 :height 0.9
-                                                :foreground ,comment
+                                                :foreground ,grey-dark
                                                 :box ,(when dark-lord-use-paddings-in-mode-line
                                                         (list :line-width 6 :color mode-line))))))
      `(anzu-mode-line ((,class :inherit mode-line :foreground ,cyan :weight bold)))
-     ))
-
   (setq-default mode-line-format
                 `("%e"
                   " "
