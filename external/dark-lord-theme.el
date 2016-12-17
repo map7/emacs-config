@@ -274,8 +274,8 @@ The result is cached for one second to avoid hiccups."
    `(success ((,class (:foreground ,green :weight bold))))
 
    ;; powerline
-   `(powerline-active1 ((,class (:height 0.9 :foreground ,cyan :background ,background-darker))))
-   `(powerline-active2 ((,class (:height 0.9 :foreground ,cyan :background ,background-lighter))))
+   `(powerline-active1 ((,class (:height 0.9 :foreground ,white :background ,background-darker))))
+   `(powerline-active2 ((,class (:height 0.9 :foreground ,white :background ,background-lighter))))
 
    ;; mml
    `(message-mml-face ((,class (:foreground ,comment))))
