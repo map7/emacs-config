@@ -160,22 +160,15 @@
 ;;        (propertize (format "%s:%s" words chars)
 ;;                    'face `(:height 0.9))))))
  
-(defun dark-lord-modeline-github-vc ()
+(defun dark-lord-modeline-vc ()
   "Github Version Control."
   (let ((branch (mapconcat 'concat (cdr (split-string vc-mode "[:-]")) "-")))
     (concat
-     (propertize (format " %s" (all-the-icons-alltheicon "git")) 'face `(:height 1.2) 'display '(raise -0.1))
-     " · "
      (propertize (format "%s" (all-the-icons-octicon "git-branch"))
                  'face `(:height 1.3 :family ,(all-the-icons-octicon-family))
                  'display '(raise -0.1))
      (propertize (format " %s" branch) 'face `(:height 0.9)))))
 
-(defun dark-lord-modeline-icon-vc ()
-  (when vc-mode
-    (cond
-     ((string-match "Git[:-]" vc-mode) (-dark-lord-modeline-github-vc))
-     (t (format "%s" vc-mode)))))
 
 (defun dark-lord-modeline-time ()
   (let* ((hour (string-to-number (format-time-string "%I")))
@@ -859,8 +852,9 @@ The result is cached for one second to avoid hiccups."
                 " "
                 ,dark-lord-modeline-buffer-identification
                 ,dark-lord-modeline-position
-                (:eval (dark-lord-modeline-icon-vc))
-                " "
+                "  "
+                (:eval (dark-lord-modeline-vc))
+                "  "
                 (:eval (dark-lord-modeline-flycheck-status))
                 " "
                 (:eval (dark-lord-modeline-time))
