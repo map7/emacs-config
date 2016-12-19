@@ -877,6 +877,26 @@ The result is cached for one second to avoid hiccups."
                 mode-line-modes mode-line-misc-info mode-line-end-spaces
                 ))
 
+;; ;; Simple text only modeline
+;; (setq-default mode-line-format
+;;               `("%e"
+;;                 " "
+;;                 ,dark-lord-modeline-ro
+;;                 " "
+;;                 ,dark-lord-buffer-coding
+;;                 ;; mode-line-frame-identification " "
+;;                 ;; " "
+;;                 ,dark-lord-modeline-modified
+;;                 " "
+;;                 ,dark-lord-modeline-buffer-identification
+;;                 ,dark-lord-modeline-position
+;;                 " "
+;;                 (:propertize (vc-mode vc-mode) face (:weight normal))
+;;                 " "
+;;                 ;; (:eval (dark-lord-modeline-flycheck-status))
+;;                 "  " mode-line-modes mode-line-misc-info mode-line-end-spaces
+;;                 ))
+
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)
   (add-to-list 'custom-theme-load-path
