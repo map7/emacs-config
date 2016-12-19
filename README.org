@@ -22,6 +22,30 @@ Install use-package with
 
 Then restart emacs and it should start building the packages, if it asks you to build pdf-tools say yes and in the compile buffer it will show the results. If this compile is needed then after the compile is finished you will need to restart emacs again for the final run of packages.
 
+*** Dark-lord-theme
+The dark lord theme is loaded by default. 
+
+**** Iconised modeline 
+      A nice iconised based modeline. Tries to save on modelin re
+***** Setup
+      The package all-the-icons is needed. This package has been added to the init.el file and should be automatically installed. 
+
+      The next step must be done manually. 
+      You will need to download and install the fonts and icons from the following link: 
+      [[https://github.com/domtronn/all-the-icons.el/tree/master/fonts][all-the-icons.el/fonts]]
+
+****** Linux
+       copy fonts into (for all users)
+       : usr/local/share/fonts` 
+       or (for a specific user)
+       : ~/.fonts
+       manually rebuild the font cache 
+       : fc-cache -fv
+
+***** Use
+To manually invoke the iconised modeline theme:
+: M-x dark-lord-modeline
+
 *** Manually
  Install my sub modules
  : git submodule init
