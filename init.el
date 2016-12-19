@@ -1,8 +1,10 @@
-;; ;; An attempt to get smart-mode-line working
-;; ;; This allows the sml theme to be loaded without questions
-;; (custom-set-variables
-;;  '(custom-safe-themes (quote ("756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" default))))
+;;; package --- Summary
+;;; init.el - Emacs configuration backbone file.
 
+;;; Commentary:
+;;; All Emacs configuration starts from this file.
+
+;;; Code:
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -160,3 +162,7 @@
 ;; Read in custom settings for the user
 (setq custom-file "~/.emacs.d/.emacs.custom.el")
 (load custom-file)
+
+;; End:
+
+;;; init.el ends here
