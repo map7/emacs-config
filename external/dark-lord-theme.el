@@ -116,38 +116,47 @@
 ;;               'display '(raise 0.0)))
 
 ;; (defun dark-lord-modeline-battery ()
-;;  "Show battery information"
-;;     (let* ((charging? (equal "AC" (cdr (assoc ?L battery-mode-line-format))))
-;;            (percentage (string-to-int (cdr (assoc ?p battery-mode-line-format))))
-;;            (time (format "%s" (cdr (assoc ?t battery-mode-line-format))))
-;;            (icon-set (if charging? 'alltheicon 'faicon))
-;;            (icon-alist
-;;             (cond
-;;              (charging? '((icon . "charging") (inherit . success) (height . 1.3) (raise . -0.1)))
-;;              ((> percentage 95) '((icon . "full") (inherit . success)))
-;;              ((> percentage 70) '((icon . "three-quarters")))
-;;              ((> percentage 35) '((icon . "half")))
-;;              ((> percentage 15) '((icon . "quarter") (inherit . warning)))
-;;              (t '((icon . "empty") (inherit . error)))))
-;;            (icon-f (all-the-icons--function-name icon-set))
-;;            (family (funcall (all-the-icons--family-name icon-set))))
-;;       (let-alist icon-alist
-;;         (concat
-;;          (if .inherit
-;;              (let ((fg (face-attribute .inherit :foreground)))
-;;                (propertize (funcall icon-f (format "battery-%s" .icon))
-;;                            'face `(:height ,(or .height 1.0) :family ,family :foreground ,fg)
-;;                            'display `(raise ,(or .raise 0.0))))
+;;   "Show battery information"
+;;   (let* ((charging? (equal "AC" (cdr (assoc ?L fancy-battery-last-status))))
+;;          (percentage (string-to-int (cdr (assoc ?p fancy-battery-last-status))))
+;;          (time (format "%s" (cdr (assoc ?t fancy-battery-last-status))))
+;;          (icon-set (if charging? 'alltheicon 'faicon))
+;;          (icon-alist
+;;           (cond
+;;            (charging? '((icon . "charging") (inherit . success) (height . 1.3) (raise . -0.1)))
+;;            ((> percentage 95) '((icon . "full") (inherit . success)))
+;;            ((> percentage 70) '((icon . "three-quarters")))
+;;            ((> percentage 35) '((icon . "half")))
+;;            ((> percentage 15) '((icon . "quarter") (inherit . warning)))
+;;            (t '((icon . "empty") (inherit . error)))))
+;;          (icon-f (all-the-icons--function-name icon-set))
+;;          (family (funcall (all-the-icons--family-name icon-set))))
+;;     (let-alist icon-alist
+;;       (concat
+;;        (if .inherit
+;;            (let ((fg (face-attribute .inherit :foreground)))
 ;;              (propertize (funcall icon-f (format "battery-%s" .icon))
-;;                          'face `(:family ,family :inherit)
-;;                          'display '(raise 0.0)))
-;;          " "
-;;          (if .inherit
-;;              (let ((fg (face-attribute .inherit :foreground)))
-;;                (propertize (if charging? (format "%s%%%%" percentage) time) 'face `(:height 0.9 :foreground ,fg)))
-;;            (propertize time 'face '(:height 0.9 :inherit)))
-;;          )))
-;;     :global-override battery-mode-line-format :when (and active (fboundp 'battery-mode-line-format) battery-mode-line-format))
+;;                          'face `(:height ,(or .height 1.0) :family ,family :foreground ,fg)
+;;                          'display `(raise ,(or .raise 0.0))))
+;;          (propertize (funcall icon-f (format "battery-%s" .icon))
+;;                      'face `(:family ,family :inherit)
+;;                      'display '(raise 0.0)))
+;;        " "
+;;        (if .inherit
+;;            (let ((fg (face-attribute .inherit :foreground)))
+;;              (propertize (if charging? (format "%s%%%%" percentage) time) 'face `(:height 0.9 :foreground ,fg)))
+;;          (propertize time 'face '(:height 0.9 :inherit)))
+;;        )))
+;;   :global-override fancy-battery-mode-line :when (and active (fboundp 'fancy-battery-mode) fancy-battery-mode))
+
+;; (defun dark-lord-modeline-battery ()
+;;   "Display battery status in modeline [%L %b%p%% %t]."
+;;   (require 'battery)
+;;   (when (and battery-status-function
+;;              (not (string-match-p "N/A"
+;;                                   (battery-format "%B"
+;;                                                   (funcall battery-status-function)))))
+;;     (display-battery-mode 1)))
 
 ;; (defun custom-modeline-region-info ()
 ;;   (when mark-active
@@ -189,15 +198,6 @@
     (concat
      (propertize (format-time-string " %H:%M ") 'face `(:height 0.9))
      (propertize (format "%s " icon) 'face `(:height 1.0 :family ,(all-the-icons-wicon-family)) 'display '(raise -0.0)))))
-
-(defun dark-lord-modeline-battery ()
-  "Display battery status in modeline [%L %b%p%% %t]."
-  (require 'battery)
-  (when (and battery-status-function
-             (not (string-match-p "N/A"
-                                  (battery-format "%L %b%p%%"
-                                                  (funcall battery-status-function)))))
-    (display-battery-mode 1)))
 
 (defun dark-lord-modeline-flycheck-status ()
   "Return the status of flycheck to be displayed in the mode-line."
