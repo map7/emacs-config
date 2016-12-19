@@ -193,6 +193,7 @@
 ;; (:propertize (vc-mode vc-mode) face (:weight normal))
 
 (defun dark-lord-modeline-time ()
+  "Display time."
   (let* ((hour (string-to-number (format-time-string "%I")))
          (icon (all-the-icons-wicon (format "time-%s" hour) :height 1.3 :v-adjust 0.0)))
     (concat
