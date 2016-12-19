@@ -169,6 +169,19 @@
                  'display '(raise -0.1))
      (propertize (format " %s" branch) 'face `(:height 0.9)))))
 
+;; For simple modeline text version control
+;; (defun dark-lord-modeline-tvc ()
+;;   "VC."
+;;   (when vc-mode
+;;     'face (when (dark-lord--active-window-p)
+;;                                                                     (dark-lord-git-face)
+
+;; (defvar dark-lord-modeline-vc '(vc-mode (" "
+;;                                          (:propertize (vc-mode)
+;;                                                             'face (when (dark-lord--active-window-p)
+;;                                                                     (dark-lord-git-face)))))))
+
+;; (:propertize (vc-mode vc-mode) face (:weight normal))
 
 (defun dark-lord-modeline-time ()
   (let* ((hour (string-to-number (format-time-string "%I")))
