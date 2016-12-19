@@ -873,7 +873,7 @@ The result is cached for one second to avoid hiccups."
                 " "
                 (:eval (dark-lord-modeline-time))
                 " "
-                (:eval (dark-lord-modeline-battery))
+                ;; (:eval (dark-lord-modeline-battery))
                 " "
                 mode-line-modes mode-line-misc-info mode-line-end-spaces
                 ))
