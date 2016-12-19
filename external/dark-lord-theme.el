@@ -1,6 +1,8 @@
-;;; Commentary:
+;;; package --- Summary:
 ;;
-;; A dark theme inspired from zerodark.
+;; A high contrast theme extending on the emacs zerodark theme.
+
+;;; Commentary:
 ;;
 
 ;;; Code:
