@@ -49,5 +49,5 @@
 ;; ;; Exclude this from org-mode
 ;; (add-hook 'before-save-hook 'whitespace-cleanup)
 
-;; Save desktop
-(desktop-save-mode 1)
+;; ;; Save desktop
+;; (desktop-save-mode 1)
