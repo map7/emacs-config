@@ -308,6 +308,7 @@ The result is cached for one second to avoid hiccups."
       ;; Yellow Shades
       (yellow (if (true-color-p) "yellow2" "yellow2"))
       (sunrise (if (true-color-p) "#ffdb45" "#ffdb45"))
+      (mustard (if (true-color-p) "#bdb303" "#bdb303"))
       
       ;; Green Shades
       (green (if (true-color-p) "chartreuse" "chartreuse"))
@@ -599,7 +600,7 @@ The result is cached for one second to avoid hiccups."
    `(org-special-keyword ((,class (:foreground ,sunrise))))
    `(org-priority ((,class (:foreground ,comment))))
    `(org-level-1 ((,class (:foreground ,blue-dodgerblue :weight bold))))
-   `(org-level-2 ((,class (:foreground ,red :weight bold))))
+   `(org-level-2 ((,class (:foreground ,mastard :weight bold))))
    `(org-level-3 ((,class (:foreground ,orange :weight bold))))
    `(org-ellipsis ((,class (:foreground ,frost))))
 
