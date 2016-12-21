@@ -115,6 +115,8 @@
 ;;               'face `(:height ,(/ (* 0.90 powerline/default-height) 100.0))
 ;;               'display '(raise 0.0)))
 
+;; ;; This method uses the fancy-battery but we cannot get it working.
+;; ;;
 ;; (defun dark-lord-modeline-battery ()
 ;;   "Show battery information"
 ;;   (let* ((charging? (equal "AC" (cdr (assoc ?L fancy-battery-last-status))))
@@ -149,6 +151,9 @@
 ;;        )))
 ;;   :global-override fancy-battery-mode-line :when (and active (fboundp 'fancy-battery-mode) fancy-battery-mode))
 
+;; ;; This method has a problem of polling too often and using all battery life.
+;; ;; It has to do with battery-status-function
+;; ;; 
 ;; (defun dark-lord-modeline-battery ()
 ;;   "Display battery status in modeline [%L %b%p%% %t]."
 ;;   (require 'battery)
