@@ -8,6 +8,7 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
+
 (require 'package)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("marmalade" . "https://marmalade-repo.org/packages/")
@@ -25,6 +26,7 @@
 
 ;; Package configuration (NEW way as of 02/12/2016)
 (setq use-package-always-ensure t)
+(use-package all-the-icons)
 (use-package findr)
 (use-package xkcd)
 (use-package ansible)
@@ -42,6 +44,9 @@
 (use-package switch-window)
 (use-package tramp-term)
 (use-package twittering-mode)
+
+;; All custom files have a number at the front so they don't clash with the library files.
+(require 'dark-lord-theme)
 
 ;;--------------------------------------------------------------------------------
 ;;-Base emacs related (0-39)
@@ -135,9 +140,9 @@
 ;;--------------------------------------------------------------------------------
 ;;-EXWM, appearance and shortcut keys
 ;;--------------------------------------------------------------------------------
-(load "95-resize-buffer.el")         ; Resize buffer
-(load "96-mode-line.el")             ; Format my mode line
-(load "97-shortcuts.el")             ; Keyboard shortcuts
+(load "95-resize-buffer.el")          ; Resize buffer
+;;(load "96-mode-line.el")              ; Format my mode line
+(load "97-shortcuts.el")              ; Keyboard shortcuts
 
 (if (file-exists-p "~/.xinitrc")
     (load "98-exwm.el")                    ; Emacs X Windows Manager
@@ -150,9 +155,8 @@
 (if (file-exists-p "~/.emacs.d/.emacs.paradox.el")
     (load "~/.emacs.d/.emacs.paradox.el")
   )
-(load "99-symbolised-mode-line.el")    ; Save on valuable modeline realestate & use symbols
-(load "100-theme.el")                  ; Load theme and setup font
-
+;;(load "99-symbolised-mode-line.el")   ; Save on valuable modeline realestate & use symbols
+;;(load "100-theme.el")                 ; Load theme and setup font
 
 ;; Read in custom settings for the user
 (setq custom-file "~/.emacs.d/.emacs.custom.el")
