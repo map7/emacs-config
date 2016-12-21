@@ -42,7 +42,7 @@ Clone
 : git clone https://github.com/domtronn/all-the-icons.el.git
 
 copy fonts into (for all users)
-: sudo cp all-the-icons.el/fonts/*ttf /usr/local/share/fonts`
+: sudo cp all-the-icons.el/fonts/*ttf /usr/local/share/fonts
 
 or (for a specific user)
 : cp all-the-icons.el/fonts/*ttf ~/.fonts
