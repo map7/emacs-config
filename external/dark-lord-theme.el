@@ -600,7 +600,7 @@ The result is cached for one second to avoid hiccups."
    `(org-special-keyword ((,class (:foreground ,sunrise))))
    `(org-priority ((,class (:foreground ,comment))))
    `(org-level-1 ((,class (:foreground ,blue-dodgerblue :weight bold))))
-   `(org-level-2 ((,class (:foreground ,mastard :weight bold))))
+   `(org-level-2 ((,class (:foreground ,mustard :weight bold))))
    `(org-level-3 ((,class (:foreground ,orange :weight bold))))
    `(org-ellipsis ((,class (:foreground ,frost))))
 
