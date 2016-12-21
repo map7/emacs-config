@@ -12,7 +12,7 @@
     (hl-line-mode . "")
     (isearch-mode . " iS")
     (js-mode . " js")
-    (flyspell-mode . " F")
+    (flycheck-mode . "")
     (lisp-interaction-mode . " λ")
     (paredit-mode . " π")
     (projectile-mode . "")
@@ -48,21 +48,5 @@ want to use in the modeline *in lieu of* the original."
              (when (eq mode major-mode)
                (setq mode-name mode-str)))))
 
-
 (add-hook 'after-change-major-mode-hook 'clean-mode-line)
 
-;;; alias the new `flymake-report-status-slim' to
-;;; `flymake-report-status'
-(defalias 'flymake-report-status 'flymake-report-status-slim)
-(defun flymake-report-status-slim (e-w &optional status)
-  "Show \"slim\" flymake status in mode line."
-  (when e-w
-    (setq flymake-mode-line-e-w e-w))
-  (when status
-    (setq flymake-mode-line-status status))
-  (let* ((mode-line " Φ"))
-    (when (> (length flymake-mode-line-e-w) 0)
-      (setq mode-line (concat mode-line ":" flymake-mode-line-e-w)))
-    (setq mode-line (concat mode-line flymake-mode-line-status))
-    (setq flymake-mode-line mode-line)
-    (force-mode-line-update)))
