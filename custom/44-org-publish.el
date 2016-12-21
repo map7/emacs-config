@@ -33,7 +33,6 @@
 
 	  ))
 
- '(org-archive-location "~/org/archive/%s_archive::")
  '(org-stuck-projects (quote ("hard" ("REDUNDANT" "DONE" "NEXT" "NEXTACTION") nil "")))
 
 ;; Allow divs in org-publish

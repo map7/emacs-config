@@ -51,9 +51,8 @@
 ;;                (add-hook 'org-open-link-functions' browse-url-thunderlink)
 ;;                ))
 
-
-
-
+;; Set archive location
+(setq org-archive-location "~/org/archive/%s_archive::")
 
 ;; Custom searches
 (setq org-agenda-custom-commands
