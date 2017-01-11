@@ -28,24 +28,24 @@
 
 ;; Package configuration (NEW way as of 02/12/2016)
 (setq use-package-always-ensure t)
-(use-package all-the-icons)
-(use-package findr)
-(use-package xkcd)
-(use-package ansible)
-(use-package circe)
-(use-package company)
-(use-package csv-mode)
-(use-package enh-ruby-mode)
-(use-package expand-region)
-(use-package js2-mode)
-(use-package jsx-mode)
-(use-package markdown-mode)
-(use-package org-cliplink)
-(use-package org-clock-csv)
-(use-package paradox)
-(use-package switch-window)
-(use-package tramp-term)
-(use-package twittering-mode)
+(use-package all-the-icons :defer)
+(use-package findr :defer)
+(use-package xkcd :defer)
+(use-package ansible :defer)
+(use-package circe :defer)
+(use-package company :defer)
+(use-package csv-mode :defer)
+(use-package enh-ruby-mode :defer)
+(use-package expand-region :defer)
+(use-package js2-mode :defer)
+(use-package jsx-mode :defer)
+(use-package markdown-mode :defer)
+(use-package org-cliplink :defer)
+(use-package org-clock-csv :defer)
+(use-package paradox :defer)
+(use-package switch-window :defer)
+(use-package tramp-term :defer)
+(use-package twittering-mode :defer)
 
 ;; All custom files have a number at the front so they don't clash with the library files.
 (require 'dark-lord-theme)
@@ -87,6 +87,7 @@
 ;;(load "31-sunshine.el")             ; Weather
 ;;(load "32-twittering-mode.el")      ; Twitter client
 ;;(load "33-ivy.el")                      ; ivy-mode (not convinced yet)
+(load "34-windmove.el")                 ; Move around buffers fast
 
 ;;--------------------------------------------------------------------------------
 ;;-Org-mode related (40-49)

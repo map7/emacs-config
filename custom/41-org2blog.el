@@ -1,15 +1,16 @@
-(use-package org2blog)
+(use-package org2blog
+  :defer t
+  :config
+  ;; Org2blog mode
+  (require 'org2blog-autoloads)
 
-;; Org2blog mode
-(require 'org2blog-autoloads)
+  ;; Read password
+  (require 'netrc)
+  (setq blog (netrc-machine (netrc-parse "~/.netrc") "2014roundtheworld" t))
 
-;; Read password
-(require 'netrc)
-(setq blog (netrc-machine (netrc-parse "~/.netrc") "2014roundtheworld" t))
-
-(if (file-exists-p "~/.emacs.org2blog.el")
-    (load "~/.emacs.org2blog.el")
-  )
+  (if (file-exists-p "~/.emacs.org2blog.el")
+      (load "~/.emacs.org2blog.el")
+    ))
 
 ;; Example
 ;; ;; Login details for my round the world blog 2014

@@ -1,4 +1,6 @@
-(use-package diredful)
 ;; colour your file names
-(require 'diredful)
-(diredful-mode 1)
+(use-package diredful
+  :init
+  (diredful-mode 1)  
+  :defer 5)
+

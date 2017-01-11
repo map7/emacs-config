@@ -1,3 +1,2 @@
-(use-package togetherly)
 ;; Work together with someone
-(require 'togetherly)
+(use-package togetherly)

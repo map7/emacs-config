@@ -1,4 +1,4 @@
-(use-package async)
+(use-package async :defer)
 
 ;; Compile packages in the background.
 (async-bytecomp-package-mode 1)

@@ -1,4 +1,4 @@
-(use-package pdf-tools)
+(use-package pdf-tools :defer)
 
 ;; pdf-tools for viewing PDFs
 (pdf-tools-install)
