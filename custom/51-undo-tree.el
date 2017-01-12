@@ -1,3 +1,5 @@
-(use-package undo-tree)
-;; undo
-(add-hook 'ruby-mode-hook 'undo-tree-mode)
+(use-package undo-tree
+  :init
+  (add-hook 'ruby-mode-hook 'undo-tree-mode)
+  :defer)
+
