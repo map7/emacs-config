@@ -1,7 +1,7 @@
-(use-package slime)
-(setq inferior-lisp-program "/usr/bin/sbcl")
-;; Setup Common Lisp
-(require 'slime)
-(slime-setup)
-;; Use highlight colors
-(global-font-lock-mode t)
+(use-package slime
+  :init
+  (slime-setup)
+  :defer 2
+  :config
+  (setq inferior-lisp-program "/usr/bin/sbcl")
+  (global-font-lock-mode t))

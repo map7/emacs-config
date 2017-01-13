@@ -28,24 +28,25 @@
 
 ;; Package configuration (NEW way as of 02/12/2016)
 (setq use-package-always-ensure t)
-(use-package all-the-icons :defer)
-(use-package findr :defer)
-(use-package xkcd :defer)
-(use-package ansible :defer)
-(use-package circe :defer)
-(use-package company :defer)
-(use-package csv-mode :defer)
-(use-package enh-ruby-mode :defer)
-(use-package expand-region :defer)
-(use-package js2-mode :defer)
-(use-package jsx-mode :defer)
-(use-package markdown-mode :defer)
-(use-package org-cliplink :defer)
-(use-package org-clock-csv :defer)
-(use-package paradox :defer)
-(use-package switch-window :defer)
-(use-package tramp-term :defer)
-(use-package twittering-mode :defer)
+(use-package all-the-icons :defer 5)
+(use-package findr :defer 5)
+(use-package xkcd :defer 5)
+(use-package ansible :defer 5)
+(use-package circe :defer 5)
+(use-package company :defer 5)
+(use-package csv-mode :defer 5)
+(use-package enh-ruby-mode :defer 5)
+(use-package expand-region :defer 5)
+(use-package js2-mode :defer 5)
+(use-package jsx-mode :defer 5)
+(use-package markdown-mode :defer 5)
+(use-package org-cliplink :defer 5)
+(use-package org-clock-csv :defer 5)
+(use-package paradox :defer 5)
+(use-package sudo-edit :defer 5)
+(use-package switch-window :defer 5)
+(use-package tramp-term :defer 5)
+(use-package twittering-mode :defer 5)
 
 ;; All custom files have a number at the front so they don't clash with the library files.
 (require 'dark-lord-theme)
@@ -66,10 +67,9 @@
 (load "10-multi-term.el")            ; Handle multiple terminals in emacs nicely.
 (load "11-eshell.el")                ; eshell customisations
 (load "12-projectile.el")            ; Manage projects
-(load "13-dired-details.el")         ; Hide/show details in directory mode
+;;(load "13-dired-details.el")         ; Hide/show details in directory mode
 (load "14-ido-mode.el")              ; IDO mode for moving around dirs & buffers
 (load "15-winner-mode.el")           ; Undo/redo window layouts
-(load "16-sudo-edit.el")             ; editing files as root
 (load "17-emacs-server.el")          ; Config relating to emacs server
 (load "18-flyspell.el")              ; Spelling
 ;;(load "19-spotify.el")              ; Control spotify from emacs

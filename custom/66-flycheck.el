@@ -1,2 +1,5 @@
-(use-package flycheck)
-(global-flycheck-mode)
+(use-package flycheck
+  :init
+  (global-flycheck-mode)
+  :defer)
+

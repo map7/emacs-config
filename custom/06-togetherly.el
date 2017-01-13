@@ -1,2 +1,3 @@
 ;; Work together with someone
-(use-package togetherly)
+(use-package togetherly
+  :defer 2)

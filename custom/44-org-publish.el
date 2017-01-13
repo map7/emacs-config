@@ -1,6 +1,5 @@
 ;; org publish options
-;;(require 'org-publish)
-;;(require 'ox-publish)
+
 (setq org-publish-project-alist
 	  '(
 		;; ... add all the components here (see below)...
@@ -34,9 +33,6 @@
 	  ))
 
  '(org-stuck-projects (quote ("hard" ("REDUNDANT" "DONE" "NEXT" "NEXTACTION") nil "")))
-
-;; Allow divs in org-publish
-;;(require 'org-special-blocks)
 
 ; Create a little function to run publish mode in a shortcut
 (defun puborg ()

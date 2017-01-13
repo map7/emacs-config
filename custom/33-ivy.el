@@ -1,7 +1,13 @@
-(use-package ivy)
-(use-package counsel)
-(use-package swiper)
+(use-package ivy
+  :init
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  :bind (("C-s" . swiper))  
+  :defer 5)
 
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(global-set-key "\C-s" 'swiper)
+(use-package counsel
+  :defer 5)
+
+(use-package swiper
+  :defer 5)
+

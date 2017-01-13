@@ -1,5 +1,5 @@
-(use-package highlight-parentheses)
-(require 'highlight-parentheses)
-
 ;; Turn on highlight parentheses for all modes
-(global-highlight-parentheses-mode)
+(use-package highlight-parentheses
+  :init
+  (global-highlight-parentheses-mode)
+  :defer 5)

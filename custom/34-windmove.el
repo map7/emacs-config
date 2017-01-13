@@ -1,8 +1,7 @@
 ;; Move by holding down super and using the arrow keys
 (use-package windmove
-  ;; :defer 4
-  :ensure t
-  :config
+  :init
   (windmove-default-keybindings 'super)
   ;; wrap around at edges
-  (setq windmove-wrap-around t))
+  (setq windmove-wrap-around t)
+  :defer 5)
