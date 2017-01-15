@@ -83,7 +83,7 @@
         (flycheck-error-new-at
          (org-current-line) (1+ (current-column))
          'warning (cadr err) :checker checker))
-      (org-lint-link-to-local-file (org-element-parse-buffer))
+      (org-lint '(link-to-local-file))
       ))))
 
 ;; Using org-lint check the health of our org file on save
