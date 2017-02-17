@@ -5,7 +5,6 @@
   (pdf-tools-install)  
   ;; Setup a hook when we kill a pdf take a bookmark
   (add-hook 'kill-buffer-hook 'kill-buffer-hook-setup)
-  :defer 5
   :config
   ;; Set a bookmark on kill
   (defun kill-buffer-hook-setup ()
