@@ -11,6 +11,8 @@
 (setq org-clock-out-remove-zero-time-clocks t)
 (setq org-directory "~/org")
 (setq org-agenda-files '("~/org/" "~/org/business" "~/org/projects"))
+;; Format the time in clock tables.
+(setq org-time-clocksum-format (quote (:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t)))
 
 ;; Display inline images
 (defun do-org-show-all-inline-images ()
