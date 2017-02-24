@@ -89,6 +89,7 @@
 ;;(load "32-twittering-mode.el")      ; Twitter client
 ;;(load "33-ivy.el")                      ; ivy-mode (not convinced yet)
 (load "34-windmove.el")                 ; Move around buffers fast
+(load "35-paperless.el")                ; Paperless for managing pdfs
 
 ;;--------------------------------------------------------------------------------
 ;;-Org-mode related (40-49)
