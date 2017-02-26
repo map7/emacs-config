@@ -1,3 +1,4 @@
+(use-package grizzl :defer)
 (use-package projectile-rails
   :defer 2
   :init
@@ -17,8 +18,6 @@
   ;; Press Super-b for fuzzy switch buffer
   (global-set-key (kbd "s-b") 'projectile-switch-to-buffer))
 
-(use-package grizzl :defer)
-
-;; FIX hange issue with tramp
+;; FIX hange issue with tramp. Tested this 16/02/2017 and it's fixed.
 ;; https://github.com/bbatsov/prelude/issues/594
-;; (projectile-global-mode 1)
+(projectile-global-mode 1)
