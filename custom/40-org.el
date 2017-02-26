@@ -86,10 +86,10 @@
       (org-lint '(link-to-local-file))
       ))))
 
-;; Using org-lint check the health of our org file on save
-(flycheck-define-generic-checker 'org-lint
-  "Syntax checker for org-lint."
-  :start 'flycheck-org-lint-start
-  :modes '(org-mode))
+;; ;; Using org-lint check the health of our org file on save
+;; (flycheck-define-generic-checker 'org-lint
+;;   "Syntax checker for org-lint."
+;;   :start 'flycheck-org-lint-start
+;;   :modes '(org-mode))
 
-(add-to-list 'flycheck-checkers 'org-lint)
+;;(add-to-list 'flycheck-checkers 'org-lint)
