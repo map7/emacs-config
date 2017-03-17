@@ -146,7 +146,6 @@
 ;;-EXWM, appearance and shortcut keys
 ;;--------------------------------------------------------------------------------
 (load "95-resize-buffer.el")          ; Resize buffer
-;;(load "96-mode-line.el")              ; Format my mode line
 (load "97-shortcuts.el")              ; Keyboard shortcuts
 
 (if (file-exists-p "~/.xinitrc")
