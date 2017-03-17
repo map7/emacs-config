@@ -231,6 +231,9 @@
                   'local-map (make-mode-line-mouse-map
                               'mouse-1 #'flycheck-list-errors)))))
 
+;; Update the time in all buffers every 60 seconds.
+(run-at-time "60 sec" 60 #'force-mode-line-update "Update clock.")
+
 (defun true-color-p ()
   "Return non-nil on displays that support 256 colors."
   (or
