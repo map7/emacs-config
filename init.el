@@ -118,7 +118,7 @@
 (load "60-yafolding.el")             ; yafolding
 (load "61-ruby-refactor.el")
 (load "62-robe.el")                  ; Ruby documentation
-;;(load "63-tide.el")                ; Typescript Interactive Dev Environment
+(load "63-tide.el")                ; Typescript Interactive Dev Environment
 (load "64-rbenv.el")                 ; Ruby version manager
 ;;(load "65-slime.el")               ; Slime Superior Lisp Interaction Mode for Emacs
 (load "66-flycheck.el")              ; Syntax checking (better than built in flymake)
