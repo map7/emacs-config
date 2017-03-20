@@ -11,7 +11,7 @@
 ;
 
 ; Keybinding (Keyboard shortcuts)
-(global-set-key [f1] 'rotate-windows)
+;;(global-set-key [f1] 'rotate-windows)
 (global-set-key [f2] 'gist-region-or-buffer)
 (global-set-key [f3] 'twit)
 (global-set-key [f4] 'magit-log-all)
