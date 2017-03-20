@@ -122,7 +122,7 @@
 (load "64-rbenv.el")                 ; Ruby version manager
 ;;(load "65-slime.el")               ; Slime Superior Lisp Interaction Mode for Emacs
 (load "66-flycheck.el")              ; Syntax checking (better than built in flymake)
-
+(load "67-tags.el")                  ; Create tags
 
 ;;--------------------------------------------------------------------------------
 ;;-Programming modes (75-94)
@@ -166,6 +166,5 @@
 (setq custom-file "~/.emacs.d/.emacs.custom.el")
 (load custom-file)
 
-;; End:
 
 ;;; init.el ends here
