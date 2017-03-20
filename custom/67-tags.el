@@ -1,4 +1,4 @@
-(setq path-to-ctags "/usr/bin/X11/ctags")
+(setq path-to-ctags "/usr/bin/ctags")
 
 (defun create-tags (dir-name)
     "Create tags file."
