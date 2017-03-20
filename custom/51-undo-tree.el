@@ -1,5 +1,5 @@
 (use-package undo-tree
   :init
-  (add-hook 'ruby-mode-hook 'undo-tree-mode)
-  :defer)
+  (global-undo-tree-mode)
+  :defer 5)
 
