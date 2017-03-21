@@ -42,6 +42,17 @@
 (exwm-input-set-key (kbd "s-<f12>")
                     (lambda () (interactive) (start-process "" nil "sudo" "pm-suspend")))
 
+
+;; Use windmove within GUI apps
+(exwm-input-set-key (kbd "s-<right>") 'windmove-right)
+(push (elt (kbd "s-<right>") 0) exwm-input-prefix-keys)
+(exwm-input-set-key (kbd "s-<left>") 'windmove-left)
+(push (elt (kbd "s-<left>") 0) exwm-input-prefix-keys)
+(exwm-input-set-key (kbd "s-<up>") 'windmove-up)
+(push (elt (kbd "s-<up>") 0) exwm-input-prefix-keys)
+(exwm-input-set-key (kbd "s-<down>") 'windmove-down)
+(push (elt (kbd "s-<down>") 0) exwm-input-prefix-keys)
+
 ;; Enable workspace
 (setq exwm-workspace-number 10)
 
