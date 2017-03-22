@@ -53,6 +53,18 @@
 (exwm-input-set-key (kbd "s-<down>") 'windmove-down)
 (push (elt (kbd "s-<down>") 0) exwm-input-prefix-keys)
 
+;; Resize buffers within GUI apps
+(global-set-key [C-s-right] 'win-resize-right)
+(push (elt (kbd "C-s-<right>") 0) exwm-input-prefix-keys)
+(global-set-key [C-s-up] 'win-resize-up)
+(push (elt (kbd "C-s-<up>") 0) exwm-input-prefix-keys)
+(global-set-key [C-s-down] 'win-resize-down)
+(push (elt (kbd "C-s-<down>") 0) exwm-input-prefix-keys)
+(global-set-key [C-s-left] 'win-resize-left)
+(push (elt (kbd "C-s-<left>") 0) exwm-input-prefix-keys)
+
+
+
 ;; Enable workspace
 (setq exwm-workspace-number 10)
 
