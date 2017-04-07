@@ -53,6 +53,32 @@
 (exwm-input-set-key (kbd "s-<down>") 'windmove-down)
 (push (elt (kbd "s-<down>") 0) exwm-input-prefix-keys)
 
+;; Start Terminator
+(exwm-input-set-key (kbd "s-<f1>")
+                    (lambda () (interactive) (start-process "" nil "terminator" )))
+(push (elt (kbd "s-<f1>") 0) exwm-input-prefix-keys)
+
+;; Start Firefox
+(exwm-input-set-key (kbd "s-<f2>")
+                    (lambda () (interactive) (start-process "" nil "firefox" )))
+(push (elt (kbd "s-<f2>") 0) exwm-input-prefix-keys)
+
+;; Start Google-chrome
+(exwm-input-set-key (kbd "s-<f3>")
+                    (lambda () (interactive) (start-process "" nil "google-chrome" )))
+(push (elt (kbd "s-<f3>") 0) exwm-input-prefix-keys)
+
+;; Start Thunderbird
+(exwm-input-set-key (kbd "s-<f4>")
+                    (lambda () (interactive) (start-process "" nil "thunderbird" )))
+(push (elt (kbd "s-<f4>") 0) exwm-input-prefix-keys)
+
+;; Start keypass
+(exwm-input-set-key (kbd "s-<f5>")
+                    (lambda () (interactive) (start-process "" nil "keepassx" )))
+(push (elt (kbd "s-<f5>") 0) exwm-input-prefix-keys)
+
+
 ;; Resize buffers within GUI apps
 (global-set-key [C-s-right] 'win-resize-right)
 (push (elt (kbd "C-s-<right>") 0) exwm-input-prefix-keys)
