@@ -166,5 +166,12 @@
 (setq custom-file "~/.emacs.d/.emacs.custom.el")
 (load custom-file)
 
+;;;; Refer to issue 216 on exwm for a discussion on this.
+;; (require 'desktop)
+;; (setq desktop-save 1
+;;       desktop-load-locked-desktop t
+;;       desktop-dirname user-emacs-directory
+;;       desktop-files-not-to-save "\\(^/[^/:]*:\\|(ftp)$\\)\\|\\(\\.gpg$\\)")
+;; (desktop-save-mode 1)
 
 ;;; init.el ends here
