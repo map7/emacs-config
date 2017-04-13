@@ -7,6 +7,8 @@
 (use-package counsel
   :defer 5
   :bind (
+         ("M-x" . counsel-M-x)
+         ("C-x C-f" . counsel-find-file)
          ("s-f" . counsel-git)
          ("s-g" . counsel-git-grep)
          ("s-&" . counsel-shell-command)
