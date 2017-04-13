@@ -13,7 +13,7 @@
   (setq projectile-completion-system 'grizzl)
 
   ;; Press Super-p for fuzzy find in project
-  (global-set-key (kbd "s-f") 'projectile-find-file)
+  ;; (global-set-key (kbd "s-f") 'projectile-find-file)
 
   ;; Press Super-b for fuzzy switch buffer
   (global-set-key (kbd "s-b") 'projectile-switch-to-buffer))
