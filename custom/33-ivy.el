@@ -10,6 +10,7 @@
          ("s-f" . counsel-git)
          ("s-g" . counsel-git-grep)
          ("s-&" . counsel-shell-command)
+         ("C-s-l" . counsel-locate)
          )
   :config
 
