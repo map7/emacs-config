@@ -69,7 +69,7 @@
 (load "11-eshell.el")                ; eshell customisations
 (load "12-projectile.el")            ; Manage projects
 ;;(load "13-dired-details.el")         ; Hide/show details in directory mode
-(load "14-ido-mode.el")              ; IDO mode for moving around dirs & buffers
+;; (load "14-ido-mode.el")              ; IDO mode for moving around dirs & buffers
 (load "15-winner-mode.el")           ; Undo/redo window layouts
 (load "17-emacs-server.el")          ; Config relating to emacs server
 (load "18-flyspell.el")              ; Spelling
@@ -87,7 +87,7 @@
 ;;(load "30-discover.el")             ; Discover more of emacs using context menus
 ;;(load "31-sunshine.el")             ; Weather
 ;;(load "32-twittering-mode.el")      ; Twitter client
-;;(load "33-ivy.el")                      ; ivy-mode (not convinced yet)
+(load "33-ivy.el")                      ; ivy-mode
 (load "34-windmove.el")                 ; Move around buffers fast
 (load "35-paperless.el")                ; Paperless for managing pdfs
 
