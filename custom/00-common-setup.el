@@ -19,6 +19,7 @@
 (setq column-number-mode t)
 ;;(display-time)
 (setq backup-inhibited t) ;; disable backup
+(setq make-backup-files nil)
 
 ;fullscreen mode (Redundant in Emacs 24.4)
 (defun switch-full-screen ()
