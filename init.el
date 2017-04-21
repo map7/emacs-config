@@ -123,6 +123,7 @@
 ;;(load "65-slime.el")               ; Slime Superior Lisp Interaction Mode for Emacs
 (load "66-flycheck.el")              ; Syntax checking (better than built in flymake)
 (load "67-tags.el")                  ; Create tags
+(load "68-seeing-is-believing.el") ; Show ruby expressions in a comment
 
 ;;--------------------------------------------------------------------------------
 ;;-Programming modes (75-94)
