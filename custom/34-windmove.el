@@ -3,5 +3,5 @@
   :init
   (windmove-default-keybindings 'super)
   ;; wrap around at edges
-  (setq windmove-wrap-around t)
+  (setq windmove-wrap-around 't)
   :defer 5)
