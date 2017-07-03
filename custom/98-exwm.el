@@ -75,8 +75,43 @@
 
 ;; Start keypass
 (exwm-input-set-key (kbd "s-<f5>")
-                    (lambda () (interactive) (start-process "" nil "keepassx" )))
+                    (lambda () (interactive) (start-process "" nil "keepass2" )))
 (push (elt (kbd "s-<f5>") 0) exwm-input-prefix-keys)
+
+;; Start virt-manager
+(exwm-input-set-key (kbd "s-<f6>")
+                    (lambda () (interactive) (start-process "" nil "virt-manager" )))
+(push (elt (kbd "s-<f6>") 0) exwm-input-prefix-keys)
+
+;; Start inkscape
+(exwm-input-set-key (kbd "s-<f7>")
+                    (lambda () (interactive) (start-process "" nil "inkscape" )))
+(push (elt (kbd "s-<f7>") 0) exwm-input-prefix-keys)
+
+;; Start oldpais
+(exwm-input-set-key (kbd "s-<f8>")
+                    (lambda () (interactive) (start-process "" nil "oldpais" )))
+(push (elt (kbd "s-<f8>") 0) exwm-input-prefix-keys)
+
+;; Start x2goclient
+(exwm-input-set-key (kbd "s-<f9>")
+                    (lambda () (interactive) (start-process "" nil "x2goclient" )))
+(push (elt (kbd "s-<f9>") 0) exwm-input-prefix-keys)
+
+;; Start epoptes
+(exwm-input-set-key (kbd "s-<f10>")
+                    (lambda () (interactive) (start-process "" nil "epoptes" )))
+(push (elt (kbd "s-<f10>") 0) exwm-input-prefix-keys)
+
+;; Start spotify
+(exwm-input-set-key (kbd "s-<f11>")
+                    (lambda () (interactive) (start-process "" nil "spotify" )))
+(push (elt (kbd "s-<f11>") 0) exwm-input-prefix-keys)
+
+;; Start camera feed
+(exwm-input-set-key (kbd "s-<f12>")
+                    (lambda () (interactive) (start-process "" nil "reception_camera" )))
+(push (elt (kbd "s-<f12>") 0) exwm-input-prefix-keys)
 
 
 ;; Resize buffers within GUI apps
