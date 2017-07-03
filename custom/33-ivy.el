@@ -33,3 +33,8 @@
   :defer 5
   :bind (("C-s" . swiper)))
 
+
+(use-package all-the-icons-ivy
+  :init
+  (all-the-icons-ivy-setup)
+  )
