@@ -1,0 +1,17 @@
+
+* 4gl-mode
+  This is a very rudimentary 4gl-mode that I have made based on the vim 4gl-mode.
+  The mode will be provide syntax highlighting, smart indentation and snippets.
+  I primarily work on the generos [[http:www.4js.com/online_documentation/fjs-gas-manual-html/][4js generos 4gl dialect]].
+
+  I am still relatively new with emacs-lisp and will be modifying this semi-regularily.
+
+  Current status: very broken
+  
+* TODO
+  - Clean up code and document functions
+  - Fix indentation logic
+  - Add more snippets
+
+	
+  

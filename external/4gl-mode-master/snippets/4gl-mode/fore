@@ -1,0 +1,9 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: fore
+# key: fore
+# binding: direct-keybinding
+# expand-env: ((yas-indent-line 'fixed))
+# --
+FOREACH ${1:cursor_results} INTO {2:query_row.*}
+	$0
+END FOREACH

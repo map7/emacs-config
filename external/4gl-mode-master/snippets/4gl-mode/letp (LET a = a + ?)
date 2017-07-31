@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: letp (LET a = a + ?)
+# key: letp
+# binding: direct-keybinding
+# --
+LET ${1:var} = $1 + $0

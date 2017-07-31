@@ -1,0 +1,9 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: fori
+# key: fori
+# binding: direct-keybinding
+# expand-env: ((yas-indent-line 'fixed))
+# --
+FOR ${1:idx}= ${2:1} TO $3
+	$0
+END FOR

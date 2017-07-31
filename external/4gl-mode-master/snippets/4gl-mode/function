@@ -1,0 +1,9 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: function
+# key: fun
+# expand-env: ((yas-indent-line 'fixed))
+# binding: direct-keybinding
+# --
+FUNCTION ${1:fn} ()
+	$0
+END FUNCTION

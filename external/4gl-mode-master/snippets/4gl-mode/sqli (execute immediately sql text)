@@ -1,0 +1,14 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: sqli (execute immediately sql text)
+# key: sqli
+# binding: direct-keybinding
+# expand-env: ((yas-indent-line 'fixed))
+# --
+LET ${1:p_query_text} = "
+$0
+"
+
+LET $1 = SFMT($1,$3)
+
+DISPLAY $1
+EXECUTE IMMEDIATE $1

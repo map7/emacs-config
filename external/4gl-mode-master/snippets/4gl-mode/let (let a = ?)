@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: let (let a = ?)
+# key: let
+# binding: direct-keybinding
+# --
+LET $1 = $0

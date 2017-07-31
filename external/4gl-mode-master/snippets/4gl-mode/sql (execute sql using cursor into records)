@@ -1,0 +1,21 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# key: sql
+# name: sql (execute sql using cursor into records)
+# expand-env: ((yas-indent-line (quote fixed)))
+# --
+
+#+ Explanation of $1
+#+ 
+LET ${1:p_query_text} = "
+$4
+"
+
+LET $1 = SFMT($1,$3)
+DISPLAY $1
+
+PREPARE stmt_$1  FROM $1
+DECLARE cursor_results CURSOR FOR stmt_$1
+
+FOREACH cursor_results INTO r_record.*
+	$0
+END FOREACH

@@ -1,0 +1,11 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: defun (function a (param) define param ... end function)
+# key: defun
+# expand-env: ((yas-indent-line 'fixed))
+# binding: direct-keybinding
+# --
+FUNCTION $1 (${2:param})
+	DEFINE
+		$2
+	$0
+END FUNCTION
