@@ -52,3 +52,7 @@
 
 ;; ;; Save desktop
 ;; (desktop-save-mode 1)
+
+;; Dired setup
+(setq dired-listing-switches "-alh")
+
