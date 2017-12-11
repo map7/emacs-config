@@ -75,7 +75,7 @@
 
 ;; Start keypass
 (exwm-input-set-key (kbd "s-<f5>")
-                    (lambda () (interactive) (start-process "" nil "keepass2" )))
+                    (lambda () (interactive) (start-process "" nil "keepassxc" )))
 (push (elt (kbd "s-<f5>") 0) exwm-input-prefix-keys)
 
 ;; Start virt-manager
