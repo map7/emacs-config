@@ -56,6 +56,7 @@
 (use-package twittering-mode :defer 5)
 (use-package xkcd :defer 5)
 (use-package dockerfile-mode :defer 5)
+(use-package nov)
 
 ;; All custom files have a number at the front so they don't clash with the library files.
 (require 'dark-lord-theme)
