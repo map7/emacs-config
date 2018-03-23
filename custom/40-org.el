@@ -97,3 +97,17 @@
 
 ;; (add-to-list 'flycheck-checkers 'org-lint)
 
+
+
+
+(defun org-clock-sum-agenda-today ()
+  "Visit each file in `org-agenda-files' and return the total time of today's clocked tasks in minutes."
+  (interactive)
+  (let ((files (org-agenda-files))
+        (total 0))
+    (org-agenda-prepare-buffers files)
+    (dolist (file files)
+      (with-current-buffer (find-buffer-visiting file)
+        (setq total (+ total (org-clock-sum-today)))))
+    (message "Hours clocked for the day: %s" (/ total 60))))
+
