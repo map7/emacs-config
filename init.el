@@ -20,6 +20,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 (add-to-list 'load-path "~/.emacs.d/external") ; Plugins not in the repo
+(add-to-list 'load-path "~/.emacs.d/external/4gl-mode-master")
 
 (package-initialize)
 
