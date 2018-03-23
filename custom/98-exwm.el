@@ -23,6 +23,10 @@
 ;;   is a more feature-rich alternative.
 (exwm-input-set-key (kbd "s-l")
                     (lambda () (interactive)
+                      (start-process "" nil "slock")))
+
+(exwm-input-set-key (kbd "s-s")
+                    (lambda () (interactive)
                       (start-process "" nil "slock")
                       (start-process "" nil "sudo" "pm-suspend")))
 
