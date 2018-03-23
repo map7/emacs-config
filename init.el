@@ -189,4 +189,5 @@
 ;;       desktop-files-not-to-save "\\(^/[^/:]*:\\|(ftp)$\\)\\|\\(\\.gpg$\\)")
 ;; (desktop-save-mode 1)
 
+(ido-mode 0)
 ;;; init.el ends here
