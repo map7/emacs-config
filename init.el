@@ -49,6 +49,7 @@
 (use-package markdown-mode :defer 5)
 (use-package org-cliplink :defer 5)
 (use-package org-clock-csv :defer 5)
+(use-package org-clock-today :defer 5)
 (use-package pass :defer 5)
 (use-package paradox :defer 5)
 (use-package sudo-edit :defer 5)
