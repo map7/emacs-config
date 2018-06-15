@@ -13,7 +13,6 @@
 
 (use-package rinari
   :init
-  (global-set-key (kbd "s-g") 'rinari-rgrep)
   (global-set-key (kbd "C-x f") 'rinari-find-file-in-project)
 
   (add-hook 'rinari-minor-mode-hook (lambda ()
