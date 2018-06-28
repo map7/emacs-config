@@ -187,4 +187,6 @@
 ;; (desktop-save-mode 1)
 
 (ido-mode 0)
+(setq epa-pinentry-mode 'loopback)
+(pinentry-start)
 ;;; init.el ends here
