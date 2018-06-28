@@ -28,11 +28,6 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-;; ;; OLD cask
-;; (require 'cask "~/.cask/cask.el")
-;; (cask-initialize)
-;; (require 'pallet)
-
 ;; Package configuration (NEW way as of 02/12/2016)
 (setq use-package-always-ensure t)
 (use-package all-the-icons :defer 5)
