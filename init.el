@@ -56,10 +56,12 @@
 (use-package nov)
 
 ;; All custom files have a number at the front so they don't clash with the library files.
-(require 'dark-lord-theme)
 
 ;; 4gl mode from external
 (require '4gl-mode)
+
+;; load theme
+(load-theme 'alect-black t)
 
 ;;--------------------------------------------------------------------------------
 ;;-Base emacs related (0-39)
