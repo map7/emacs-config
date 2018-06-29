@@ -54,6 +54,10 @@
 (use-package xkcd :defer 5)
 (use-package dockerfile-mode :defer 5)
 (use-package nov)
+
+;; Apply our own theme colour preferences
+(load "000-theme-colour-overrides.el")
+
 ;; load theme called alect-themes
 (use-package alect-themes
   :ensure t
