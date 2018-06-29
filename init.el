@@ -54,14 +54,17 @@
 (use-package xkcd :defer 5)
 (use-package dockerfile-mode :defer 5)
 (use-package nov)
+;; load theme called alect-themes
+(use-package alect-themes
+  :ensure t
+  :init
+  (load-theme 'alect-black t))
 
 ;; All custom files have a number at the front so they don't clash with the library files.
 
 ;; 4gl mode from external
 (require '4gl-mode)
 
-;; load theme
-(load-theme 'alect-black t)
 
 ;;--------------------------------------------------------------------------------
 ;;-Base emacs related (0-39)
