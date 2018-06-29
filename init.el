@@ -22,16 +22,11 @@
 (add-to-list 'load-path "~/.emacs.d/external") ; Plugins not in the repo
 (add-to-list 'load-path "~/.emacs.d/external/4gl-mode-master")
 
-(package-initialize)
+(unless package--initialized (package-initialize t))
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
-
-;; ;; OLD cask
-;; (require 'cask "~/.cask/cask.el")
-;; (cask-initialize)
-;; (require 'pallet)
 
 ;; Package configuration (NEW way as of 02/12/2016)
 (setq use-package-always-ensure t)
@@ -60,11 +55,20 @@
 (use-package dockerfile-mode :defer 5)
 (use-package nov)
 
+;; Apply our own theme colour preferences
+(load "000-theme-colour-overrides.el")
+
+;; load theme called alect-themes
+(use-package alect-themes
+  :ensure t
+  :init
+  (load-theme 'alect-black t))
+
 ;; All custom files have a number at the front so they don't clash with the library files.
-(require 'dark-lord-theme)
 
 ;; 4gl mode from external
 (require '4gl-mode)
+
 
 ;;--------------------------------------------------------------------------------
 ;;-Base emacs related (0-39)
@@ -190,4 +194,6 @@
 ;; (desktop-save-mode 1)
 
 (ido-mode 0)
+(setq epa-pinentry-mode 'loopback)
+(pinentry-start)
 ;;; init.el ends here
