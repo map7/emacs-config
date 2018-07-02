@@ -41,6 +41,7 @@
 (use-package findr :defer 5)
 (use-package js2-mode :defer 5)
 (use-package jsx-mode :defer 5)
+(use-package ledger-mode :defer 5)
 (use-package markdown-mode :defer 5)
 (use-package org-cliplink :defer 5)
 (use-package org-clock-csv :defer 5)
@@ -53,7 +54,6 @@
 (use-package twittering-mode :defer 5)
 (use-package xkcd :defer 5)
 (use-package dockerfile-mode :defer 5)
-(use-package nov)
 
 ;; Apply our own theme colour preferences
 (load "000-theme-colour-overrides.el")
@@ -108,6 +108,7 @@
 (load "33-ivy.el")                      ; ivy-mode
 (load "34-windmove.el")                 ; Move around buffers fast
 (load "35-paperless.el")                ; Paperless for managing pdfs
+(load "36-nov.el")
 
 ;;--------------------------------------------------------------------------------
 ;;-Org-mode related (40-49)
@@ -197,3 +198,4 @@
 (setq epa-pinentry-mode 'loopback)
 (pinentry-start)
 ;;; init.el ends here
+(put 'downcase-region 'disabled nil)
