@@ -111,3 +111,10 @@
         (setq total (+ total (org-clock-sum-today)))))
     (message "Hours clocked for the day: %s" (/ total 60))))
 
+;; Sorts the tables by time, largest to smallest
+;; 
+;; example of clocktable line;
+;; #+BEGIN: clocktable :maxlevel 1 :block today :scope agenda-with-archives :link t :stepskip0 t :fileskip0 t :formula % :formatter my-org-clocktable-sorter
+(defun my-org-clocktable-sorter (ipos tables params)
+  (setq tables (cl-sort tables (lambda (table1 table2) (> (nth 1 table1) (nth 1 table2)))))
+  (funcall (or org-clock-clocktable-formatter 'org-clocktable-write-default) ipos tables params))
