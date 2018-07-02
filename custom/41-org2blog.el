@@ -7,6 +7,7 @@
 ;;          :password (netrc-get blog "password"))))
 
 (use-package org2blog
+  :ensure t
   :init
   (require 'org2blog-autoloads)  ;; Org2blog mode
   :defer 5
