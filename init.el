@@ -22,7 +22,7 @@
 (add-to-list 'load-path "~/.emacs.d/external") ; Plugins not in the repo
 (add-to-list 'load-path "~/.emacs.d/external/4gl-mode-master")
 
-(unless package--initialized (package-initialize t))
+(package-initialize)
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
