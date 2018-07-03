@@ -55,7 +55,7 @@
 (use-package xkcd :defer 5)
 (use-package dockerfile-mode :defer 5)
 
-;; Apply our own theme colour preferences
+;Apply our own theme colour preferences prior to loading theme
 (load "000-theme-colour-overrides.el")
 
 ;; load theme called alect-themes
@@ -68,7 +68,6 @@
 
 ;; 4gl mode from external
 (require '4gl-mode)
-
 
 ;;--------------------------------------------------------------------------------
 ;;-Base emacs related (0-39)
@@ -137,12 +136,12 @@
 (load "60-yafolding.el")             ; yafolding
 (load "61-ruby-refactor.el")
 (load "62-robe.el")                  ; Ruby documentation
-(load "63-tide.el")                ; Typescript Interactive Dev Environment
+(load "63-tide.el")                  ; Typescript Interactive Dev Environment
 (load "64-rbenv.el")                 ; Ruby version manager
 ;;(load "65-slime.el")               ; Slime Superior Lisp Interaction Mode for Emacs
 (load "66-flycheck.el")              ; Syntax checking (better than built in flymake)
 (load "67-tags.el")                  ; Create tags
-(load "68-seeing-is-believing.el") ; Show ruby expressions in a comment
+(load "68-seeing-is-believing.el")   ; Show ruby expressions in a comment
 
 ;;--------------------------------------------------------------------------------
 ;;-Programming modes (75-94)
