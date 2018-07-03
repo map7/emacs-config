@@ -221,8 +221,8 @@
 
    ;;ERC
    (erc-nick-default-face ((t :foreground "cyan" :background "navyblue" :weight bold)))
-   (erc-current-nick-face ((t :foreground "#4c3840" :weight bold :background "#4c3840")))
-   (erc-my-nick-face ((t :foreground "#4c3840" :weight bold :background "#4c3840")))
+   (erc-current-nick-face ((t :foreground "gold" :weight bold)))
+   (erc-my-nick-face ((t :foreground "gold" :weight bold)))
    (erc-notice-face ((t :foreground "chocolate1")))
    (erc-input-face ((t :foreground "#ffffff" :weight bold)))
    (erc-prompt-face ((t :foreground "cyan" :background "blue1" :weight bold :box 1)))
