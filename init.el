@@ -196,5 +196,6 @@
 (ido-mode 0)
 (setq epa-pinentry-mode 'loopback)
 (pinentry-start)
+(display-time)
 ;;; init.el ends here
 (put 'downcase-region 'disabled nil)
