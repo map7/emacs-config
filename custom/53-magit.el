@@ -11,6 +11,8 @@
   (eval-after-load "magit"
     '(define-key magit-status-mode-map (kbd "C-c C-a") 'magit-just-amend)))
 
-;; (use-package magithub
-;;   :after magit
-;;   :config (magithub-feature-autoinject t))
+(use-package magithub
+  :after magit
+  :config
+  (magithub-feature-autoinject t)
+  (setq magithub-clone-default-directory "~/code"))
