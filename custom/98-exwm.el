@@ -72,9 +72,9 @@
                     (lambda () (interactive) (start-process "" nil "google-chrome" )))
 (push (elt (kbd "s-<f3>") 0) exwm-input-prefix-keys)
 
-;; Start Thunderbird
+;; Start Mailspring
 (exwm-input-set-key (kbd "s-<f4>")
-                    (lambda () (interactive) (start-process "" nil "thunderbird" )))
+                    (lambda () (interactive) (start-process "" nil "mailspring" )))
 (push (elt (kbd "s-<f4>") 0) exwm-input-prefix-keys)
 
 ;; Start keypass
@@ -84,7 +84,7 @@
 
 ;; Start virt-manager
 (exwm-input-set-key (kbd "s-<f6>")
-                    (lambda () (interactive) (start-process "" nil "virt-manager" )))
+                    (lambda () (interactive) (start-process "" nil "" )))
 (push (elt (kbd "s-<f6>") 0) exwm-input-prefix-keys)
 
 ;; Start inkscape
@@ -109,7 +109,7 @@
 
 ;; Start spotify
 (exwm-input-set-key (kbd "s-<f11>")
-                    (lambda () (interactive) (start-process "" nil "spotify" )))
+                    (lambda () (interactive) (start-process "" nil "virt-manager" )))
 (push (elt (kbd "s-<f11>") 0) exwm-input-prefix-keys)
 
 ;; Start camera feed
