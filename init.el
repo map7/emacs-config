@@ -199,3 +199,6 @@
 (display-time)
 ;;; init.el ends here
 (put 'downcase-region 'disabled nil)
+
+;; Display time
+(display-time)
