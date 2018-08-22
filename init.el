@@ -185,6 +185,11 @@
 ;;; init.el ends here
 (put 'downcase-region 'disabled nil)
 
+;; Load apps
+(if (file-exists-p "~/.emacs.d/.emacs.workspace.el")
+    (load "~/.emacs.d/.emacs.workspace.el")
+  )
+
 ;; (setq epa-pinentry-mode 'loopback)
 ;; (pinentry-start)
 
