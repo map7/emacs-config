@@ -82,9 +82,9 @@
                     (lambda () (interactive) (start-process "" nil "keepassxc" )))
 (push (elt (kbd "s-<f5>") 0) exwm-input-prefix-keys)
 
-;; Start virt-manager
+;; Start BOM
 (exwm-input-set-key (kbd "s-<f6>")
-                    (lambda () (interactive) (start-process "" nil "" )))
+                    (lambda () (interactive) (start-process "" nil "google-chrome" "http://www.bom.gov.au/products/IDR023.loop.shtml" )))
 (push (elt (kbd "s-<f6>") 0) exwm-input-prefix-keys)
 
 ;; Start inkscape
