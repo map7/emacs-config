@@ -180,6 +180,14 @@
 (load "99-symbolised-mode-line.el")   ; Save on valuable modeline realestate & use symbols
 ;;(load "100-theme.el")                 ; Load theme and setup font
 
+(ido-mode 0)
+(display-time)
+;;; init.el ends here
+(put 'downcase-region 'disabled nil)
+
+;; (setq epa-pinentry-mode 'loopback)
+;; (pinentry-start)
+
 ;; Read in custom settings for the user
 (setq custom-file "~/.emacs.d/.emacs.custom.el")
 (load custom-file)
@@ -192,12 +200,3 @@
 ;;       desktop-files-not-to-save "\\(^/[^/:]*:\\|(ftp)$\\)\\|\\(\\.gpg$\\)")
 ;; (desktop-save-mode 1)
 
-(ido-mode 0)
-(setq epa-pinentry-mode 'loopback)
-(pinentry-start)
-(display-time)
-;;; init.el ends here
-(put 'downcase-region 'disabled nil)
-
-;; Display time
-(display-time)
