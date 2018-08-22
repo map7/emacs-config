@@ -79,13 +79,12 @@
 (load "04-packages.el")              ; Package related tasks
 (load "05-scroll-settings.el")       ; Settings for scrolling
 (load "06-togetherly.el")            ; Work together with someone in the same file.
-(load "07-diredful.el")              ; Color files in dired listing
+(load "07-dired.el")                 ; Dired related plugins
 (load "08-nlinum.el")                ; Line number mode (faster than standard package)
 (load "09-real-auto-save.el")        ; Autosave files
 (load "10-multi-term.el")            ; Handle multiple terminals in emacs nicely.
 (load "11-eshell.el")                ; eshell customisations
 (load "12-projectile.el")            ; Manage projects
-;;(load "13-dired-details.el")         ; Hide/show details in directory mode
 ;; (load "14-ido-mode.el")              ; IDO mode for moving around dirs & buffers
 (load "15-winner-mode.el")           ; Undo/redo window layouts
 (load "17-emacs-server.el")          ; Config relating to emacs server
