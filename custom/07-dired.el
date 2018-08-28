@@ -14,14 +14,18 @@
 (use-package dired-open
   :init
   (require 'dired-open)
+  :config
+  
   :defer 5)
 
 (use-package dired-ranger
   :init
   (require 'dired-ranger)
+  :bind ("s-b" . dired-ranger-bookmark-visit)
   :defer 5)
 
 (use-package dired-narrow
+  :bind ("s-n" . dired-narrow)
   :defer 5)
 
 
