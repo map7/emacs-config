@@ -4,6 +4,9 @@
 ;; Turn off menubar
 (menu-bar-mode -1)
 
+;; Turn off splash screen
+(setq inhibit-splash-screen t)
+
 ;; auto-indent
 (define-key global-map (kbd "C-j") 'newline-and-indent)
 
