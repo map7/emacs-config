@@ -9,6 +9,9 @@
     (load "~/.emacs.randr.el")
 )
 
+;; Allow all workspaces to share all buffers
+(setq exwm-workspace-show-all-buffers t)
+
 ;; Load EXWM
 (require 'exwm)
 (require 'exwm-config)
