@@ -180,6 +180,7 @@
 ;;(load "100-theme.el")                 ; Load theme and setup font
 ;; (load "99-symbolised-mode-line.el")   ; Save on valuable modeline realestate & use symbols
 
+;;Turn Default Ido mode off as we Use ivy for searching
 (ido-mode 0)
 (display-time)
 ;;; init.el ends here
