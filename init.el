@@ -190,9 +190,6 @@
     (load "~/.emacs.d/.emacs.workspace.el")
   )
 
-;; (setq epa-pinentry-mode 'loopback)
-;; (pinentry-start)
-
 ;; Read in custom settings for the user
 (setq custom-file "~/.emacs.d/.emacs.custom.el")
 (load custom-file)
