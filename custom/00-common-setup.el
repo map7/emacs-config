@@ -44,6 +44,9 @@
 ;; Use highlight colors
 (global-font-lock-mode t)
 
+;; Hide system ruby version from modeline
+(setq rbenv-show-active-ruby-in-modeline nil)
+
 ;; ;; Clean up whitepace before saving a file
 ;; ;; Exclude this from org-mode
 ;; (add-hook 'before-save-hook 'whitespace-cleanup)
