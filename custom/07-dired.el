@@ -11,6 +11,12 @@
 ;;   :config
 ;;   (setq-default dired-details-hidden-string "--- "))
 
+;; Setting a new bookmark
+;; Navigate to desired dired directory
+;; M-x dired-ranger-bookmark
+;; it will ask you which single key you would like to use as the shortcut
+;; Then, to use it, s-b 'your single key'
+
 (use-package dired-open
   :init
   (require 'dired-open)
