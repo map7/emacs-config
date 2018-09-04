@@ -3,7 +3,7 @@
 
 (custom-theme-set-faces
  'customizable-dark
- '(default ((t (:family "DejaVu Sans Mono"
+ '(default ((t (:family "Droid Sans Mono-10"
                         :foundry "unknown"
                         :width normal
                         :height 106
