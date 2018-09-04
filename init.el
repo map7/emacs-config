@@ -169,6 +169,8 @@
 ;; (load "99-symbolised-mode-line.el")   ; Save on valuable modeline realestate & use symbols
 (load "100-theme.el")                 ; Load theme and setup font
 
+(load "101-modeline.el")
+
 ;;Turn Default Ido mode off as we Use ivy for searching
 (ido-mode 0)
 
@@ -191,4 +193,3 @@
 ;;       desktop-dirname user-emacs-directory
 ;;       desktop-files-not-to-save "\\(^/[^/:]*:\\|(ftp)$\\)\\|\\(\\.gpg$\\)")
 ;; (desktop-save-mode 1)
-
