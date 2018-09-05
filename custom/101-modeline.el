@@ -22,6 +22,7 @@
                                            'face `(:foreground "green" :height 1.0 :family ,(all-the-icons-faicon-family))
                                            'display '(raise -0.1) 'help-echo "Buffer has been modified"))))
        " "
+       "  "
        ;; == Buffer name ==
        ;; white & bold as set by font mode-line-buffer-id
        ;; '(:eval (propertize "%b" 'face 'mode-line-buffer-id
