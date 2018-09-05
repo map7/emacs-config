@@ -1,3 +1,7 @@
+;; Customizable-dark --- A dark theme that is completely customizable
+;;; Commentary:
+;;; Code:
+
 (deftheme customizable-dark
   "Created 2018-09-03. A completely and easily customizable dark theme")
 
@@ -331,3 +335,4 @@
                (file-name-as-directory (file-name-directory load-file-name))))
 
 (provide-theme 'customizable-dark)
+;;; customizable-dark ends here
