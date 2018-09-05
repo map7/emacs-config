@@ -186,7 +186,7 @@
  '(diredp-number ((t :foreground "orange1")))
 
  ;; diff
- '(diff-removed ((t :background "#4c3840" :foreground "#4c3840")))
+ '(diff-removed ((t :background "#4c3840" :foreground "red")))
  '(diff-added ((t :background "#3d4a41" :foreground "chartreuse")))
  '(diff-hunk-header ((t :background "navyblue" :weight bold :foreground "cyan")))
  '(diff-file-header ((t :weight bold)))
