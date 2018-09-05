@@ -1,7 +1,7 @@
 ;; Modeline --- Creates custom modeline
 ;;; Commentary:
-
 ;;; Code:
+
 (setq-default mode-line-format
       (list
        ""
@@ -65,7 +65,7 @@
        ;;          (-3 "%p"))))
 
        ;; == Column numbers ==
-       " C:"
+       "  C:"
 
        '(:eval (propertize "%03c" 'face `(:height 1.0)))
        
@@ -165,5 +165,6 @@
                               'face `(:height 1.0)))))
        
        ))
+
 (provide-theme '101-modeline)
 ;;; 101-modeline ends here
