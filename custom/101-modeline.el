@@ -23,13 +23,7 @@
                                            'display '(raise -0.1) 'help-echo "Buffer has been modified"))))
        "  "
        ;; == Buffer name ==
-       ;; white & bold as set by font mode-line-buffer-id
-       ;; '(:eval (propertize "%b" 'face 'mode-line-buffer-id
-       ;;                     'help-echo (buffer-file-name)))
-
-       ;; '(:eval (propertize "%b" 'face `(:foreground "green" :background "yellow" :weight bold)
-       ;;                     'help-echo (buffer-file-name)))
-
+       ;; gray & bold as set by font mode-line-buffer-id
        '(:eval (propertize "%b" 'face `(:weight bold)
                            'help-echo (buffer-file-name)))
 
