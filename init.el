@@ -172,9 +172,6 @@
 
 (load "101-modeline.el")
 
-;;Turn Default Ido mode off as we Use ivy for searching
-(ido-mode 0)
-
 ;;; init.el ends here
 (put 'downcase-region 'disabled nil)
 
