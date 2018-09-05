@@ -21,7 +21,6 @@
                    (concat " " (propertize (format "%s " (all-the-icons-faicon "check"))
                                            'face `(:foreground "green" :height 1.0 :family ,(all-the-icons-faicon-family))
                                            'display '(raise -0.1) 'help-echo "Buffer has been modified"))))
-       " "
        "  "
        ;; == Buffer name ==
        ;; gray & bold as set by font mode-line-buffer-id
@@ -33,7 +32,7 @@
                  (concat " "  (propertize (format "  %s" (all-the-icons-faicon "eye"))
                                           'face `(:height 1.0 :family ,(all-the-icons-faicon-family))
                                           'display '(raise -0.1) 'help-echo "Buffer os read only"))))
-       " "
+       "  "
 
        ;; == Current Major Mode ==
        '(:eval (propertize "%m" 'face 'font-lock-string-face
