@@ -245,14 +245,6 @@
  '(magit-sequence-part ((t :foreground "orange1" :weight bold)))
  '(magit-sequence-head ((t :foreground "chartreuse" :weight bold)))
 
- ;; Diffs
- '(diff-added ((t :background "#284437")))
- '(diff-added-refined ((t :background "#1e8967")))
- '(diff-removed ((t :background  "#580000")))
- '(diff-removed-refined ((t :background  "#b33c49")))
- '(diff-current ((t :background  "#29457b")))
- '(diff-current-refined ((t :background  "#4174ae")))
-
  ;; Message faces
  '(message-header-name ((t :foreground "cyan" :weight bold)))
  '(message-header-cc ((t :foreground "cyan")))
