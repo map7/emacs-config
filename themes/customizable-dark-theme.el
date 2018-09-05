@@ -86,7 +86,7 @@
  '(mode-line-buffer-id ((t (:weight bold :foreground "white"))))
  '(mode-line-emphasis ((t (:weight bold :background "red")))) ;; Testing this atm
  '(mode-line-highlight ((t (:weight bold ))))
- '(mode-line-inactive ((t (:foreground "#8b806c" :background "#000000"))))
+ '(mode-line-inactive ((t (:foreground "#8b806c" :background "#000000" :box (:line-width 1 :color "gray20")))))
 
  ;; Cursor
  '(cursor ((((background light)) (:background "black")) (((background dark)) (:background "white"))))
