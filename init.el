@@ -55,20 +55,10 @@
 (use-package xkcd :defer 5)
 (use-package dockerfile-mode :defer 5)
 
-;Apply our own theme colour preferences prior to loading theme
-(load "000-theme-colour-overrides.el")
-
-;; load theme called alect-themes
-(use-package alect-themes
-  :ensure t
-  :init
-  (load-theme 'alect-black t))
-
-;; All custom files have a number at the front so they don't clash with the library files.
-
 ;; 4gl mode from external
 (require '4gl-mode)
 
+;; All custom files have a number at the front so they don't clash with the library files.
 ;;--------------------------------------------------------------------------------
 ;;-Base emacs related (0-39)
 ;;--------------------------------------------------------------------------------
@@ -177,11 +167,11 @@
 (if (file-exists-p "~/.emacs.d/.emacs.paradox.el")
     (load "~/.emacs.d/.emacs.paradox.el")
   )
-(load "99-symbolised-mode-line.el")   ; Save on valuable modeline realestate & use symbols
-;;(load "100-theme.el")                 ; Load theme and setup font
+;; (load "99-symbolised-mode-line.el")   ; Save on valuable modeline realestate & use symbols
+(load "100-theme.el")                 ; Load theme and setup font
 
-(ido-mode 0)
-(display-time)
+(load "101-modeline.el")
+
 ;;; init.el ends here
 (put 'downcase-region 'disabled nil)
 
@@ -189,9 +179,6 @@
 (if (file-exists-p "~/.emacs.d/.emacs.workspace.el")
     (load "~/.emacs.d/.emacs.workspace.el")
   )
-
-;; (setq epa-pinentry-mode 'loopback)
-;; (pinentry-start)
 
 ;; Read in custom settings for the user
 (setq custom-file "~/.emacs.d/.emacs.custom.el")
@@ -204,4 +191,3 @@
 ;;       desktop-dirname user-emacs-directory
 ;;       desktop-files-not-to-save "\\(^/[^/:]*:\\|(ftp)$\\)\\|\\(\\.gpg$\\)")
 ;; (desktop-save-mode 1)
-

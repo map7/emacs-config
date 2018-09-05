@@ -1,7 +1,7 @@
 ;; Enable the built in pair mode
 (electric-pair-mode 1)
 
-;; Turn off menubar
+;; Turn off menubar (Top File, Edit, etc Click menu)
 (menu-bar-mode -1)
 
 ;; Turn off splash screen
@@ -14,13 +14,13 @@
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 
-
 ; stop emacs from contaminating each directory with semantic.cache
 (setq semanticdb-default-save-directory "/tmp")
 
 ;; (display-battery-mode)
+
 (setq column-number-mode t)
-;;(display-time)
+
 (setq backup-inhibited t) ;; disable backup
 (setq make-backup-files nil)
 
@@ -49,6 +49,9 @@
 ;; Use highlight colors
 (global-font-lock-mode t)
 
+;; Hide system ruby version from modeline
+(setq rbenv-show-active-ruby-in-modeline nil)
+
 ;; ;; Clean up whitepace before saving a file
 ;; ;; Exclude this from org-mode
 ;; (add-hook 'before-save-hook 'whitespace-cleanup)
@@ -58,4 +61,3 @@
 
 ;; Dired setup
 (setq dired-listing-switches "-alh")
-
