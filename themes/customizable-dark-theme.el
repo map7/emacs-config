@@ -280,13 +280,15 @@
  '(org-mode-line-clock ((t :background unspecified (:inherit mode-line))))
 
  ;; ERC
- '(erc-nick-default-face ((t :foreground "cyan" :background "navyblue" :weight bold)))
+ ;; '(erc-nick-default-face ((t :foreground "cyan" :background "navyblue" :weight bold)))
+ '(erc-nick-default-face ((t :foreground "gold" :weight bold)))
  '(erc-current-nick-face ((t :foreground "gold" :weight bold)))
- '(erc-my-nick-face ((t :foreground "gold" :weight bold)))
+ '(erc-my-nick-face ((t :foreground "gold" :weight normal)))
+ '(erc-nick-msg-face ((t :foreground "gray" :weight bold)))
  '(erc-notice-face ((t :foreground "chocolate1")))
- '(erc-input-face ((t :foreground "#ffffff" :weight bold)))
- '(erc-prompt-face ((t :foreground "cyan" :background "blue1" :weight bold :box 1)))
- '(erc-timestamp-face ((t :foreground "cyan" :weight bold)))
+ '(erc-input-face ((t :foreground "white" :weight bold)))
+ '(erc-prompt-face ((t :foreground "gold" :background "black" :weight bold :box 1)))
+ '(erc-timestamp-face ((t :foreground "DodgerBlue1" :weight bold)))
 
  ;; Ivy
  '(ivy-current-match ((t :background "blue1" :weight bold :foreground "cyan")))
