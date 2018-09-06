@@ -140,7 +140,7 @@
        ;; '(:eval (window-parameter (selected-window) 'ace-window-path))
 
        ;; == Org-timer-set-timer ==
-       '(:eval (propertize "%M" 'face 'font-lock-type-face))
+       '(:eval (propertize "  %M  " 'face 'font-lock-type-face))
 
        " "
        ;; == Date & Time ==
