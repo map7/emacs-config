@@ -5,10 +5,11 @@
 (setq-default mode-line-format
       (list
        ""
-       ;; == Buffer coding system ==
-       '(:eval mode-line-mule-info)
 
        
+       ;; == Buffer coding system ==
+       'mode-line-mule-info
+
        ;; == Buffer modified? ==
        'mode-line-modified
 
