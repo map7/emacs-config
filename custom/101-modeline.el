@@ -15,7 +15,7 @@
        "  "
        ;; == Buffer name ==
        ;; gray & bold as set by font mode-line-buffer-id
-       '(:eval (propertize "%b" 'face `(:weight bold)
+       '(:eval (propertize " %b " 'face `(:weight bold)
                            'help-echo (buffer-file-name)))
 
        ;; == Current Major Mode ==
