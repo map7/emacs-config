@@ -24,8 +24,42 @@
        ;; == Major & Minor Modes =
        'mode-line-modes
 
+       ;; == Hide all minor modes ;; Thanks to Mark Karpov for this code snippet ==
+       (defvar hidden-minor-modes ; example, write your own list of hidden
+         '(auto-complete-mode
+           auto-revert-mode
+           company-mode
+           eldoc-mode
+           guide-key-mode
+           hi-lock-mode
+           highlight-parentheses-mode
+           hl-line-mode
+           isearch-mode
+           ivy-mode
+           flycheck-mode
+           paredit-mode
+           projectile-mode
+           projectile-rails-mode
+           real-auto-save-mode
+           rinari-minor-mode
+           robe-mode
+           rspec-mode
+           ruby-end-mode
+           ruby-refactor-mode
+           undo-tree-mode
+           visual-line-mode
+           yas-minor-mode))
 
+       (defun purge-minor-modes ()
+         (interactive)
+         (dolist (x hidden-minor-modes nil)
+           (let ((trg (cdr (assoc x minor-mode-alist))))
+             (when trg
+               (setcar trg "")))))
 
+       (add-hook 'after-change-major-mode-hook 'purge-minor-modes)
+
+       " "
        ;; == Line numbers ==
        ;; grey & normal as set by font mode-line
        ;; '%03' to set to 3 chars at least; prevents flickering
