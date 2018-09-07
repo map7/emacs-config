@@ -78,20 +78,7 @@
        '(:eval (propertize "  %M  " 'face 'font-lock-type-face))
 
        " "
-       ;; == Date & Time ==
-       ;; Simple date (day-month), time (24hr)
-       ;; '(:eval (propertize (format-time-string "%d-%b %H:%M")))
-
-       ;; Date, clock icon with correct hour hand, time in 24hr format
-       '(:eval (let* ((hour (string-to-number (format-time-string "%I")))
-                      (icon (all-the-icons-wicon (format "time-%s" hour) :height 1.3 :v-adjust 0.0)))
-                 (concat
-                  (propertize (format-time-string " %d-%b "))
-                  (propertize (format "%s" icon)
-                              'face `(:height 1.0 :family ,(all-the-icons-wicon-family))
-                              'display '(raise -0.0))
-                  (propertize (format-time-string " %H:%M ")
-                              'face `(:height 1.0)))))
-       
+       ;; == Date (day-month) & Time (24hr)==
+       '(:eval (propertize (format-time-string "%d-%b  %H:%M")))
        ))
 ;;; 101-modeline ends here
