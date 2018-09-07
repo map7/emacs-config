@@ -271,7 +271,7 @@
  '(org-special-keyword ((t :foreground "gold")))
  '(org-priority ((t :foreground "chocolate1")))
  '(org-level-1 ((t :foreground "DodgerBlue1" :weight bold)))
- '(org-level-2 ((t :foreground "yellow2" :weight bold))) 
+ '(org-level-2 ((t :foreground "yellow2" :weight bold)))
  '(org-level-3 ((t :foreground "dark orange" :weight bold)))
  '(org-level-4 ((t :foreground "firebrick1" :weight bold)))
  '(org-level-5 ((t :foreground "lavender" :weight bold)))
