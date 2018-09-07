@@ -19,10 +19,9 @@
                            'help-echo (buffer-file-name)))
 
        ;; == Current Major Mode ==
-       '(:eval (propertize "%m" 'face 'font-lock-string-face
+       '(:eval (propertize " %m " 'face 'font-lock-string-face
                            'help-echo buffer-file-coding-system))
 
-       "  "
 
        ;; == Line numbers ==
        ;; grey & normal as set by font mode-line
