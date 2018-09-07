@@ -49,14 +49,10 @@
        
        "  "
        
-       ;; ;; == Buffer scroll (%) position ==
-       ;; (propertize "%06p" 'face 'font-lock-constant-face) ;; % above top
-
-       ;; " "
-       
        ;; == Git branch status ==
        ;; Simple
        '(vc-mode vc-mode)
+
 	     "  "
 
        ;; == ERC, ORG Timer, etc ===
