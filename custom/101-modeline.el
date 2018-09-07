@@ -91,31 +91,6 @@
                    (propertize (format " %s" branch) 'face `(:height 1.0)))))
                (t (format "%s" vc-mode)))))
 
-       "  "
-       ;; == Flycheck ==
-       '(:eval (when flycheck-mode
-         (let* ((text (pcase flycheck-last-status-change
-                        (`finished (if flycheck-current-errors
-                                       (let ((count (let-alist (flycheck-count-errors flycheck-current-errors)
-                                                      (+ (or .warning 0) (or .error 0)))))
-                                         (propertize (format "✖ %s Issue%s" count (if (eq 1 count) "" "s"))
-                                                     'face `(:foreground "#ff6c6b")))
-                                     (propertize "✔ No Issues"
-                                                 'face `(:foreground "#61afef"))))
-                        (`running     (propertize "⟲ Running"
-                                                  'face `(:foreground "#da8548")))
-                        (`no-checker  (propertize "⚠ No Checker"
-                                                  'face `(:foreground "#da8548")))
-                        (`not-checked "✖ Disabled")
-                        (`errored     (propertize "⚠ Error"
-                                                  'face `(:foreground "#ff6c6b")))
-                        (`interrupted (propertize "⛔ Interrupted"
-                                                  'face `(:foreground "#ff6c6b")))
-                        (`suspicious  ""))))
-           (propertize text
-                       'help-echo "Show Flycheck Errors"
-                       'local-map (make-mode-line-mouse-map
-                                   'mouse-1 #'flycheck-list-errors)))))
 
        ;; == ERC ==
        ;; change header line face if disconnected
