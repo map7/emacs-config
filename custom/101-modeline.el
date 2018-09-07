@@ -67,7 +67,7 @@
        '(vc-mode vc-mode)
 	     "  "
 
-       ;; ERC
+       ;; == ERC, ORG Timer, etc ===
 	     'mode-line-misc-info
        
        ;; == Window ==
