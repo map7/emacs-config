@@ -19,6 +19,11 @@
        '(:eval (propertize " %b " 'face `(:weight bold)
                            'help-echo (buffer-file-name)))
 
+       " "
+
+       ;; == Major & Minor Modes =
+       'mode-line-modes
+
 
 
        ;; == Line numbers ==
