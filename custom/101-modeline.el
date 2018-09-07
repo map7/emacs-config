@@ -73,9 +73,6 @@
        ;; == Window ==
        ;; '(:eval (window-parameter (selected-window) 'ace-window-path))
 
-       ;; == Org-timer-set-timer ==
-       '(:eval (propertize "  %M  " 'face 'font-lock-type-face))
-
        " "
        ;; == Date (day-month) & Time (24hr)==
        '(:eval (propertize (format-time-string "%d-%b  %H:%M")))
