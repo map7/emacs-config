@@ -50,7 +50,6 @@
        "  "
        
        ;; == Git branch status ==
-       ;; Simple
        '(vc-mode vc-mode)
 
 	     "  "
