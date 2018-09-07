@@ -5,6 +5,7 @@
 (setq-default mode-line-format
       (list "%e"
 
+       'modeline-front-space
        
        ;; == Buffer coding system ==
        'mode-line-mule-info
