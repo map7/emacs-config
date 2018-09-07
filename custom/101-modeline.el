@@ -27,7 +27,7 @@
        ;; == Line numbers ==
        ;; grey & normal as set by font mode-line
        ;; '%03' to set to 3 chars at least; prevents flickering
-       "L:"
+       " L:"
       
        '(:eval (propertize "%03l" 'face `(:height 1.0)))
 
@@ -66,7 +66,6 @@
        ;; Simple
        '(vc-mode vc-mode)
 	     "  "
-       
 
        ;; ERC
 	     'mode-line-misc-info
