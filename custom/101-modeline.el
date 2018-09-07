@@ -19,9 +19,6 @@
        '(:eval (propertize " %b " 'face `(:weight bold)
                            'help-echo (buffer-file-name)))
 
-       ;; == Current Major Mode ==
-       '(:eval (propertize " %m " 'face 'font-lock-string-face
-                           'help-echo buffer-file-coding-system))
 
 
        ;; == Line numbers ==
