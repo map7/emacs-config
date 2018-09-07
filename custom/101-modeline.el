@@ -3,8 +3,7 @@
 ;;; Code:
 
 (setq-default mode-line-format
-      (list
-       ""
+      (list "%e"
 
        
        ;; == Buffer coding system ==
