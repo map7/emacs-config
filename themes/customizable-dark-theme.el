@@ -18,7 +18,7 @@
                         :strike-through nil
                         :box nil
                         :inverse-video nil
-                        :foreground "#b2af95"
+                        :foreground "white"
                         :background "#000000"
                         :stipple nil
                         :inherit nil))))
