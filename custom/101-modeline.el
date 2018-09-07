@@ -78,26 +78,12 @@
        ;;                                        (if overwrite-mode "overwrite" "insert") " mode")))
        ;; " "
        
-       ;; == Git branch status == 
-       ;; 
-       '(:eval (when vc-mode
-         (cond ((string-match "Git[:-]" vc-mode)
-                (let ((branch (mapconcat 'concat (cdr (split-string vc-mode "[:-]")) "-")))
-                  (concat
-                   " "
-                   (propertize (format "%s" (all-the-icons-octicon "git-branch"))
-                               'face `(:height 1.0 :family ,(all-the-icons-octicon-family))
-                               'display '(raise -0.1))
-                   (propertize (format " %s" branch) 'face `(:height 1.0)))))
-               (t (format "%s" vc-mode)))))
-
-
-       ;; == ERC ==
-       ;; change header line face if disconnected
-       (defface erc-header-line-disconnected
-         '((t (:foreground "black" :background "indianred")))
-         "Face to use when ERC has been disconnected.")
+       ;; == Git branch status ==
+       ;; Simple
+       '(vc-mode vc-mode)
+	     "  "
        
+
        ;; ERC
 	     'mode-line-misc-info
        
