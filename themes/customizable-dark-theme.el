@@ -267,7 +267,7 @@
  '(org-block-begin-line ((t :foreground "cyan")))
  '(org-block-background ((t :background "#000000")))
  '(org-block-end-line ((t :foreground "cyan")))
- '(org-tag ((t :foreground "#3a3f4b")))
+ '(org-tag ((t :foreground "gray60")))
  '(org-special-keyword ((t :foreground "gold")))
  '(org-priority ((t :foreground "gray40")))
  '(org-level-1 ((t :foreground "DodgerBlue1" :weight bold)))
