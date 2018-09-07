@@ -57,9 +57,6 @@
 
        ;; == ERC, ORG Timer, etc ===
 	     'mode-line-misc-info
-       
-       ;; == Window ==
-       ;; '(:eval (window-parameter (selected-window) 'ace-window-path))
 
        " "
        ;; == Date (day-month) & Time (24hr)==
