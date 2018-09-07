@@ -53,14 +53,6 @@
        ;; (propertize "%06p" 'face 'font-lock-constant-face) ;; % above top
 
        ;; " "
-
-       ;; == Insert or Overwrite mode ==
-       ;; , input-method in a tooltip
-       ;; '(:eval (propertize (if overwrite-mode "Ovr" "Ins")
-       ;;                     'face 'font-lock-preprocessor-face
-       ;;                     'help-echo (concat "Buffer is in "
-       ;;                                        (if overwrite-mode "overwrite" "insert") " mode")))
-       ;; " "
        
        ;; == Git branch status ==
        ;; Simple
