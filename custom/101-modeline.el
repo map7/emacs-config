@@ -165,5 +165,4 @@
                               'face `(:height 1.0)))))
        
        ))
-(provide-theme '101-modeline)
 ;;; 101-modeline ends here
