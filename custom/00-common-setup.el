@@ -24,11 +24,6 @@
 (setq backup-inhibited t) ;; disable backup
 (setq make-backup-files nil)
 
-;fullscreen mode (Redundant in Emacs 24.4)
-(defun switch-full-screen ()
-  (interactive)
-  (shell-command "wmctrl -r :ACTIVE: -btoggle,fullscreen"))
-
 ;; Setup external directory variable
 (setq elisp-external-dir
     (expand-file-name "external" user-emacs-directory))

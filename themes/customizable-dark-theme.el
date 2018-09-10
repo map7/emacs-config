@@ -18,7 +18,7 @@
                         :strike-through nil
                         :box nil
                         :inverse-video nil
-                        :foreground "#b2af95"
+                        :foreground "white"
                         :background "#000000"
                         :stipple nil
                         :inherit nil))))
@@ -209,8 +209,8 @@
 
  ;; Magit
  '(magit-diff-context-highlight ((t :background "#000000")))
- '(magit-diff-file-heading ((t :weight bold :foreground "cyan")))
- '(magit-diff-file-heading-highlight ((t :weight bold :foreground "cyan" :background "navyblue")))
+ '(magit-diff-file-heading ((t :weight bold :foreground "cyan3")))
+ '(magit-diff-file-heading-highlight ((t :weight bold :foreground "cyan3" :background "NavyBlue")))
  '(magit-diff-removed-highlight ((t :inherit diff-removed)))
  '(magit-diff-removed ((t :inherit diff-removed)))
  '(magit-diff-added-highlight ((t :inherit diff-added)))
@@ -263,27 +263,32 @@
  '(org-done ((t :foreground "chartreuse")))
  '(org-hide ((t :foreground "#3a3f4b")))
  '(org-link ((t :foreground "cyan" :underline t)))
- '(org-date ((t :foreground "chocolate1")))
- '(org-block-begin-line ((t :foreground "#ffdb45")))
+ '(org-date ((t :foreground "gold")))
+ '(org-block-begin-line ((t :foreground "cyan")))
  '(org-block-background ((t :background "#000000")))
- '(org-block-end-line ((t :foreground "#ffdb45")))
- '(org-tag ((t :foreground "#3a3f4b")))
- '(org-special-keyword ((t :foreground "#ffdb45")))
+ '(org-block-end-line ((t :foreground "cyan")))
+ '(org-tag ((t :foreground "gray60")))
+ '(org-special-keyword ((t :foreground "gold")))
  '(org-priority ((t :foreground "chocolate1")))
- '(org-level-1 ((t :foreground "dodgerblue1" :weight bold)))
- '(org-level-2 ((t :foreground "#bdb303" :weight bold)))
- '(org-level-3 ((t :foreground "orange1" :weight bold)))
+ '(org-level-1 ((t :foreground "DodgerBlue1" :weight bold)))
+ '(org-level-2 ((t :foreground "yellow2" :weight bold)))
+ '(org-level-3 ((t :foreground "dark orange" :weight bold)))
+ '(org-level-4 ((t :foreground "firebrick1" :weight bold)))
+ '(org-level-5 ((t :foreground "lavender" :weight bold)))
+ '(org-level-6 ((t :foreground "medium spring green" :weight bold)))
  '(org-ellipsis ((t :foreground "#cccccc")))
  '(org-mode-line-clock ((t :background unspecified (:inherit mode-line))))
 
  ;; ERC
- '(erc-nick-default-face ((t :foreground "cyan" :background "navyblue" :weight bold)))
+ ;; '(erc-nick-default-face ((t :foreground "cyan" :background "navyblue" :weight bold)))
+ '(erc-nick-default-face ((t :foreground "gold" :weight bold)))
  '(erc-current-nick-face ((t :foreground "gold" :weight bold)))
- '(erc-my-nick-face ((t :foreground "gold" :weight bold)))
+ '(erc-my-nick-face ((t :foreground "gold" :weight normal)))
+ '(erc-nick-msg-face ((t :foreground "gray" :weight bold)))
  '(erc-notice-face ((t :foreground "chocolate1")))
- '(erc-input-face ((t :foreground "#ffffff" :weight bold)))
- '(erc-prompt-face ((t :foreground "cyan" :background "blue1" :weight bold :box 1)))
- '(erc-timestamp-face ((t :foreground "cyan" :weight bold)))
+ '(erc-input-face ((t :foreground "white" :weight bold)))
+ '(erc-prompt-face ((t :foreground "gold" :background "black" :weight bold :box 1)))
+ '(erc-timestamp-face ((t :foreground "DodgerBlue1" :weight bold)))
 
  ;; Ivy
  '(ivy-current-match ((t :background "blue1" :weight bold :foreground "cyan")))

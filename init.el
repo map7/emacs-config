@@ -167,9 +167,7 @@
 (if (file-exists-p "~/.emacs.d/.emacs.paradox.el")
     (load "~/.emacs.d/.emacs.paradox.el")
   )
-;; (load "99-symbolised-mode-line.el")   ; Save on valuable modeline realestate & use symbols
 (load "100-theme.el")                 ; Load theme and setup font
-
 (load "101-modeline.el")
 
 ;;; init.el ends here

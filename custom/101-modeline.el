@@ -3,47 +3,67 @@
 ;;; Code:
 
 (setq-default mode-line-format
-      (list
-       ""
-       ;; == Buffer coding system ==
-       '(:eval mode-line-mule-info)
+      (list "%e"
 
-       ;; Buffer modified?
-       ;; Simple
-       ;; 'mode-line-modified
+       'modeline-front-space
        
-       ;; == Buffer modified or Saved? ==
-       ;; If modified, Icon = floppy, else (saved) Icon = check
-       '(:eval (if (buffer-modified-p (current-buffer))
-                   (concat " " (propertize (format "%s " (all-the-icons-faicon "floppy-o"))
-                                           'face `(:foreground "red" :height 1.0 :family ,(all-the-icons-faicon-family))
-                                           'display '(raise -0.1) 'help-echo "Buffer has been modified"))
-                   (concat " " (propertize (format "%s " (all-the-icons-faicon "check"))
-                                           'face `(:foreground "green" :height 1.0 :family ,(all-the-icons-faicon-family))
-                                           'display '(raise -0.1) 'help-echo "Buffer has been modified"))))
+       ;; == Buffer coding system ==
+       'mode-line-mule-info
+
+       ;; == Buffer modified? ==
+       'mode-line-modified
+
        "  "
        ;; == Buffer name ==
        ;; gray & bold as set by font mode-line-buffer-id
-       '(:eval (propertize "%b" 'face `(:weight bold)
+       '(:eval (propertize " %b " 'face `(:weight bold)
                            'help-echo (buffer-file-name)))
 
-       ;; == Buffer read-only? ==
-       '(:eval (when buffer-read-only
-                 (concat " "  (propertize (format "  %s" (all-the-icons-faicon "eye"))
-                                          'face `(:height 1.0 :family ,(all-the-icons-faicon-family))
-                                          'display '(raise -0.1) 'help-echo "Buffer os read only"))))
-       "  "
+       " "
 
-       ;; == Current Major Mode ==
-       '(:eval (propertize "%m" 'face 'font-lock-string-face
-                           'help-echo buffer-file-coding-system))
+       ;; == Major & Minor Modes =
+       'mode-line-modes
 
-       "  "
+       ;; == Hide all minor modes ;; Thanks to Mark Karpov for this code snippet ==
+       (defvar hidden-minor-modes ; example, write your own list of hidden
+         '(auto-complete-mode
+           auto-revert-mode
+           company-mode
+           eldoc-mode
+           guide-key-mode
+           hi-lock-mode
+           highlight-parentheses-mode
+           hl-line-mode
+           isearch-mode
+           ivy-mode
+           flycheck-mode
+           paredit-mode
+           projectile-mode
+           projectile-rails-mode
+           real-auto-save-mode
+           rinari-minor-mode
+           robe-mode
+           rspec-mode
+           ruby-end-mode
+           ruby-refactor-mode
+           undo-tree-mode
+           visual-line-mode
+           yas-minor-mode))
 
+       (defun purge-minor-modes ()
+         (interactive)
+         (dolist (x hidden-minor-modes nil)
+           (let ((trg (cdr (assoc x minor-mode-alist))))
+             (when trg
+               (setcar trg "")))))
+
+       (add-hook 'after-change-major-mode-hook 'purge-minor-modes)
+
+       " "
        ;; == Line numbers ==
        ;; grey & normal as set by font mode-line
        ;; '%03' to set to 3 chars at least; prevents flickering
-       "L:"
+       " L:"
       
        '(:eval (propertize "%03l" 'face `(:height 1.0)))
 
@@ -65,100 +85,16 @@
        
        "  "
        
-       ;; ;; == Buffer scroll (%) position ==
-       ;; (propertize "%06p" 'face 'font-lock-constant-face) ;; % above top
+       ;; == Git branch status ==
+       '(vc-mode vc-mode)
 
-       ;; " "
+	     "  "
 
-       ;; == Insert or Overwrite mode ==
-       ;; , input-method in a tooltip
-       ;; '(:eval (propertize (if overwrite-mode "Ovr" "Ins")
-       ;;                     'face 'font-lock-preprocessor-face
-       ;;                     'help-echo (concat "Buffer is in "
-       ;;                                        (if overwrite-mode "overwrite" "insert") " mode")))
-       ;; " "
-       
-       ;; == Git branch status == 
-       ;; 
-       '(:eval (when vc-mode
-         (cond ((string-match "Git[:-]" vc-mode)
-                (let ((branch (mapconcat 'concat (cdr (split-string vc-mode "[:-]")) "-")))
-                  (concat
-                   " "
-                   (propertize (format "%s" (all-the-icons-octicon "git-branch"))
-                               'face `(:height 1.0 :family ,(all-the-icons-octicon-family))
-                               'display '(raise -0.1))
-                   (propertize (format " %s" branch) 'face `(:height 1.0)))))
-               (t (format "%s" vc-mode)))))
-
-       "  "
-       ;; == Flycheck ==
-       '(:eval (when flycheck-mode
-         (let* ((text (pcase flycheck-last-status-change
-                        (`finished (if flycheck-current-errors
-                                       (let ((count (let-alist (flycheck-count-errors flycheck-current-errors)
-                                                      (+ (or .warning 0) (or .error 0)))))
-                                         (propertize (format "✖ %s Issue%s" count (if (eq 1 count) "" "s"))
-                                                     'face `(:foreground "#ff6c6b")))
-                                     (propertize "✔ No Issues"
-                                                 'face `(:foreground "#61afef"))))
-                        (`running     (propertize "⟲ Running"
-                                                  'face `(:foreground "#da8548")))
-                        (`no-checker  (propertize "⚠ No Checker"
-                                                  'face `(:foreground "#da8548")))
-                        (`not-checked "✖ Disabled")
-                        (`errored     (propertize "⚠ Error"
-                                                  'face `(:foreground "#ff6c6b")))
-                        (`interrupted (propertize "⛔ Interrupted"
-                                                  'face `(:foreground "#ff6c6b")))
-                        (`suspicious  ""))))
-           (propertize text
-                       'help-echo "Show Flycheck Errors"
-                       'local-map (make-mode-line-mouse-map
-                                   'mouse-1 #'flycheck-list-errors)))))
-
-       ;; == ERC ==
-       ;; change header line face if disconnected
-       (defface erc-header-line-disconnected
-         '((t (:foreground "black" :background "indianred")))
-         "Face to use when ERC has been disconnected.")
-       
-       (defun erc-update-header-line-show-disconnected ()
-         "Use a different face in the header-line when disconnected."
-         (erc-with-server-buffer
-           (cond ((erc-server-process-alive) 'erc-header-line)
-                 (t 'erc-header-line-disconnected))))
-       (setq erc-header-line-face-method 'erc-update-header-line-show-disconnected)
+       ;; == ERC, ORG Timer, etc ===
+	     'mode-line-misc-info
 
        " "
-       '(:eval 'Target-and/or-server)
-
-	     " "
-       '(:eval 'status 'away)
-       
-       ;; == Window ==
-       ;; '(:eval (window-parameter (selected-window) 'ace-window-path))
-
-       ;; == Org-timer-set-timer ==
-       '(:eval (propertize "%M" 'face 'font-lock-type-face))
-
-       " "
-       ;; == Date & Time ==
-       ;; Simple date (day-month), time (24hr)
-       ;; '(:eval (propertize (format-time-string "%d-%b %H:%M")))
-
-       ;; Date, clock icon with correct hour hand, time in 24hr format
-       '(:eval (let* ((hour (string-to-number (format-time-string "%I")))
-                      (icon (all-the-icons-wicon (format "time-%s" hour) :height 1.3 :v-adjust 0.0)))
-                 (concat
-                  (propertize (format-time-string " %d-%b "))
-                  (propertize (format "%s" icon)
-                              'face `(:height 1.0 :family ,(all-the-icons-wicon-family))
-                              'display '(raise -0.0))
-                  (propertize (format-time-string " %H:%M ")
-                              'face `(:height 1.0)))))
-       
+       ;; == Date (day-month) & Time (24hr)==
+       '(:eval (propertize (format-time-string "%d-%b  %H:%M")))
        ))
-
-(provide-theme '101-modeline)
 ;;; 101-modeline ends here
