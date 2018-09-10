@@ -1,7 +1,7 @@
 (use-package tide
   :init
   ;; (add-hook 'before-save-hook 'tide-format-before-save)  ;; formats the buffer before saving
-  (add-hook 'js2-mode-hook #'setup-tide-mode)  ;; JS Setup
+  ;; (add-hook 'js2-mode-hook #'setup-tide-mode)  ;; JS Setup
   (add-hook 'typescript-mode-hook #'setup-tide-mode)
   :defer 5
   :config
