@@ -11,12 +11,7 @@
   :config
   (setq projectile-enable-caching t)
   (setq projectile-completion-system 'grizzl)
-
-  ;; Press Super-p for fuzzy find in project
-  ;; (global-set-key (kbd "s-f") 'projectile-find-file)
-
-  ;; Press Super-b for fuzzy switch buffer
-  (global-set-key (kbd "s-b") 'projectile-switch-to-buffer))
+  )
 
 ;; FIX hange issue with tramp. Tested this 16/02/2017 and it's fixed.
 ;; https://github.com/bbatsov/prelude/issues/594
