@@ -107,4 +107,8 @@
        ;; == Date (day-month) & Time (24hr)==
        '(:eval (propertize (format-time-string "%d-%b  %H:%M")))
        ))
+
+;; Update the time in all buffers every 60 seconds.
+(run-at-time "60 sec" 60 #'force-mode-line-update "Update clock.")
+
 ;;; 101-modeline ends here
