@@ -26,17 +26,27 @@
 
        ;; == Hide all minor modes ;; Thanks to Mark Karpov for this code snippet ==
        (defvar hidden-minor-modes ; example, write your own list of hidden
-         '(auto-complete-mode
+         '(abbrev-mode
+           auto-fill-mode
+           auto-complete-mode
            auto-revert-mode
+           auto-revert-tail-mode
            company-mode
            eldoc-mode
+           glasses-mode
            guide-key-mode
            hi-lock-mode
+           hide-ifdef-mode
+           highlight-changes-mode
+           highlight-indentation-mode
            highlight-parentheses-mode
            hl-line-mode
            isearch-mode
            ivy-mode
            flycheck-mode
+           flyspell-mode
+           font-lock-mode
+           outline-mode
            paredit-mode
            projectile-mode
            projectile-rails-mode
@@ -97,4 +107,8 @@
        ;; == Date (day-month) & Time (24hr)==
        '(:eval (propertize (format-time-string "%d-%b  %H:%M")))
        ))
+
+;; Update the time in all buffers every 60 seconds.
+(run-at-time "60 sec" 60 #'force-mode-line-update "Update clock.")
+
 ;;; 101-modeline ends here
