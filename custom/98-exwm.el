@@ -67,7 +67,7 @@
 
 ;; Start Firefox
 (exwm-input-set-key (kbd "s-<f2>")
-                    (lambda () (interactive) (start-process "" nil "firefox" )))
+                    (lambda () (interactive) (start-process "" nil "firefox-dev" )))
 (push (elt (kbd "s-<f2>") 0) exwm-input-prefix-keys)
 
 ;; Start Google-chrome
