@@ -11,6 +11,8 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 
+(package-initialize)
+
 (require 'package)
 (setq package-enable-at-startup nil)   ;; To prevent initialising twice
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
@@ -21,8 +23,6 @@
 (add-to-list 'load-path "~/.emacs.d/custom")
 (add-to-list 'load-path "~/.emacs.d/external") ; Plugins not in the repo
 (add-to-list 'load-path "~/.emacs.d/external/4gl-mode-master")
-
-;;(package-initialize)
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
