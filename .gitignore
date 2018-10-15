@@ -31,3 +31,6 @@ network-security.data
 /.emacs.desktop.lock
 xkcd
 irony
+/magithub/cache
+/nov-places
+/recentf
