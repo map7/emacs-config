@@ -55,6 +55,9 @@
 (use-package xkcd :defer 5)
 (use-package dockerfile-mode :defer 5)
 
+(use-package rg :defer 5)                        ; ripgrep - compatible with wgrep
+(use-package wgrep :defer 5)                     ; wgrep - edit grep buffers
+
 ;; 4gl mode from external
 (require '4gl-mode)
 

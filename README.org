@@ -131,6 +131,8 @@ ag - Compile [[https://github.com/ggreer/the_silver_searcher][the silver searche
 
 flyspell - install 'ispell'
 
+ripgrep - install 'ripgrep'
+
 ** Specific package notes
 *** paradox
 
