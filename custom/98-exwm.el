@@ -10,7 +10,7 @@
 )
 
 ;; Allow all workspaces to share all buffers
-(setq exwm-workspace-show-all-buffers t)
+;;(setq exwm-workspace-show-all-buffers t)
 
 ;; Load EXWM
 (require 'exwm)
@@ -131,19 +131,9 @@
 (global-set-key [C-s-left] 'win-resize-left)
 (push (elt (kbd "C-s-<left>") 0) exwm-input-prefix-keys)
 
-
-
 ;; Enable workspace
 (setq exwm-workspace-number 10)
 
 ;; System tray
 (require 'exwm-systemtray)
 (exwm-systemtray-enable)
-
-;; Composition manager
-(require 'exwm-cm)
-;; Make all Emacs frames opaque.
-(setq window-system-default-frame-alist '((x . ((alpha . 100)))))
-;; Assign everything else a 80% opacity.
-(setq exwm-cm-opacity 80)
-;;(exwm-cm-enable)                        ; This is pretty slow so I've left it off for now. You can put it on at any time with exwm-cm-start
