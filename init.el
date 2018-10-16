@@ -36,16 +36,12 @@
 (use-package circe :defer 5)
 (use-package company :defer 5)
 (use-package csv-mode :defer 5)
-(use-package enh-ruby-mode :defer 5)
 (use-package expand-region :defer 5)
 (use-package findr :defer 5)
 (use-package js2-mode :defer 5)
 (use-package jsx-mode :defer 5)
 (use-package ledger-mode :defer 5)
 (use-package markdown-mode :defer 5)
-(use-package org-cliplink :defer 5)
-(use-package org-clock-csv :defer 5)
-(use-package org-clock-today :defer 5)
 (use-package pass :defer 5)
 (use-package paradox :defer 5)
 (use-package sudo-edit :defer 5)
@@ -57,6 +53,15 @@
 
 (use-package rg :defer 5)                        ; ripgrep - compatible with wgrep
 (use-package wgrep :defer 5)                     ; wgrep - edit grep buffers
+
+;; Ruby related
+(use-package enh-ruby-mode :defer 5)
+(use-package goto-gem :defer 5)         ; Goto the directory for a ruby gem package
+
+;; Org related
+(use-package org-cliplink :defer 5)
+(use-package org-clock-csv :defer 5)
+(use-package org-clock-today :defer 5)
 
 ;; 4gl mode from external
 (require '4gl-mode)
