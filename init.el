@@ -197,8 +197,7 @@
   )
 
 ;; Read in custom settings for the user
-(setq custom-file "~/.emacs.d/.emacs.custom.el")
-(load custom-file)
+(load "~/.emacs.d/.emacs.custom.el")
 
 ;;;; Refer to issue 216 on exwm for a discussion on this.
 ;; (require 'desktop)
