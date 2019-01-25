@@ -75,9 +75,9 @@
                     (lambda () (interactive) (start-process "" nil "google-chrome" )))
 (push (elt (kbd "s-<f3>") 0) exwm-input-prefix-keys)
 
-;; Start Mailspring
+;; Start mu4e
 (exwm-input-set-key (kbd "s-<f4>")
-                    (lambda () (interactive) (start-process "" nil "mailspring" )))
+                    (lambda () (interactive) (mu4e)))
 (push (elt (kbd "s-<f4>") 0) exwm-input-prefix-keys)
 
 ;; Start keypass
