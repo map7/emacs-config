@@ -53,7 +53,7 @@
 (use-package twittering-mode :defer 5)
 (use-package xkcd :defer 5)
 (use-package dockerfile-mode :defer 5)
-
+(use-package disk-usage :defer 5)
 (use-package rg :defer 5)                        ; ripgrep - compatible with wgrep
 (use-package wgrep :defer 5)                     ; wgrep - edit grep buffers
 
