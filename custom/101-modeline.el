@@ -70,31 +70,16 @@
        (add-hook 'after-change-major-mode-hook 'purge-minor-modes)
 
        " "
+       
        ;; == Line numbers ==
        ;; grey & normal as set by font mode-line
        ;; '%03' to set to 3 chars at least; prevents flickering
        " L:"
-      
-       '(:eval (propertize "%03l" 'face `(:height 1.0)))
-
-       "/"
-
-       ;; Print total number of lines in the buffer
-       ;; (Can be slow for buffers with large number of lines eg. org files)
-       '(:eval (format "%s"(line-number-at-pos (point-max))))
-
+       
        ;; Faster option could be to use total-lines.el
        ; the below will look like e.g. "263/947,10  26%"
-       ;; '(:eval ((12 "%l" "/" (:eval (format "%d,%d" total-lines (1+ (current-column)))))
-       ;;          (-3 "%p"))))
+       `((12 "%l" "/" (:eval (format "%d,%d" total-lines (1+ (current-column))))))
 
-       ;; == Column numbers ==
-       "  C:"
-
-       '(:eval (propertize "%03c" 'face `(:height 1.0)))
-       
-       "  "
-       
        ;; == Git branch status ==
        '(vc-mode vc-mode)
 

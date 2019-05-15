@@ -56,6 +56,9 @@
 (use-package disk-usage :defer 5)
 (use-package rg :defer 5)                        ; ripgrep - compatible with wgrep
 (use-package wgrep :defer 5)                     ; wgrep - edit grep buffers
+(use-package total-lines
+  :ensure t
+  :config (global-total-lines-mode))
 
 ;; Ruby related
 (use-package enh-ruby-mode :defer 5)
