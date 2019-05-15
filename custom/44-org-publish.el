@@ -10,7 +10,7 @@
 		 :base-extension "org"
 		 :publishing-directory "/var/www/manual/"
 		 :style "<link rel=\"stylesheet\" href=\"css/stylesheet.css\" type=\"text/css\" />"
-		 :recursive t
+		 :recursive f
 		 :publishing-function org-html-publish-to-html
 		 :headline-levels 4             ; Just the default for this project.
 		 :auto-preamble t
