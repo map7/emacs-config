@@ -170,9 +170,9 @@
 (load "95-resize-buffer.el")          ; Resize buffer
 (load "97-shortcuts.el")              ; Keyboard shortcuts
 
-(if (file-exists-p "~/.xinitrc")
-    (load "98-exwm.el")                    ; Emacs X Windows Manager
-)
+;; (if (file-exists-p "~/.xinitrc")
+;;     (load "98-exwm.el")                    ; Emacs X Windows Manager
+;; )
 
 (if (file-exists-p "~/.emacs.d/.emacs.autostart.el")
     (load "~/.emacs.d/.emacs.autostart.el")
