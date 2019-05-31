@@ -12,7 +12,6 @@
 ;; You may delete these explanatory comments.
 
 (package-initialize)
-
    
 (require 'package)
 (setq package-enable-at-startup nil)   ;; To prevent initialising twice
@@ -167,6 +166,7 @@
 ;;--------------------------------------------------------------------------------
 ;;-EXWM, appearance and shortcut keys
 ;;--------------------------------------------------------------------------------
+(load "94-i3.el")                     ; i3
 (load "95-resize-buffer.el")          ; Resize buffer
 (load "97-shortcuts.el")              ; Keyboard shortcuts
 
