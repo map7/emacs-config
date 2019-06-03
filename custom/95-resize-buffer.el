@@ -1,5 +1,4 @@
 ;; Resizing splits
-;; Resizing splits
 (defun win-resize-up ()
   (interactive)
   (enlarge-window 7))
