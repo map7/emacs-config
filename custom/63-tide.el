@@ -31,19 +31,3 @@
   ;; see https://github.com/Microsoft/TypeScript/blob/cc58e2d7eb144f0b2ff89e6a6685fb4deaa24fde/src/server/protocol.d.ts#L421-473 for the full list available options
   )
 
-(use-package web-mode
-  :init
-  ;; TSX setup
-  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-  (add-hook 'web-mode-hook
-            (lambda ()
-              (when (string-equal "tsx" (file-name-extension buffer-file-name))
-                (setup-tide-mode))))
-  
-  ;; JSX Setup
-  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-  (add-hook 'web-mode-hook
-            (lambda ()
-              (when (string-equal "jsx" (file-name-extension buffer-file-name))
-                (setup-tide-mode))))
-  :defer 5)
