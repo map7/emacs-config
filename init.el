@@ -178,8 +178,8 @@
     (load "~/.emacs.d/.emacs.autostart.el")
 )
 
-(if (file-exists-p "~/.emacs.d/.emacs.mu4e.el")
-    (load "~/.emacs.d/.emacs.mu4e.el")  ; Email settings
+(if (file-exists-p "~/.emacs.mu4e.el")
+    (load "~/.emacs.mu4e.el")  ; Email settings
 )
 
 (if (file-exists-p "~/.emacs.d/.emacs.paradox.el")
