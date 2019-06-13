@@ -1,3 +1,6 @@
+;; Replace bell (beep) with visible bell
+(setq visible-bell t)
+
 ;; Enable the built in pair mode
 (electric-pair-mode 1)
 
