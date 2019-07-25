@@ -1,6 +1,5 @@
-* emacs config
-
-Emacs Version tested: 24.3.1 (stable) & 25.0.50.2 (dev branch)
+* Emacs
+  Emacs Version tested: 26.2.90 (stable) 2019-07-12
 
 ** Installation
 
