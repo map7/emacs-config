@@ -211,10 +211,19 @@ http://crypt.codemancers.com/posts/2013-09-26-setting-up-emacs-as-development-en
 Try to invalidate the project cache, first sit in a file within a project dir
 : C-c p i
 
-** changelog
+** Changelog
 
-*** 09/02/2015
+*** 2015-02-09
 Added
 - sunshine - weather
 - symon - system monitor, replaces gkrellm
 - ox-reveal - reveal.js presentation tool
+
+
+*** 2019-07-25
+Added
+- Installation
+Updated
+- CustomConfiguration
+- Cask
+- Modeline
