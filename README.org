@@ -80,8 +80,8 @@
 
 Then restart emacs and it should start building the packages, if it asks you to build pdf-tools say yes and in the compile buffer it will show the results. If this compile is needed then after the compile is finished you will need to restart emacs again for the final run of packages.
 
-**** Iconised modeline 
-A nice iconised based modeline. Tries to save on modelin re
+**** Modeline(to be updated)
+A nice iconised based modeline. Used to save horizontal modeline space.
 
 ***** Setup
 The package all-the-icons is needed. This package has been added to the init.el file and should be automatically installed. 
