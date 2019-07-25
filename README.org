@@ -2,27 +2,63 @@
   Emacs Version tested: 26.2.90 (stable) 2019-07-12
 
 ** Installation
+*** Emacs latest from github for linux (debian)
+    Section Last updated: <2019-07-25 Thu 19:21>
 
-Clone my repo
-: git clone https://github.com/map7/emacs-config.git ~/.emacs.d
+ 1. Requires packages
+    : sudo apt-get install libxaw7-dev libxpm-dev libpng12-dev libtiff5-dev libgif-dev libjpeg8-dev libgtk2.0-dev libncurses5-dev libdbus-1-dev libxft-dev texinfo libgnutls-dev libgnutls28-dev libjpeg62-turbo-dev
 
-Run installation script
-: cd ~/.emacs.d
-: ./install
+ 2. Install requirements for emacs xwidgets to work
+    : sudo apt-get install libwebkitgtk-3.0-0 libwebkitgtk-3.0-dev
 
-Start emacs
-: emacs
+ 3. Clone from git like so
+    : git clone --depth 1 https://github.com/emacs-mirror/emacs.git
 
-List packages (Note: M-x is emacs way of saying Alt + x)
-: M-x list-packages
+ 4. Compile (Note xwidgets may not work on your machine)
+    : ./autogen.sh
+    : ./autogen.sh git
+    : ./configure --prefix=/opt/emacs --with-xft --with-xwidgets --with-imagemagick
+    : make -j32
+    
+ 5. Start
+    : src/emacs
 
-Install use-package with 
-: M-x package-install use-package
+ 6. Install
+    : sudo make install
 
-Then restart emacs and it should start building the packages, if it asks you to build pdf-tools say yes and in the compile buffer it will show the results. If this compile is needed then after the compile is finished you will need to restart emacs again for the final run of packages.
+ 7. Update alternatives to use the new emacs & set the priority to 100 so it's automatically selected
+    : sudo update-alternatives --install /usr/bin/emacs emacs /opt/emacs/bin/emacs 100
+    : sudo update-alternatives --install /usr/bin/emacsclient emacsclient /opt/emacs/bin/emacsclient 100
 
-*** Dark-lord-theme
-The dark lord theme is loaded by default. 
+ 8. Configure the alternatives
+    : sudo update-alternatives --config emacs
+    : sudo update-alternatives --config emacsclient
+
+ 9. Manually check alternatives are correctly set
+    : ls -al /etc/alternatives | grep emacs
+
+ 10. Manually check bin directory is correctly set
+     : ls -al /usr/bin | grep emacs
+
+ 11. Start the new emacs
+     : emacs
+
+ 12. Start package listing and accept certificates using 'a'
+     : M-x package-listing
+
+ 13. Start emacs & install use-package
+     : M-x package-install
+     : use-package
+
+ 14. Restart emacs & install pdf-tools
+     : C-x b
+     : compile-pdftools (respond with Y) (also M-x pdf-tools-install then exit & restart emacs answer Y to reinstall prompt on restart)
+
+ 15. Restart a number of times until everything is starting correctly.
+
+ (Optional fix) Create/update symlinks if they are pointing to an old emacs version
+ : ln -s -f target symlink_name #update existing symlink
+
 
 **** Iconised modeline 
 A nice iconised based modeline. Tries to save on modelin re
