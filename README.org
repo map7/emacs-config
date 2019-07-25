@@ -59,6 +59,26 @@
  (Optional fix) Create/update symlinks if they are pointing to an old emacs version
  : ln -s -f target symlink_name #update existing symlink
 
+*** Custom Configuration
+    This configuration is based on the latest use-package system as created by John Wiegley, who is also steering emacs development. Our configuration also includes a custom dark theme that is completely customisable.
+
+1. Clone my repo
+ : git clone https://github.com/map7/emacs-config.git ~/.emacs.d
+
+2. Run installation script
+ : cd ~/.emacs.d
+ : ./install
+
+3. Start emacs
+ : emacs
+
+4. List packages (Note: M-x is emacs way of saying Alt + x)
+ : M-x list-packages
+
+5. Install use-package with 
+ : M-x package-install use-package
+
+Then restart emacs and it should start building the packages, if it asks you to build pdf-tools say yes and in the compile buffer it will show the results. If this compile is needed then after the compile is finished you will need to restart emacs again for the final run of packages.
 
 **** Iconised modeline 
 A nice iconised based modeline. Tries to save on modelin re
@@ -71,7 +91,6 @@ You will need to download and install the fonts and icons from the following lin
 [[https://github.com/domtronn/all-the-icons.el/tree/master/fonts][all-the-icons.el/fonts]]
 
 ****** Linux
-
 Clone
 : cd ~/src
 : git clone https://github.com/domtronn/all-the-icons.el.git
