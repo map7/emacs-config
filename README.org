@@ -109,7 +109,7 @@ manually rebuild the font cache
 To manually invoke the iconised modeline theme:
 : M-x dark-lord-modeline
 
-*** Manually
+*** Cask package management (outdated)
 
  Install my sub modules
  : git submodule init
@@ -148,8 +148,6 @@ Link it to .xsession to work with a desktop manager like lightdm as the default 
  : (call-process-shell-command "(sleep 10s && ~/.dropbox-dist/dropboxd) &" nil 0)
  : (call-process-shell-command "(sleep 10s && SpiderOakONE) &" nil 0)
 
-
-
 *** Multiple screens
 
 Create a ~/.emacs.randr.el file and put the following
@@ -164,7 +162,6 @@ Create a ~/.emacs.randr.el file and put the following
 Remember to change the LVDS1 & DP2 to your screens which you can find out by typing in xrandr at the command line and looking for the active screens.
 
 ** flycheck configure
-
 Installing
 : npm install -g coffeelint eslint
 : gem install scss_lint rubocop
