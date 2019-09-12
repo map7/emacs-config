@@ -50,6 +50,7 @@
 (use-package switch-window :ensure t :defer 5)
 (use-package tramp-term :ensure t :defer 5)
 (use-package twittering-mode :ensure t :defer 5)
+(use-package restclient :ensure t :defer 5) ; Used to test restful APIs
 (use-package xkcd :ensure t :defer 5)
 (use-package dockerfile-mode :ensure t :defer 5)
 (use-package disk-usage :ensure t :defer 5)
