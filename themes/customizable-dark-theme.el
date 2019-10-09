@@ -207,6 +207,10 @@
  '(ediff-fine-diff-C ((t :foreground "cyan" :background "blue")))
  '(ediff-current-diff-C ((t :background "navyblue" :foreground "cyan")))
 
+ ;; X-Term
+ '(term-color-blue ((t :foreground "cyan3")))   ;; foreground font color for xterm prompt & normal folders
+ '(term-color-cyan ((t :foreground "gold")))    ;; foreground font color for xterm symlinks
+
  ;; Magit
  '(magit-diff-context-highlight ((t :background "#000000")))
  '(magit-diff-file-heading ((t :weight bold :foreground "cyan3")))
