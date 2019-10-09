@@ -19,7 +19,7 @@
                         :box nil
                         :inverse-video nil
                         :foreground "white"
-                        :background "#000000"
+                        :background "black"
                         :stipple nil
                         :inherit nil))))
 
@@ -29,10 +29,10 @@
  '(homoglyph ((((background dark)) (:foreground "cyan"))
               (((type pc)) (:foreground "magenta")) (t (:foreground "brown"))))
  '(minibuffer-prompt ((t (:weight bold :foreground "cyan"))))
- '(highlight ((t (:underline nil :foreground "#ffffff" :background "#3e4451"))))
- '(region ((t (:foreground "#ffffff" :background "#3e4451"))))
+ '(highlight ((t (:underline nil :foreground "white" :background "#3e4451"))))
+ '(region ((t (:foreground "white" :background "#3e4451"))))
  '(shadow ((t (:foreground "#9b9b9b"))))
- '(secondary-selection ((t (:foreground "#ffffff" :background "#3e4451"))))
+ '(secondary-selection ((t (:foreground "white" :background "#3e4451"))))
  '(trailing-whitespace ((t (:background "#a52621"))))
 
 
@@ -76,21 +76,21 @@
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:inherit (isearch)))))
 
- ;; Set Emacs background colour to black
- '(add-to-list 'default-frame-alist '(foreground-color . "white"))
- '(add-to-list 'default-frame-alist '(background-color . "black"))
+ ;; ;; Set Emacs background colour to black
+ ;; '(add-to-list 'default-frame-alist '(foreground-color . "white"))
+ ;; '(add-to-list 'default-frame-alist '(background-color . "black"))
 
  ;; Modeline
  '(mode-line              ((((background light))
                             :foreground "gray" :background "#1c2129"
                             :box (:line-width 2 :color "white"))
                            (((background dark))
-                            :foreground "gray" :background "#000000"
+                            :foreground "gray" :background "black"
                             :box (:line-width 1 :color "gray"))))
  '(mode-line-buffer-id ((t (:weight bold :foreground "white"))))
  '(mode-line-emphasis ((t (:weight bold :background "red")))) ;; Testing this atm
  '(mode-line-highlight ((t (:weight bold ))))
- '(mode-line-inactive ((t (:foreground "#8b806c" :background "#000000" :box (:line-width 1 :color "gray20")))))
+ '(mode-line-inactive ((t (:foreground "#8b806c" :background "black" :box (:line-width 1 :color "gray20")))))
 
  ;; Cursor
  '(cursor ((((background light)) (:background "black")) (((background dark)) (:background "white"))))
@@ -103,15 +103,15 @@
  '(escape-glyph ((t :foreground "cyan" :weight bold)))
 
  ;; linum (code line numbering)
- '(linum ((t :foreground "#cccccc" :background "#000000")))
+ '(linum ((t :foreground "#cccccc" :background "black")))
  ;; from hlinum
  '(linum-highlight-face ((t :foreground "cyan" :background "navyblue")))
 
  ;; eshell
- '(eshell-prompt ((t :foreground "orange1" :background "#000000" :weight bold)))
- '(eshell-ls-directory ((t :foreground "cyan" :background "#000000" :weight bold)))
- '(eshell-ls-symlink ((t :foreground "orange1" :background "#000000" :weight normal)))
- '(eshell-ls-executable ((t :foreground "chartreuse" :background "#000000" :weight bold)))
+ '(eshell-prompt ((t :foreground "orange1" :background "black" :weight bold)))
+ '(eshell-ls-directory ((t :foreground "cyan" :background "black" :weight bold)))
+ '(eshell-ls-symlink ((t :foreground "orange1" :background "black" :weight normal)))
+ '(eshell-ls-executable ((t :foreground "chartreuse" :background "black" :weight bold)))
 
  ;; whitespace
  '(whitespace-space ((t :background unspecified :foreground "#3e4451"
@@ -122,7 +122,7 @@
                       :inverse-video unspecified)))
  '(whitespace-newline ((t :background unspecified :foreground "#3e4451"
                           :inverse-video unspecified)))
- '(whitespace-trailing ((t :background "#ee0000" :foreground "#000000" :weight bold
+ '(whitespace-trailing ((t :background "#ee0000" :foreground "black" :weight bold
                            :inverse-video nil)))
  '(whitespace-line ((t :background unspecified :foreground "#ee0000"
                        '                                        :inverse-video unspecified)))
@@ -153,9 +153,9 @@
  '(fringe ((t :background "#24282f" :foreground "chocolate1")))
  '(border ((t :foreground "#3a3f4b")))
  '(vertical-border ((t :foreground "#3a3f4b")))
- '(highlight ((t :background "#3e4451" :foreground "#ffffff" :underline nil)))
- '(region ((t :background "#3e4451" :foreground "#ffffff")))
- '(secondary-selection ((t :background "#3e4451" :foreground "#ffffff")))
+ '(highlight ((t :background "#3e4451" :foreground "white" :underline nil)))
+ '(region ((t :background "#3e4451" :foreground "white")))
+ '(secondary-selection ((t :background "#3e4451" :foreground "white")))
  '(isearch ((t :background "#ddbd78" :foreground "#3e4451")))
  '(lazy-highlight ((t :background "#666666" :foreground "#ddbd78")))
 
@@ -178,7 +178,7 @@
  '(dired-marked ((t :foreground "orange1" :underline t)))
  '(dired-subtree-depth-1-face ((t :background "#cccccc")))
  '(dired-subtree-depth-2-face ((t :background "#666666")))
- '(dired-subtree-depth-3-face ((t :background "#000000")))
+ '(dired-subtree-depth-3-face ((t :background "black")))
 
  ;;; dired+
  '(diredp-dir-heading ((t :foreground "#4c3840")))
@@ -194,8 +194,8 @@
  '(diff-added ((t :background "#3d4a41" :foreground "chartreuse")))
  '(diff-hunk-header ((t :background "navyblue" :weight bold :foreground "cyan")))
  '(diff-file-header ((t :weight bold)))
- '(diff-header ((t :background "#000000" :foreground "cyan")))
- '(diff-context ((t :foreground "#ffffff")))
+ '(diff-header ((t :background "black" :foreground "cyan")))
+ '(diff-context ((t :foreground "white")))
  '(diff-refine-added ((t :foreground "chartreuse" :background "#3f6d54")))
  '(diff-refine-removed ((t :background "#744a5b" :foreground "#4c3840")))
 
@@ -212,7 +212,7 @@
  '(term-color-cyan ((t :foreground "gold")))    ;; foreground font color for xterm symlinks
 
  ;; Magit
- '(magit-diff-context-highlight ((t :background "#000000")))
+ '(magit-diff-context-highlight ((t :background "black")))
  '(magit-diff-file-heading ((t :weight bold :foreground "cyan3")))
  '(magit-diff-file-heading-highlight ((t :weight bold :foreground "cyan3" :background "NavyBlue")))
  '(magit-diff-removed-highlight ((t :inherit diff-removed)))
@@ -226,11 +226,11 @@
 
  '(magit-process-ok ((t :foreground "chartreuse" :weight bold)))
 
- '(magit-section-highlight ((t :background "#000000")))
+ '(magit-section-highlight ((t :background "black")))
  '(magit-section-heading ((t :foreground "#cccccc" :weight bold)))
- '(magit-branch-current ((t :foreground "cyan" :background "#000000" :box 1)))
- '(magit-branch-local ((t :foreground "orange1" :background "#000000" :box 1)))
- '(magit-branch-remote ((t :foreground "chartreuse" :background "#000000" :box 1)))
+ '(magit-branch-current ((t :foreground "cyan" :background "black" :box 1)))
+ '(magit-branch-local ((t :foreground "orange1" :background "black" :box 1)))
+ '(magit-branch-remote ((t :foreground "chartreuse" :background "black" :box 1)))
 
  '(magit-reflog-reset ((t :background "#4c3840" :foreground "#4c3840" :weight bold)))
  '(magit-reflog-amend ((t :background "navyblue" :foreground "cyan" :weight bold)))
@@ -269,7 +269,7 @@
  '(org-link ((t :foreground "cyan" :underline t)))
  '(org-date ((t :foreground "gold")))
  '(org-block-begin-line ((t :foreground "cyan")))
- '(org-block-background ((t :background "#000000")))
+ '(org-block-background ((t :background "black")))
  '(org-block-end-line ((t :foreground "cyan")))
  '(org-tag ((t :foreground "gray60")))
  '(org-special-keyword ((t :foreground "gold")))
@@ -305,17 +305,17 @@
  '(ivy-remote ((t :foreground "cyan")))
 
  ;; Company
- '(company-preview ((t :background "#22252c" :foreground "#ffffff")))
+ '(company-preview ((t :background "#22252c" :foreground "white")))
  '(company-preview-common ((t :background "#22252c" :foreground "LightSkyblue1")))
- '(company-preview-search ((t :background "cyan" :foreground "#ffffff")))
- '(company-tooltip ((t :background "#22252c" :foreground "#ffffff")))
+ '(company-preview-search ((t :background "cyan" :foreground "white")))
+ '(company-tooltip ((t :background "#22252c" :foreground "white")))
  '(company-scrollbar-bg ((t :background "#22252c")))
  '(company-scrollbar-fg ((t :background "navyblue")))
  '(company-tooltip-common ((t :foreground "LightSkyblue1" :weight bold :background "#22252c")))
  '(company-tooltip-annotation ((t :foreground "cyan" :weight bold :background "navyblue")))
  '(company-tooltip-common-selection ((t :foreground "dodgerblue1" :background "#3a3f4b" :weight bold)))
- '(company-tooltip-selection ((t :foreground "#ffffff" :background "#3a3f4b")))
- '(company-tooltip-mouse ((t :foreground "#ffffff" :background "#3a3f4b")))
+ '(company-tooltip-selection ((t :foreground "white" :background "#3a3f4b")))
+ '(company-tooltip-mouse ((t :foreground "white" :background "#3a3f4b")))
 
  ;; Flycheck
  '(flycheck-fringe-error ((t :foreground "#4c3840" :background "#4c3840" :weight bold :inverse-video t)))
