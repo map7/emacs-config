@@ -52,7 +52,7 @@
  '(font-lock-builtin-face ((t (:foreground "#ee0000"))))
  '(font-lock-doc-face ((t (:inherit (font-lock-string-face)))))
  '(font-lock-function-name-face ((t (:foreground "yellow2"))))
- '(font-lock-keyword-face ((t (:foreground "cyan"))))
+ '(font-lock-keyword-face ((t (:foreground "green"))))
  '(font-lock-negation-char-face ((t (:foreground "#00a2f5"))))
  '(font-lock-preprocessor-face ((t (:foreground "#29b029"))))
  '(font-lock-regexp-grouping-backslash ((t (:foreground "#ae2823"))))
