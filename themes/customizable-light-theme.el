@@ -97,9 +97,9 @@
  '(escape-glyph ((t :foreground "DodgerBlue1" :weight bold)))
 
  ;; linum (code line numbering)
- '(linum ((t :foreground "#cccccc" :background "white")))
+ '(linum ((t :foreground "dark gray" :background "white")))
  ;; from hlinum
- '(linum-highlight-face ((t :foreground "cyan" :background "navyblue")))
+ '(linum-highlight-face ((t :foreground "DodgerBlue1")))
 
  ;; eshell
  '(eshell-prompt ((t :foreground "orange1" :background "black" :weight bold)))
