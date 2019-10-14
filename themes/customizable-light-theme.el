@@ -93,8 +93,8 @@
  '(message-mml-face ((t :foreground "chocolate1")))
 
  ;; Escape and prompt faces
- '(minibuffer-prompt ((t :foreground "cyan" :weight bold)))
- '(escape-glyph ((t :foreground "cyan" :weight bold)))
+ '(minibuffer-prompt ((t :foreground "NavyBlue" :background "white" :weight bold)))
+ '(escape-glyph ((t :foreground "DodgerBlue1" :weight bold)))
 
  ;; linum (code line numbering)
  '(linum ((t :foreground "#cccccc" :background "white")))
