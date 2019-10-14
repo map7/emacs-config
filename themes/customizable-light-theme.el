@@ -212,38 +212,34 @@
  '(magit-diff-removed ((t :inherit diff-removed)))
  '(magit-diff-added-highlight ((t :inherit diff-added)))
  '(magit-diff-added ((t :inherit diff-added)))
- '(magit-diff-lines-heading ((t :background "dodgerblue1" :foreground "black")))
- '(magit-diff-hunk-heading-highlight ((t :background "dodgerblue1")))
-
+ '(magit-diff-lines-heading ((t :background "DodgerBlue1" :foreground "black")))
  '(magit-diff-hunk-heading ((t :background "gray")))
+ '(magit-diff-hunk-heading-highlight ((t :background "DodgerBlue1")))
  '(magit-process-ok ((t :foreground "chartreuse" :weight bold)))
-
  '(magit-section-highlight ((t :background "white")))
  '(magit-section-heading ((t :foreground "#cccccc" :weight bold)))
- '(magit-branch-current ((t :foreground "cyan" :background "white" :box 1)))
- '(magit-branch-local ((t :foreground "orange1" :background "white" :box 1)))
- '(magit-branch-remote ((t :foreground "chartreuse" :background "white" :box 1)))
-
+ '(magit-branch-current ((t :foreground "DodgerBlue1" :background "cyan" :box 1)))
+ '(magit-branch-local ((t :foreground "DarkOrange4" :background "orange" :box 1)))
+ '(magit-branch-remote ((t :foreground "dark green" :background "light green" :box 1)))
  '(magit-reflog-reset ((t :background "#4c3840" :foreground "#4c3840" :weight bold)))
  '(magit-reflog-amend ((t :background "navyblue" :foreground "cyan" :weight bold)))
  '(magit-reflog-rebase ((t :background "navyblue" :foreground "cyan" :weight bold)))
  '(magit-reflog-commit ((t :background "#3d4a41" :foreground "chartreuse" :weight bold)))
  '(magit-reflog-checkout ((t :background "#4a473d" :foreground "orange1" :weight bold)))
  '(magit-reflog-cherry-pick ((t :background "blue1" :foreground "cyan" :weight bold)))
-
  '(magit-bisect-bad ((t :background "#4c3840" :foreground "#4c3840" :box 1)))
  '(magit-bisect-good ((t :background "navyblue" :foreground "cyan" :box 1)))
-
  '(magit-blame-heading ((t :foreground "chartreuse" :background "#3d4a41" :box 1)))
+ '(magit-tag ((t :foreground "cyan" :weight bold :box 1 :background "#202020")))
+ '(magit-sequence-part ((t :foreground "orange1" :weight bold)))
+ '(magit-sequence-head ((t :foreground "chartreuse" :weight bold)))
 
  '(git-commit-summary ((t :weight bold)))
  '(git-commit-known-pseudo-header ((t :foreground "black")))
  '(change-log-name ((t :foreground "firebrick")))
  '(change-log-date ((t :foreground "gray")))
 
- '(magit-tag ((t :foreground "cyan" :weight bold :box 1 :background "#202020")))
- '(magit-sequence-part ((t :foreground "orange1" :weight bold)))
- '(magit-sequence-head ((t :foreground "chartreuse" :weight bold)))
+
 
  ;; Message faces
  '(message-header-name ((t :foreground "cyan" :weight bold)))
