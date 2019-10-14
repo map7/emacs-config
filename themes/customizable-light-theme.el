@@ -183,13 +183,13 @@
  '(diredp-number ((t :foreground "orange1")))
 
  ;; diff
- '(diff-added ((t :background "#3d4a41" :foreground "chartreuse")))
  '(diff-hunk-header ((t :background "navyblue" :weight bold :foreground "cyan")))
  '(diff-removed ((t :background "LightSalmon" :foreground "dark red" :weight bold)))
+ '(diff-added ((t :background "light green" :foreground "dark green" :weight bold)))
  '(diff-file-header ((t :weight bold)))
  '(diff-header ((t :background "white" :foreground "cyan")))
  '(diff-context ((t :foreground "black")))
- '(diff-refine-added ((t :foreground "chartreuse" :background "#3f6d54")))
+ '(diff-refine-added ((:background "light green" :foreground "dark green" :weight bold)))
  '(diff-refine-removed ((t :background "LightSalmon" :foreground "dark red" :weight bold)))
 
  ;; ediff
