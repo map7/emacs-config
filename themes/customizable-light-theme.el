@@ -213,10 +213,9 @@
  '(magit-diff-added-highlight ((t :inherit diff-added)))
  '(magit-diff-added ((t :inherit diff-added)))
  '(magit-diff-lines-heading ((t :background "dodgerblue1" :foreground "black")))
- '(magit-diff-hunk-heading ((t :background "#3a3f4b")))
  '(magit-diff-hunk-heading-highlight ((t :background "dodgerblue1")))
- '(magit-diff-hunk-heading ((t :background "#3a3f4b")))
 
+ '(magit-diff-hunk-heading ((t :background "gray")))
  '(magit-process-ok ((t :foreground "chartreuse" :weight bold)))
 
  '(magit-section-highlight ((t :background "white")))
