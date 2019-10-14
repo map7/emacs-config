@@ -301,7 +301,7 @@
  '(company-scrollbar-fg ((t :background "navyblue")))
  '(company-tooltip-common ((t :foreground "LightSkyblue1" :weight bold :background "#22252c")))
  '(company-tooltip-annotation ((t :foreground "cyan" :weight bold :background "navyblue")))
- '(company-tooltip-common-selection ((t :foreground "dodgerblue1" :background "#3a3f4b" :weight bold)))
+ '(company-tooltip-common-selection ((t :foreground "DodgerBlue1" :background "#3a3f4b" :weight bold)))
  '(company-tooltip-selection ((t :foreground "black" :background "#3a3f4b")))
  '(company-tooltip-mouse ((t :foreground "black" :background "#3a3f4b")))
 
