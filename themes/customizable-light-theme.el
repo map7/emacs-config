@@ -77,14 +77,11 @@
  '(query-replace ((t (:inherit (isearch)))))
 
  ;; Modeline
- '(mode-line              ((background light)
-                            :foreground "black" :background "white")
-                           ((background dark)
-                            :foreground "gray" :background "gray"))
+ '(mode-line ((t  (:box nil :foreground "black" :background "gray"))))
+ '(mode-line-inactive ((t  (:box nil :foreground "black" :background "white"))))
  '(mode-line-buffer-id ((t (:weight bold :foreground "white"))))
  '(mode-line-emphasis ((t (:weight bold :background "red")))) ;; Testing this atm
  '(mode-line-highlight ((t (:weight bold ))))
- '(mode-line-inactive ((t (:foreground "#8b806c" :background "black" :box (:line-width 1 :color "gray20")))))
 
  ;; Cursor
  '(cursor ((((background light)) (:background "white")) (((background dark)) (:background "black"))))
