@@ -272,7 +272,6 @@
  '(org-mode-line-clock ((t :background unspecified (:inherit mode-line))))
 
  ;; ERC
- ;; '(erc-nick-default-face ((t :foreground "cyan" :background "navyblue" :weight bold)))
  '(erc-nick-default-face ((t :foreground "gold" :weight bold)))
  '(erc-current-nick-face ((t :foreground "gold" :weight bold)))
  '(erc-my-nick-face ((t :foreground "gold" :weight normal)))
