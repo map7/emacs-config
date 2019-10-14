@@ -206,8 +206,8 @@
 
  ;; Magit
  '(magit-diff-context-highlight ((t :background "white")))
- '(magit-diff-file-heading ((t :weight bold :foreground "cyan")))
- '(magit-diff-file-heading-highlight ((t :weight bold :foreground "cyan" :background "NavyBlue")))
+ '(magit-diff-file-heading ((t :weight bold :foreground "DodgerBlue1")))
+ '(magit-diff-file-heading-highlight ((t :foreground "DodgerBlue1" :background "cyan" :weight bold)))
  '(magit-diff-removed-highlight ((t :inherit diff-removed)))
  '(magit-diff-removed ((t :inherit diff-removed)))
  '(magit-diff-added-highlight ((t :inherit diff-added)))
