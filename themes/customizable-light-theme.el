@@ -39,7 +39,7 @@
  ;; Base fonts
  '(font-lock-comment-delimiter-face ((default (:inherit (font-lock-comment-face)))))
  '(font-lock-comment-face ((((class grayscale) (background light)) (:slant italic :weight bold :foreground "DimGray"))
-                           (((class grayscale) (background dark)) (:slant italic :weight bold :foreground "LightGray"))
+                           (((class grayscale) (background dark)) (:slant italic :weight bold :foreground "DarkGray"))
                            (((class color) (min-colors 88) (background light)) (:foreground "Firebrick"))
                            (((class color) (min-colors 88) (background dark)) (:foreground "chocolate1"))
                            (((class color) (min-colors 16) (background light)) (:foreground "red"))
