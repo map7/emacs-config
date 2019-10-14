@@ -158,7 +158,7 @@
  '(success ((t :foreground "chartreuse" :weight bold)))
 
  ;; dired
- '(dired-directory ((t :foreground "cyan" :weight bold)))
+ '(dired-directory ((t :foreground "DodgerBlue1" :weight bold)))
  '(dired-git-face ((t :foreground "#4c3840")))
  '(dired-ignored ((t :foreground "#3a3f4b")))
  '(dired-filetype-omit ((t :foreground "#3a3f4b")))
