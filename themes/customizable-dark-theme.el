@@ -103,7 +103,7 @@
  '(escape-glyph ((t :foreground "cyan" :weight bold)))
 
  ;; linum (code line numbering)
- '(linum ((t :foreground "#cccccc" :background "black")))
+ '(linum ((t :foreground "gray" :background "black")))
  ;; from hlinum
  '(linum-highlight-face ((t :foreground "cyan" :background "navyblue")))
 
