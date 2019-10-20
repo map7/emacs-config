@@ -38,18 +38,11 @@
 
  ;; Base fonts
  '(font-lock-comment-delimiter-face ((default (:inherit (font-lock-comment-face)))))
- '(font-lock-comment-face ((((class grayscale) (background light)) (:slant italic :weight bold :foreground "DimGray"))
-                           (((class grayscale) (background dark)) (:slant italic :weight bold :foreground "DarkGray"))
-                           (((class color) (min-colors 88) (background light)) (:foreground "Firebrick"))
-                           (((class color) (min-colors 88) (background dark)) (:foreground "chocolate1"))
-                           (((class color) (min-colors 16) (background light)) (:foreground "red"))
-                           (((class color) (min-colors 16) (background dark)) (:foreground "red1"))
-                           (((class color) (min-colors 8) (background light)) (:foreground "red"))
-                           (((class color) (min-colors 8) (background dark)) (:foreground "yellow"))
                            (t (:slant italic :weight bold))))
  '(font-lock-string-face ((t (:foreground "orange1"))))
  '(font-lock-constant-face ((t (:foreground "DodgerBlue1"))))
  '(font-lock-builtin-face ((t (:foreground "#ee0000"))))
+ '(font-lock-comment-face ((t (:foreground "DimGray")))) ;; ruby comment
  '(font-lock-doc-face ((t (:inherit (font-lock-string-face)))))
  '(font-lock-function-name-face ((t (:foreground "gold"))))
  '(font-lock-keyword-face ((t (:foreground "dark green"))))
