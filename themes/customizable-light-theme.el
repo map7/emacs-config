@@ -3,7 +3,7 @@
 ;;; Code:
 
 (deftheme customizable-light
-  "Created 2018-09-03. A completely and easily customizable light theme")
+  "Created 2019-10-16. A completely and easily customizable light theme")
 
 (custom-theme-set-faces
  'customizable-light
@@ -305,4 +305,3 @@
                (file-name-as-directory (file-name-directory load-file-name))))
 
 (provide-theme 'customizable-light)
-;;; customizable-light ends here
