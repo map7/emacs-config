@@ -55,15 +55,14 @@
  '(fringe ((t (:background "white"))))
  '(header-line ((default (:inherit (mode-line))) (((type tty)) (:underline (:color foreground-color :style line) :inverse-video nil)) (((class color grayscale) (background light)) (:box nil :foreground "grey20" :background "grey90")) (((class color grayscale) (background dark)) (:box nil :foreground "grey90" :background "grey20")) (((class mono) (background light)) (:underline (:color foreground-color :style line) :box nil :inverse-video nil :foreground "black" :background "white")) (((class mono) (background dark)) (:underline (:color foreground-color :style line) :box nil :inverse-video nil :foreground "white" :background "black"))))
  '(tooltip ((((class color)) (:inherit (variable-pitch) :foreground "black" :background "lightyellow")) (t (:inherit (variable-pitch)))))
+ ;; Modeline
+ '(mode-line ((t (:background "gray" :foreground "black" :box -1))))
+ '(mode-line-buffer-id ((t (:weight normal))))
+ '(mode-line-emphasis ((t (:weight bold))))
+ '(mode-line-highlight ((t (:box nil :weight bold))))
+ '(mode-line-inactive ((t (:inherit mode-line :background "white" :foreground "black" :box (:line-width 1 :color "DimGray") :weight light))))
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:inherit (isearch)))))
-
- ;; Modeline
- '(mode-line ((t  (:box nil :foreground "black" :background "gray"))))
- '(mode-line-inactive ((t  (:box nil :foreground "black" :background "white"))))
- '(mode-line-buffer-id ((t (:weight bold :foreground "white"))))
- '(mode-line-emphasis ((t (:weight bold :background "red")))) ;; Testing this atm
- '(mode-line-highlight ((t (:weight bold ))))
 
  ;; Cursor
  '(cursor ((((background light)) (:background "white")) (((background dark)) (:background "black"))))
