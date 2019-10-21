@@ -64,7 +64,7 @@
  ;; iSearch
  '(isearch ((t (:background "DodgerBlue4" :foreground "light sky blue"))))
  '(isearch-fail ((t (:background "orange red" :foreground "black"))))
- '(lazy-highlight ((t (:background "dim gray" :foreground "gold3"))))
+ '(lazy-highlight ((t (:background "DimGray" :foreground "gold3"))))
  '(match ((((class color) (min-colors 88) (background light)) (:background "yellow1")) (((class color) (min-colors 88) (background dark)) (:background "RoyalBlue3")) (((class color) (min-colors 8) (background light)) (:foreground "black" :background "yellow")) (((class color) (min-colors 8) (background dark)) (:foreground "white" :background "blue")) (((type tty) (class mono)) (:inverse-video t)) (t (:background "gray"))))
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:inherit (isearch)))))
