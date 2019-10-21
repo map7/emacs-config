@@ -8,19 +8,19 @@
 (custom-theme-set-faces
  'customizable-light
  '(default ((t (:family "DejaVu Sans Mono"
-                        :foundry "unknown"
-                        :width normal
-                        :height 106
-                        :weight normal
-                        :slant normal
-                        :underline nil
-                        :overline nil
-                        :strike-through nil
-                        :box nil
-                        :inverse-video nil
-                        :foreground "black"
-                        :background "white"
                         :stipple nil
+                        :background "white"
+                        :foreground "black"
+                        :inverse-video nil
+                        :box nil
+                        :strike-through nil
+                        :overline nil
+                        :underline nil
+                        :slant normal
+                        :weight normal
+                        :height 106
+                        :width normal
+                        :foundry "PfEd"
                         :inherit nil))))
 
  '(fixed-pitch ((t (:family "Monospace"))))
