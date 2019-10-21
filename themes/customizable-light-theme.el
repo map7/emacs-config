@@ -154,14 +154,14 @@
  '(diredp-number ((t :foreground "orange1")))
 
  ;; diff
- '(diff-removed ((t :background "LightSalmon" :foreground "dark red" :weight bold)))
- '(diff-added ((t :background "light green" :foreground "dark green" :weight bold)))
+ '(diff-removed ((t :background "LightSalmon" :foreground "red4")))
+ '(diff-added ((t :background "light green" :foreground "dark green")))
  '(diff-hunk-header ((t :background "white" :foreground "DodgerBlue1" :weight bold)))
  '(diff-file-header ((t :weight bold)))
  '(diff-header ((t :background "white" :foreground "DodgerBlue1")))
  '(diff-context ((t :foreground "black")))
- '(diff-refine-added ((:background "light green" :foreground "dark green" :weight bold)))
- '(diff-refine-removed ((t :background "LightSalmon" :foreground "dark red" :weight bold)))
+ '(diff-refine-added ((:background "light green" :foreground "dark green")))
+ '(diff-refine-removed ((t :background "LightSalmon" :foreground "dark red")))
 
  ;; ediff
  '(ediff-fine-diff-B ((t :inherit diff-refine-added)))
