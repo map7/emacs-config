@@ -118,6 +118,11 @@
  '(region ((t :background "red" :foreground "white")))
  '(secondary-selection ((t :background "#3e4451" :foreground "white")))
 
+ ;; Buffer borders
+ '(border ((t :foreground "#3a3f4b")))
+ '(vertical-border ((t :foreground "black")))
+ '(internal-border ((t :foreground "white"))) 
+
  ;; error & success
  '(error ((t :foreground "#ee0000" :weight bold)))
  '(warning ((t :foreground "orange1" :weight bold)))
