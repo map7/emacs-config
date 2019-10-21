@@ -257,11 +257,11 @@
  '(erc-timestamp-face ((t :foreground "DodgerBlue1" :weight bold)))
 
  ;; Ivy
- '(ivy-current-match ((t :background "cyan" :foreground "DodgerBlue4" :weight bold)))
- '(ivy-minibuffer-match-face-1 ((t :foreground "orange1")))
- '(ivy-minibuffer-match-face-2 ((t :foreground "chartreuse")))
- '(ivy-minibuffer-match-face-3 ((t :foreground "orange1")))
- '(ivy-minibuffer-match-face-4 ((t :foreground "chartreuse")))
+ '(ivy-current-match ((t :background "gold" :foreground "DarkBlue" :weight bold)))
+ '(ivy-minibuffer-match-face-1 ((t :foreground "dark orange")))
+ '(ivy-minibuffer-match-face-2 ((t :foreground "DodgerBlue1")))
+ '(ivy-minibuffer-match-face-3 ((t :foreground "dark orange")))
+ '(ivy-minibuffer-match-face-4 ((t :foreground "DodgerBlue1")))
  '(ivy-match-required-face ((t :foreground "#4c3840" :background "#4c3840" :weight bold)))
  '(ivy-modified-buffer ((t :foreground "#4c3840")))
  '(ivy-remote ((t :background "cyan" :foreground "DodgerBlue4")))
