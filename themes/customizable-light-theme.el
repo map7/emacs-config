@@ -73,7 +73,7 @@
  '(message-mml-face ((t :foreground "chocolate1")))
 
  ;; linum (code line numbering)
- '(linum ((t :foreground "dark gray" :background "white")))
+ '(linum ((t :foreground "DimGray" :background "white")))
  ;; from hlinum
  '(linum-highlight-face ((t :foreground "DodgerBlue1")))
 
