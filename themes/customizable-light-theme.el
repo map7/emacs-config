@@ -103,14 +103,6 @@
  '(whitespace-empty ((t :background "orange1" :foreground "#3e4451"
                         :inverse-video unspecified)))
 
- ;; Hyperlink faces
- '(link ((t :foreground "cyan" :underline t)))
- '(link-visited ((t :foreground "cyan" :underline t)))
-
- ;; widget faces
- '(widget-field ((t :background "#3e4451" :box (:line-width 1 :color "chocolate1"))))
- '(widget-button ((t :inherit link)))
-
  ;; Emacs menu (custom-face) 
  '(custom-button ((t :background "light gray" :box (:line-width 2 :style released-button))))
  '(custom-button-mouse ((t :background "gray" :box (:line-width 2 :style released-button))))
