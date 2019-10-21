@@ -78,10 +78,10 @@
  '(linum-highlight-face ((t :foreground "DodgerBlue1")))
 
  ;; eshell
- '(eshell-prompt ((t :foreground "orange1" :background "black" :weight bold)))
- '(eshell-ls-directory ((t :foreground "cyan" :background "black" :weight bold)))
- '(eshell-ls-symlink ((t :foreground "orange1" :background "black" :weight normal)))
- '(eshell-ls-executable ((t :foreground "chartreuse" :background "black" :weight bold)))
+ '(eshell-prompt-face ((t :weight bold :foreground "orange3" :background "white")))
+ '(eshell-ls-directory ((t :foreground "DodgerBlue1" :background "white" :weight bold)))
+ '(eshell-ls-symlink ((t :weight bold :foreground "dark orange" :background "white")))
+ '(eshell-ls-executable ((t :weight bold :foreground "dark green" :background "white")))
 
  ;; whitespace
  '(whitespace-space ((t :background unspecified :foreground "#3e4451"
