@@ -209,12 +209,11 @@
  '(magit-sequence-part ((t :foreground "orange1" :weight bold)))
  '(magit-sequence-head ((t :foreground "chartreuse" :weight bold)))
 
+ ;; Git
  '(git-commit-summary ((t :weight bold)))
  '(git-commit-known-pseudo-header ((t :foreground "black")))
  '(change-log-name ((t :foreground "firebrick")))
  '(change-log-date ((t :foreground "gray")))
-
-
 
  ;; Message faces
  '(message-header-name ((t :foreground "cyan" :weight bold)))
