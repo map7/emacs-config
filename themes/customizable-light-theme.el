@@ -117,13 +117,8 @@
 
  ;; Highlighting faces
  '(fringe ((t :background "#24282f" :foreground "chocolate1")))
- '(border ((t :foreground "#3a3f4b")))
- '(vertical-border ((t :foreground "#3a3f4b")))
- '(highlight ((t :background "#3e4451" :foreground "white" :underline nil)))
  '(region ((t :background "#3e4451" :foreground "white")))
  '(secondary-selection ((t :background "#3e4451" :foreground "white")))
- '(isearch ((t :background "#ddbd78" :foreground "#3e4451")))
- '(lazy-highlight ((t :background "#666666" :foreground "#ddbd78")))
 
  ;; error & success
  '(error ((t :foreground "#ee0000" :weight bold)))
