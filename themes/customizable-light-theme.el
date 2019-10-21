@@ -109,8 +109,6 @@
  '(custom-button ((t :background "light gray" :box (:line-width 2 :style released-button))))
  '(custom-button-mouse ((t :background "gray" :box (:line-width 2 :style released-button))))
  '(custom-button-pressed ((t :background "dark gray" :box (:line-width 2 :style pressed-button))))
-
-;; other
  '(custom-group-tag ((t :foreground "DodgerBlue1" :weight bold :height 1.4)))
  '(custom-variable-tag ((t :foreground "DodgerBlue1" :weight bold)))
  '(custom-state ((t :foreground "chartreuse")))
