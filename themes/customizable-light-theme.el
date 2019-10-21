@@ -104,6 +104,8 @@
                         :inverse-video unspecified)))
 
  ;; Emacs menu (custom-face) 
+ '(widget-field ((t (:background "gray" :foreground "black" :box (:line-width 1 :color "chocolate1")))))
+ '(widget-button ((t :inherit link)))
  '(custom-button ((t :background "light gray" :box (:line-width 2 :style released-button))))
  '(custom-button-mouse ((t :background "gray" :box (:line-width 2 :style released-button))))
  '(custom-button-pressed ((t :background "dark gray" :box (:line-width 2 :style pressed-button))))
