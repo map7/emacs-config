@@ -48,20 +48,13 @@
  '(font-lock-string-face ((t (:foreground "orange3")))) ;; ruby quoted string
  '(font-lock-type-face ((t (:foreground "DodgerBlue3")))) ;; ruby class_name
  '(font-lock-variable-name-face ((t (:foreground "black"))))
-
- 
- '(button ((t (:underline (:color "#b2af95" :style line) :inherit (link)))))
- '(link ((t (:underline (:color foreground-color :style line) :foreground "cyan"))))
- '(link-visited ((t (:underline (:color foreground-color :style line) :foreground "cyan"))))
- '(fringe ((t (:foreground "chocolate1" :background "#24282f"))))
- '(header-line ((t (:height 1.13 :box (:line-width 1 :color "#d6cbae" :style nil) :foreground "#d6cbae"))))
- '(tooltip ((t (:foreground "#0a7874" :background "#404040" :inherit (variable-pitch)))))
-
- '(isearch ((t (:foreground "#3e4451" :background "#ddbd78"))))
- '(isearch-fail ((t (:background "#86201c"))))
- '(lazy-highlight ((t (:foreground "#ddbd78" :background "#666666"))))
- '(match ((t (:foreground "#b2af95" :background "#0c325a"))))
  '(font-lock-warning-face ((t (:background "red" :foreground "black" :weight bold))))
+ '(button ((t (:inherit (link)))))
+ '(link ((((class color) (min-colors 88) (background light)) (:underline (:color foreground-color :style line) :foreground "RoyalBlue3")) (((class color) (background light)) (:underline (:color foreground-color :style line) :foreground "blue")) (((class color) (min-colors 88) (background dark)) (:underline (:color foreground-color :style line) :foreground "cyan1")) (((class color) (background dark)) (:underline (:color foreground-color :style line) :foreground "cyan")) (t (:inherit (underline)))))
+ '(link-visited ((t (:inherit link :foreground "blue"))))
+ '(fringe ((t (:background "white"))))
+ '(header-line ((default (:inherit (mode-line))) (((type tty)) (:underline (:color foreground-color :style line) :inverse-video nil)) (((class color grayscale) (background light)) (:box nil :foreground "grey20" :background "grey90")) (((class color grayscale) (background dark)) (:box nil :foreground "grey90" :background "grey20")) (((class mono) (background light)) (:underline (:color foreground-color :style line) :box nil :inverse-video nil :foreground "black" :background "white")) (((class mono) (background dark)) (:underline (:color foreground-color :style line) :box nil :inverse-video nil :foreground "white" :background "black"))))
+ '(tooltip ((((class color)) (:inherit (variable-pitch) :foreground "black" :background "lightyellow")) (t (:inherit (variable-pitch)))))
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:inherit (isearch)))))
 
