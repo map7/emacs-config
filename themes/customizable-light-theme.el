@@ -34,22 +34,20 @@
  '(secondary-selection ((((class color) (min-colors 88) (background light)) (:background "yellow1")) (((class color) (min-colors 88) (background dark)) (:background "SkyBlue4")) (((class color) (min-colors 16) (background light)) (:background "yellow")) (((class color) (min-colors 16) (background dark)) (:background "SkyBlue4")) (((class color) (min-colors 8)) (:foreground "black" :background "cyan")) (t (:inverse-video t))))
  '(trailing-whitespace ((((class color) (background light)) (:background "red1")) (((class color) (background dark)) (:background "red1")) (t (:inverse-video t))))
  ;; Base fonts
+ '(font-lock-builtin-face ((t (:foreground "red3")))) ;; ruby requrie
  '(font-lock-comment-delimiter-face ((default (:inherit (font-lock-comment-face)))))
-                           (t (:slant italic :weight bold))))
- '(font-lock-string-face ((t (:foreground "orange1"))))
- '(font-lock-constant-face ((t (:foreground "DodgerBlue1"))))
- '(font-lock-builtin-face ((t (:foreground "#ee0000"))))
  '(font-lock-comment-face ((t (:foreground "DimGray")))) ;; ruby comment
+ '(font-lock-constant-face ((t (:foreground "DodgerBlue4")))) ;; ruby :name (symbols)
  '(font-lock-doc-face ((t (:inherit (font-lock-string-face)))))
- '(font-lock-function-name-face ((t (:foreground "gold"))))
- '(font-lock-keyword-face ((t (:foreground "dark green"))))
- '(font-lock-negation-char-face ((t (:foreground "#00a2f5"))))
- '(font-lock-preprocessor-face ((t (:foreground "#29b029"))))
- '(font-lock-regexp-grouping-backslash ((t (:foreground "#ae2823"))))
- '(font-lock-regexp-grouping-construct ((t (:foreground "#c9d617"))))
- '(font-lock-type-face ((t (:foreground "DodgerBlue1"))))
+ '(font-lock-function-name-face ((t (:foreground "yellow4")))) ;; ruby method eg .run
+ '(font-lock-keyword-face ((t (:foreground "green3")))) ;; ruby def
+ '(font-lock-negation-char-face ((t (:inherit (font-lock-constant-face)))))
+ '(font-lock-preprocessor-face ((t (:inherit (font-lock-type-face))))) ;; ruby =, <<, &&, >, <
+ '(font-lock-regexp-grouping-backslash ((t (:inherit (bold)))))
+ '(font-lock-regexp-grouping-construct ((t (:inherit (bold)))))
+ '(font-lock-string-face ((t (:foreground "orange3")))) ;; ruby quoted string
+ '(font-lock-type-face ((t (:foreground "DodgerBlue3")))) ;; ruby class_name
  '(font-lock-variable-name-face ((t (:foreground "black"))))
- '(font-lock-warning-face ((t (:weight bold :foreground "#ee0000" :background "#4c3840"))))
 
  
  '(button ((t (:underline (:color "#b2af95" :style line) :inherit (link)))))
@@ -63,6 +61,7 @@
  '(isearch-fail ((t (:background "#86201c"))))
  '(lazy-highlight ((t (:foreground "#ddbd78" :background "#666666"))))
  '(match ((t (:foreground "#b2af95" :background "#0c325a"))))
+ '(font-lock-warning-face ((t (:background "red" :foreground "black" :weight bold))))
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:inherit (isearch)))))
 
