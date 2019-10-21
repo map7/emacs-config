@@ -22,20 +22,17 @@
                         :width normal
                         :foundry "PfEd"
                         :inherit nil))))
-
+ '(cursor ((((background light)) (:background "black")) (((background dark)) (:background "white"))))
  '(fixed-pitch ((t (:family "Monospace"))))
- '(variable-pitch ((((type w32)) (:foundry "outline" :family "Arial")) (t (:family "Sans Serif"))))
- '(escape-glyph ((t (:weight bold :foreground "cyan"))))
- '(homoglyph ((((background dark)) (:foreground "cyan"))
-              (((type pc)) (:foreground "magenta")) (t (:foreground "brown"))))
- '(minibuffer-prompt ((t (:weight bold :foreground "DodgerBlue1"))))
- '(highlight ((t (:underline nil :foreground "white" :background "black"))))
- '(region ((t (:foreground "white" :background "#3e4451"))))
- '(shadow ((t (:foreground "#9b9b9b"))))
- '(secondary-selection ((t (:foreground "white" :background "#3e4451"))))
- '(trailing-whitespace ((t (:background "#a52621"))))
-
-
+ '(variable-pitch ((t (:family "Sans Serif"))))
+ '(escape-glyph ((t (:foreground "DodgerBlue3" :weight bold))))
+ '(homoglyph ((t (:foreground "DodgerBlue1"))))
+ '(minibuffer-prompt ((t (:foreground "DarkBlue" :weight bold))))
+ '(highlight ((t :background "DarkGray" :foreground "white" :underline nil)))
+ '(region ((t (:background "red" :foreground "white")))) ;; text highlight background
+ '(shadow ((((class color grayscale) (min-colors 88) (background light)) (:foreground "grey50")) (((class color grayscale) (min-colors 88) (background dark)) (:foreground "grey70")) (((class color) (min-colors 8) (background light)) (:foreground "green")) (((class color) (min-colors 8) (background dark)) (:foreground "yellow"))))
+ '(secondary-selection ((((class color) (min-colors 88) (background light)) (:background "yellow1")) (((class color) (min-colors 88) (background dark)) (:background "SkyBlue4")) (((class color) (min-colors 16) (background light)) (:background "yellow")) (((class color) (min-colors 16) (background dark)) (:background "SkyBlue4")) (((class color) (min-colors 8)) (:foreground "black" :background "cyan")) (t (:inverse-video t))))
+ '(trailing-whitespace ((((class color) (background light)) (:background "red1")) (((class color) (background dark)) (:background "red1")) (t (:inverse-video t))))
  ;; Base fonts
  '(font-lock-comment-delimiter-face ((default (:inherit (font-lock-comment-face)))))
                            (t (:slant italic :weight bold))))
