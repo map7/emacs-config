@@ -68,16 +68,9 @@
  '(match ((((class color) (min-colors 88) (background light)) (:background "yellow1")) (((class color) (min-colors 88) (background dark)) (:background "RoyalBlue3")) (((class color) (min-colors 8) (background light)) (:foreground "black" :background "yellow")) (((class color) (min-colors 8) (background dark)) (:foreground "white" :background "blue")) (((type tty) (class mono)) (:inverse-video t)) (t (:background "gray"))))
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:inherit (isearch)))))
-
- ;; Cursor
- '(cursor ((((background light)) (:background "white")) (((background dark)) (:background "black"))))
-
+ 
  ;; mml
  '(message-mml-face ((t :foreground "chocolate1")))
-
- ;; Escape and prompt faces
- '(minibuffer-prompt ((t :foreground "NavyBlue" :background "white" :weight bold)))
- '(escape-glyph ((t :foreground "DodgerBlue1" :weight bold)))
 
  ;; linum (code line numbering)
  '(linum ((t :foreground "dark gray" :background "white")))
