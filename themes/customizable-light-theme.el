@@ -266,11 +266,11 @@
  '(ivy-remote ((t :background "cyan" :foreground "DodgerBlue4")))
 
  ;; Company
- '(company-preview ((t :background "#22252c" :foreground "black")))
- '(company-preview-common ((t :background "#22252c" :foreground "LightSkyblue1")))
+ '(company-preview ((t :background "orange3" :foreground "black"))) ;; Autocomplete single suggestion
+ '(company-preview-common ((t :background "orange3" :foreground "NavyBlue" :weight bold)))
  '(company-preview-search ((t :background "cyan" :foreground "black")))
- '(company-tooltip ((t :background "#22252c" :foreground "black")))
- '(company-scrollbar-bg ((t :background "#22252c")))
+ '(company-tooltip ((t :background "gray60" :foreground "black"))) ;; Autocomplete background
+ '(company-scrollbar-bg ((t :background "gray60"))) ;; Autocomplete Scroll bar background
  '(company-scrollbar-fg ((t :background "navyblue")))
  '(company-tooltip-common ((t :foreground "LightSkyblue1" :weight bold :background "#22252c")))
  '(company-tooltip-annotation ((t :foreground "cyan" :weight bold :background "navyblue")))
