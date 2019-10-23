@@ -45,7 +45,7 @@
  '(font-lock-preprocessor-face ((t (:inherit (font-lock-type-face))))) ;; ruby =, <<, &&, >, <
  '(font-lock-regexp-grouping-backslash ((t (:inherit (bold)))))
  '(font-lock-regexp-grouping-construct ((t (:inherit (bold)))))
- '(font-lock-string-face ((t (:foreground "orange3")))) ;; ruby quoted string
+ '(font-lock-string-face ((t (:foreground "chocolate")))) ;; ruby quoted string
  '(font-lock-type-face ((t (:foreground "DodgerBlue3")))) ;; ruby class_name
  '(font-lock-variable-name-face ((t (:foreground "black"))))
  '(font-lock-warning-face ((t (:background "red" :foreground "black" :weight bold))))
