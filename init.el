@@ -63,6 +63,7 @@
 ;; Ruby related
 (use-package enh-ruby-mode :ensure t :defer 5)
 (use-package goto-gem :ensure t :defer 5)         ; Goto the directory for a ruby gem package
+(use-package ruby-refactor :ensure t :defer 5)    ; Refactor shortcuts
 
 ;; Org related
 (use-package org-cliplink :ensure t :defer 5)
