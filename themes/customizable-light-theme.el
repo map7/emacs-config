@@ -62,9 +62,9 @@
  '(mode-line-highlight ((t (:box nil :weight bold))))
  '(mode-line-inactive ((t (:inherit mode-line :background "white" :foreground "black" :box (:line-width 1 :color "DimGray") :weight light))))
  ;; iSearch
- '(isearch-fail ((t (:background "orange red" :foreground "black"))))
  '(lazy-highlight ((t (:background "DimGray" :foreground "gold3"))))
  '(isearch ((t :background "DodgerBlue1" :foreground "white"))) ;; In buffer highlighting
+ '(isearch-fail ((t (:background "red2" :foreground "black"))))
  '(match ((((class color) (min-colors 88) (background light)) (:background "yellow1")) (((class color) (min-colors 88) (background dark)) (:background "RoyalBlue3")) (((class color) (min-colors 8) (background light)) (:foreground "black" :background "yellow")) (((class color) (min-colors 8) (background dark)) (:foreground "white" :background "blue")) (((type tty) (class mono)) (:inverse-video t)) (t (:background "gray"))))
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:inherit (isearch)))))
