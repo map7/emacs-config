@@ -29,7 +29,7 @@
  '(homoglyph ((t (:foreground "DodgerBlue1"))))
  '(minibuffer-prompt ((t (:foreground "DarkBlue" :weight bold))))
  '(highlight ((t :background "DarkGray" :foreground "white" :underline nil)))
- '(region ((t (:background "red" :foreground "white")))) ;; text highlight background
+ '(region ((t (:inherit (highlight))))) ;; In buffer text highlight background under cursor
  '(shadow ((((class color grayscale) (min-colors 88) (background light)) (:foreground "grey50")) (((class color grayscale) (min-colors 88) (background dark)) (:foreground "grey70")) (((class color) (min-colors 8) (background light)) (:foreground "green")) (((class color) (min-colors 8) (background dark)) (:foreground "yellow"))))
  '(secondary-selection ((((class color) (min-colors 88) (background light)) (:background "yellow1")) (((class color) (min-colors 88) (background dark)) (:background "SkyBlue4")) (((class color) (min-colors 16) (background light)) (:background "yellow")) (((class color) (min-colors 16) (background dark)) (:background "SkyBlue4")) (((class color) (min-colors 8)) (:foreground "black" :background "cyan")) (t (:inverse-video t))))
  '(trailing-whitespace ((((class color) (background light)) (:background "red1")) (((class color) (background dark)) (:background "red1")) (t (:inverse-video t))))
