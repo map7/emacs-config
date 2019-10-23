@@ -1,3 +1,5 @@
+(use-package org-attach-screenshot :ensure t :defer 5)
+
 ;; Org mode shortcuts
 (global-set-key (kbd "C-c C-x C-v") 'do-org-show-all-inline-images)
 (global-set-key "\C-cl" 'org-store-link)
