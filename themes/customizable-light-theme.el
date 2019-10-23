@@ -28,7 +28,7 @@
  '(escape-glyph ((t (:foreground "DodgerBlue3" :weight bold))))
  '(homoglyph ((t (:foreground "DodgerBlue1"))))
  '(minibuffer-prompt ((t (:foreground "DarkBlue" :weight bold))))
- '(highlight ((t :background "DarkGray" :foreground "white" :underline nil)))
+ '(highlight ((t (:background "NavyBlue" :foreground "white")))) ;; In buffer Ivy search line highlight
  '(region ((t (:inherit (highlight))))) ;; In buffer text highlight background under cursor
  '(shadow ((((class color grayscale) (min-colors 88) (background light)) (:foreground "grey50")) (((class color grayscale) (min-colors 88) (background dark)) (:foreground "grey70")) (((class color) (min-colors 8) (background light)) (:foreground "green")) (((class color) (min-colors 8) (background dark)) (:foreground "yellow"))))
  '(secondary-selection ((((class color) (min-colors 88) (background light)) (:background "yellow1")) (((class color) (min-colors 88) (background dark)) (:background "SkyBlue4")) (((class color) (min-colors 16) (background light)) (:background "yellow")) (((class color) (min-colors 16) (background dark)) (:background "SkyBlue4")) (((class color) (min-colors 8)) (:foreground "black" :background "cyan")) (t (:inverse-video t))))
