@@ -267,7 +267,7 @@
 
  ;; Company
  '(company-preview ((t :background "DodgerBlue1" :foreground "white"))) ;; Autocomplete single suggestion
- '(company-preview-common ((t :background "NavyBlue" :foreground "yellow" :weight bold))) ;; Autocomplete current word suggestion
+ '(company-preview-common ((t :background "Dodgerblue1" :foreground "black" :weight bold))) ;; Autocomplete current word suggestion
  '(company-preview-search ((t :background "cyan" :foreground "black")))
  '(company-tooltip-annotation ((t :foreground "cyan" :weight bold :background "navyblue")))
  '(company-tooltip-common-selection ((t :foreground "DodgerBlue1" :background "#3a3f4b" :weight bold)))
