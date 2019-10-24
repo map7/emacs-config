@@ -188,7 +188,7 @@
  '(magit-diff-their ((t :inherit diff-added)))
  '(magit-diff-their-highlight ((t :inherit diff-added)))
  '(magit-diff-lines-heading ((t :background "DodgerBlue1" :foreground "black")))
- '(magit-diff-hunk-heading ((t :background "DimGray")))
+ '(magit-diff-hunk-heading ((t :background "Gray40" :foreground "white")))
  '(magit-diff-hunk-heading-highlight ((t :background "DodgerBlue1")))
  '(magit-process-ok ((t :foreground "chartreuse" :weight bold)))
  '(magit-section-highlight ((t :background "gray")))
