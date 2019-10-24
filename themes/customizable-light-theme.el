@@ -178,7 +178,7 @@
  ;; Magit
  '(magit-diff-context-highlight ((t :background "white")))
  '(magit-diff-file-heading ((t :weight bold :foreground "DodgerBlue1")))
- '(magit-diff-file-heading-highlight ((t :foreground "DodgerBlue1" :background "cyan" :weight bold)))
+ '(magit-diff-file-heading-highlight ((t :inherit highlight)))
  '(magit-diff-removed-highlight ((t :inherit diff-removed)))
  '(magit-diff-removed ((t :inherit diff-removed)))
  '(magit-diff-our ((t :inherit diff-removed)))
