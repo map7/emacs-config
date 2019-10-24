@@ -172,7 +172,7 @@
  '(ediff-current-diff-C ((t :background "navyblue" :foreground "cyan")))
 
  ;; X-Term
- '(term-color-blue ((t :foreground "DodgerBlue3")))   ;; foreground font color for xterm prompt & normal folders
+ '(term-color-blue ((t :foreground "DodgerBlue1")))   ;; foreground font color for xterm prompt & normal folders
  '(term-color-cyan ((t :foreground "orange3")))    ;; foreground font color for xterm symlinks
 
  ;; Magit
