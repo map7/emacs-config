@@ -160,8 +160,8 @@
  '(diff-file-header ((t :weight bold)))
  '(diff-header ((t :background "white" :foreground "DodgerBlue1")))
  '(diff-context ((t :foreground "black")))
- '(diff-refine-removed ((t :background "LightSalmon" :foreground "dark red")))
  '(diff-refine-added ((t :background "light green" :foreground "green4")))
+ '(diff-refine-removed ((t :background "LightSalmon" :foreground "red4")))
 
  ;; ediff
  '(ediff-fine-diff-B ((t :inherit diff-refine-added)))
