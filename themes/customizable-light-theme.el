@@ -266,8 +266,8 @@
  '(ivy-remote ((t :background "cyan" :foreground "DodgerBlue4")))
 
  ;; Company
- '(company-preview ((t :background "orange3" :foreground "black"))) ;; Autocomplete single suggestion
  '(company-preview-common ((t :background "orange3" :foreground "NavyBlue" :weight bold)))
+ '(company-preview ((t :background "DodgerBlue1" :foreground "white"))) ;; Autocomplete single suggestion
  '(company-preview-search ((t :background "cyan" :foreground "black")))
  '(company-tooltip ((t :background "gray60" :foreground "black"))) ;; Autocomplete background
  '(company-scrollbar-bg ((t :background "gray60"))) ;; Autocomplete Scroll bar background
