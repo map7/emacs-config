@@ -269,13 +269,13 @@
  '(company-preview ((t :background "DodgerBlue1" :foreground "white"))) ;; Autocomplete single suggestion
  '(company-preview-common ((t :background "NavyBlue" :foreground "yellow" :weight bold))) ;; Autocomplete current word suggestion
  '(company-preview-search ((t :background "cyan" :foreground "black")))
- '(company-tooltip-common ((t :foreground "LightSkyblue1" :weight bold :background "#22252c")))
  '(company-tooltip-annotation ((t :foreground "cyan" :weight bold :background "navyblue")))
  '(company-tooltip-common-selection ((t :foreground "DodgerBlue1" :background "#3a3f4b" :weight bold)))
  '(company-tooltip-selection ((t :foreground "black" :background "#3a3f4b")))
  '(company-scrollbar-bg ((t :background "gray10"))) ;; Autocomplete Scroll bar background
  '(company-scrollbar-fg ((t :background "DodgerBlue1"))) ;; Autocomplete Scrollbar
  '(company-tooltip ((t :background "gray60" :foreground "white"))) ;; Autocomplete background
+ '(company-tooltip-common ((t :foreground "white" :background "DodgerBlue1" :weight bold))) ;; Autocomplete matched text
  '(company-tooltip-mouse ((t :foreground "black" :background "#3a3f4b")))
 
  ;; Flycheck
