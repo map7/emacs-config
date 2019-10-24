@@ -256,12 +256,12 @@
  '(erc-timestamp-face ((t :foreground "DodgerBlue1" :weight bold)))
 
  ;; Ivy
- '(ivy-minibuffer-match-face-1 ((t :foreground "dark orange")))
- '(ivy-minibuffer-match-face-2 ((t :foreground "DodgerBlue1")))
- '(ivy-minibuffer-match-face-3 ((t :foreground "dark orange")))
- '(ivy-minibuffer-match-face-4 ((t :foreground "DodgerBlue1")))
  '(ivy-match-required-face ((t :foreground "#4c3840" :background "#4c3840" :weight bold)))
  '(ivy-current-match ((t :inherit highlight)))
+ '(ivy-minibuffer-match-face-1 ((t :foreground "white" :background "gray40" :weight bold)))
+ '(ivy-minibuffer-match-face-2 ((t :foreground "white" :background "Dodgerblue1" :weight bold)))
+ '(ivy-minibuffer-match-face-3 ((t (:inherit ivy-minibuffer-match-face-1))))
+ '(ivy-minibuffer-match-face-4 ((t (:inherit ivy-minibuffer-match-face-2))))
  '(ivy-modified-buffer ((t :foreground "#4c3840")))
  '(ivy-remote ((t :background "cyan" :foreground "DodgerBlue4")))
 
