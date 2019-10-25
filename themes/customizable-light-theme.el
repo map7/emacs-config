@@ -275,7 +275,7 @@
  '(company-tooltip-common ((t :foreground "white" :background "DodgerBlue1" :weight bold))) ;; Autocomplete matched text
  '(company-tooltip-annotation ((t :foreground "white" :background "DodgerBlue1" :weight bold)))
  '(company-tooltip-common-selection ((t :foreground "white" :background "NavyBlue" :weight bold)))
- '(company-tooltip-selection ((t :foreground "white" :background "#3a3f4b")))
+ '(company-tooltip-selection ((t :foreground "white" :background "NavyBlue")))
  '(company-tooltip-mouse ((t :foreground "black" :background "#3a3f4b")))
 
  ;; Flycheck
