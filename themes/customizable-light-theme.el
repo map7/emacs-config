@@ -269,7 +269,7 @@
  '(company-preview ((t :background "DodgerBlue1" :foreground "white"))) ;; Autocomplete single suggestion
  '(company-preview-common ((t :background "Dodgerblue1" :foreground "black" :weight bold))) ;; Autocomplete current word suggestion
  '(company-preview-search ((t :background "cyan" :foreground "black")))
- '(company-scrollbar-bg ((t :background "gray10"))) ;; Autocomplete Scroll bar background
+ '(company-scrollbar-bg ((t :background "gray30"))) ;; Autocomplete Scroll bar background
  '(company-scrollbar-fg ((t :background "DodgerBlue1"))) ;; Autocomplete Scrollbar
  '(company-tooltip ((t :background "gray60" :foreground "white"))) ;; Autocomplete background
  '(company-tooltip-common ((t :foreground "white" :background "DodgerBlue1" :weight bold))) ;; Autocomplete matched text
