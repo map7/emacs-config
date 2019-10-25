@@ -56,11 +56,11 @@
  '(header-line ((default (:inherit (mode-line))) (((type tty)) (:underline (:color foreground-color :style line) :inverse-video nil)) (((class color grayscale) (background light)) (:box nil :foreground "grey20" :background "grey90")) (((class color grayscale) (background dark)) (:box nil :foreground "grey90" :background "grey20")) (((class mono) (background light)) (:underline (:color foreground-color :style line) :box nil :inverse-video nil :foreground "black" :background "white")) (((class mono) (background dark)) (:underline (:color foreground-color :style line) :box nil :inverse-video nil :foreground "white" :background "black"))))
  '(tooltip ((((class color)) (:inherit (variable-pitch) :foreground "black" :background "lightyellow")) (t (:inherit (variable-pitch)))))
  ;; Modeline
- '(mode-line ((t (:background "gray" :foreground "black" :box -1))))
+ '(mode-line ((t (:background "gray60" :foreground "white" :box (:line-width 1 :color "gray60")))))
  '(mode-line-buffer-id ((t (:weight normal))))
  '(mode-line-emphasis ((t (:weight bold))))
  '(mode-line-highlight ((t (:box nil :weight bold))))
- '(mode-line-inactive ((t (:inherit mode-line :background "white" :foreground "black" :box (:line-width 1 :color "DimGray") :weight light))))
+ '(mode-line-inactive ((t (:inherit mode-line :background "white" :foreground "gray60" :box (:line-width 1 :color "gray60")))))
  ;; iSearch
  '(isearch ((t :background "DodgerBlue1" :foreground "white"))) ;; In buffer highlighting
  '(isearch-fail ((t (:background "red2" :foreground "black"))))
@@ -269,13 +269,13 @@
  '(company-preview ((t :background "DodgerBlue1" :foreground "white"))) ;; Autocomplete single suggestion
  '(company-preview-common ((t :background "Dodgerblue1" :foreground "black" :weight bold))) ;; Autocomplete current word suggestion
  '(company-preview-search ((t :background "cyan" :foreground "black")))
- '(company-tooltip-selection ((t :foreground "black" :background "#3a3f4b")))
  '(company-scrollbar-bg ((t :background "gray10"))) ;; Autocomplete Scroll bar background
  '(company-scrollbar-fg ((t :background "DodgerBlue1"))) ;; Autocomplete Scrollbar
  '(company-tooltip ((t :background "gray60" :foreground "white"))) ;; Autocomplete background
  '(company-tooltip-common ((t :foreground "white" :background "DodgerBlue1" :weight bold))) ;; Autocomplete matched text
  '(company-tooltip-annotation ((t :foreground "white" :background "DodgerBlue1" :weight bold)))
  '(company-tooltip-common-selection ((t :foreground "white" :background "NavyBlue" :weight bold)))
+ '(company-tooltip-selection ((t :foreground "white" :background "#3a3f4b")))
  '(company-tooltip-mouse ((t :foreground "black" :background "#3a3f4b")))
 
  ;; Flycheck
