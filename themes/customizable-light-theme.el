@@ -281,7 +281,7 @@
  ;; Flycheck
  '(flycheck-fringe-error ((t :foreground "#4c3840" :background "#4c3840" :weight bold :inverse-video t)))
  '(flycheck-fringe-warning ((t :background "#4a473d" :foreground "orange1" :weight bold :inverse-video t)))
- '(flycheck-fringe-info ((t :background "navyblue" :foreground "cyan" :weight bold :inverse-video t)))
+ '(flycheck-fringe-info ((t :background "Dodgerblue4" :foreground "cyan" :weight bold :inverse-video t)))
  '(flycheck-warning ((t :underline (:color "#4c3840" :style wave))))
  '(flycheck-error ((t :underline (:color "#4c3840" :style wave))))
 
