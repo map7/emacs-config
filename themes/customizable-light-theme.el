@@ -305,3 +305,4 @@
                (file-name-as-directory (file-name-directory load-file-name))))
 
 (provide-theme 'customizable-light)
+;;; customizable-light ends here
