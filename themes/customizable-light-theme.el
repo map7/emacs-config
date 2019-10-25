@@ -191,7 +191,7 @@
  '(magit-diff-hunk-heading ((t :background "Gray40" :foreground "white")))
  '(magit-diff-hunk-heading-highlight ((t :background "DodgerBlue1")))
  '(magit-process-ok ((t :foreground "chartreuse" :weight bold)))
- '(magit-section-highlight ((t :background "gray")))
+ '(magit-section-highlight ((t :background "white"))) ;; Make same as background (transparent)
  '(magit-section-heading ((t :foreground "DimGray" :weight bold)))
  '(magit-branch-current ((t :foreground "DodgerBlue1" :background "cyan" :box 1)))
  '(magit-branch-local ((t :foreground "DarkOrange4" :background "orange" :box 1)))
