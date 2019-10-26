@@ -246,13 +246,13 @@
  '(org-mode-line-clock ((t :background unspecified (:inherit mode-line))))
 
  ;; ERC
- '(erc-nick-default-face ((t :foreground "gold" :weight bold)))
- '(erc-current-nick-face ((t :foreground "gold" :weight bold)))
- '(erc-my-nick-face ((t :foreground "gold" :weight normal)))
- '(erc-nick-msg-face ((t :foreground "gray" :weight bold)))
- '(erc-notice-face ((t :foreground "chocolate1")))
+ '(erc-nick-default-face ((t :foreground "gold" :background "black" :weight bold)))
+ '(erc-current-nick-face ((t :inherit erc-nick-default-face)))
+ '(erc-my-nick-face ((t :inherit erc-nick-default-face)))
+ '(erc-nick-msg-face ((t :inherit erc-nick-default-face)))
+ '(erc-notice-face (:inherit (font-lock-comment-face)))
  '(erc-input-face ((t :foreground "black" :weight bold)))
- '(erc-prompt-face ((t :foreground "gold" :background "white" :weight bold :box 1)))
+ '(erc-prompt-face ((t :inherit erc-nick-default-face :box 1)))
  '(erc-timestamp-face ((t :foreground "DodgerBlue1" :weight bold)))
 
  ;; Ivy
