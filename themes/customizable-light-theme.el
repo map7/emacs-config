@@ -176,7 +176,7 @@
  '(term-color-cyan ((t :foreground "orange3")))    ;; foreground font color for xterm symlinks
 
  ;; Magit
- '(magit-diff-context-highlight ((t :background "white")))
+ '(magit-diff-context-highlight ((t nil))) ;; turn off as it doesnt add any value
  '(magit-diff-file-heading ((t :weight bold :foreground "DodgerBlue1")))
  '(magit-diff-file-heading-highlight ((t :inherit highlight)))
  '(magit-diff-removed-highlight ((t :inherit diff-removed)))
@@ -191,7 +191,7 @@
  '(magit-diff-hunk-heading ((t :background "Gray40" :foreground "white")))
  '(magit-diff-hunk-heading-highlight ((t :background "DodgerBlue1")))
  '(magit-process-ok ((t :foreground "chartreuse" :weight bold)))
- '(magit-section-highlight ((t :background "white"))) ;; Make same as background (transparent)
+ '(magit-section-highlight ((t nil))) ;; turn off as it doesnt add any value
  '(magit-section-heading ((t :foreground "DimGray" :weight bold)))
  '(magit-branch-current ((t :foreground "DodgerBlue1" :background "cyan" :box 1)))
  '(magit-branch-local ((t :foreground "DarkOrange4" :background "orange" :box 1)))
