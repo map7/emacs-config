@@ -190,6 +190,7 @@
  '(magit-diff-lines-heading ((t :background "DodgerBlue1" :foreground "black")))
  '(magit-diff-hunk-heading ((t :background "Gray40" :foreground "white")))
  '(magit-diff-hunk-heading-highlight ((t :background "DodgerBlue1")))
+ '(magit-diff-hunk-heading-selection ((t :background "DodgerBlue1"))) 
  '(magit-process-ok ((t :foreground "chartreuse" :weight bold)))
  '(magit-section-highlight ((t nil))) ;; turn off as it doesnt add any value
  '(magit-section-heading ((t :foreground "DimGray" :weight bold)))
