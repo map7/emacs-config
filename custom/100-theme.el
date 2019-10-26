@@ -24,5 +24,5 @@
 ;; Set theme toggle shortcut key
 (global-set-key (kbd "s-t") 'my/cycle-theme)
 
-;; Load theme toggle function & load theme
+;; Load theme toggle function & load theme (loads 0th position theme in my/themes list)
 (my/load-indexed-theme)
