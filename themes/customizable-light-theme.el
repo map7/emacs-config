@@ -120,9 +120,8 @@
 
  ;; Buffer borders
  '(border ((t :foreground "#3a3f4b")))
- '(vertical-border ((t :foreground "black")))
- '(internal-border ((t :foreground "white"))) 
-
+ '(vertical-border ((t :foreground "black"))) ;; border between buffers
+ '(internal-border ((t :foreground "black"))) ;; not sure what this does yet
  ;; error & success
  '(error ((t :foreground "#ee0000" :weight bold)))
  '(warning ((t :foreground "orange1" :weight bold)))
