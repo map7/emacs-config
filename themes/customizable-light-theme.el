@@ -35,7 +35,7 @@
  '(trailing-whitespace ((((class color) (background light)) (:background "red1")) (((class color) (background dark)) (:background "red1")) (t (:inverse-video t))))
  ;; Base fonts
  '(font-lock-builtin-face ((t (:foreground "red3")))) ;; ruby requrie
- '(font-lock-comment-delimiter-face ((default (:inherit (font-lock-comment-face)))))
+ '(font-lock-comment-delimiter-face ((t (:inherit (font-lock-comment-face)))))
  '(font-lock-comment-face ((t (:foreground "DimGray")))) ;; ruby comment
  '(font-lock-constant-face ((t (:foreground "DodgerBlue4")))) ;; ruby :name (symbols)
  '(font-lock-doc-face ((t (:inherit (font-lock-string-face)))))
