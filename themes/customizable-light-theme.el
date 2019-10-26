@@ -26,9 +26,9 @@
  '(fixed-pitch ((t (:family "Monospace"))))
  '(variable-pitch ((t (:family "Sans Serif"))))
  '(escape-glyph ((t (:foreground "DodgerBlue3" :weight bold))))
- '(homoglyph ((t (:foreground "DodgerBlue1"))))
- '(minibuffer-prompt ((t (:foreground "DarkBlue" :weight bold))))
- '(highlight ((t (:background "NavyBlue" :foreground "white")))) ;; In buffer Ivy search line highlight
+ '(homoglyph ((t (:foreground "DodgerBlue3")))) ;; Face for lookalike characters.
+ '(minibuffer-prompt ((t (:foreground "DodgerBlue1" :weight bold))))
+ '(highlight ((t (:background "gray40" :foreground "white")))) ;; In buffer Ivy search line highlight
  '(region ((t (:inherit (highlight))))) ;; In buffer text highlight background under cursor
  '(shadow ((((class color grayscale) (min-colors 88) (background light)) (:foreground "grey50")) (((class color grayscale) (min-colors 88) (background dark)) (:foreground "grey70")) (((class color) (min-colors 8) (background light)) (:foreground "green")) (((class color) (min-colors 8) (background dark)) (:foreground "yellow"))))
  '(secondary-selection ((((class color) (min-colors 88) (background light)) (:background "yellow1")) (((class color) (min-colors 88) (background dark)) (:background "SkyBlue4")) (((class color) (min-colors 16) (background light)) (:background "yellow")) (((class color) (min-colors 16) (background dark)) (:background "SkyBlue4")) (((class color) (min-colors 8)) (:foreground "black" :background "cyan")) (t (:inverse-video t))))
@@ -62,7 +62,7 @@
  '(mode-line-highlight ((t (:box nil :weight bold))))
  '(mode-line-inactive ((t (:inherit mode-line :background "white" :foreground "gray60" :box (:line-width 1 :color "gray60")))))
  ;; iSearch
- '(isearch ((t :background "DodgerBlue1" :foreground "white"))) ;; In buffer highlighting
+ '(isearch ((t :background "DodgerBlue3" :foreground "white"))) ;; In buffer highlighting
  '(isearch-fail ((t (:background "red2" :foreground "black"))))
  '(lazy-highlight ((t (:background "red2" :foreground "white")))) ;; Highlights words not currently matched on selected match line
  '(match ((((class color) (min-colors 88) (background light)) (:foreground "black" :background "yellow")) (((class color) (min-colors 88) (background dark)) (:background "RoyalBlue3")) (((class color) (min-colors 8) (background light)) (:foreground "black" :background "yellow")) (((class color) (min-colors 8) (background dark)) (:foreground "white" :background "blue")) (((type tty) (class mono)) (:inverse-video t)) (t (:background "gray"))))
@@ -258,25 +258,25 @@
 
  ;; Ivy
  '(ivy-current-match ((t :inherit highlight)))
- '(ivy-minibuffer-match-face-1 ((t :foreground "white" :background "gray40" :weight bold)))
- '(ivy-minibuffer-match-face-2 ((t :foreground "white" :background "Dodgerblue1" :weight bold)))
+ '(ivy-minibuffer-match-face-1 ((t :foreground "white" :background "gray60" :weight bold)))
+ '(ivy-minibuffer-match-face-2 ((t :foreground "white" :background "Dodgerblue3" :weight bold)))
  '(ivy-minibuffer-match-face-3 ((t (:inherit ivy-minibuffer-match-face-1))))
  '(ivy-minibuffer-match-face-4 ((t (:inherit ivy-minibuffer-match-face-2))))
- '(ivy-match-required-face ((t :foreground "white" :background "gray40" :weight bold)))
+ '(ivy-match-required-face ((t :foreground "white" :background "orange4" :weight bold)))
  '(ivy-modified-buffer ((t :foreground "#4c3840")))
  '(ivy-remote ((t :background "cyan" :foreground "DodgerBlue4")))
 
  ;; Company
- '(company-preview ((t :background "DodgerBlue1" :foreground "white"))) ;; Autocomplete single suggestion
- '(company-preview-common ((t :background "Dodgerblue1" :foreground "black" :weight bold))) ;; Autocomplete current word suggestion
+ '(company-preview ((t :background "DodgerBlue3" :foreground "white"))) ;; Autocomplete single suggestion
+ '(company-preview-common ((t :inherit highlight :weight bold))) ;; Autocomplete current word suggestion
  '(company-preview-search ((t :background "cyan" :foreground "black")))
  '(company-scrollbar-bg ((t :background "gray30"))) ;; Autocomplete Scroll bar background
- '(company-scrollbar-fg ((t :background "DodgerBlue1"))) ;; Autocomplete Scrollbar
- '(company-tooltip ((t :background "gray60" :foreground "white"))) ;; Autocomplete background
+ '(company-scrollbar-fg ((t :background "DodgerBlue3"))) ;; Autocomplete Scrollbar
+ '(company-tooltip ((t :background "gray80" :foreground "white"))) ;; Autocomplete background
  '(company-tooltip-common ((t :foreground "white" :background "DodgerBlue1" :weight bold))) ;; Autocomplete matched text
  '(company-tooltip-annotation ((t :foreground "white" :background "DodgerBlue1" :weight bold)))
- '(company-tooltip-common-selection ((t :foreground "white" :background "NavyBlue" :weight bold)))
- '(company-tooltip-selection ((t :foreground "white" :background "NavyBlue")))
+ '(company-tooltip-common-selection ((t :foreground "white" :background "DodgerBlue3" :weight bold)))
+ '(company-tooltip-selection ((t :inherit highlight)))
  '(company-tooltip-mouse ((t :foreground "black" :background "#3a3f4b")))
 
  ;; Flycheck
