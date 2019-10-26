@@ -18,7 +18,7 @@
                         :underline nil
                         :slant normal
                         :weight normal
-                        :height 120
+                        :height 110
                         :width normal
                         :foundry "PfEd"
                         :inherit nil))))
