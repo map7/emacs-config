@@ -193,7 +193,7 @@
  '(magit-process-ok ((t :foreground "chartreuse" :weight bold)))
  '(magit-section-highlight ((t nil))) ;; turn off as it doesnt add any value
  '(magit-section-heading ((t :foreground "DimGray" :weight bold)))
- '(magit-branch-current ((t :foreground "DodgerBlue1" :background "cyan" :box 1)))
+ '(magit-branch-current ((t :foreground "DodgerBlue4" :background "cyan" :box 1)))
  '(magit-branch-local ((t :foreground "DarkOrange4" :background "orange" :box 1)))
  '(magit-branch-remote ((t :foreground "dark green" :background "light green" :box 1)))
  '(magit-reflog-reset ((t :background "#4c3840" :foreground "#4c3840" :weight bold)))
