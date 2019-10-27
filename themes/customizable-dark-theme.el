@@ -34,19 +34,19 @@
  '(secondary-selection ((((class color) (min-colors 88) (background light)) (:background "yellow1")) (((class color) (min-colors 88) (background dark)) (:background "SkyBlue4")) (((class color) (min-colors 16) (background light)) (:background "yellow")) (((class color) (min-colors 16) (background dark)) (:background "SkyBlue4")) (((class color) (min-colors 8)) (:foreground "white" :background "cyan")) (t (:inverse-video t))))
  '(trailing-whitespace ((((class color) (background light)) (:background "red1")) (((class color) (background dark)) (:background "red1")) (t (:inverse-video t))))
  ;; Base fonts
- '(font-lock-builtin-face ((t (:foreground "red3")))) ;; ruby requrie
+ '(font-lock-builtin-face ((t (:foreground "red1")))) ;; ruby requrie
  '(font-lock-comment-delimiter-face ((t (:inherit (font-lock-comment-face)))))
  '(font-lock-comment-face ((t (:foreground "gray60")))) ;; ruby comment
- '(font-lock-constant-face ((t (:foreground "DodgerBlue4")))) ;; ruby :name (symbols)
+ '(font-lock-constant-face ((t (:foreground "DodgerBlue1")))) ;; ruby :name (symbols)
  '(font-lock-doc-face ((t (:inherit (font-lock-string-face)))))
- '(font-lock-function-name-face ((t (:foreground "yellow4")))) ;; ruby method eg .run
- '(font-lock-keyword-face ((t (:foreground "green3")))) ;; ruby def
+ '(font-lock-function-name-face ((t (:foreground "yellow1")))) ;; ruby method eg .run
+ '(font-lock-keyword-face ((t (:foreground "green1")))) ;; ruby def
  '(font-lock-negation-char-face ((t (:inherit (font-lock-constant-face)))))
  '(font-lock-preprocessor-face ((t (:inherit (font-lock-type-face))))) ;; ruby =, <<, &&, >, <
  '(font-lock-regexp-grouping-backslash ((t (:inherit (bold)))))
  '(font-lock-regexp-grouping-construct ((t (:inherit (bold)))))
- '(font-lock-string-face ((t (:foreground "orange3")))) ;; ruby quoted string
- '(font-lock-type-face ((t (:foreground "DodgerBlue3")))) ;; ruby class_name
+ '(font-lock-string-face ((t (:foreground "orange1")))) ;; ruby quoted string
+ '(font-lock-type-face ((t (:foreground "DodgerBlue1")))) ;; ruby class_name
  '(font-lock-variable-name-face ((t (:foreground "white"))))
  '(font-lock-warning-face ((t (:background "red" :foreground "white" :weight bold))))
  '(button ((t (:inherit (link)))))
