@@ -36,7 +36,7 @@
  ;; Base fonts
  '(font-lock-builtin-face ((t (:foreground "red3")))) ;; ruby requrie
  '(font-lock-comment-delimiter-face ((t (:inherit (font-lock-comment-face)))))
- '(font-lock-comment-face ((t (:foreground "DimGray")))) ;; ruby comment
+ '(font-lock-comment-face ((t (:foreground "gray60")))) ;; ruby comment
  '(font-lock-constant-face ((t (:foreground "DodgerBlue4")))) ;; ruby :name (symbols)
  '(font-lock-doc-face ((t (:inherit (font-lock-string-face)))))
  '(font-lock-function-name-face ((t (:foreground "yellow4")))) ;; ruby method eg .run
