@@ -70,7 +70,7 @@
  '(query-replace ((t (:inherit (isearch)))))
  
  ;; mml
- '(message-mml-face ((t :foreground "chocolate1")))
+ '(message-mml-face ((t (:inherit (font-lock-comment-face)))))
 
  ;; linum (code line numbering)
  '(linum ((t :foreground "gray40" :background "black")))
@@ -221,7 +221,7 @@
  '(message-header-other ((t :foreground "cyan")))
  '(message-header-subject ((t :foreground "chartreuse")))
  '(message-header-to ((t :foreground "cyan")))
- '(message-cited-text ((t :foreground "chocolate1")))
+ '(message-cited-text ((t (:inherit (font-lock-comment-face)))))
  '(message-separator ((t :foreground "#4c3840" :weight bold)))
 
  ;; Org-Mode
