@@ -37,7 +37,7 @@
  '(font-lock-builtin-face ((t (:foreground "red1")))) ;; ruby requrie
  '(font-lock-comment-delimiter-face ((t (:inherit (font-lock-comment-face)))))
  '(font-lock-comment-face ((t (:foreground "gray60")))) ;; ruby comment
- '(font-lock-constant-face ((t (:foreground "DodgerBlue1")))) ;; ruby :name (symbols)
+ '(font-lock-constant-face ((t (:foreground "cyan")))) ;; ruby :name (symbols)
  '(font-lock-doc-face ((t (:inherit (font-lock-string-face)))))
  '(font-lock-function-name-face ((t (:foreground "yellow1")))) ;; ruby method eg .run
  '(font-lock-keyword-face ((t (:foreground "green1")))) ;; ruby def
@@ -46,7 +46,7 @@
  '(font-lock-regexp-grouping-backslash ((t (:inherit (bold)))))
  '(font-lock-regexp-grouping-construct ((t (:inherit (bold)))))
  '(font-lock-string-face ((t (:foreground "orange1")))) ;; ruby quoted string
- '(font-lock-type-face ((t (:foreground "DodgerBlue1")))) ;; ruby class_name
+ '(font-lock-type-face ((t (:foreground "cyan")))) ;; ruby class_name
  '(font-lock-variable-name-face ((t (:foreground "white"))))
  '(font-lock-warning-face ((t (:background "red" :foreground "white" :weight bold))))
  '(button ((t (:inherit (link)))))
