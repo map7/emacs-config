@@ -114,7 +114,7 @@
  '(custom-state ((t :foreground "chartreuse")))
 
  ;; Highlighting faces
- '(fringe ((t :background "#24282f" :foreground "chocolate1")))
+ '(fringe ((t (:inherit (font-lock-comment-face)))))
  ;; '(region ((t :background "red" :foreground "white"))) ;; defined in default faces
  '(secondary-selection ((t :background "#3e4451" :foreground "white")))
 
