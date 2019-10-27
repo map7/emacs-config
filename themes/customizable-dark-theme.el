@@ -56,7 +56,7 @@
  '(header-line ((default (:inherit (mode-line))) (((type tty)) (:underline (:color foreground-color :style line) :inverse-video nil)) (((class color grayscale) (background light)) (:box nil :foreground "grey20" :background "grey90")) (((class color grayscale) (background dark)) (:box nil :foreground "grey90" :background "grey20")) (((class mono) (background light)) (:underline (:color foreground-color :style line) :box nil :inverse-video nil :foreground "black" :background "white")) (((class mono) (background dark)) (:underline (:color foreground-color :style line) :box nil :inverse-video nil :foreground "white" :background "black"))))
  '(tooltip ((((class color)) (:inherit (variable-pitch) :foreground "black" :background "lightyellow")) (t (:inherit (variable-pitch)))))
  ;; Modeline
- '(mode-line ((t (:background "white" :foreground "black" :box (:line-width 1 :color "gray60")))))
+ '(mode-line ((t (:background "gray60" :foreground "black" :box (:line-width 1 :color "gray60")))))
  '(mode-line-buffer-id ((t (:weight normal))))
  '(mode-line-emphasis ((t (:weight bold))))
  '(mode-line-highlight ((t (:box nil :weight bold))))
