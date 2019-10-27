@@ -229,7 +229,7 @@
  '(org-done ((t :foreground "dark green" :background "chartreuse" :weight bold)))
  '(org-hide ((t :foreground "#3a3f4b")))
  '(org-link ((t :foreground "cyan3" :underline t)))
- '(org-date ((t :foreground "dark orange")))
+ '(org-date ((t :foreground "DarkOrange3")))
  '(org-block-begin-line ((t :foreground "cyan")))
  '(org-block-background ((t :background "white")))
  '(org-block-end-line ((t :foreground "cyan")))
