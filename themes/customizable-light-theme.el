@@ -225,8 +225,8 @@
  '(message-separator ((t :foreground "#4c3840" :weight bold)))
 
  ;; Org-Mode
- '(org-todo ((t :background "LightSalmon" :foreground "dark red" :weight bold)))
- '(org-done ((t :foreground "dark green" :background "chartreuse" :weight bold)))
+ '(org-todo ((t :foreground "white" :background "red1" :weight bold)))
+ '(org-done ((t :foreground "white" :background "green1" :weight bold)))
  '(org-hide ((t :foreground "#3a3f4b")))
  '(org-link ((t :foreground "cyan3" :underline t)))
  '(org-date ((t :foreground "DarkOrange3")))
