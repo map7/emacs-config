@@ -8,6 +8,9 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
+;; Turn scroll bar off
+(scroll-bar-mode -1)
+
 ;; Turn off splash screen
 (setq inhibit-splash-screen t)
 

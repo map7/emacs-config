@@ -1,16 +1,16 @@
-;; Customizable-dark --- A light theme that is completely customizable
+;; Customizable-light --- A light theme that is completely customizable
 ;;; Commentary:
 ;;; Code:
 
-(deftheme customizable-dark
+(deftheme customizable-light
   "Created 2019-10-16. A completely and easily customizable light theme")
 
 (custom-theme-set-faces
- 'customizable-dark
+ 'customizable-light
  '(default ((t (:family "DejaVu Sans Mono"
                         :stipple nil
-                        :background "black"
-                        :foreground "white"
+                        :background "white"
+                        :foreground "black"
                         :inverse-video nil
                         :box nil
                         :strike-through nil
@@ -27,59 +27,59 @@
  '(variable-pitch ((t (:family "Sans Serif"))))
  '(escape-glyph ((t (:foreground "DodgerBlue3" :weight bold))))
  '(homoglyph ((t (:foreground "DodgerBlue3")))) ;; Face for lookalike characters.
- '(minibuffer-prompt ((t (:foreground "cyan" :weight bold))))
+ '(minibuffer-prompt ((t (:foreground "DodgerBlue1" :weight bold))))
  '(highlight ((t (:background "gray40" :foreground "white")))) ;; In buffer Ivy search line highlight
  '(region ((t (:inherit (highlight))))) ;; In buffer text highlight background under cursor
  '(shadow ((((class color grayscale) (min-colors 88) (background light)) (:foreground "grey50")) (((class color grayscale) (min-colors 88) (background dark)) (:foreground "grey70")) (((class color) (min-colors 8) (background light)) (:foreground "green")) (((class color) (min-colors 8) (background dark)) (:foreground "yellow"))))
- '(secondary-selection ((((class color) (min-colors 88) (background light)) (:background "yellow1")) (((class color) (min-colors 88) (background dark)) (:background "SkyBlue4")) (((class color) (min-colors 16) (background light)) (:background "yellow")) (((class color) (min-colors 16) (background dark)) (:background "SkyBlue4")) (((class color) (min-colors 8)) (:foreground "white" :background "cyan")) (t (:inverse-video t))))
+ '(secondary-selection ((((class color) (min-colors 88) (background light)) (:background "yellow1")) (((class color) (min-colors 88) (background dark)) (:background "SkyBlue4")) (((class color) (min-colors 16) (background light)) (:background "yellow")) (((class color) (min-colors 16) (background dark)) (:background "SkyBlue4")) (((class color) (min-colors 8)) (:foreground "black" :background "cyan")) (t (:inverse-video t))))
  '(trailing-whitespace ((((class color) (background light)) (:background "red1")) (((class color) (background dark)) (:background "red1")) (t (:inverse-video t))))
  ;; Base fonts
- '(font-lock-builtin-face ((t (:foreground "red1")))) ;; ruby requrie
+ '(font-lock-builtin-face ((t (:foreground "red3")))) ;; ruby requrie
  '(font-lock-comment-delimiter-face ((t (:inherit (font-lock-comment-face)))))
  '(font-lock-comment-face ((t (:foreground "gray60")))) ;; ruby comment
- '(font-lock-constant-face ((t (:foreground "cyan")))) ;; ruby :name (symbols)
+ '(font-lock-constant-face ((t (:foreground "DodgerBlue3")))) ;; ruby :name (symbols)
  '(font-lock-doc-face ((t (:inherit (font-lock-string-face)))))
- '(font-lock-function-name-face ((t (:foreground "yellow1")))) ;; ruby method eg .run
- '(font-lock-keyword-face ((t (:foreground "green1")))) ;; ruby def
+ '(font-lock-function-name-face ((t (:foreground "yellow4")))) ;; ruby method eg .run
+ '(font-lock-keyword-face ((t (:foreground "green3")))) ;; ruby def
  '(font-lock-negation-char-face ((t (:inherit (font-lock-constant-face)))))
  '(font-lock-preprocessor-face ((t (:inherit (font-lock-type-face))))) ;; ruby =, <<, &&, >, <
  '(font-lock-regexp-grouping-backslash ((t (:inherit (bold)))))
  '(font-lock-regexp-grouping-construct ((t (:inherit (bold)))))
- '(font-lock-string-face ((t (:foreground "orange1")))) ;; ruby quoted string
- '(font-lock-type-face ((t (:foreground "cyan")))) ;; ruby class_name
- '(font-lock-variable-name-face ((t (:foreground "white"))))
- '(font-lock-warning-face ((t (:background "red" :foreground "white" :weight bold))))
+ '(font-lock-string-face ((t (:foreground "orange3")))) ;; ruby quoted string
+ '(font-lock-type-face ((t (:foreground "DodgerBlue3")))) ;; ruby class_name
+ '(font-lock-variable-name-face ((t (:foreground "black"))))
+ '(font-lock-warning-face ((t (:background "red" :foreground "black" :weight bold))))
  '(button ((t (:inherit (link)))))
  '(link ((((class color) (min-colors 88) (background light)) (:underline (:color foreground-color :style line) :foreground "RoyalBlue3")) (((class color) (background light)) (:underline (:color foreground-color :style line) :foreground "blue")) (((class color) (min-colors 88) (background dark)) (:underline (:color foreground-color :style line) :foreground "cyan1")) (((class color) (background dark)) (:underline (:color foreground-color :style line) :foreground "cyan")) (t (:inherit (underline)))))
  '(link-visited ((t (:inherit link :foreground "blue"))))
- '(fringe ((t (:background "black")))) ;; Vertical strip between linum and buffer contents
+ '(fringe ((t (:background "white")))) ;; Vertical strip between linum and buffer contents
  '(header-line ((default (:inherit (mode-line))) (((type tty)) (:underline (:color foreground-color :style line) :inverse-video nil)) (((class color grayscale) (background light)) (:box nil :foreground "grey20" :background "grey90")) (((class color grayscale) (background dark)) (:box nil :foreground "grey90" :background "grey20")) (((class mono) (background light)) (:underline (:color foreground-color :style line) :box nil :inverse-video nil :foreground "black" :background "white")) (((class mono) (background dark)) (:underline (:color foreground-color :style line) :box nil :inverse-video nil :foreground "white" :background "black"))))
  '(tooltip ((((class color)) (:inherit (variable-pitch) :foreground "black" :background "lightyellow")) (t (:inherit (variable-pitch)))))
  ;; Modeline
- '(mode-line ((t (:background "gray60" :foreground "black" :box (:line-width 1 :color "gray60")))))
+ '(mode-line ((t (:background "gray60" :foreground "white" :box (:line-width 1 :color "gray60")))))
  '(mode-line-buffer-id ((t (:weight normal))))
  '(mode-line-emphasis ((t (:weight bold))))
  '(mode-line-highlight ((t (:box nil :weight bold))))
- '(mode-line-inactive ((t (:inherit mode-line :background "black" :foreground "gray60" :box (:line-width 1 :color "gray60")))))
+ '(mode-line-inactive ((t (:inherit mode-line :background "white" :foreground "gray60" :box (:line-width 1 :color "gray60")))))
  ;; iSearch
  '(isearch ((t :background "DodgerBlue3" :foreground "white"))) ;; In buffer highlighting
- '(isearch-fail ((t (:background "red2" :foreground "white"))))
+ '(isearch-fail ((t (:background "red2" :foreground "black"))))
  '(lazy-highlight ((t (:background "red2" :foreground "white")))) ;; Highlights words not currently matched on selected match line
  '(match ((((class color) (min-colors 88) (background light)) (:foreground "black" :background "yellow")) (((class color) (min-colors 88) (background dark)) (:background "RoyalBlue3")) (((class color) (min-colors 8) (background light)) (:foreground "black" :background "yellow")) (((class color) (min-colors 8) (background dark)) (:foreground "white" :background "blue")) (((type tty) (class mono)) (:inverse-video t)) (t (:background "gray"))))
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:inherit (isearch)))))
  
  ;; mml
- '(message-mml-face ((t (:inherit (font-lock-comment-face)))))
+ '(message-mml-face ((t :foreground "chocolate1")))
 
  ;; linum (code line numbering)
- '(linum ((t :foreground "gray40" :background "black")))
+ '(linum ((t :foreground "gray40" :background "white")))
  ;; from hlinum
- '(linum-highlight-face ((t :foreground "cyan")))
+ '(linum-highlight-face ((t :foreground "DodgerBlue1")))
 
  ;; eshell
  '(eshell-prompt-face ((t :weight bold :foreground "orange3" :background "white")))
- '(eshell-ls-directory ((t :foreground "cyan" :background "white" :weight bold)))
+ '(eshell-ls-directory ((t :foreground "DodgerBlue1" :background "white" :weight bold)))
  '(eshell-ls-symlink ((t :weight bold :foreground "dark orange" :background "white")))
  '(eshell-ls-executable ((t :weight bold :foreground "dark green" :background "white")))
 
@@ -109,26 +109,26 @@
  '(custom-button ((t :background "light gray" :box (:line-width 2 :style released-button))))
  '(custom-button-mouse ((t :background "gray" :box (:line-width 2 :style released-button))))
  '(custom-button-pressed ((t :background "dark gray" :box (:line-width 2 :style pressed-button))))
- '(custom-group-tag ((t :foreground "cyan" :weight bold :height 1.4)))
- '(custom-variable-tag ((t :foreground "cyan" :weight bold)))
+ '(custom-group-tag ((t :foreground "DodgerBlue1" :weight bold :height 1.4)))
+ '(custom-variable-tag ((t :foreground "DodgerBlue1" :weight bold)))
  '(custom-state ((t :foreground "chartreuse")))
 
  ;; Highlighting faces
- '(fringe ((t (:inherit (font-lock-comment-face)))))
+ '(fringe ((t :background "#24282f" :foreground "chocolate1")))
  ;; '(region ((t :background "red" :foreground "white"))) ;; defined in default faces
  '(secondary-selection ((t :background "#3e4451" :foreground "white")))
 
  ;; Buffer borders
  '(border ((t :foreground "#3a3f4b")))
- '(vertical-border ((t :foreground "white"))) ;; border between buffers
- '(internal-border ((t :foreground "white"))) ;; not sure what this does yet
+ '(vertical-border ((t :foreground "black"))) ;; border between buffers
+ '(internal-border ((t :foreground "black"))) ;; not sure what this does yet
  ;; error & success
  '(error ((t :foreground "#ee0000" :weight bold)))
  '(warning ((t :foreground "orange1" :weight bold)))
  '(success ((t :foreground "chartreuse" :weight bold)))
 
  ;; dired
- '(dired-directory ((t :foreground "cyan" :weight bold)))
+ '(dired-directory ((t :foreground "DodgerBlue1" :weight bold)))
  '(dired-git-face ((t :foreground "#4c3840")))
  '(dired-ignored ((t :foreground "#3a3f4b")))
  '(dired-filetype-omit ((t :foreground "#3a3f4b")))
@@ -145,8 +145,8 @@
 
  ;;; dired+
  '(diredp-dir-heading ((t :foreground "#4c3840")))
- '(diredp-dir-name ((t :foreground "cyan")))
- '(diredp-file-name ((t :foreground "white")))
+ '(diredp-dir-name ((t :foreground "LightSkyblue1")))
+ '(diredp-file-name ((t :foreground "black")))
  '(diredp-file-suffix ((t :foreground "#cccccc")))
  '(diredp-ignored-file-name ((t :foreground "chocolate1")))
  '(diredp-symlink ((t :foreground "#ff87ba")))
@@ -155,10 +155,10 @@
  ;; diff
  '(diff-removed ((t :background "LightSalmon" :foreground "red4")))
  '(diff-added ((t :background "light green" :foreground "dark green")))
- '(diff-hunk-header ((t :background "white" :foreground "cyan" :weight bold)))
+ '(diff-hunk-header ((t :background "white" :foreground "DodgerBlue1" :weight bold)))
  '(diff-file-header ((t :weight bold)))
- '(diff-header ((t :background "white" :foreground "cyan")))
- '(diff-context ((t :foreground "white")))
+ '(diff-header ((t :background "white" :foreground "DodgerBlue1")))
+ '(diff-context ((t :foreground "black")))
  '(diff-refine-added ((t :background "light green" :foreground "green4")))
  '(diff-refine-removed ((t :background "LightSalmon" :foreground "red4")))
 
@@ -171,12 +171,12 @@
  '(ediff-current-diff-C ((t :background "navyblue" :foreground "cyan")))
 
  ;; X-Term
- '(term-color-blue ((t :foreground "cyan")))   ;; foreground font color for xterm prompt & normal folders
+ '(term-color-blue ((t :foreground "DodgerBlue1")))   ;; foreground font color for xterm prompt & normal folders
  '(term-color-cyan ((t :foreground "orange3")))    ;; foreground font color for xterm symlinks
 
  ;; Magit
  '(magit-diff-context-highlight ((t nil))) ;; turn off as it doesnt add any value
- '(magit-diff-file-heading ((t :weight bold :foreground "cyan")))
+ '(magit-diff-file-heading ((t :weight bold :foreground "DodgerBlue1")))
  '(magit-diff-file-heading-highlight ((t :inherit highlight)))
  '(magit-diff-removed-highlight ((t :inherit diff-removed)))
  '(magit-diff-removed ((t :inherit diff-removed)))
@@ -186,7 +186,7 @@
  '(magit-diff-added ((t :inherit diff-added)))
  '(magit-diff-their ((t :inherit diff-added)))
  '(magit-diff-their-highlight ((t :inherit diff-added)))
- '(magit-diff-lines-heading ((t :background "DodgerBlue1" :foreground "white")))
+ '(magit-diff-lines-heading ((t :background "DodgerBlue1" :foreground "black")))
  '(magit-diff-hunk-heading ((t :background "Gray40" :foreground "white")))
  '(magit-diff-hunk-heading-highlight ((t :background "DodgerBlue1")))
  '(magit-diff-hunk-heading-selection ((t :background "DodgerBlue1"))) 
@@ -211,7 +211,7 @@
 
  ;; Git
  '(git-commit-summary ((t :weight bold)))
- '(git-commit-known-pseudo-header ((t :foreground "white")))
+ '(git-commit-known-pseudo-header ((t :foreground "black")))
  '(change-log-name ((t :foreground "firebrick")))
  '(change-log-date ((t :foreground "gray")))
 
@@ -221,7 +221,7 @@
  '(message-header-other ((t :foreground "cyan")))
  '(message-header-subject ((t :foreground "chartreuse")))
  '(message-header-to ((t :foreground "cyan")))
- '(message-cited-text ((t (:inherit (font-lock-comment-face)))))
+ '(message-cited-text ((t :foreground "chocolate1")))
  '(message-separator ((t :foreground "#4c3840" :weight bold)))
 
  ;; Org-Mode
@@ -229,7 +229,7 @@
  '(org-done ((t :foreground "dark green" :background "chartreuse" :weight bold)))
  '(org-hide ((t :foreground "#3a3f4b")))
  '(org-link ((t :foreground "cyan3" :underline t)))
- '(org-date ((t :foreground "dark orange")))
+ '(org-date ((t :foreground "DarkOrange3")))
  '(org-block-begin-line ((t :foreground "cyan")))
  '(org-block-background ((t :background "white")))
  '(org-block-end-line ((t :foreground "cyan")))
@@ -251,9 +251,9 @@
  '(erc-my-nick-face ((t :inherit erc-nick-default-face)))
  '(erc-nick-msg-face ((t :inherit erc-nick-default-face)))
  '(erc-notice-face (:inherit (font-lock-comment-face)))
- '(erc-input-face ((t :foreground "white" :weight bold)))
+ '(erc-input-face ((t :foreground "black" :weight bold)))
  '(erc-prompt-face ((t :inherit erc-nick-default-face :box 1)))
- '(erc-timestamp-face ((t :foreground "cyan" :weight bold)))
+ '(erc-timestamp-face ((t :foreground "DodgerBlue1" :weight bold)))
 
  ;; Ivy
  '(ivy-current-match ((t :inherit highlight)))
@@ -268,15 +268,15 @@
  ;; Company
  '(company-preview ((t :background "DodgerBlue3" :foreground "white"))) ;; Autocomplete single suggestion
  '(company-preview-common ((t :inherit highlight :weight bold))) ;; Autocomplete current word suggestion
- '(company-preview-search ((t :background "DodgerBlue3" :foreground "black")))
+ '(company-preview-search ((t :background "cyan" :foreground "black")))
  '(company-scrollbar-bg ((t :background "gray30"))) ;; Autocomplete Scroll bar background
  '(company-scrollbar-fg ((t :background "DodgerBlue3"))) ;; Autocomplete Scrollbar
  '(company-tooltip ((t :background "gray80" :foreground "white"))) ;; Autocomplete background
  '(company-tooltip-common ((t :foreground "white" :background "DodgerBlue1" :weight bold))) ;; Autocomplete matched text
- '(company-tooltip-annotation ((t :foreground "white" :background "cyan" :weight bold)))
+ '(company-tooltip-annotation ((t :foreground "white" :background "DodgerBlue1" :weight bold)))
  '(company-tooltip-common-selection ((t :foreground "white" :background "DodgerBlue3" :weight bold)))
  '(company-tooltip-selection ((t :inherit highlight)))
- '(company-tooltip-mouse ((t :foreground "white" :background "#3a3f4b")))
+ '(company-tooltip-mouse ((t :foreground "black" :background "#3a3f4b")))
 
  ;; Flycheck
  '(flycheck-fringe-error ((t :foreground "#4c3840" :background "#4c3840" :weight bold :inverse-video t)))
@@ -286,7 +286,7 @@
  '(flycheck-error ((t :underline (:color "#4c3840" :style wave))))
 
  ;; Visible mark
- '(visible-mark-face1 ((t :foreground "orange1"-dark :inverse-video t)))
+ '(visible-mark-face1 ((t :foreground "orange1"-light :inverse-video t)))
  '(visible-mark-face2 ((t :foreground "PeachPuff3" :inverse-video t)))
 
  ;; Compilation
@@ -304,5 +304,5 @@
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))
 
-(provide-theme 'customizable-dark)
-;;; customizable-dark ends here
+(provide-theme 'customizable-light)
+;;; customizable-light ends here

@@ -61,9 +61,6 @@
 ;; Duplicate whole line
 (global-set-key (kbd "\C-c\C-k") 'copy-line)
 
-;; Start terminal
-(global-set-key (kbd "s-t") 'multi-term)
-
 (defun copy-line (arg)
   "Copy lines (as many as prefix argument) in the kill ring.
       Ease of use features:

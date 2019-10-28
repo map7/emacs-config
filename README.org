@@ -1,32 +1,87 @@
-* emacs config
-
-Emacs Version tested: 24.3.1 (stable) & 25.0.50.2 (dev branch)
+* Emacs
+  Emacs Version tested: 26.2.90 (stable) 2019-07-12
 
 ** Installation
+*** Emacs latest from github for linux (debian)
+    Section Last updated: <2019-07-25 Thu 19:21>
 
-Clone my repo
-: git clone https://github.com/map7/emacs-config.git ~/.emacs.d
+ 1. Requires packages
+    : sudo apt-get install libxaw7-dev libxpm-dev libpng12-dev libtiff5-dev libgif-dev libjpeg8-dev libgtk2.0-dev libncurses5-dev libdbus-1-dev libxft-dev texinfo libgnutls-dev libgnutls28-dev libjpeg62-turbo-dev
 
-Run installation script
-: cd ~/.emacs.d
-: ./install
+ 2. Install requirements for emacs xwidgets to work
+    : sudo apt-get install libwebkitgtk-3.0-0 libwebkitgtk-3.0-dev
 
-Start emacs
-: emacs
+ 3. Clone from git like so
+    : git clone --depth 1 https://github.com/emacs-mirror/emacs.git
 
-List packages (Note: M-x is emacs way of saying Alt + x)
-: M-x list-packages
+ 4. Compile (Note xwidgets may not work on your machine)
+    : ./autogen.sh
+    : ./autogen.sh git
+    : ./configure --prefix=/opt/emacs --with-xft --with-xwidgets --with-imagemagick
+    : make -j32
+    
+ 5. Start
+    : src/emacs
 
-Install use-package with 
-: M-x package-install use-package
+ 6. Install
+    : sudo make install
+
+ 7. Update alternatives to use the new emacs & set the priority to 100 so it's automatically selected
+    : sudo update-alternatives --install /usr/bin/emacs emacs /opt/emacs/bin/emacs 100
+    : sudo update-alternatives --install /usr/bin/emacsclient emacsclient /opt/emacs/bin/emacsclient 100
+
+ 8. Configure the alternatives
+    : sudo update-alternatives --config emacs
+    : sudo update-alternatives --config emacsclient
+
+ 9. Manually check alternatives are correctly set
+    : ls -al /etc/alternatives | grep emacs
+
+ 10. Manually check bin directory is correctly set
+     : ls -al /usr/bin | grep emacs
+
+ 11. Start the new emacs
+     : emacs
+
+ 12. Start package listing and accept certificates using 'a'
+     : M-x package-listing
+
+ 13. Start emacs & install use-package
+     : M-x package-install
+     : use-package
+
+ 14. Restart emacs & install pdf-tools
+     : C-x b
+     : compile-pdftools (respond with Y) (also M-x pdf-tools-install then exit & restart emacs answer Y to reinstall prompt on restart)
+
+ 15. Restart a number of times until everything is starting correctly.
+
+ (Optional fix) Create/update symlinks if they are pointing to an old emacs version
+ : ln -s -f target symlink_name #update existing symlink
+
+*** Custom Configuration
+    This configuration is based on the latest use-package system as created by John Wiegley, who is also steering emacs development. Our configuration also includes a custom dark theme that is completely customisable.
+
+1. Clone my repo
+ : git clone https://github.com/map7/emacs-config.git ~/.emacs.d
+
+2. Run installation script
+ : cd ~/.emacs.d
+ : ./install
+
+3. Start emacs
+ : emacs
+
+4. List packages (Note: M-x is emacs way of saying Alt + x)
+ : M-x list-packages
+
+5. Install use-package with 
+ : M-x package-install use-package
 
 Then restart emacs and it should start building the packages, if it asks you to build pdf-tools say yes and in the compile buffer it will show the results. If this compile is needed then after the compile is finished you will need to restart emacs again for the final run of packages.
 
-*** Dark-lord-theme
-The dark lord theme is loaded by default. 
-
-**** Iconised modeline 
-A nice iconised based modeline. Tries to save on modelin re
+**** Modeline(to be updated)
+A nice iconised based modeline. Used to save horizontal modeline space.
 
 ***** Setup
 The package all-the-icons is needed. This package has been added to the init.el file and should be automatically installed. 
@@ -36,7 +91,6 @@ You will need to download and install the fonts and icons from the following lin
 [[https://github.com/domtronn/all-the-icons.el/tree/master/fonts][all-the-icons.el/fonts]]
 
 ****** Linux
-
 Clone
 : cd ~/src
 : git clone https://github.com/domtronn/all-the-icons.el.git
@@ -55,7 +109,7 @@ manually rebuild the font cache
 To manually invoke the iconised modeline theme:
 : M-x dark-lord-modeline
 
-*** Manually
+*** Cask package management (outdated)
 
  Install my sub modules
  : git submodule init
@@ -94,8 +148,6 @@ Link it to .xsession to work with a desktop manager like lightdm as the default 
  : (call-process-shell-command "(sleep 10s && ~/.dropbox-dist/dropboxd) &" nil 0)
  : (call-process-shell-command "(sleep 10s && SpiderOakONE) &" nil 0)
 
-
-
 *** Multiple screens
 
 Create a ~/.emacs.randr.el file and put the following
@@ -110,7 +162,6 @@ Create a ~/.emacs.randr.el file and put the following
 Remember to change the LVDS1 & DP2 to your screens which you can find out by typing in xrandr at the command line and looking for the active screens.
 
 ** flycheck configure
-
 Installing
 : npm install -g coffeelint eslint
 : gem install scss_lint rubocop
@@ -160,10 +211,19 @@ http://crypt.codemancers.com/posts/2013-09-26-setting-up-emacs-as-development-en
 Try to invalidate the project cache, first sit in a file within a project dir
 : C-c p i
 
-** changelog
+** Changelog
 
-*** 09/02/2015
+*** 2015-02-09
 Added
 - sunshine - weather
 - symon - system monitor, replaces gkrellm
 - ox-reveal - reveal.js presentation tool
+
+
+*** 2019-07-25
+Added
+- Installation
+Updated
+- CustomConfiguration
+- Cask
+- Modeline

@@ -90,7 +90,7 @@
 
        " "
        ;; == Date (day-month) & Time (24hr)==
-       '(:eval (propertize (format-time-string "%d-%b  %H:%M")))
+       ;; '(:eval (propertize (format-time-string "%d-%b  %H:%M")))
        ))
 
 ;; Update the time in all buffers every 60 seconds.
