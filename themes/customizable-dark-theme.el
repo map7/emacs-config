@@ -27,7 +27,7 @@
  '(variable-pitch ((t (:family "Sans Serif"))))
  '(escape-glyph ((t (:foreground "DodgerBlue3" :weight bold))))
  '(homoglyph ((t (:foreground "DodgerBlue3")))) ;; Face for lookalike characters.
- '(minibuffer-prompt ((t (:foreground "DodgerBlue1" :weight bold))))
+ '(minibuffer-prompt ((t (:foreground "cyan" :weight bold))))
  '(highlight ((t (:background "gray40" :foreground "white")))) ;; In buffer Ivy search line highlight
  '(region ((t (:inherit (highlight))))) ;; In buffer text highlight background under cursor
  '(shadow ((((class color grayscale) (min-colors 88) (background light)) (:foreground "grey50")) (((class color grayscale) (min-colors 88) (background dark)) (:foreground "grey70")) (((class color) (min-colors 8) (background light)) (:foreground "green")) (((class color) (min-colors 8) (background dark)) (:foreground "yellow"))))
