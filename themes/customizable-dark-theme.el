@@ -75,11 +75,11 @@
  ;; linum (code line numbering)
  '(linum ((t :foreground "gray40" :background "black")))
  ;; from hlinum
- '(linum-highlight-face ((t :foreground "DodgerBlue1")))
+ '(linum-highlight-face ((t :foreground "cyan")))
 
  ;; eshell
  '(eshell-prompt-face ((t :weight bold :foreground "orange3" :background "white")))
- '(eshell-ls-directory ((t :foreground "DodgerBlue1" :background "white" :weight bold)))
+ '(eshell-ls-directory ((t :foreground "cyan" :background "white" :weight bold)))
  '(eshell-ls-symlink ((t :weight bold :foreground "dark orange" :background "white")))
  '(eshell-ls-executable ((t :weight bold :foreground "dark green" :background "white")))
 
@@ -109,8 +109,8 @@
  '(custom-button ((t :background "light gray" :box (:line-width 2 :style released-button))))
  '(custom-button-mouse ((t :background "gray" :box (:line-width 2 :style released-button))))
  '(custom-button-pressed ((t :background "dark gray" :box (:line-width 2 :style pressed-button))))
- '(custom-group-tag ((t :foreground "DodgerBlue1" :weight bold :height 1.4)))
- '(custom-variable-tag ((t :foreground "DodgerBlue1" :weight bold)))
+ '(custom-group-tag ((t :foreground "cyan" :weight bold :height 1.4)))
+ '(custom-variable-tag ((t :foreground "cyan" :weight bold)))
  '(custom-state ((t :foreground "chartreuse")))
 
  ;; Highlighting faces
@@ -128,7 +128,7 @@
  '(success ((t :foreground "chartreuse" :weight bold)))
 
  ;; dired
- '(dired-directory ((t :foreground "DodgerBlue1" :weight bold)))
+ '(dired-directory ((t :foreground "cyan" :weight bold)))
  '(dired-git-face ((t :foreground "#4c3840")))
  '(dired-ignored ((t :foreground "#3a3f4b")))
  '(dired-filetype-omit ((t :foreground "#3a3f4b")))
@@ -145,7 +145,7 @@
 
  ;;; dired+
  '(diredp-dir-heading ((t :foreground "#4c3840")))
- '(diredp-dir-name ((t :foreground "LightSkyblue1")))
+ '(diredp-dir-name ((t :foreground "cyan")))
  '(diredp-file-name ((t :foreground "white")))
  '(diredp-file-suffix ((t :foreground "#cccccc")))
  '(diredp-ignored-file-name ((t :foreground "chocolate1")))
@@ -155,9 +155,9 @@
  ;; diff
  '(diff-removed ((t :background "LightSalmon" :foreground "red4")))
  '(diff-added ((t :background "light green" :foreground "dark green")))
- '(diff-hunk-header ((t :background "white" :foreground "DodgerBlue1" :weight bold)))
+ '(diff-hunk-header ((t :background "white" :foreground "cyan" :weight bold)))
  '(diff-file-header ((t :weight bold)))
- '(diff-header ((t :background "white" :foreground "DodgerBlue1")))
+ '(diff-header ((t :background "white" :foreground "cyan")))
  '(diff-context ((t :foreground "white")))
  '(diff-refine-added ((t :background "light green" :foreground "green4")))
  '(diff-refine-removed ((t :background "LightSalmon" :foreground "red4")))
@@ -171,12 +171,12 @@
  '(ediff-current-diff-C ((t :background "navyblue" :foreground "cyan")))
 
  ;; X-Term
- '(term-color-blue ((t :foreground "DodgerBlue1")))   ;; foreground font color for xterm prompt & normal folders
+ '(term-color-blue ((t :foreground "cyan")))   ;; foreground font color for xterm prompt & normal folders
  '(term-color-cyan ((t :foreground "orange3")))    ;; foreground font color for xterm symlinks
 
  ;; Magit
  '(magit-diff-context-highlight ((t nil))) ;; turn off as it doesnt add any value
- '(magit-diff-file-heading ((t :weight bold :foreground "DodgerBlue1")))
+ '(magit-diff-file-heading ((t :weight bold :foreground "cyan")))
  '(magit-diff-file-heading-highlight ((t :inherit highlight)))
  '(magit-diff-removed-highlight ((t :inherit diff-removed)))
  '(magit-diff-removed ((t :inherit diff-removed)))
@@ -253,7 +253,7 @@
  '(erc-notice-face (:inherit (font-lock-comment-face)))
  '(erc-input-face ((t :foreground "white" :weight bold)))
  '(erc-prompt-face ((t :inherit erc-nick-default-face :box 1)))
- '(erc-timestamp-face ((t :foreground "DodgerBlue1" :weight bold)))
+ '(erc-timestamp-face ((t :foreground "cyan" :weight bold)))
 
  ;; Ivy
  '(ivy-current-match ((t :inherit highlight)))
@@ -268,12 +268,12 @@
  ;; Company
  '(company-preview ((t :background "DodgerBlue3" :foreground "white"))) ;; Autocomplete single suggestion
  '(company-preview-common ((t :inherit highlight :weight bold))) ;; Autocomplete current word suggestion
- '(company-preview-search ((t :background "cyan" :foreground "black")))
+ '(company-preview-search ((t :background "DodgerBlue3" :foreground "black")))
  '(company-scrollbar-bg ((t :background "gray30"))) ;; Autocomplete Scroll bar background
  '(company-scrollbar-fg ((t :background "DodgerBlue3"))) ;; Autocomplete Scrollbar
  '(company-tooltip ((t :background "gray80" :foreground "white"))) ;; Autocomplete background
  '(company-tooltip-common ((t :foreground "white" :background "DodgerBlue1" :weight bold))) ;; Autocomplete matched text
- '(company-tooltip-annotation ((t :foreground "white" :background "DodgerBlue1" :weight bold)))
+ '(company-tooltip-annotation ((t :foreground "white" :background "cyan" :weight bold)))
  '(company-tooltip-common-selection ((t :foreground "white" :background "DodgerBlue3" :weight bold)))
  '(company-tooltip-selection ((t :inherit highlight)))
  '(company-tooltip-mouse ((t :foreground "white" :background "#3a3f4b")))
