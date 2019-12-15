@@ -5,7 +5,7 @@
 (setq custom-safe-themes t)
 
 ;; Create theme toggle function
-(setq my/themes '(customizable-light customizable-dark))
+(setq my/themes '(customizable-dark customizable-light))
 (setq my/themes-index 0)
 
 (defun my/cycle-theme ()
