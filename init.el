@@ -42,6 +42,7 @@
 (use-package findr :ensure t :defer 5)
 (use-package ledger-mode :ensure t :defer 5)
 (use-package markdown-mode :ensure t :defer 5)
+(use-package org-noter :ensure t :defer 5)
 (use-package paradox :ensure t :defer 5)
 (use-package sudo-edit :ensure t :defer 5)
 (use-package switch-window :ensure t :defer 5)
