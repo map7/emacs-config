@@ -40,8 +40,6 @@
 (use-package csv-mode :ensure t :defer 5)
 (use-package expand-region :ensure t :defer 5)
 (use-package findr :ensure t :defer 5)
-(use-package js2-mode :ensure t :defer 5)
-(use-package jsx-mode :ensure t :defer 5)
 (use-package ledger-mode :ensure t :defer 5)
 (use-package markdown-mode :ensure t :defer 5)
 (use-package pass :ensure t :defer 5)
@@ -146,6 +144,7 @@
 (load "66-flycheck.el")              ; Syntax checking (better than built in flymake)
 (load "67-tags.el")                  ; Create tags
 (load "68-seeing-is-believing.el")   ; Show ruby expressions in a comment
+(load "69-javascript.el")            ; Javascript related
 
 ;;--------------------------------------------------------------------------------
 ;;-Programming modes (75-94)
