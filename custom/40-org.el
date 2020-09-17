@@ -2,6 +2,7 @@
 
 ;; Org mode shortcuts
 (global-set-key (kbd "C-c C-x C-v") 'do-org-show-all-inline-images)
+(global-set-key (kbd "C-c C-x C-r") 'org-clock-report)
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key (kbd "s-h") 'puborg)
