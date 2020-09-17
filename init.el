@@ -40,6 +40,7 @@
 (use-package csv-mode :ensure t :defer 5)
 (use-package expand-region :ensure t :defer 5)
 (use-package findr :ensure t :defer 5)
+(use-package keepass-mode :ensure t :defer 5)
 (use-package ledger-mode :ensure t :defer 5)
 (use-package markdown-mode :ensure t :defer 5)
 (use-package pass :ensure t :defer 5)
