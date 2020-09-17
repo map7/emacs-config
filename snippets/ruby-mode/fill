@@ -1,0 +1,4 @@
+# RSpec
+# key: fill
+# --
+fill_in "$1", with: "$2"

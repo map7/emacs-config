@@ -1,0 +1,4 @@
+# RSpec
+# key: click
+# --
+click_on "$1"

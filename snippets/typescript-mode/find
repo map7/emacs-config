@@ -1,0 +1,4 @@
+#NativeScript
+#example : const btnCreate = driver.findElementByAutomationText("create");
+# --
+const $1 = await driver.findElementByAutomationText("$2");

@@ -1,0 +1,4 @@
+#NativeScript
+#example : assert.equal(await lblHeadingManual.text(), "New Asset");
+# --
+assert.equal(await $1.text(), "$2");

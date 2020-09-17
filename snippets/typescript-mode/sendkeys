@@ -1,0 +1,4 @@
+#NativeScript
+#example : await nameField.sendKeys("PI");
+# --
+await $1.sendKeys("$2");

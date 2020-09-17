@@ -1,0 +1,4 @@
+#NativeScript
+#name : <TextField ...></TextField>
+# --
+<TextField automationText="$1" hint="$2" [(ngModel)]="$3" class="input"></TextField>

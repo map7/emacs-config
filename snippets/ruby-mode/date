@@ -1,0 +1,4 @@
+# RSpec
+# key: date
+# --
+datepicker(date: "$1", id: "$2", model: "$3")

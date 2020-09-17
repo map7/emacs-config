@@ -1,0 +1,4 @@
+#NativeScript
+#name : <Label ...></Label>
+# --
+<Label text="$1"></Label>

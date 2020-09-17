@@ -1,0 +1,4 @@
+#NativeScript
+#example : await btnManualNavTap.click();
+# --
+await $1.click();

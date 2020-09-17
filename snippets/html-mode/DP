@@ -1,0 +1,4 @@
+#NativeScript
+#name : <DatePickerField></DatePickerField>
+# --
+<DatePickerField hint="Select Date" [(ngModel)]="$1"></DatePickerField>

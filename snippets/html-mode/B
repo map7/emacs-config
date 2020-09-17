@@ -1,0 +1,4 @@
+#NativeScript
+#name : <Button ...></Button>
+# --
+<Button automationText="$1" text="$2" (tap)="$3"></Button>

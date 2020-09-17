@@ -1,0 +1,6 @@
+#NativeScript
+#name : <StackLayout ...></StackLayout>
+# --
+<StackLayout orientation="$1">
+    $0                  
+</StackLayout>

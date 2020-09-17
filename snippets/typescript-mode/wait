@@ -1,0 +1,4 @@
+#NativeScript
+#example : driver.waitForElement("name0", 9000); // wait up to 9 seconds for the element.
+# --
+driver.waitForElement("$1", 9000);

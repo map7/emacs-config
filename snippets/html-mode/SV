@@ -1,0 +1,6 @@
+#NativeScript
+#name : <ScrollView ...></ScrollView>
+# --
+<ScrollView orientation="$1">
+    $0                  
+</ScrollView>
