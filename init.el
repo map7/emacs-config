@@ -40,10 +40,8 @@
 (use-package csv-mode :ensure t :defer 5)
 (use-package expand-region :ensure t :defer 5)
 (use-package findr :ensure t :defer 5)
-(use-package keepass-mode :ensure t :defer 5)
 (use-package ledger-mode :ensure t :defer 5)
 (use-package markdown-mode :ensure t :defer 5)
-(use-package pass :ensure t :defer 5)
 (use-package paradox :ensure t :defer 5)
 (use-package sudo-edit :ensure t :defer 5)
 (use-package switch-window :ensure t :defer 5)
@@ -58,6 +56,10 @@
 (use-package total-lines
   :ensure t
   :config (global-total-lines-mode))
+
+;; Passwords
+(use-package keepass-mode :ensure t :defer 5)
+(use-package pass :ensure t :defer 5)
 
 ;; Ruby related
 (use-package enh-ruby-mode :ensure t :defer 5)
