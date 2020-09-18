@@ -59,7 +59,7 @@
   :config (global-total-lines-mode))
 
 ;; Passwords
-(use-package keepass-mode :ensure t :defer 5)
+;;(use-package keepass-mode :ensure t :defer 5)
 (use-package pass :ensure t :defer 5)
 
 ;; Ruby related
@@ -99,7 +99,7 @@
 ;;(load "19-spotify.el")              ; Control spotify from emacs
 ;;(load "20-volume.el")               ; Control volume from emacs
 ;;(load "21-circe.el")                ; IRC settings
-;;(load "22-epa-file.el")             ; Encryption
+(load "22-epa-file.el")             ; Encryption
 ;;(load "23-markdown.el")             ; for md files.
 ;;(load "24-smex.el")                 ; smex (quick narrow down commands)
 ;;(load "25-speedbar.el")             ; Speedbar customisations
@@ -218,41 +218,38 @@
  ;; If there is more than one, they won't work right.
  '(bookmark-default-file "~/Sync/emacs-bookmarks")
  '(dired-open-extensions
-   '(("jpg" . "shotwell")
+   (quote
+    (("jpg" . "shotwell")
      ("jpeg" . "shotwell")
-     ("gif" . "shotwell")
-     ("bmp" . "shotwell")
      ("png" . "shotwell")
-     ("wp" . "libreoffice")
-     ("ott" . "libreoffice")
      ("odt" . "libreoffice")
-     ("odf" . "libreoffice")
      ("ods" . "libreoffice")
-     ("ots" . "libreoffice")
-     ("xcf" . "gimp")
      ("svg" . "inkscape")
+     ("stl" . "prusaslicer")
      ("kdbx" . "keepassxc")
      ("xls" . "libreoffice")
      ("doc" . "libreoffice")
-     ("dot" . "libreoffice")
      ("pub" . "libreoffice")
      ("odg" . "libreoffice")
-     ("ppt" . "libreoffice")
-     ("mp4" . "mplayer")
      ("netmap" . "java -jar ~/bin/jNetMap.jar $1")
      ("glabels" . "glabels-3")
      ("abw" . "libreoffice")
-     ("JPG" . "shotwell")))
- '(dired-open-functions '(dired-open-by-extension dired-open-subdir ignore))
+     ("JPG" . "shotwell"))))
+ '(dired-open-functions (quote (dired-open-by-extension dired-open-subdir ignore)))
  '(erc-modules
-   '(autojoin button completion fill irccontrols list log match menu move-to-prompt netsplit networks noncommands notify readonly ring stamp track))
- '(org-stuck-projects '(":hard/+TODO" ("DONE" "REDUNDANT") nil ""))
+   (quote
+    (autojoin button completion fill irccontrols list log match menu move-to-prompt netsplit networks noncommands notify readonly ring stamp track)))
+ '(flycheck-coffee-coffeelint-executable "/opt/node-v5.5.0-linux-x64/bin/coffeelint")
+ '(flycheck-coffeelintrc "~/coffeelint.json")
+ '(flycheck-javascript-eslint-executable "/opt/node-v5.5.0-linux-x64/bin/eslint")
+ '(flycheck-ruby-rubocop-executable "/usr/local/rbenv/shims/rubocop")
+ '(org-stuck-projects (quote (":hard/+TODO" ("DONE" "REDUNDANT") nil "")))
  '(package-selected-packages
-   '(indium restclient twittering-mode switch-window ledger-mode counsel ivy winner-mode-enable winner-mode total-lines disk-usage system-packages real-auto-save super-save org mu4e-maildirs-extension goto-gem wgrep rg chess dired-rainbow dired-narrow dired-ranger dired-open dired-hacks-utils edit-indirect pinentry ivy-pass sx backlight mw-thesaurus company-statistics company counsel-org-clock daemons bongo pass symon pocket-reader pulseaudio-control yafolding nov rudel dockerfile-mode treemacs dired-du nlinum-hl pdf-tools counsel-spotify all-the-icons-ivy command-log-mode paperless pacmacs slack crontab-mode tide xkcd use-package-chords use-package flycheck yaml-mode web-mode tramp-term togetherly sudo-edit spaceline scss-mode ruby-refactor ruby-end ruby-electric rspec-mode rsense robe rinari rbenv rainbow-mode projectile-rails paradox pallet ox-reveal org2blog org-clock-csv org-cliplink org-attach-screenshot nlinum multiple-cursors multi-term moe-theme markdown-mode magit linum-off jsx-mode js2-mode highlight-parentheses highlight-indentation haml-mode grizzl expand-region enh-ruby-mode diredful dired-details csv-mode coffee-mode circe bpr ansible))
+   (quote
+    (indium keepass-mode org-noter org-babel-eval-in-repl steam slime-volleyball i3wm total-lines disk-usage system-packages real-auto-save super-save org mu4e-maildirs-extension goto-gem wgrep rg chess dired-rainbow dired-narrow dired-ranger dired-open dired-hacks-utils edit-indirect pinentry ivy-pass sx backlight mw-thesaurus company-statistics company counsel-org-clock daemons bongo pass symon pocket-reader pulseaudio-control yafolding nov rudel dockerfile-mode treemacs dired-du nlinum-hl pdf-tools spotify counsel-spotify all-the-icons-ivy command-log-mode paperless pacmacs slack crontab-mode tide xkcd use-package-chords use-package flycheck yasnippet yaml-mode web-mode undo-tree twittering-mode tramp-term togetherly switch-window sudo-edit spaceline scss-mode ruby-refactor ruby-end ruby-electric rspec-mode rsense robe rinari rbenv rainbow-mode projectile-rails paradox pallet ox-reveal org2blog org-clock-csv org-cliplink org-attach-screenshot nlinum multiple-cursors multi-term moe-theme markdown-mode magit linum-off jsx-mode js2-mode highlight-parentheses highlight-indentation haml-mode grizzl expand-region enh-ruby-mode diredful dired-details csv-mode coffee-mode circe bpr ansible)))
  '(paperless-capture-directory "~/paperless/upload")
  '(paperless-root-directory "~/paperless/documents")
  '(paradox-automatically-star t)
- '(paradox-github-token t)
  '(undo-tree-visualizer-default-face nil)
  '(xcb:debug t))
 (custom-set-faces
@@ -260,6 +257,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:background "#000000" :foreground "#ffffff"))))
  '(flyspell-incorrect ((t (:underline (:color "Red1" :style wave) :weight normal :foreground nil :background nil))))
  '(font-lock-builtin-face ((t (:foreground "red2"))))
  '(font-lock-comment-delimiter-face ((t (:foreground "chocolate1" :slant italic))))
@@ -350,5 +348,4 @@
  '(mode-line-buffer-id ((t (:foreground "black" :box nil :weight bold))))
  '(mode-line-inactive ((t (:background "gray30" :foreground "#f9f9f9" :box nil))))
  '(mouse ((t (:background "grey"))))
- '(region ((t (:background "dim gray"))))
- '(term-color-blue ((t (:background "blue2" :foreground "gold")))))
+ '(region ((t (:background "dim gray")))))
