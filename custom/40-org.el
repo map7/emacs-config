@@ -17,6 +17,8 @@
 ;; Format the time in clock tables.
 (setq org-time-clocksum-format (quote (:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t)))
 
+(setq org-list-allow-alphabetical t)
+
 ;; Display inline images
 (defun do-org-show-all-inline-images ()
   (interactive)
