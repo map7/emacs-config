@@ -172,7 +172,7 @@
 (load "84-html-mode.el")             ; html mode & json.
 (load "85-yaml_mode.el")             ; yaml mode.
 ;(load "86-jinja2.el")               ; Ansible templates
-(load "87-js2_mode.el")              ; Javascript js2-mode
+(load "87-javascript.el")              ; Javascript js2-mode
 (load "88-arduino_mode.el")
 
 ;;--------------------------------------------------------------------------------
