@@ -60,6 +60,12 @@
 
 ;; Passwords
 (use-package keepass-mode :ensure t :defer 5)
+(use-package pinentry
+  :ensure t
+  :init
+  (pinentry-start)
+  :config
+  (setq epa-pinentry-mode 'loopback))
 (use-package pass :ensure t :defer 5)
 
 ;; Ruby related
