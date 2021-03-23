@@ -14,11 +14,13 @@
               (when (string-equal "tsx" (file-name-extension buffer-file-name))
                 (setup-tide-mode))))
   
-  ;; JSX Setup
-  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+  ;; JSX Setup (React templates)
+  (add-to-list 'auto-mode-alist '("\\.jsx?$" . web-mode))
   (add-hook 'web-mode-hook
             (lambda ()
               (when (string-equal "jsx" (file-name-extension buffer-file-name))
                 (setup-tide-mode))))
+  (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))
+  
   :defer 5)
 
