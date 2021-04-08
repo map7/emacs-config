@@ -1,3 +1,9 @@
+;; Dired functions
+
+
+;; Ref: ~/org/business/.dir-locals.el on how I use this function
+(add-hook 'dired-mode-hook (lambda () (dired-omit-mode)))
+
 ;; colour your file names
 (use-package diredful
   :init
