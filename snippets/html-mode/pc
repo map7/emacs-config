@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+#name : pc
+# --
+<p class="$1">$0</p>
