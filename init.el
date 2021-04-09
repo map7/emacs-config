@@ -255,6 +255,13 @@
  '(paperless-root-directory "~/paperless/documents")
  '(paradox-automatically-star t)
  '(paradox-github-token t)
+ '(safe-local-variable-values
+   '((dired-omit-files . "\\.html\\'")
+     (ruby-compilation-executable . "ruby")
+     (ruby-compilation-executable . "ruby1.8")
+     (ruby-compilation-executable . "ruby1.9")
+     (ruby-compilation-executable . "rbx")
+     (ruby-compilation-executable . "jruby")))
  '(undo-tree-visualizer-default-face nil)
  '(xcb:debug t))
 (custom-set-faces
