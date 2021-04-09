@@ -37,6 +37,7 @@
 ; Create a little function to run publish mode in a shortcut
 (defun puborg ()
   (interactive)
+  (setq org-export-with-broken-links 't)
   (org-publish-project "org")
 )
 
