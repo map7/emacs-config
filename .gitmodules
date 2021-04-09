@@ -1,0 +1,3 @@
+[submodule "external/org-ehtml"]
+	path = external/org-ehtml
+	url = https://github.com/map7/org-ehtml.git
