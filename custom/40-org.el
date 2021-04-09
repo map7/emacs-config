@@ -97,3 +97,19 @@
 (defun my-org-clocktable-sorter (ipos tables params)
   (setq tables (cl-sort tables (lambda (table1 table2) (> (nth 1 table1) (nth 1 table2)))))
   (funcall (or org-clock-clocktable-formatter 'org-clocktable-write-default) ipos tables params))
+
+;; WIKI
+(add-to-list 'load-path "/home/map7/.emacs.d/external/org-ehtml/src")
+(require 'org-ehtml)
+(setq org-ehtml-docroot (expand-file-name "~/org/business"))
+(setq org-ehtml-everything-editable t)
+(ws-start org-ehtml-handler 8888 nil :host "0.0.0.0")
+
+;; Autocommit changes made through org-ehtml
+(require 'vc)
+(add-hook
+ 'org-ehtml-after-save-hook
+ (lambda (request)
+   (let ((file (buffer-file-name (current-buffer))))
+     (vc-checkin (list file)
+                 (vc-backend file) "edit through org-ehtml"))))
