@@ -129,9 +129,20 @@
 (defun count-todo-items()
   "Print a message with the number of todo tasks"
   (interactive)
-  (org-todo-list)                     ; List all tasks
-  (goto-char (point-min))             ; Goto top
-  (goto-line 3)                       ; Ignore headings
-  (let (todos (count-matches "TODO"))) ; Store total todos
-  (message "Number of TODOs: %d" todos)) ; Display message
+  (async-start
+
+   ;; start
+   (lambda ()
+     (setq org-agenda-files '("~/org/" "~/org/business/michael" "~/org/projects"))
+     (org-todo-list)                     ; List all tasks
+     (goto-char (point-min))             ; Goto top
+     (goto-line 3)                       ; Ignore headings
+     (count-matches "TODO")              ; Return total todos
+     )
+
+   ;; finish
+   (lambda (todos)
+     (message "Number of TODOs: %d" todos)) ; Display message
+     )
+   )
 
