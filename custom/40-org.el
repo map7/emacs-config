@@ -125,7 +125,7 @@
 
 ;; 2021-My code to count todo items WIP
 ;;
-;; 
+;; https://github.com/jwiegley/emacs-async
 (defun count-todo-items()
   "Print a message with the number of todo tasks"
   (interactive)
@@ -142,6 +142,10 @@
 
    ;; finish
    (lambda (todos)
+     (setq xbuff (generate-new-buffer "*todo-results*"))
+     (print todos xbuff)
+     (switch-to-buffer xbuff)
+     (append-to-file (point-min) (point-max) "~/org/todos-results.org")
      (message "Number of TODOs: %d" todos)) ; Display message
      )
    )
