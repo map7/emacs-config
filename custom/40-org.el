@@ -160,4 +160,9 @@
    )
 
 ;; Schedule using midnight mode
+(require 'midnight)
+(midnight-delay-set 'midnight-delay "11:59pm")
+(setq midnight-hook nil)                ; Remove clear-buffer-list
+(add-hook 'midnight-hook 'count-todo-items)
+
 
