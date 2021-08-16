@@ -126,6 +126,9 @@
 ;; 2021-My code to count todo items WIP
 ;;
 ;; https://github.com/jwiegley/emacs-async
+(defun get-date()
+  (shell-command-to-string "echo -n $(date +%Y-%m-%d)"))
+
 (defun count-todo-items()
   "Print a message with the number of todo tasks"
   (interactive)
@@ -142,11 +145,19 @@
 
    ;; finish
    (lambda (todos)
-     (setq xbuff (generate-new-buffer "*todo-results*"))
-     (print todos xbuff)
+     (setq xbuff (generate-new-buffer "*todo-results*")) 
+
+     ;; Join date and todo total tegether
+     (setq msg (string-join `("|" ,(get-date) "|" ,(number-to-string todos) "|\n") " "))
+
+     (princ msg xbuff)                  ; Print to the buffer
+     
      (switch-to-buffer xbuff)
      (append-to-file (point-min) (point-max) "~/org/todos-results.org")
+     (kill-buffer xbuff)
      (message "Number of TODOs: %d" todos)) ; Display message
      )
    )
+
+;; Schedule using midnight mode
 
