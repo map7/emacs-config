@@ -38,6 +38,7 @@
 (use-package circe :ensure t :defer 5)
 (use-package company :ensure t :defer 5)
 (use-package csv-mode :ensure t :defer 5)
+(use-package dumb-jump :ensure t :defer 5)
 (use-package expand-region :ensure t :defer 5)
 (use-package findr :ensure t :defer 5)
 (use-package ledger-mode :ensure t :defer 5)
@@ -251,11 +252,11 @@
  '(flycheck-ruby-rubocop-executable "/usr/local/rbenv/shims/rubocop")
  '(org-stuck-projects '(":hard/+TODO" ("DONE" "REDUNDANT") nil ""))
  '(package-selected-packages
-   '(clojure-mode indium keepass-mode org-noter org-babel-eval-in-repl steam slime-volleyball i3wm total-lines disk-usage system-packages real-auto-save super-save org mu4e-maildirs-extension goto-gem wgrep rg chess dired-rainbow dired-narrow dired-ranger dired-open dired-hacks-utils edit-indirect pinentry ivy-pass sx backlight mw-thesaurus company-statistics company counsel-org-clock daemons bongo pass symon pocket-reader pulseaudio-control yafolding nov rudel dockerfile-mode treemacs dired-du nlinum-hl pdf-tools spotify counsel-spotify all-the-icons-ivy command-log-mode paperless pacmacs slack crontab-mode tide xkcd use-package-chords use-package flycheck yasnippet yaml-mode web-mode undo-tree twittering-mode tramp-term togetherly switch-window sudo-edit spaceline scss-mode ruby-refactor ruby-end ruby-electric rspec-mode rsense robe rinari rbenv rainbow-mode projectile-rails paradox pallet ox-reveal org2blog org-clock-csv org-cliplink org-attach-screenshot nlinum multiple-cursors multi-term moe-theme markdown-mode magit linum-off jsx-mode js2-mode highlight-parentheses highlight-indentation haml-mode grizzl expand-region enh-ruby-mode diredful dired-details csv-mode coffee-mode circe bpr ansible))
+   '(async picpocket dumb-jump clojure-mode indium keepass-mode org-noter org-babel-eval-in-repl steam slime-volleyball i3wm total-lines disk-usage system-packages real-auto-save super-save org mu4e-maildirs-extension goto-gem wgrep rg chess dired-rainbow dired-narrow dired-ranger dired-open dired-hacks-utils edit-indirect pinentry ivy-pass sx backlight mw-thesaurus company-statistics company counsel-org-clock daemons bongo pass symon pocket-reader pulseaudio-control yafolding nov rudel dockerfile-mode treemacs dired-du nlinum-hl pdf-tools spotify counsel-spotify all-the-icons-ivy command-log-mode paperless pacmacs slack crontab-mode tide xkcd use-package-chords use-package flycheck yasnippet yaml-mode web-mode undo-tree twittering-mode tramp-term togetherly switch-window sudo-edit spaceline scss-mode ruby-refactor ruby-end ruby-electric rspec-mode rsense robe rinari rbenv rainbow-mode projectile-rails paradox pallet ox-reveal org2blog org-clock-csv org-cliplink org-attach-screenshot nlinum multiple-cursors multi-term moe-theme markdown-mode magit linum-off jsx-mode js2-mode highlight-parentheses highlight-indentation haml-mode grizzl expand-region enh-ruby-mode diredful dired-details csv-mode coffee-mode circe bpr ansible))
  '(paperless-capture-directory "~/paperless/upload")
  '(paperless-root-directory "~/paperless/documents")
  '(paradox-automatically-star t)
- '(paradox-github-token t)
+ '(paradox-github-token t t)
  '(safe-local-variable-values
    '((dired-omit-files . "\\.html\\'")
      (ruby-compilation-executable . "ruby")
