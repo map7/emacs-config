@@ -2,4 +2,5 @@
   :init
   (global-linum-mode 1)
   :config
-  (setq linum-format "%4d \u2502 "))
+  (setq linum-format "%4d \u2502 ")
+  (setq column-number-mode t))

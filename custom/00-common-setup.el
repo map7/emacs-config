@@ -17,21 +17,18 @@
 (global-auto-revert-mode t)               ; Auto-update buffer if file has changed on disk
 
 (add-hook 'before-save-hook
-	  'delete-trailing-whitespace)    ; Delete trailing whitespace on save
-
-;; auto-indent
-(define-key global-map (kbd "C-j") 'newline-and-indent)
+	  'delete-trailing-whitespace)          ; Delete trailing whitespace on save
 
 ;; Tab settings
+(define-key global-map (kbd "C-j") 'newline-and-indent);; auto-indent
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
+
+
 
 ; stop emacs from contaminating each directory with semantic.cache
 (setq semanticdb-default-save-directory "/tmp")
 
-;; (display-battery-mode)
-
-(setq column-number-mode t)
 
 (setq backup-inhibited t) ;; disable backup
 (setq make-backup-files nil)
@@ -44,13 +41,6 @@
 
 ;; Hide system ruby version from modeline
 (setq rbenv-show-active-ruby-in-modeline nil)
-
-;; ;; Clean up whitepace before saving a file
-;; ;; Exclude this from org-mode
-;; (add-hook 'before-save-hook 'whitespace-cleanup)
-
-;; ;; Save desktop
-;; (desktop-save-mode 1)
 
 ;; Dired setup
 (setq dired-listing-switches "-alh")
