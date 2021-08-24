@@ -1,3 +1,6 @@
+(load "tab-settings")
+(load "backup-settings")
+
 ;;; Disable menu-bar, tool-bar, and scroll-bar.
 (if (fboundp 'menu-bar-mode)
     (menu-bar-mode -1))
@@ -19,17 +22,10 @@
 (add-hook 'before-save-hook
 	  'delete-trailing-whitespace)          ; Delete trailing whitespace on save
 
-(load "tab-settings")
-(load "backup-settings")
 
-;; Don't ask to save abbrevs
-(setq save-abbrevs 'silently)
+(setq save-abbrevs 'silently)             ;; save abbrevs when files are saved
+(global-font-lock-mode t)                 ;; Use highlight colors
 
-;; Use highlight colors
-(global-font-lock-mode t)
-
-;; Hide system ruby version from modeline
-(setq rbenv-show-active-ruby-in-modeline nil)
 
 ;; Dired setup
 (setq dired-listing-switches "-alh")

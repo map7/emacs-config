@@ -10,3 +10,6 @@
   (require 'cl) ; If you don't have it already
   (setq ruby-bounce-deep-indent t)
   (setq ruby-hanging-brace-indent-level 2))
+
+;; Hide system ruby version from modeline
+(setq rbenv-show-active-ruby-in-modeline nil)
