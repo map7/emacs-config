@@ -4,12 +4,13 @@
 ;; Enable the built in pair mode
 (electric-pair-mode 1)
 
-;; Turn off menubar (Top File, Edit, etc Click menu)
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-
-;; Turn scroll bar off
-(scroll-bar-mode -1)
+;;; Disable menu-bar, tool-bar, and scroll-bar.
+(if (fboundp 'menu-bar-mode)
+    (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode)
+    (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode)
+    (scroll-bar-mode -1))
 
 ;; Turn off splash screen
 (setq inhibit-splash-screen t)
