@@ -1,5 +1,6 @@
 (load "tab-settings")
 (load "backup-settings")
+(load "conf-mode-settings")
 
 ;;; Disable menu-bar, tool-bar, and scroll-bar.
 (if (fboundp 'menu-bar-mode)
@@ -22,13 +23,6 @@
 (add-hook 'before-save-hook
 	  'delete-trailing-whitespace)          ; Delete trailing whitespace on save
 
-
 (setq save-abbrevs 'silently)             ;; save abbrevs when files are saved
 (global-font-lock-mode t)                 ;; Use highlight colors
-
-
-
-;; Enter conf-mode for all rc files
-(add-to-list 'auto-mode-alist '("\\.*rc$" . conf-unix-mode))
-
 
