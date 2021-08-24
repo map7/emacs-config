@@ -7,6 +7,4 @@
   ;; Add indium interaction in all JS buffers  
   (add-hook 'js-mode-hook #'indium-interaction-mode)
   
-  ;; Turn off lockfiles as it interfers with auto loading
-  (setq create-lockfiles nil)
   )
