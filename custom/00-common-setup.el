@@ -19,19 +19,8 @@
 (add-hook 'before-save-hook
 	  'delete-trailing-whitespace)          ; Delete trailing whitespace on save
 
-;; Tab settings
-(define-key global-map (kbd "C-j") 'newline-and-indent);; auto-indent
-(setq-default tab-width 2)
-(setq-default indent-tabs-mode nil)
-
-
-
-; stop emacs from contaminating each directory with semantic.cache
-(setq semanticdb-default-save-directory "/tmp")
-
-
-(setq backup-inhibited t) ;; disable backup
-(setq make-backup-files nil)
+(load "tab-settings")
+(load "backup-settings")
 
 ;; Don't ask to save abbrevs
 (setq save-abbrevs 'silently)
