@@ -63,15 +63,15 @@
 
 ;; Custom searches
 (setq org-agenda-custom-commands
-      '(("Q" . "Custom queries") ;; gives label to "Q" 
+      '(("Q" . "Custom queries") ;; gives label to "Q"
         ("Qa" "Archive search" search ""
-         ((org-agenda-files (file-expand-wildcards "~/org/archive/*.org_archive")))) 
+         ((org-agenda-files (file-expand-wildcards "~/org/archive/*.org_archive"))))
         ;; ("Qw" "Website search" search ""
         ;;  ((org-agenda-files (file-expand-wildcards "~/website/*.org"))))
         ("Qb" "Projects and Archive" search ""
          ((org-agenda-text-search-extra-files (file-expand-wildcards "~/org/archive/*.org_archive"))))
         ;; searches both projects and org/archive directories
-        ("QA" "Archive tags search" org-tags-view "" 
+        ("QA" "Archive tags search" org-tags-view ""
          ((org-agenda-files (file-expand-wildcards "~/org/archive/*.org_archive"))))
         ;; ...other commands here
         ))
@@ -91,7 +91,7 @@
     (message "Hours clocked for the day: %s" (/ total 60))))
 
 ;; Sorts the tables by time, largest to smallest
-;; 
+;;
 ;; example of clocktable line;
 ;; #+BEGIN: clocktable :maxlevel 1 :block today :scope agenda-with-archives :link t :stepskip0 t :fileskip0 t :formula % :formatter my-org-clocktable-sorter
 (defun my-org-clocktable-sorter (ipos tables params)
@@ -123,46 +123,5 @@
 
 ;; (add-hook 'org-ehtml-after-save-hook 'commit-ehtml-edit)
 
-;; 2021-My code to count todo items WIP
-;;
-;; https://github.com/jwiegley/emacs-async
-(defun get-date()
-  (shell-command-to-string "echo -n $(date +%Y-%m-%d)"))
-
-(defun count-todo-items()
-  "Print a message with the number of todo tasks"
-  (interactive)
-  (async-start
-
-   ;; start
-   (lambda ()
-     (setq org-agenda-files '("~/org/" "~/org/business/michael" "~/org/projects"))
-     (org-todo-list)                     ; List all tasks
-     (goto-char (point-min))             ; Goto top
-     (goto-line 3)                       ; Ignore headings
-     (count-matches "TODO")              ; Return total todos
-     )
-
-   ;; finish
-   (lambda (todos)
-     (setq xbuff (generate-new-buffer "*todo-results*")) 
-
-     ;; Join date and todo total tegether
-     (setq msg (string-join `("|" ,(get-date) "|" ,(number-to-string todos) "|\n") " "))
-
-     (princ msg xbuff)                  ; Print to the buffer
-     
-     (switch-to-buffer xbuff)
-     (append-to-file (point-min) (point-max) "~/org/todos-results.org")
-     (kill-buffer xbuff)
-     (message "Number of TODOs: %d" todos)) ; Display message
-     )
-   )
-
-;; Schedule using midnight mode
-(require 'midnight)
-(midnight-delay-set 'midnight-delay "11:59pm")
-(setq midnight-hook nil)                ; Remove clear-buffer-list
-(add-hook 'midnight-hook 'count-todo-items)
-
-
+(load "count-todo")
+(load "async-agenda")
