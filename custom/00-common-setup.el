@@ -26,3 +26,6 @@
 (setq save-abbrevs 'silently)             ;; save abbrevs when files are saved
 (global-font-lock-mode t)                 ;; Use highlight colors
 
+(defun reload-config ()
+  (interactive)
+  (load-file (concat user-emacs-directory "init.el")))
