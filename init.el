@@ -22,6 +22,7 @@
 (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/"))
 
+(load "external-plugins")
 (add-to-list 'load-path "~/.emacs.d/external") ; Plugins not in the repo
 (unless package--initialized (package-initialize))
 
