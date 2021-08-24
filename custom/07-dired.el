@@ -59,3 +59,5 @@
   
   :defer 5)
 
+;; Dired setup
+(setq dired-listing-switches "-alh")
