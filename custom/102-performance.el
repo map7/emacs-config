@@ -1,11 +1,11 @@
-;; Delay the garabage collection
+(setq gc-cons-threshold 100000000)     ;; Delay the garabage collection
 
-(setq gc-cons-threshold-original gc-cons-threshold)
-(setq gc-cons-threshold 100000000)      ;performace
-(setq file-name-handler-alist-original file-name-handler-alist) ;performance
+(setq read-process-output-max (* 1024 1024)) ;; 1mb
+
+(setq file-name-handler-alist-original file-name-handler-alist) ; Save original
 (setq file-name-handler-alist nil)
-(run-with-idle-timer                    ;reset
- 10 nil
- (lambda ()
-   (setq gc-cons-threshold gc-cons-threshold-original)
-   (setq file-name-handler-alist file-name-handler-alist-original)))
+
+;; restore after startup
+(add-hook 'after-init-hook #'(lambda ()
+                               (setq gc-cons-threshold 800000)
+                               (setq file-name-handler-alist file-name-handler-alist-original)))
