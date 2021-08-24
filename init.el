@@ -14,6 +14,7 @@
 (add-to-list 'load-path "~/.emacs.d/custom")
 (load "102-performance.el")
 
+;; Setup package.el
 (require 'package)
 (setq package-enable-at-startup nil)   ;; To prevent initialising twice
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
@@ -23,14 +24,17 @@
 
 (add-to-list 'load-path "~/.emacs.d/external") ; Plugins not in the repo
 (add-to-list 'load-path "~/.emacs.d/external/4gl-mode-master")
-(package-initialize)
+(unless package--initialized (package-initialize))
 
+;; Setup use-package
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+(eval-when-compile
+  (require 'use-package))
+(setq use-package-always-ensure t)
 
 ;; Package configuration (NEW way as of 02/12/2016)
-(setq use-package-always-ensure t)
 (use-package all-the-icons :ensure t :defer 5)
 (use-package ansible :ensure t :defer 5)
 (use-package clojure-mode :ensure t :defer 5)
