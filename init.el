@@ -23,7 +23,6 @@
 (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/"))
 
 (add-to-list 'load-path "~/.emacs.d/external") ; Plugins not in the repo
-(add-to-list 'load-path "~/.emacs.d/external/4gl-mode-master")
 (unless package--initialized (package-initialize))
 
 ;; Setup use-package
@@ -86,6 +85,7 @@
 (use-package org-clock-today :ensure t :defer 5)
 
 ;; 4gl mode from external
+(add-to-list 'load-path "~/.emacs.d/external/4gl-mode-master")
 (require '4gl-mode)
 
 ;; All custom files have a number at the front so they don't clash with the library files.
