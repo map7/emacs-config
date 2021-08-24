@@ -1,9 +1,3 @@
-;; Replace bell (beep) with visible bell
-(setq visible-bell t)
-
-;; Enable the built in pair mode
-(electric-pair-mode 1)
-
 ;;; Disable menu-bar, tool-bar, and scroll-bar.
 (if (fboundp 'menu-bar-mode)
     (menu-bar-mode -1))
@@ -12,8 +6,18 @@
 (if (fboundp 'scroll-bar-mode)
     (scroll-bar-mode -1))
 
-;; Turn off splash screen
-(setq inhibit-splash-screen t)
+;;; Useful Defaults
+(setq inhibit-startup-screen t)           ; Disable startup screen
+(setq initial-scratch-message "")         ; Make *scratch* buffer blank
+(setq-default frame-title-format '("%b")) ; Make window title the buffer name
+(setq ring-bell-function 'ignore)         ; Disable bell sound
+(fset 'yes-or-no-p 'y-or-n-p)             ; y-or-n-p makes answering questions faster
+(show-paren-mode 1)                       ; Show closing parens by default
+(delete-selection-mode 1)                 ; Selected text will be overwritten when you start typing
+(global-auto-revert-mode t)               ; Auto-update buffer if file has changed on disk
+
+(add-hook 'before-save-hook
+	  'delete-trailing-whitespace)    ; Delete trailing whitespace on save
 
 ;; auto-indent
 (define-key global-map (kbd "C-j") 'newline-and-indent)
@@ -42,9 +46,6 @@
 (dolist (project (directory-files elisp-external-dir t "\\w+"))
   (when (file-directory-p project)
   (add-to-list 'load-path project)))
-
-; Auto revert unless there is unsaved data
-(global-auto-revert-mode t)
 
 ;; Don't ask to save abbrevs
 (setq save-abbrevs 'silently)
