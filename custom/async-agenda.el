@@ -31,6 +31,7 @@
    ;; What to do in the child process
    (lambda ()
      (require 'org-agenda)
+     (setq max-lisp-eval-depth 10000)
      (setq org-agenda-files '("~/org/" "~/org/business/michael" "~/org/projects"))
      (org-agenda-list)
      (buffer-string))
@@ -38,6 +39,7 @@
    ;; What to do when it finishes
    (lambda (result)
      (require 'org-agenda)
+     (setq max-lisp-eval-depth 10000)
      (switch-to-buffer-other-window "*Org Agenda ASYNC*")
      ;; In this example, we have only one file in org-agenda-files, but
      ;; we can assume user will want to use the same value of
