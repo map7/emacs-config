@@ -17,7 +17,8 @@
 (setq ring-bell-function 'ignore)         ; Disable bell sound
 (fset 'yes-or-no-p 'y-or-n-p)             ; y-or-n-p makes answering questions faster
 (show-paren-mode 1)                       ; Show closing parens by default
-(delete-selection-mode 1)                 ; Selected text will be overwritten when you start typing
+(electric-pair-mode 1)                    ; Enable the built in pair mode
+(delete-selection-mode 0)                 ; Selected text NOT will be overwritten when you start typing
 (global-auto-revert-mode t)               ; Auto-update buffer if file has changed on disk
 
 (add-hook 'before-save-hook
