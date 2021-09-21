@@ -11,7 +11,7 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 
-(add-to-list 'load-path "~/.emacs.d/custom")
+(add-to-list 'load-path (expand-file-name "custom" user-emacs-directory))
 (load "102-performance.el")
 
 ;; Setup package.el
@@ -23,7 +23,7 @@
 (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/"))
 
 (load "external-plugins")
-(add-to-list 'load-path "~/.emacs.d/external") ; Plugins not in the repo
+(add-to-list 'load-path (expand-file-name "external" user-emacs-directory)) ; Plugins not in the repo
 (unless package--initialized (package-initialize))
 
 ;; Setup use-package
@@ -53,6 +53,7 @@
 (use-package picpocket :ensure t :defer 5 :bind ("M-p" . picpocket))
 (use-package sudo-edit :ensure t :defer 5)
 (use-package switch-window :ensure t :defer 5)
+(use-package vterm :ensure t :defer 5)  ; Best terminal for emacs
 (use-package tramp-term :ensure t :defer 5)
 (use-package twittering-mode :ensure t :defer 5)
 (use-package restclient :ensure t :defer 5) ; Used to test restful APIs
@@ -87,7 +88,7 @@
 (use-package org-clock-today :ensure t :defer 5)
 
 ;; 4gl mode from external
-(add-to-list 'load-path "~/.emacs.d/external/4gl-mode-master")
+(add-to-list 'load-path (expand-file-name "external/4gl-mode-master" user-emacs-directory))
 (require '4gl-mode)
 
 ;; All custom files have a number at the front so they don't clash with the library files.
@@ -194,16 +195,16 @@
 ;;     (load "98-exwm.el")                    ; Emacs X Windows Manager
 ;; )
 
-(if (file-exists-p "~/.emacs.d/.emacs.autostart.el")
-    (load "~/.emacs.d/.emacs.autostart.el")
+(if (file-exists-p (expand-file-name ".emacs.autostart.el" user-emacs-directory))
+    (load (expand-file-name ".emacs.autostart.el" user-emacs-directory))
 )
 
 (if (file-exists-p "~/.emacs.mu4e.el")
     (load "~/.emacs.mu4e.el")  ; Email settings
 )
 
-(if (file-exists-p "~/.emacs.d/.emacs.paradox.el")
-    (load "~/.emacs.d/.emacs.paradox.el")
+(if (file-exists-p (expand-file-name ".emacs.paradox.el" user-emacs-directory))
+    (load (expand-file-name ".emacs.paradox.el" user-emacs-directory))
   )
 (load "100-theme.el")                 ; Load theme and setup font
 (load "101-modeline.el")
@@ -212,12 +213,12 @@
 (put 'downcase-region 'disabled nil)
 
 ;; Load apps
-(if (file-exists-p "~/.emacs.d/.emacs.workspace.el")
-    (load "~/.emacs.d/.emacs.workspace.el")
+(if (file-exists-p (expand-file-name ".emacs.workspace.el" user-emacs-directory))
+    (load (expand-file-name ".emacs.workspace.el" user-emacs-directory))
   )
 
 ;; Read in custom settings for the user
-(load "~/.emacs.d/.emacs.custom.el")
+(load (expand-file-name ".emacs.custom.el" user-emacs-directory))
 
 ;;;; Refer to issue 216 on exwm for a discussion on this.
 ;; (require 'desktop)
@@ -258,7 +259,7 @@
  '(flycheck-ruby-rubocop-executable "/usr/local/rbenv/shims/rubocop")
  '(org-stuck-projects '(":hard/+TODO" ("DONE" "REDUNDANT") nil ""))
  '(package-selected-packages
-   '(crdt async picpocket dumb-jump clojure-mode indium keepass-mode org-noter org-babel-eval-in-repl steam slime-volleyball i3wm total-lines disk-usage system-packages real-auto-save super-save org mu4e-maildirs-extension goto-gem wgrep rg chess dired-rainbow dired-narrow dired-ranger dired-open dired-hacks-utils edit-indirect pinentry ivy-pass sx backlight mw-thesaurus company-statistics company counsel-org-clock daemons bongo pass symon pocket-reader pulseaudio-control yafolding nov rudel dockerfile-mode treemacs dired-du nlinum-hl pdf-tools spotify counsel-spotify all-the-icons-ivy command-log-mode paperless pacmacs slack crontab-mode tide xkcd use-package-chords use-package flycheck yasnippet yaml-mode web-mode undo-tree twittering-mode tramp-term togetherly switch-window sudo-edit spaceline scss-mode ruby-refactor ruby-end ruby-electric rspec-mode rsense robe rinari rbenv rainbow-mode projectile-rails paradox pallet ox-reveal org2blog org-clock-csv org-cliplink org-attach-screenshot nlinum multiple-cursors multi-term moe-theme markdown-mode magit linum-off jsx-mode js2-mode highlight-parentheses highlight-indentation haml-mode grizzl expand-region enh-ruby-mode diredful dired-details csv-mode coffee-mode circe bpr ansible))
+   '(vterm crdt async picpocket dumb-jump clojure-mode indium keepass-mode org-noter org-babel-eval-in-repl steam slime-volleyball i3wm total-lines disk-usage system-packages real-auto-save super-save org mu4e-maildirs-extension goto-gem wgrep rg chess dired-rainbow dired-narrow dired-ranger dired-open dired-hacks-utils edit-indirect pinentry ivy-pass sx backlight mw-thesaurus company-statistics company counsel-org-clock daemons bongo pass symon pocket-reader pulseaudio-control yafolding nov rudel dockerfile-mode treemacs dired-du nlinum-hl pdf-tools spotify counsel-spotify all-the-icons-ivy command-log-mode paperless pacmacs slack crontab-mode tide xkcd use-package-chords use-package flycheck yasnippet yaml-mode web-mode undo-tree twittering-mode tramp-term togetherly switch-window sudo-edit spaceline scss-mode ruby-refactor ruby-end ruby-electric rspec-mode rsense robe rinari rbenv rainbow-mode projectile-rails paradox pallet ox-reveal org2blog org-clock-csv org-cliplink org-attach-screenshot nlinum multiple-cursors multi-term moe-theme markdown-mode magit linum-off jsx-mode js2-mode highlight-parentheses highlight-indentation haml-mode grizzl expand-region enh-ruby-mode diredful dired-details csv-mode coffee-mode circe bpr ansible))
  '(paperless-capture-directory "~/paperless/upload")
  '(paperless-root-directory "~/paperless/documents")
  '(paradox-automatically-star t)
