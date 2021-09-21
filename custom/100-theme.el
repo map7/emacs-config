@@ -1,5 +1,5 @@
 ;; Tell emacs where the theme is
-(setq custom-theme-directory "~/.emacs.d/themes")
+(setq custom-theme-directory (expand-file-name "themes" user-emacs-directory))
 
 ;; Trust custom themes
 (setq custom-safe-themes t)

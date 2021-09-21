@@ -1,5 +1,5 @@
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/.cask/24.3.1/elpa/auto-complete-20141103.105/dict")
+;(add-to-list 'ac-dictionary-directories "~/.emacs.d/.cask/24.3.1/elpa/auto-complete-20141103.105/dict")
 (ac-config-default)
 
 (setq ac-use-quick-help nil)
@@ -19,4 +19,3 @@
 (add-to-list 'ac-modes 'rhtml-mode)
 (add-to-list 'ac-modes 'enh-ruby-mode)
 (add-to-list 'ac-modes 'web-mode)
-
