@@ -13,7 +13,7 @@
 (add-hook 'org-mode-hook 'turn-on-visual-line-mode)
 (setq org-clock-out-remove-zero-time-clocks t)
 (setq org-directory "~/org")
-;;(setq org-agenda-files '("~/org/" "~/org/business" "~/org/projects"))
+(setq org-agenda-files '("~/org/" "~/org/business/michael" "~/org/projects"))
 ;; Format the time in clock tables.
 (setq org-time-clocksum-format (quote (:hours "%d" :require-hours t :minutes ":%02d" :require-minutes t)))
 
