@@ -26,6 +26,8 @@
 (add-to-list 'load-path (expand-file-name "external" user-emacs-directory)) ; Plugins not in the repo
 (unless package--initialized (package-initialize))
 
+
+
 ;; Setup use-package
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -130,6 +132,7 @@
 (load "34-windmove.el")                 ; Move around buffers fast
 (load "35-paperless.el")                ; Paperless for managing pdfs
 (load "36-nov.el")
+(load "37-expenses.el")                 ; Budgeting plugin
 
 ;;--------------------------------------------------------------------------------
 ;;-Org-mode related (40-49)
