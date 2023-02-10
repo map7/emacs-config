@@ -2,9 +2,10 @@
 
 (use-package pdf-tools
   :init
-  (pdf-tools-install)  
+  (pdf-tools-install)
   ;; Setup a hook when we kill a pdf take a bookmark
   (add-hook 'kill-buffer-hook 'kill-buffer-hook-setup)
+  (pdf-view-midnight-colors '("white smoke" . "black"))
   :config
   ;; Set a bookmark on kill
   (defun kill-buffer-hook-setup ()
@@ -16,4 +17,3 @@
              (y-or-n-p "Set bookmark with current file name?"))
         ;; Set a bookmark with the name being the buffers full path name
         (bookmark-set (file-name-nondirectory buffer-file-name) nil))))
-
