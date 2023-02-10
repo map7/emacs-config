@@ -12,6 +12,7 @@
 ;; Org-mode options
 (add-hook 'org-mode-hook 'turn-on-visual-line-mode)
 (setq org-clock-out-remove-zero-time-clocks t)
+(setq org-duration-format (quote h:mm))
 (setq org-directory "~/org")
 (setq org-agenda-files '("~/org/" "~/org/business/michael" "~/org/projects"))
 ;; Format the time in clock tables.
@@ -125,3 +126,6 @@
 
 (load "count-todo")
 (load "async-agenda")
+
+;; plotting
+(global-set-key "\M-\C-g" 'org-plot/gnuplot)
