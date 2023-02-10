@@ -24,6 +24,9 @@
 (global-set-key [f10] 'undo-tree-visualize)
 (global-set-key [f12] 'switch-full-screen)
 
+(global-set-key (kbd "M-<up>") 'move-line-up)
+(global-set-key (kbd "M-<down>") 'move-line-down)
+
 ;; key bindings for dictionary
 (global-set-key "\C-cs" 'dictionary-search)
 (global-set-key "\C-cm" 'dictionary-match-words)
@@ -35,7 +38,7 @@
 ;; difference in mapping the super key.
 (global-set-key (kbd "C-S-e") 'eval-buffer)
 
-(global-set-key (kbd "s-RET") 'google-maps)
+;; (global-set-key (kbd "s-RET") 'google-maps)
 
 (global-set-key (kbd "C-c I") 'irc)
 
@@ -83,12 +86,9 @@
   (arg (1+ arg) 2)
   (if (arg (not (= 1 arg))) (message "%d lines copied" arg)))
 
-
-
 ;; Expanding & Hiding org mode sections
 (global-set-key (kbd "s-,") 'hide-sublevels)
 (global-set-key (kbd "s-.") 'show-all)
-
 
 ;; Toggle
 ;;(global-set-key (kbd "s-t") 'exwm-input-toggle-keyboard)
