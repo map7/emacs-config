@@ -5,4 +5,6 @@
   :defer 5
   :config
   (yas-global-mode 1)
-  (setq yas-snippet-dirs '(expand-file-name "snippets" user-emacs-directory)))
+  (setq yas-snippet-dirs '("~/.emacs.default/snippets"))
+  ;(setq yas-snippet-dirs (expand-file-name "snippets" user-emacs-directory))
+  )
