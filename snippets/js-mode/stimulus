@@ -1,13 +1,13 @@
 #name : Stimulus template
 # key: stimulus
 # --
-import { Controller } from "stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   static targets = ["output"]
-  
+
   connect() {
     $0
-    this.outputTarget.textContent = "Hello World!"
+    this.outputTarget.textContent = "Hello World!";
   }
 }
