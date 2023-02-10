@@ -28,7 +28,7 @@
      (princ msg xbuff)                  ; Print to the buffer
 
      (switch-to-buffer xbuff)
-     (append-to-file (point-min) (point-max) "~/org/todos-results.org")
+     (append-to-file (point-min) (point-max) "~/todos-results.org")
      (kill-buffer xbuff)
      (message "Number of TODOs: %d" todos)) ; Display message
      )
