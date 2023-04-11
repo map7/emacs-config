@@ -17,7 +17,7 @@
 (global-set-key [f3] 'twit)
 (global-set-key [f4] 'magit-log-all)
 (global-set-key [f5] 'magit-status)
-(global-set-key [f6] 'vterm)
+(global-set-key [f6] 'eshell)
 (global-set-key [f7] 'split-window-vertically)
 (global-set-key [f8] 'other-window)
 ;; f9 is taken by git-status somewhere.
