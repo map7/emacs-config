@@ -141,7 +141,7 @@
 ;;-Org-mode related (40-49)
 ;;--------------------------------------------------------------------------------
 (load "40-org.el")                   ; Org mode
-(load "41-org2blog.el")              ; Org2blog mode
+;; (load "41-org2blog.el")              ; Org2blog mode ; 2023 broken
 (load "42-org-expiry.el")            ; Org expiry <-- add created property on todo items
 (load "43-revealjs.el")              ; Reveal.js settings
 (load "44-org-publish.el")           ; Org publish setup
