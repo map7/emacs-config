@@ -171,7 +171,7 @@ n and compare it with a closing statement.
 	  )
 	(save-excursion
 	  (ignore-errors
-		(search-backward-regexp "^\\s-*\\(IF \\|MAIN\\|TYPE\\|FUNCTION\\|REPORT\\|CONSTRUCT\\|DIALOG\\|INPUT\\|FOREACH\\|ON\\s-\\|FORMAT\\|BEFORE\\|AFTER\\|ELSE\\)")
+		(search-backward-regexp "^\\s-*\\(IF \\|MAIN\\|TYPE\\|FUNCTION\\|REPORT\\|CONSTRUCT\\|DIALOG\\|INPUT\\|FOREACH\\|ON\\s-\\|FORMAT\\|BEFORE\\|AFTER\\|ELSE\\|CASE\\)")
 
 		(forward-word)(backward-word)
 		(setq open-col (+ (current-column) 4))
@@ -192,6 +192,8 @@ n and compare it with a closing statement.
 		   ((regexp-current-linep "^\\s-*ELSE") (regexp-backward-col-number "^\\s-*IF"))
 		   ((regexp-current-linep "^\\s-*END TYPE") (regexp-backward-col-number "^\\s-*TYPE"))
 		   ((regexp-current-linep "^\\s-*END INPUT") (regexp-backward-col-number "^\\s-*INPUT"))
+		   ((regexp-current-linep "^\\s-*END CASE") (regexp-backward-col-number "^\\s-*CASE"))
+		   ((regexp-current-linep "^\\s-*WHEN") (regexp-backward-col-number "^\\s-*CASE"))
 		   ((regexp-current-linep "^\\s-*END DIALOG") (regexp-backward-col-number "^\\s-*DIALOG"))
 		   ((regexp-current-linep "^\\s-*END CONSTRUCT") (regexp-backward-col-number "^\\s-*CONSTRUCT"))
 		   ((regexp-current-linep "^\\s-*END FOREACH") (regexp-backward-col-number "^\\s-*FOREACH"))
