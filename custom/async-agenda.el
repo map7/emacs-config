@@ -33,6 +33,7 @@
      (require 'org-agenda)
      (setq max-lisp-eval-depth 10000)
      (setq org-agenda-files '("~/org/" "~/org/business/michael" "~/org/projects"))
+     (setq org-agenda-skip-function-global '(org-agenda-skip-entry-if 'notregexp "^\\*+ TODO"))
      (org-agenda-list)
      (buffer-string))
 
@@ -40,15 +41,13 @@
    (lambda (result)
      (require 'org-agenda)
      (setq max-lisp-eval-depth 10000)
-     (switch-to-buffer-other-window "*Org Agenda ASYNC*")
-     ;; In this example, we have only one file in org-agenda-files, but
-     ;; we can assume user will want to use the same value of
-     ;; org-agenda-files both in parent and child so we can loop in
-     ;; org-agenda-files to open all org buffer (org is doing this when
-     ;; calling org-agenda).
-     (find-file-noselect "~/tmp/test.org")
-     (insert (car result))
-     (map-text-properties (cdr result))
-     (org-agenda-mode))))
+     (let ((agenda-buffer (get-buffer-create "*Org Agenda*")))
+       (with-current-buffer agenda-buffer
+         (erase-buffer)
+         (find-file-noselect "~/tmp/test.org")
+         (insert (car result))
+         (map-text-properties (cdr result))
+         (org-agenda-mode)
+         (message "DONE"))))))
 
 (global-set-key (kbd "s-a") 'async-org-agenda-list)
