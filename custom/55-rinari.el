@@ -68,3 +68,6 @@
   (global-rinari-mode +1)
   :defer 2)
 
+(global-set-key (kbd "M-s-m") 'rinari-find-model)
+(global-set-key (kbd "M-s-c") 'rinari-find-controller)
+(global-set-key (kbd "M-s-v") 'rinari-find-view)
