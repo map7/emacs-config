@@ -21,8 +21,8 @@
 (delete-selection-mode 0)                 ; Selected text NOT will be overwritten when you start typing
 (global-auto-revert-mode t)               ; Auto-update buffer if file has changed on disk
 
-(add-hook 'before-save-hook
-	  'delete-trailing-whitespace)          ; Delete trailing whitespace on save
+;; (add-hook 'before-save-hook
+;; 	  'delete-trailing-whitespace)          ; Delete trailing whitespace on save
 
 (setq save-abbrevs 'silently)             ;; save abbrevs when files are saved
 (global-font-lock-mode t)                 ;; Use highlight colors
