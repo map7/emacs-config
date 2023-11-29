@@ -30,3 +30,28 @@
 (defun reload-config ()
   (interactive)
   (load-file (concat user-emacs-directory "init.el")))
+
+
+;; --------------------------------------------------------------------------------
+;; Colourise the Shell Output
+(use-package xterm-color :ensure t)
+(require 'xterm-color)
+
+(defun xterm-color-colorize-shell-command-output ()
+  "Colorize `shell-command' output."
+  (let ((bufs
+         (seq-remove
+          (lambda (x)
+            (not (or (string-prefix-p " *Echo Area" (buffer-name x))
+                     (string-prefix-p "*Shell Command" (buffer-name x)))))
+          (buffer-list))))
+    (dolist (buf bufs)
+      (with-current-buffer buf
+        (xterm-color-colorize-buffer)))))
+
+(defun xterm-color-colorize-shell-command-output-advice (proc &rest rest)
+  (xterm-color-colorize-shell-command-output))
+
+(advice-add 'shell-command :after #'xterm-color-colorize-shell-command-output-advice)
+(advice-remove 'shell-command #'xterm-color-colorize-shell-command-output-advice)
+;; --------------------------------------------------------------------------------
