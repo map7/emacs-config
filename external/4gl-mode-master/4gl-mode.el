@@ -155,7 +155,7 @@ ZEROFILL")'words ) . font-lock-keyword-face)
 
 (defun 4gl-indent ()
 "Going to search backwards for an open(indenting) statement
-n and compare it with a closing statement. 
+ and compare it with a closing statement. 
  Indent appropriately to whichever appears first
 "
   (let ((open-col 0)
