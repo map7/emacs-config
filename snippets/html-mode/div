@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 #name : div
 # --
-<div>
+<div id="$1">
   $0
 </div>
