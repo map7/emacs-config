@@ -129,3 +129,6 @@
 
 ;; plotting
 (global-set-key "\M-\C-g" 'org-plot/gnuplot)
+
+;; set time
+(setq org-clock-display-default-range 'untilnow)
