@@ -5,7 +5,6 @@
   (pdf-tools-install)
   ;; Setup a hook when we kill a pdf take a bookmark
   (add-hook 'kill-buffer-hook 'kill-buffer-hook-setup)
-  (pdf-view-midnight-colors '("white smoke" . "black"))
   :config
   ;; Set a bookmark on kill
   (defun kill-buffer-hook-setup ()
