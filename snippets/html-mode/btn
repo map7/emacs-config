@@ -1,0 +1,4 @@
+#HTML
+#name : <button ...></button>
+# --
+<button id="$1">$2</button>
