@@ -102,11 +102,6 @@
   (funcall (or org-clock-clocktable-formatter 'org-clocktable-write-default) ipos tables params))
 
 ;; WIKI
-;; (add-to-list 'load-path "/home/map7/.emacs.d/external/org-ehtml/src")
-;; (require 'org-ehtml)
-;; (setq org-ehtml-docroot (expand-file-name "~/org/business"))
-;; (setq org-ehtml-everything-editable t)
-;; (ws-start org-ehtml-handler 8888 nil :host "0.0.0.0")
 (use-package web-server :ensure t)
 (use-package org-ehtml
   :ensure t
