@@ -1,1 +1,0 @@
-/home/map7/.emacs.default/straight/repos/compat/compat-26.el

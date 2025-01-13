@@ -1,1 +1,0 @@
-/home/map7/.emacs.default/straight/repos/seq/seq-25.el

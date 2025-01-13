@@ -38,3 +38,5 @@ irony
 /picpocket/
 /.cache/
 /external/expenses/
+straight
+/eln-cache/
