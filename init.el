@@ -227,9 +227,9 @@
     (load (expand-file-name ".emacs.autostart.el" user-emacs-directory))
 )
 
-(if (file-exists-p "~/.emacs.mu4e.el")
-    (load "~/.emacs.mu4e.el")  ; Email settings
-)
+;; (if (file-exists-p "~/.emacs.mu4e.el")
+;;     (load "~/.emacs.mu4e.el")  ; Email settings
+;; )
 
 (if (file-exists-p (expand-file-name ".emacs.paradox.el" user-emacs-directory))
     (load (expand-file-name ".emacs.paradox.el" user-emacs-directory))
