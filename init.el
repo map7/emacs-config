@@ -62,6 +62,7 @@
 (use-package company :ensure t :defer 5)
 (use-package csv-mode :ensure t :defer 5)
 (use-package crdt :ensure t :defer 5)   ; Collaborating error free!
+(use-package dired-open-with :ensure t, :defer 5)
 (use-package dumb-jump :ensure t :defer 5)
 (use-package expand-region :ensure t :defer 5)
 (use-package findr :ensure t :defer 5)
