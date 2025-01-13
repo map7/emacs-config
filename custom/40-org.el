@@ -132,3 +132,6 @@
 
 ;; set time
 (setq org-clock-display-default-range 'untilnow)
+
+;; I take screenshots all the time
+(global-set-key (kbd "s-s") 'org-attach-screenshot)
