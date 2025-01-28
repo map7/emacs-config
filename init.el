@@ -245,6 +245,10 @@
     (load (expand-file-name ".emacs.workspace.el" user-emacs-directory))
   )
 
+;; Setup default window size
+(add-to-list 'default-frame-alist '(height . 28))
+(add-to-list 'default-frame-alist '(width . 82)) 
+
 ;; Read in custom settings for the user
 (load (expand-file-name ".emacs.custom.el" user-emacs-directory))
 
