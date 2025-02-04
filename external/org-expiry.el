@@ -304,7 +304,7 @@ update the date."
 	      (format-time-string (cdr org-time-stamp-formats))))
       ;; maybe transform to inactive timestamp
       (if org-expiry-inactive-timestamps
-	  (setq timestr (concat "[" (substring timestr 1 -1) "]")))
+	        (setq timestr (format-time-string "[%Y-%m-%d %a %H:%M]")))
       (save-excursion
 	(org-entry-put
 	 (point) org-expiry-created-property-name timestr)))))
