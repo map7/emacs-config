@@ -16,3 +16,5 @@
              (y-or-n-p "Set bookmark with current file name?"))
         ;; Set a bookmark with the name being the buffers full path name
         (bookmark-set (file-name-nondirectory buffer-file-name) nil))))
+
+(add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1)))
