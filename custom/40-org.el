@@ -27,7 +27,7 @@
 
 ;; Assign mode to .org files
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-
+(add-hook 'org-mode-hook (lambda () (display-line-numbers-mode 0)))
 
 ;; Set more workflow states than TODO
 (setq org-todo-keywords
