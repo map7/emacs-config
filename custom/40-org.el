@@ -107,7 +107,7 @@
   :ensure t
   :config
   (setq org-ehtml-docroot (expand-file-name "~/org/business"))
-  (setq org-ehtml-everything-editable t)
+  ;; (setq org-ehtml-everything-editable t) ;; 10/06/2025: Disabled as it creates errors in Emacs 30.1
   (ws-start org-ehtml-handler 8888 nil :host "0.0.0.0"))
 
 
