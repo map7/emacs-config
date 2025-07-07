@@ -43,8 +43,6 @@
 ;;                  :protocol "http"
 ;;                  :host "localhost:8080"
 ;;                  :models '(test)))
-<<<<<<< HEAD
-=======
 
 
 ;; --------------------------------------------------------------------------------
@@ -60,4 +58,4 @@
   (ellama-context-header-line-global-mode +1)
   ;; show ellama session id in header line in all buffers
   (ellama-session-header-line-global-mode +1))
->>>>>>> 827478e (Config gptel)
+
