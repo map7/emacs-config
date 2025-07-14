@@ -2,6 +2,13 @@
   :init
   (global-flycheck-mode)
   :ensure t
+  :config
+  (setq flycheck-ruby-rubocop-executable "rubocop")
+  (setq flycheck-rubocoprc "~/.rubocop.yml")
+  (setq flycheck-checker-error-threshold 1000)
+  (setq-default mode-line-format
+              (append mode-line-format
+                      '((:eval (flycheck-mode-line-status-text)))))
   :defer)
 
 ;;;; Takes too long to do the check.
