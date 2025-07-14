@@ -8,6 +8,7 @@
   :defer
   :config
   (require 'cl) ; If you don't have it already
+  (add-hook 'enh-ruby-mode-hook #'whitespace-cleanup)
   (setq ruby-bounce-deep-indent t)
   (setq ruby-hanging-brace-indent-level 2))
 
