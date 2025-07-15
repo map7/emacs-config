@@ -1,3 +1,17 @@
+(defun my-flycheck-rubocop-error-count ()
+  "Return the number of Flycheck errors from RuboCop."
+  (let ((errors (seq-filter
+                 (lambda (err)
+                   (eq (flycheck-error-checker err) 'ruby-rubocop)))
+                 flycheck-current-errors)))
+    (format " RuboCop[%d] " (length errors)))
+
+(defun my-append-to-mode-line-once (segment)
+  "Append SEGMENT to `mode-line-format` only if it's not already present."
+  (unless (member segment mode-line-format)
+    (setq-default mode-line-format
+                  (append mode-line-format (list segment)))))
+
 (use-package flycheck
   :init
   (global-flycheck-mode)
@@ -5,10 +19,11 @@
   :config
   (setq flycheck-ruby-rubocop-executable "rubocop")
   (setq flycheck-rubocoprc "~/.rubocop.yml")
-  (setq flycheck-checker-error-threshold 1000)
-  (setq-default mode-line-format
-              (append mode-line-format
-                      '((:eval (flycheck-mode-line-status-text)))))
+  (setq flycheck-checker-error-threshold 2000)
+
+  (my-append-to-mode-line-once '(:eval (flycheck-mode-line-status-text)))
+  (my-append-to-mode-line-once '(:eval (my-flycheck-rubocop-error-count)))
+
   :defer)
 
 ;;;; Takes too long to do the check.
