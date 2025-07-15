@@ -132,3 +132,60 @@
 
 ;; I take screenshots all the time
 (global-set-key (kbd "s-s") 'org-attach-screenshot)
+
+
+;; Display list of TODO items in CREATED order
+(defun my/org-list-todos-by-created ()
+  "List only 'TODO' items from .org files under ~/org/business/michael as an Org table.
+Includes :CREATED: property if present and sorts the table by it."
+  (interactive)
+  (let* ((target-dir (expand-file-name "~/org/business/michael"))
+         (org-files (when (file-directory-p target-dir)
+                      (directory-files-recursively target-dir "\\.org$")))
+         ;; Header + separator
+         (todo-rows '(("File" "Headline" "Created")
+                      ("--------" "--------" "--------"))))
+    ;; Collect TODOs with :CREATED:
+    (dolist (file org-files)
+      (with-current-buffer (find-file-noselect file)
+        (org-with-wide-buffer
+         (org-element-map (org-element-parse-buffer) 'headline
+           (lambda (hl)
+             (let* ((todo (org-element-property :todo-keyword hl)))
+               (when (and todo (string= todo "TODO"))
+                 (save-excursion
+                   (goto-char (org-element-property :begin hl))
+                   (let* ((props (org-entry-properties))
+                          (created (or (cdr (assoc "CREATED" props)) "")) ;; raw value
+                          (title (org-element-property :raw-value hl)))
+                     (push (list (file-name-nondirectory file)
+                                 title
+                                 (org-trim created))
+                           todo-rows))))))))))
+    ;; Sort rows by CREATED
+    (let ((data-rows (cl-subseq (nreverse todo-rows) 2))) ;; skip header+sep
+      (setq data-rows
+            (sort data-rows
+                  (lambda (a b)
+                    (let ((da (car (split-string (nth 2 a)))) ; extract YYYY-MM-DD
+                          (db (car (split-string (nth 2 b)))))
+                      (cond
+                       ((and (string-empty-p da) (not (string-empty-p db))) t)
+                       ((and (not (string-empty-p da)) (string-empty-p db)) nil)
+                       (t (string< da db)))))))
+      ;; Prepend header
+      (setq todo-rows (append '(("File" "Headline" "Created")
+                                ("--------" "--------" "--------"))
+                              data-rows)))
+    ;; Output buffer
+    (with-current-buffer (get-buffer-create "*TODO Items*")
+      (erase-buffer)
+      (insert (format "* TODO items from %s (%d files)\n\n"
+                      target-dir (length org-files)))
+      (dolist (row todo-rows)
+        (insert (format "| %s | %s | %s |\n"
+                        (nth 0 row) (nth 1 row) (nth 2 row))))
+      (goto-char (point-min))
+      (org-mode)
+      (org-table-align)
+      (display-buffer (current-buffer)))))
