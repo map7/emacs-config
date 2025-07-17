@@ -54,6 +54,7 @@
   (load bootstrap-file nil 'nomessage))
 
 ;; Package configuration (NEW way as of 02/12/2016)
+(use-package transient :ensure t)
 (use-package all-the-icons :ensure t :defer 5)
 (use-package ansible :ensure t :defer 5)
 (use-package clojure-mode :ensure t :defer 5)
