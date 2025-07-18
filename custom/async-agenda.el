@@ -50,4 +50,4 @@
          (org-agenda-mode)
          (message "DONE"))))))
 
-(global-set-key (kbd "s-a") 'async-org-agenda-list)
+;; (global-set-key (kbd "s-a") 'async-org-agenda-list)
