@@ -10,6 +10,11 @@
 ;; gptel is a LLM chat client for Emacs which handles heaps of models & backends.
 (straight-use-package 'gptel)
 
+;; (use-package gptel-watch
+;;   :after gptel
+;;   :config
+;;   (gptel-watch-global-mode 1))  ;; Optional: enable globally
+
 (when (file-exists-p "~/.emacs.gptel.el")
   (load "~/.emacs.gptel.el"))
 
