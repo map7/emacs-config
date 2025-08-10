@@ -43,7 +43,6 @@
            hl-line-mode
            isearch-mode
            ivy-mode
-           flycheck-mode
            flyspell-mode
            font-lock-mode
            outline-mode

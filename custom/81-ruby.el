@@ -14,3 +14,8 @@
 
 ;; Hide system ruby version from modeline
 (setq rbenv-show-active-ruby-in-modeline nil)
+
+
+(use-package rubocopfmt
+  :hook
+  (ruby-mode . rubocopfmt-mode))
