@@ -158,7 +158,7 @@
 (load "34-windmove.el")                 ; Move around buffers fast
 (load "35-paperless.el")                ; Paperless for managing pdfs
 (load "36-nov.el")
-(load "37-expenses.el")                 ; Budgeting plugin
+;; (load "37-expenses.el")                 ; Budgeting plugin
 
 ;;--------------------------------------------------------------------------------
 ;;-Org-mode related (40-49)
