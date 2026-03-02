@@ -40,3 +40,7 @@ irony
 /external/expenses/
 straight
 /eln-cache/
+/multisession/
+/.chatgpt-shell.el
+/projects
+/request/
