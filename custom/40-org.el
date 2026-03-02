@@ -104,10 +104,10 @@
 ;; WIKI
 (use-package web-server :ensure t)
 (use-package org-ehtml
-  :ensure t
+  :load-path "external/org-ehtml/src"
   :config
   (setq org-ehtml-docroot (expand-file-name "~/org/business"))
-  ;; (setq org-ehtml-everything-editable t) ;; 10/06/2025: Disabled as it creates errors in Emacs 30.1
+  (setq org-ehtml-everything-editable t)
   (ws-start org-ehtml-handler 8888 nil :host "0.0.0.0"))
 
 
