@@ -55,62 +55,60 @@
   (load bootstrap-file nil 'nomessage))
 
 ;; Package configuration (NEW way as of 02/12/2016)
-(use-package transient :ensure t)
-(use-package all-the-icons :ensure t :defer 5)
-(use-package ansible :ensure t :defer 5)
-(use-package clojure-mode :ensure t :defer 5)
-(use-package crontab-mode :ensure t :defer 5)
-(use-package circe :ensure t :defer 5)
-(use-package company :ensure t :defer 5)
-(use-package csv-mode :ensure t :defer 5)
-(use-package crdt :ensure t :defer 5)   ; Collaborating error free!
-(use-package dired-open-with :ensure t :defer 5)
-(use-package dumb-jump :ensure t :defer 5)
-(use-package expand-region :ensure t :defer 5)
-(use-package findr :ensure t :defer 5)
-(use-package ledger-mode :ensure t :defer 5)
-(use-package markdown-mode :ensure t :defer 5)
-(use-package org-noter :ensure t :defer 5)
-(use-package paradox :ensure t :defer 5)
-(use-package picpocket :ensure t :defer 5 :bind ("M-p" . picpocket))
-(use-package sudo-edit :ensure t :defer 5)
-(use-package switch-window :ensure t :defer 5)
-(use-package vterm :ensure t :defer 5)  ; Best terminal for emacs
-(use-package tramp-term :ensure t :defer 5)
-(use-package twittering-mode :ensure t :defer 5)
-(use-package restclient :ensure t :defer 5) ; Used to test restful APIs
-(use-package xkcd :ensure t :defer 5)
-(use-package dockerfile-mode :ensure t :defer 5)
-(use-package disk-usage :ensure t :defer 5)
-(use-package rg :ensure t :defer 5)                        ; ripgrep - compatible with wgrep
-(use-package wgrep :ensure t :defer 5)                     ; wgrep - edit grep buffers
+(use-package transient)
+(use-package all-the-icons :defer 5)
+(use-package ansible :defer 5)
+(use-package clojure-mode :defer 5)
+(use-package crontab-mode :defer 5)
+(use-package circe :defer 5)
+(use-package company :defer 5)
+(use-package csv-mode :defer 5)
+(use-package crdt :defer 5)   ; Collaborating error free!
+(use-package dired-open-with :defer 5)
+(use-package dumb-jump :defer 5)
+(use-package expand-region :defer 5)
+(use-package findr :defer 5)
+(use-package ledger-mode :defer 5)
+(use-package markdown-mode :defer 5)
+(use-package org-noter :defer 5)
+(use-package paradox :defer 5)
+(use-package picpocket :defer 5 :bind ("M-p" . picpocket))
+(use-package sudo-edit :defer 5)
+(use-package switch-window :defer 5)
+(use-package vterm :defer 5)  ; Best terminal for emacs
+(use-package tramp-term :defer 5)
+(use-package twittering-mode :defer 5)
+(use-package restclient :defer 5) ; Used to test restful APIs
+(use-package xkcd :defer 5)
+(use-package dockerfile-mode :defer 5)
+(use-package disk-usage :defer 5)
+(use-package rg :defer 5)                        ; ripgrep - compatible with wgrep
+(use-package wgrep :defer 5)                     ; wgrep - edit grep buffers
 (use-package total-lines
-  :ensure t
   :config (global-total-lines-mode))
 
 ;; Passwords
-(use-package keepass-mode :ensure t :defer 5)
+(use-package keepass-mode :defer 5)
 (use-package pinentry
-  :ensure t
   :init
   (pinentry-start)
   :config
   (setq epa-pinentry-mode 'loopback))
 
-(use-package pass :ensure t :defer 5)
+(use-package pass :defer 5)
 
 ;; other langs
-(use-package php-mode :ensure t :defer 5)
+(use-package php-mode :defer 5)
 
 ;; Ruby related
-(use-package enh-ruby-mode :ensure t :defer 5)
-(use-package goto-gem :ensure t :defer 5)         ; Goto the directory for a ruby gem package
-(use-package ruby-refactor :ensure t :defer 5)    ; Refactor shortcuts
+(use-package enh-ruby-mode :defer 5)
+(use-package goto-gem :defer 5)         ; Goto the directory for a ruby gem package
+(use-package ruby-refactor :defer 5)    ; Refactor shortcuts
 
 ;; Org related
-(use-package org-cliplink :ensure t :defer 5)
-(use-package org-clock-csv :ensure t :defer 5)
-(use-package org-clock-today :ensure t :defer 5)
+(use-package org-cliplink :defer 5)
+(use-package org-clock-csv :defer 5)
+(use-package org-clock-today :defer 5)
 
 ;; 4gl mode from external
 (add-to-list 'load-path (expand-file-name "external/4gl-mode-master" user-emacs-directory))
