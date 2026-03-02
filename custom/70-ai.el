@@ -15,6 +15,12 @@
   :vc (:url "https://github.com/stevemolitor/monet"
        :rev :newest))
 
+(defun claude-code-display-buffer-right (buffer)
+  "Display the Claude Code BUFFER to the right of the current window."
+  (display-buffer buffer '((display-buffer-in-direction)
+                           (direction . right)
+                           (window-width . 0.5))))
+
 (use-package claude-code
   :vc (:url "https://github.com/stevemolitor/claude-code"
        :rev :newest)
@@ -22,9 +28,10 @@
   :config
   (add-hook 'claude-code-process-environment-functions
             #'monet-start-server-function)
+  (setq claude-code-display-window-fn #'claude-code-display-buffer-right)
   (monet-mode 1)
   (claude-code-mode)
-e  :bind-keymap ("C-c c" . claude-code-command-map)
+  :bind-keymap ("C-c c" . claude-code-command-map)
   )
 
 
