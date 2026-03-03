@@ -319,6 +319,13 @@ Falls back to a site search for keywords not in the lookup table."
        (format "https://google.com/search?q=site:aubit4gl.sourceforge.net+Informix+4GL+%s"
                (url-hexify-string kw))))))
 
+(defun 4gl-compile ()
+  "Compile the current 4GL file by running `p' in its directory.
+Works over TRAMP — the command runs on the remote host."
+  (interactive)
+  (let ((default-directory (file-name-directory (buffer-file-name))))
+    (compile "bash -ic p")))
+
 (defun 4gl--electric-reindent ()
   "Reindent the current line after typing a dedent keyword like else or end."
   (when (eq major-mode '4gl-mode)
@@ -327,6 +334,9 @@ Falls back to a site search for keywords not in the lookup table."
         (beginning-of-line)
         (when (looking-at "^\\s-*\\(else\\|end\\s-\\|when\\b\\)")
           (4gl-indent))))))
+
+(require 'ansi-color)
+(add-hook 'compilation-filter-hook #'ansi-color-compilation-filter)
 
 (define-derived-mode 4gl-mode prog-mode "4gl"
   :syntax-table 4gl-mode-syntax-table
@@ -338,7 +348,8 @@ Falls back to a site search for keywords not in the lookup table."
   (setq-local indent-line-function #'4gl-indent)
   (add-hook 'post-self-insert-hook #'4gl--electric-reindent nil t)
   (add-hook 'xref-backend-functions #'4gl--xref-backend nil t)
-  (keymap-local-set "C-c C-d" #'4gl-lookup-docs))
+  (keymap-local-set "C-c C-d" #'4gl-lookup-docs)
+  (keymap-local-set "C-c C-c" #'4gl-compile))
 
 (add-to-list 'auto-mode-alist '("\\.4gl\\'" . 4gl-mode))
 (add-to-list 'auto-mode-alist '("\\.per\\'" . 4gl-mode))
