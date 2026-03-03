@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: construct ... end construct
+# key: construct
+# --
+construct ${1:variable} on ${2:columns} from ${3:fields}
+    $0
+end construct

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: input ... end input
+# key: input
+# --
+input ${1:variables} from ${2:fields}
+    $0
+end input

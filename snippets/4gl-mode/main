@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: main ... end main
+# key: main
+# --
+main
+    $0
+end main

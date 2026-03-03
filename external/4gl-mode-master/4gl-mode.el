@@ -208,6 +208,14 @@ ZEROFILL")'words ) . font-lock-keyword-face)
         (setq col (current-column))))
     col))
 
+(defun 4gl--electric-reindent ()
+  "Reindent the current line after typing a dedent keyword like else or end."
+  (when (eq major-mode '4gl-mode)
+    (let ((case-fold-search t))
+      (save-excursion
+        (beginning-of-line)
+        (when (looking-at "^\\s-*\\(else\\|end\\s-\\|when\\b\\)")
+          (4gl-indent))))))
 
 (define-derived-mode 4gl-mode prog-mode "4gl"
   :syntax-table 4gl-mode-syntax-table
@@ -216,7 +224,8 @@ ZEROFILL")'words ) . font-lock-keyword-face)
   (setq-local comment-end "")
   (setq-local tab-width 4)
   (setq-local indent-tabs-mode t)
-  (setq-local indent-line-function #'4gl-indent))
+  (setq-local indent-line-function #'4gl-indent)
+  (add-hook 'post-self-insert-hook #'4gl--electric-reindent nil t))
 
 (add-to-list 'auto-mode-alist '("\\.4gl\\'" . 4gl-mode))
 (add-to-list 'auto-mode-alist '("\\.per\\'" . 4gl-mode))

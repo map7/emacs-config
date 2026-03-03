@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: menu ... end menu
+# key: menu
+# --
+menu "${1:title}"
+    command "${2:option}"
+        $0
+end menu

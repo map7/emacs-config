@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: foreach ... end foreach
+# key: foreach
+# --
+foreach ${1:cursor_name} into ${2:variables}
+    $0
+end foreach

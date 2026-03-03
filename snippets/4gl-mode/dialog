@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: dialog ... end dialog
+# key: dialog
+# --
+dialog
+    $0
+end dialog

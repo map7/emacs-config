@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: case ... end case
+# key: case
+# --
+case ${1:expression}
+    when ${2:value}
+        $0
+end case
