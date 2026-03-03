@@ -238,6 +238,87 @@ ZEROFILL")'words ) . font-lock-keyword-face)
                 results))))
     (nreverse results)))
 
+(defconst 4gl--doc-base-url
+  "https://aubit4gl.sourceforge.net/aubit4gldoc/4glreference/pages/"
+  "Base URL for Aubit 4GL / Informix 4GL reference documentation.")
+
+(defconst 4gl--doc-pages
+  '(;; Flow control
+    ("call"           . "4GLREFCALL.htm")
+    ("return"         . "4GLREFRETURN.htm")
+    ("case"           . "4GLREFCASE.htm")
+    ("continue"       . "4GLREFCONTINUE.htm")
+    ("exit"           . "4GLREFEXIT.htm")
+    ("for"            . "4GLREFFOR.htm")
+    ("goto"           . "4GLREFGOTO.htm")
+    ("if"             . "4GLREFIF.htm")
+    ("label"          . "4GLREFLABEL00000450.htm")
+    ("sleep"          . "4GLREFSLEEP.htm")
+    ("while"          . "4GLREFWHILE.htm")
+    ("end"            . "4GLREFEND.htm")
+    ;; Variables and declarations
+    ("define"         . "4GLREFDEFINE00000433.htm")
+    ("initialize"     . "4GLREFINITIALIZE.htm")
+    ("locate"         . "4GLREFLOCATE.htm")
+    ("let"            . "4GLREFLET.htm")
+    ("validate"       . "4GLREFVALIDATE.htm")
+    ;; Program structure
+    ("function"       . "4GLREFFUNCTION00000443.htm")
+    ("main"           . "4GLREFMAIN.htm")
+    ("globals"        . "4GLREFGLOBALS.htm")
+    ("report"         . "4GLREFREPORT00000465.htm")
+    ("run"            . "4GLREFRUN00000467.htm")
+    ("defer"          . "4GLREFDEFER.htm")
+    ("whenever"       . "4GLREFWHENEVER.htm")
+    ;; Database
+    ("database"       . "4GLREFDATABASE00000431.htm")
+    ;; Cursors and SQL
+    ("foreach"        . "4GLREFFOREACH.htm")
+    ;; UI / Forms
+    ("clear"          . "4GLREFCLEAR.htm")
+    ("close form"     . "4GLREFCLOSE_FORM.htm")
+    ("close window"   . "4GLREFCLOSE_WINDOW.htm")
+    ("construct"      . "4GLREFCONSTRUCT.htm")
+    ("current window" . "4GLREFCURRENT_WINDOW.htm")
+    ("display"        . "4GLREFDISPLAY.htm")
+    ("display array"  . "4GLREFDISPLAY_ARRAY.htm")
+    ("display form"   . "4GLREFDISPLAY_FORM.htm")
+    ("error"          . "4GLREFERROR00000438.htm")
+    ("input"          . "4GLREFINPUT.htm")
+    ("input array"    . "4GLREFINPUT_ARRAY.htm")
+    ("menu"           . "4GLREFMENU00000455.htm")
+    ("message"        . "4GLREFMESSAGE.htm")
+    ("open form"      . "4GLREFOPEN_FORM.htm")
+    ("open window"    . "4GLREFOPEN_WINDOW.htm")
+    ("options"        . "4GLREFOPTIONS.htm")
+    ("prompt"         . "4GLREFPROMPT.htm")
+    ("scroll"         . "4GLREFSCROLL.htm")
+    ;; Report
+    ("finish report"  . "4GLREFFINISH_REPORT.htm")
+    ("output to report" . "4GLREFOUTPUT_TO_REPORT.htm")
+    ("start report"   . "4GLREFSTART_REPORT.htm")
+    ("need"           . "4GLREFNEED00000457.htm")
+    ("pause"          . "4GLREFPAUSE00000462.htm")
+    ("print"          . "4GLREFPRINT00000463.htm")
+    ("skip"           . "4GLREFSKIP00000469.htm"))
+  "Alist mapping 4GL keywords (lowercase) to Aubit 4GL reference page filenames.")
+
+(defun 4gl-lookup-docs (keyword)
+  "Look up documentation for a 4GL KEYWORD.
+With point on a keyword, opens the Aubit 4GL reference in the browser.
+Falls back to a site search for keywords not in the lookup table."
+  (interactive
+   (list (let ((sym (thing-at-point 'symbol t)))
+           (read-string (format-prompt "4GL keyword" sym)
+                        nil nil sym))))
+  (let* ((kw (downcase (string-trim keyword)))
+         (page (cdr (assoc kw 4gl--doc-pages))))
+    (browse-url
+     (if page
+         (concat 4gl--doc-base-url page)
+       (format "https://google.com/search?q=site:aubit4gl.sourceforge.net+Informix+4GL+%s"
+               (url-hexify-string kw))))))
+
 (defun 4gl--electric-reindent ()
   "Reindent the current line after typing a dedent keyword like else or end."
   (when (eq major-mode '4gl-mode)
@@ -256,7 +337,8 @@ ZEROFILL")'words ) . font-lock-keyword-face)
   (setq-local indent-tabs-mode t)
   (setq-local indent-line-function #'4gl-indent)
   (add-hook 'post-self-insert-hook #'4gl--electric-reindent nil t)
-  (add-hook 'xref-backend-functions #'4gl--xref-backend nil t))
+  (add-hook 'xref-backend-functions #'4gl--xref-backend nil t)
+  (keymap-local-set "C-c C-d" #'4gl-lookup-docs))
 
 (add-to-list 'auto-mode-alist '("\\.4gl\\'" . 4gl-mode))
 (add-to-list 'auto-mode-alist '("\\.per\\'" . 4gl-mode))
