@@ -208,6 +208,36 @@ ZEROFILL")'words ) . font-lock-keyword-face)
         (setq col (current-column))))
     col))
 
+(defun 4gl--project-root ()
+  "Return the project root for 4GL files (git root or default-directory)."
+  (or (locate-dominating-file default-directory ".git")
+      default-directory))
+
+(defun 4gl--xref-backend () '4gl)
+
+(cl-defmethod xref-backend-identifier-at-point ((_backend (eql '4gl)))
+  (let ((sym (thing-at-point 'symbol t)))
+    (when sym (downcase sym))))
+
+(cl-defmethod xref-backend-definitions ((_backend (eql '4gl)) identifier)
+  "Find FUNCTION or REPORT definitions matching IDENTIFIER in .4gl files."
+  (let* ((root (4gl--project-root))
+         (default-directory root)
+         (pattern (format "^[[:space:]]*(function|report)[[:space:]]+%s[[:space:]]*\\("
+                          (shell-quote-argument identifier)))
+         (output (shell-command-to-string
+                  (format "git grep -inE %s -- '*.4gl'" (shell-quote-argument pattern))))
+         (results nil))
+    (dolist (line (split-string output "\n" t))
+      (when (string-match "^\\([^:]+\\):\\([0-9]+\\):" line)
+        (let ((file (expand-file-name (match-string 1 line) root))
+              (lnum (string-to-number (match-string 2 line))))
+          (push (xref-make
+                 (format "%s in %s" identifier (match-string 1 line))
+                 (xref-make-file-location file lnum 0))
+                results))))
+    (nreverse results)))
+
 (defun 4gl--electric-reindent ()
   "Reindent the current line after typing a dedent keyword like else or end."
   (when (eq major-mode '4gl-mode)
@@ -225,7 +255,8 @@ ZEROFILL")'words ) . font-lock-keyword-face)
   (setq-local tab-width 4)
   (setq-local indent-tabs-mode t)
   (setq-local indent-line-function #'4gl-indent)
-  (add-hook 'post-self-insert-hook #'4gl--electric-reindent nil t))
+  (add-hook 'post-self-insert-hook #'4gl--electric-reindent nil t)
+  (add-hook 'xref-backend-functions #'4gl--xref-backend nil t))
 
 (add-to-list 'auto-mode-alist '("\\.4gl\\'" . 4gl-mode))
 (add-to-list 'auto-mode-alist '("\\.per\\'" . 4gl-mode))
