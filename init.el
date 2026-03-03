@@ -97,9 +97,6 @@
 ;;;; 4gl mode
 (add-to-list 'load-path (expand-file-name "external/4gl-mode-master" user-emacs-directory))
 (require '4gl-mode)
-(defun remove-electric-indent-mode ()
-  (electric-indent-local-mode -1))
-(add-hook '4gl-mode-hook 'remove-electric-indent-mode)
 
 ;;;; Custom config files
 

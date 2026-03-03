@@ -3,11 +3,11 @@
 
 		("\\s." . font-lock-type-face)
 		("\\s(\\|\\s)" . font-lock-builtin-face)
-		("^REPORT .*(\\(.*\\))" (1 font-lock-variable-name-face))
-		("^FUNCTION .*(\\(.*\\))" (1 font-lock-variable-name-face))
-		("LET \\(\\sw+\\)" (1 font-lock-variable-name-face))
-		("REPORT \\(\\sw+\\)(" (1 font-lock-function-name-face))
-		("FUNCTION \\(\\sw+\\)(" (1 font-lock-function-name-face))
+		("\\bREPORT\\s-+.*(\\(.*\\))" (1 font-lock-variable-name-face))
+		("\\bFUNCTION\\s-+.*(\\(.*\\))" (1 font-lock-variable-name-face))
+		("\\bLET\\s-+\\(\\sw+\\)" (1 font-lock-variable-name-face))
+		("\\bREPORT\\s-+\\(\\sw+\\)(" (1 font-lock-function-name-face))
+		("\\bFUNCTION\\s-+\\(\\sw+\\)(" (1 font-lock-function-name-face))
 		(, (regexp-opt (split-string "ABORT ABS ABSOLUTE ACCEPT ACCESS ACOS ADD AFTER ALL SFMT
 ALLOCATE ALTER AND ANSI ANY APPEND ARG_VAL ARRAY ARR_COUNT
 ARR_CURR AS ASC ASCENDING ASCII ASIN AT ATAN ATAN2 ATTACH
@@ -98,7 +98,7 @@ ZEROFILL")'words ) . font-lock-keyword-face)
 		(modify-syntax-entry ?\_  "w" synTable)
 		(modify-syntax-entry ?\'  "\"" synTable)
 		(modify-syntax-entry ?\"  "\"" synTable)
-		
+
 		(modify-syntax-entry ?+  "." synTable)
 		(modify-syntax-entry ?-  "." synTable)
 		(modify-syntax-entry ?%  "." synTable)
@@ -108,128 +108,117 @@ ZEROFILL")'words ) . font-lock-keyword-face)
 		(modify-syntax-entry ?!  "." synTable)
 		(modify-syntax-entry ?=  "." synTable)
 		(modify-syntax-entry ?<  "." synTable)
-		(modify-syntax-entry ?>  "." synTable)		
-		;; {         } as multi-line comments
-		(modify-syntax-entry ?\{  "< 1n" synTable)
-		(modify-syntax-entry ?\}  "> 4n" synTable)
+		(modify-syntax-entry ?>  "." synTable)
+		;; { } as comments (single-char delimiter)
+		(modify-syntax-entry ?\{  "! 1n" synTable)
+		(modify-syntax-entry ?\}  "! 4n" synTable)
 
-		;; # python style comments
+		;; # line comments
         (modify-syntax-entry ?# "< b" synTable)
         (modify-syntax-entry ?\n "> b " synTable)
 
 		;; -- SQL style comments
 		;; also uses the new line comment ender above
-		(modify-syntax-entry ?\- ". 12b" synTable) 
+		(modify-syntax-entry ?\- ". 12b" synTable)
 
         synTable))
 
 
-
-(defun regexp-current-linep (regexp)
-  (let ((line-number -1))
-	(save-excursion
-	  (move-beginning-of-line nil)
-	  (ignore-errors 
-		(search-forward-regexp regexp)
-		(setq line-number (line-number-at-pos)))
-	  )
-	(= (line-number-at-pos) line-number)))
-
-(defun regexp-backward-col-number (regexp)
-  (let ((col-number nil))
-	(save-excursion
-	  (move-beginning-of-line nil)
-	  (search-backward-regexp regexp)
-	  (forward-word)(backward-word)
-	  (setq col-number (current-column))
-	  )
-	col-number))
-(defun regexp-backward-line-number (regexp)
-  (let ((line-number -1))
-	(ignore-errors
-	  (save-excursion
-		(move-beginning-of-line nil)
-		(search-backward-regexp regexp)
-		(setq line-number (line-number-at-pos))))
-	line-number))
-
 (defun 4gl-indent ()
-"Going to search backwards for an open(indenting) statement
- and compare it with a closing statement. 
- Indent appropriately to whichever appears first
-"
-  (let ((open-col 0)
-		(open-line-number -1)
-		(close-col 0)
-		(close-line-number -1)
-		(forward-end-line-number -1)
-		)
-	(save-excursion
-	  (move-beginning-of-line nil)
-	  (search-forward-regexp "^\\s-*END ")
-	  (setq forward-end-line-number (line-number-at-pos))
-	  )
-	(save-excursion
-	  (ignore-errors
-		(search-backward-regexp "^\\s-*\\(IF \\|MAIN\\|TYPE\\|FUNCTION\\|REPORT\\|CONSTRUCT\\|DIALOG\\|INPUT\\|FOREACH\\|ON\\s-\\|FORMAT\\|BEFORE\\|AFTER\\|ELSE\\|CASE\\)")
+  "Indent current line for Informix 4GL."
+  (let ((case-fold-search t)
+        (open-col 0)
+        (open-line-number -1)
+        (close-col 0)
+        (close-line-number -1))
+    ;; Find nearest opening keyword above
+    (save-excursion
+      (beginning-of-line)
+      (when (re-search-backward
+             "^\\s-*\\(if\\b\\|main\\b\\|type\\b\\|function\\b\\|report\\b\\|construct\\b\\|dialog\\b\\|input\\b\\|foreach\\b\\|for\\b\\|while\\b\\|menu\\b\\|display\\s-+array\\b\\|input\\s-+array\\b\\|on\\s-\\|format\\b\\|before\\b\\|after\\b\\|else\\b\\|case\\b\\)"
+             nil t)
+        (back-to-indentation)
+        (setq open-col (+ (current-column) 4))
+        (setq open-line-number (line-number-at-pos))))
+    ;; Find nearest closing keyword above
+    (save-excursion
+      (beginning-of-line)
+      (when (re-search-backward "^\\s-*end\\s-" nil t)
+        (back-to-indentation)
+        (setq close-col (current-column))
+        (setq close-line-number (line-number-at-pos))))
+    (indent-line-to
+     (cond
+      ;; Current line is a closing or peer keyword — match its opener
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+if\\b")
+       (4gl--opener-column "^\\s-*if\\b"))
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+main\\b")
+       (4gl--opener-column "^\\s-*main\\b"))
+      ((4gl--current-line-matches-p "^\\s-*else\\b")
+       (4gl--opener-column "^\\s-*if\\b"))
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+type\\b")
+       (4gl--opener-column "^\\s-*type\\b"))
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+input\\b")
+       (4gl--opener-column "^\\s-*input\\b"))
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+case\\b")
+       (4gl--opener-column "^\\s-*case\\b"))
+      ((4gl--current-line-matches-p "^\\s-*when\\b")
+       (4gl--opener-column "^\\s-*case\\b"))
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+dialog\\b")
+       (4gl--opener-column "^\\s-*dialog\\b"))
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+construct\\b")
+       (4gl--opener-column "^\\s-*construct\\b"))
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+foreach\\b")
+       (4gl--opener-column "^\\s-*foreach\\b"))
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+for\\b")
+       (4gl--opener-column "^\\s-*for\\b"))
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+while\\b")
+       (4gl--opener-column "^\\s-*while\\b"))
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+menu\\b")
+       (4gl--opener-column "^\\s-*menu\\b"))
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+display\\b")
+       (4gl--opener-column "^\\s-*display\\s-+array\\b"))
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+function\\b") 0)
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+report\\b") 0)
+      ((4gl--current-line-matches-p
+        "^\\s-*\\(format\\|output\\|order\\s-\\|first\\|on\\s-+every\\|after\\s-+group\\|before\\s-+group\\|on\\s-+last\\s-\\|page\\s-\\)")
+       (+ (4gl--opener-column "^\\s-*report\\s-") 4))
+      ((4gl--current-line-matches-p "^\\s-*\\(on\\|after\\|before\\)\\b")
+       (+ (4gl--opener-column "^\\s-*\\(input\\|construct\\|dialog\\)\\b") 4))
+      ;; Default: use nearest open/close
+      ((> open-line-number close-line-number) open-col)
+      ((< open-line-number close-line-number) close-col)
+      (t 0)))))
 
-		(forward-word)(backward-word)
-		(setq open-col (+ (current-column) 4))
-		(setq open-line-number (line-number-at-pos))	  
-		)
-	  )	
-	(save-excursion
-	  (ignore-errors
-		(search-backward-regexp "^\\s-*\\(END \\)")
-		(forward-word)(backward-word)
-		(setq close-col (+ (current-column) 0))
-		(setq close-line-number (line-number-at-pos))	  	  
-		)
-	  )
-	(indent-line-to
-	 (cond ((regexp-current-linep "^\\s-*END IF") (regexp-backward-col-number "^\\s-*IF"))
-		   ((regexp-current-linep "^\\s-*END MAIN") (regexp-backward-col-number "^\\s-*MAIN"))
-		   ((regexp-current-linep "^\\s-*ELSE") (regexp-backward-col-number "^\\s-*IF"))
-		   ((regexp-current-linep "^\\s-*END TYPE") (regexp-backward-col-number "^\\s-*TYPE"))
-		   ((regexp-current-linep "^\\s-*END INPUT") (regexp-backward-col-number "^\\s-*INPUT"))
-		   ((regexp-current-linep "^\\s-*END CASE") (regexp-backward-col-number "^\\s-*CASE"))
-		   ((regexp-current-linep "^\\s-*WHEN") (regexp-backward-col-number "^\\s-*CASE"))
-		   ((regexp-current-linep "^\\s-*END DIALOG") (regexp-backward-col-number "^\\s-*DIALOG"))
-		   ((regexp-current-linep "^\\s-*END CONSTRUCT") (regexp-backward-col-number "^\\s-*CONSTRUCT"))
-		   ((regexp-current-linep "^\\s-*END FOREACH") (regexp-backward-col-number "^\\s-*FOREACH"))
-		   ((regexp-current-linep "^\\s-*END FUNCTION") 0)
-		   ((regexp-current-linep "^\\s-*END REPORT") 0)
-		   ((regexp-current-linep "^\\s-*\\(FORMAT\\|OUTPUT\\|ORDER \\|FIRST\\|ON EVERY\\|AFTER GROUP\\|BEFORE GROUP\\|ON LAST \\|PAGE \\)")
-			(+ (regexp-backward-col-number "^\\s-*REPORT ") 4))
-		   ((regexp-current-linep "^\\s-*\\(ON\\|AFTER\\|BEFORE\\)")
-			(+ (regexp-backward-col-number "^\\s-*\\(INPUT\\|CONSTRUCT\\|DIALOG\\)") 4))
-;;		   ((> (regexp-backward-line-number "^.*RECORD") open-col ) (+ 4(regexp-backward-col-number "^.*RECORD")))
-		   ((> open-line-number close-line-number) open-col )
-		   ((< open-line-number close-line-number) close-col )
-		   
-		  )
-	 )
+(defun 4gl--current-line-matches-p (regexp)
+  "Return non-nil if current line matches REGEXP (case-insensitive)."
+  (let ((case-fold-search t))
+    (save-excursion
+      (beginning-of-line)
+      (looking-at regexp))))
 
-	;; (indent-line-to (if (> open-line-number close-line-number)
-	;; 					open-col
-	;; 				  close-col	))
-
-	))
+(defun 4gl--opener-column (regexp)
+  "Search backward for REGEXP and return its indentation column (case-insensitive)."
+  (let ((case-fold-search t)
+        (col 0))
+    (save-excursion
+      (beginning-of-line)
+      (when (re-search-backward regexp nil t)
+        (back-to-indentation)
+        (setq col (current-column))))
+    col))
 
 
-(define-derived-mode 4gl-mode text-mode
+(define-derived-mode 4gl-mode prog-mode "4gl"
   :syntax-table 4gl-mode-syntax-table
-  (setq mode-name "4gl")
-  (setq font-lock-defaults '(4gl-keywords))
-  (setq comment-start "# ")
-  (setq comment-end "")
-  (set-syntax-table 4gl-mode-syntax-table)
-  (setq tab-width 4)
-  (electric-indent-mode 1)
-  (setq indent-line-function '4gl-indent)
-  (setq indent-tabs-mode t)
-  )
+  (setq-local font-lock-defaults '(4gl-keywords nil t))
+  (setq-local comment-start "# ")
+  (setq-local comment-end "")
+  (setq-local tab-width 4)
+  (setq-local indent-tabs-mode t)
+  (setq-local indent-line-function #'4gl-indent))
 
 (add-to-list 'auto-mode-alist '("\\.4gl\\'" . 4gl-mode))
+(add-to-list 'auto-mode-alist '("\\.per\\'" . 4gl-mode))
 
 (provide '4gl-mode)
