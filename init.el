@@ -133,6 +133,7 @@
 (load "43-revealjs.el")
 (load "44-org-publish.el")
 (load "45-org-easydraw.el")
+(load "46-whisper.el")
 
 ;;--------------------------------------------------------------------------------
 ;;-Programming tools (50-69)

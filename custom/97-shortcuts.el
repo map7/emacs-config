@@ -22,7 +22,6 @@
 (global-set-key [f8] 'other-window)
 ;; f9 is taken by git-status somewhere.
 (global-set-key [f10] 'undo-tree-visualize)
-(global-set-key [f12] 'switch-full-screen)
 
 (global-set-key (kbd "M-<up>") 'move-line-up)
 (global-set-key (kbd "M-<down>") 'move-line-down)
