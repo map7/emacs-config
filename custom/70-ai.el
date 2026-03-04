@@ -15,14 +15,8 @@
   :vc (:url "https://github.com/stevemolitor/monet"
        :rev :newest))
 
-(defun claude-code-display-buffer-right (buffer)
-  "Display the Claude Code BUFFER to the right of the current window."
-  (display-buffer buffer '((display-buffer-in-direction)
-                           (direction . right)
-                           (window-width . 0.5))))
-
 (use-package claude-code
-  :vc (:url "https://github.com/stevemolitor/claude-code"
+  :vc (:url "https://github.com/stevemolitor/claude-code.el"
        :rev :newest)
   :after monet
   :config
@@ -33,6 +27,13 @@
   (claude-code-mode)
   :bind-keymap ("C-c c" . claude-code-command-map)
   )
+
+
+(defun claude-code-display-buffer-right (buffer)
+  "Display the Claude Code BUFFER to the right of the current window."
+  (display-buffer buffer '((display-buffer-in-direction)
+                           (direction . right)
+                           (window-width . 0.5))))
 
 
 ;; (use-package claude-code :ensure t
