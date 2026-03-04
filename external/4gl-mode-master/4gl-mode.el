@@ -131,15 +131,19 @@ ZEROFILL")'words ) . font-lock-keyword-face)
         (open-line-number -1)
         (close-col 0)
         (close-line-number -1))
-    ;; Find nearest opening keyword above
+    ;; Find nearest opening keyword above (skipping self-closing one-liners)
     (save-excursion
       (beginning-of-line)
-      (when (re-search-backward
-             "^\\s-*\\(if\\b\\|main\\b\\|type\\b\\|function\\b\\|report\\b\\|construct\\b\\|dialog\\b\\|input\\b\\|foreach\\b\\|for\\b\\|while\\b\\|menu\\b\\|display\\s-+array\\b\\|input\\s-+array\\b\\|on\\s-\\|format\\b\\|before\\b\\|after\\b\\|else\\b\\|case\\b\\)"
-             nil t)
-        (back-to-indentation)
-        (setq open-col (+ (current-column) 4))
-        (setq open-line-number (line-number-at-pos))))
+      (let ((opener-re "^\\s-*\\(if\\b\\|main\\b\\|type\\b\\|function\\b\\|report\\b\\|construct\\b\\|dialog\\b\\|input\\b\\|foreach\\b\\|for\\b\\|while\\b\\|menu\\b\\|display\\s-+array\\b\\|input\\s-+array\\b\\|on\\s-\\|format\\b\\|before\\b\\|after\\b\\|else\\b\\|case\\b\\|define\\b\\|globals\\b\\)")
+            (found nil))
+        (while (and (not found)
+                    (re-search-backward opener-re nil t))
+          (unless (4gl--self-closing-line-p)
+            (setq found t)))
+        (when found
+          (back-to-indentation)
+          (setq open-col (+ (current-column) 4))
+          (setq open-line-number (line-number-at-pos)))))
     ;; Find nearest closing keyword above
     (save-excursion
       (beginning-of-line)
@@ -149,39 +153,49 @@ ZEROFILL")'words ) . font-lock-keyword-face)
         (setq close-line-number (line-number-at-pos))))
     (indent-line-to
      (cond
-      ;; Current line is a closing or peer keyword — match its opener
+      ;; Top-level keywords always at column 0
+      ((4gl--current-line-matches-p
+        "^\\s-*\\(main\\b\\|function\\b\\|report\\b\\|define\\b\\|globals\\b\\|database\\b\\)")
+       0)
+      ;; Closing keywords — use balanced matching to find the true opener
       ((4gl--current-line-matches-p "^\\s-*end\\s-+if\\b")
-       (4gl--opener-column "^\\s-*if\\b"))
-      ((4gl--current-line-matches-p "^\\s-*end\\s-+main\\b")
-       (4gl--opener-column "^\\s-*main\\b"))
+       (4gl--matching-opener-column "^\\s-*if\\b" "^\\s-*end\\s-+if\\b"))
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+main\\b") 0)
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+function\\b") 0)
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+report\\b") 0)
+      ((4gl--current-line-matches-p "^\\s-*end\\s-+globals\\b") 0)
       ((4gl--current-line-matches-p "^\\s-*else\\b")
-       (4gl--opener-column "^\\s-*if\\b"))
+       (4gl--matching-opener-column "^\\s-*if\\b" "^\\s-*end\\s-+if\\b"))
       ((4gl--current-line-matches-p "^\\s-*end\\s-+type\\b")
        (4gl--opener-column "^\\s-*type\\b"))
       ((4gl--current-line-matches-p "^\\s-*end\\s-+input\\b")
-       (4gl--opener-column "^\\s-*input\\b"))
+       (4gl--matching-opener-column "^\\s-*input\\b" "^\\s-*end\\s-+input\\b"))
       ((4gl--current-line-matches-p "^\\s-*end\\s-+case\\b")
-       (4gl--opener-column "^\\s-*case\\b"))
+       (4gl--matching-opener-column "^\\s-*case\\b" "^\\s-*end\\s-+case\\b"))
       ((4gl--current-line-matches-p "^\\s-*when\\b")
-       (4gl--opener-column "^\\s-*case\\b"))
+       (4gl--matching-opener-column "^\\s-*case\\b" "^\\s-*end\\s-+case\\b"))
+      ((4gl--current-line-matches-p "^\\s-*otherwise\\b")
+       (4gl--matching-opener-column "^\\s-*case\\b" "^\\s-*end\\s-+case\\b"))
       ((4gl--current-line-matches-p "^\\s-*end\\s-+dialog\\b")
-       (4gl--opener-column "^\\s-*dialog\\b"))
+       (4gl--matching-opener-column "^\\s-*dialog\\b" "^\\s-*end\\s-+dialog\\b"))
       ((4gl--current-line-matches-p "^\\s-*end\\s-+construct\\b")
-       (4gl--opener-column "^\\s-*construct\\b"))
+       (4gl--matching-opener-column "^\\s-*construct\\b" "^\\s-*end\\s-+construct\\b"))
       ((4gl--current-line-matches-p "^\\s-*end\\s-+foreach\\b")
-       (4gl--opener-column "^\\s-*foreach\\b"))
+       (4gl--matching-opener-column "^\\s-*foreach\\b" "^\\s-*end\\s-+foreach\\b"))
       ((4gl--current-line-matches-p "^\\s-*end\\s-+for\\b")
-       (4gl--opener-column "^\\s-*for\\b"))
+       (4gl--matching-opener-column "^\\s-*for\\b" "^\\s-*end\\s-+for\\b"))
       ((4gl--current-line-matches-p "^\\s-*end\\s-+while\\b")
-       (4gl--opener-column "^\\s-*while\\b"))
+       (4gl--matching-opener-column "^\\s-*while\\b" "^\\s-*end\\s-+while\\b"))
       ((4gl--current-line-matches-p "^\\s-*end\\s-+menu\\b")
-       (4gl--opener-column "^\\s-*menu\\b"))
+       (4gl--matching-opener-column "^\\s-*menu\\b" "^\\s-*end\\s-+menu\\b"))
       ((4gl--current-line-matches-p "^\\s-*end\\s-+display\\b")
-       (4gl--opener-column "^\\s-*display\\s-+array\\b"))
-      ((4gl--current-line-matches-p "^\\s-*end\\s-+function\\b") 0)
-      ((4gl--current-line-matches-p "^\\s-*end\\s-+report\\b") 0)
+       (4gl--matching-opener-column "^\\s-*display\\s-+array\\b" "^\\s-*end\\s-+display\\b"))
+      ;; Report section keywords (but not OUTPUT TO REPORT which is a statement)
+      ((and (4gl--current-line-matches-p "^\\s-*output\\b")
+            (not (4gl--current-line-matches-p "^\\s-*output\\s-+to\\b")))
+       (+ (4gl--opener-column "^\\s-*report\\s-") 4))
       ((4gl--current-line-matches-p
-        "^\\s-*\\(format\\|output\\|order\\s-\\|first\\|on\\s-+every\\|after\\s-+group\\|before\\s-+group\\|on\\s-+last\\s-\\|page\\s-\\)")
+        "^\\s-*\\(format\\|order\\s-\\|first\\|on\\s-+every\\|after\\s-+group\\|before\\s-+group\\|on\\s-+last\\s-\\|page\\s-\\)")
        (+ (4gl--opener-column "^\\s-*report\\s-") 4))
       ((4gl--current-line-matches-p "^\\s-*\\(on\\|after\\|before\\)\\b")
        (+ (4gl--opener-column "^\\s-*\\(input\\|construct\\|dialog\\)\\b") 4))
@@ -204,6 +218,38 @@ ZEROFILL")'words ) . font-lock-keyword-face)
     (save-excursion
       (beginning-of-line)
       (when (re-search-backward regexp nil t)
+        (back-to-indentation)
+        (setq col (current-column))))
+    col))
+
+(defun 4gl--self-closing-line-p ()
+  "Return non-nil if current line has both a block opener and its END closer.
+For example: IF l_gd is null then let l_gd = 0 end if"
+  (let ((case-fold-search t))
+    (save-excursion
+      (re-search-forward
+       "\\bend\\s-+\\(if\\|for\\|while\\|foreach\\|case\\|menu\\|input\\|construct\\|dialog\\|display\\|main\\|function\\|report\\|globals\\)\\b"
+       (line-end-position) t))))
+
+(defun 4gl--matching-opener-column (open-re close-re)
+  "Find column of the balanced opener matching OPEN-RE, skipping nested blocks.
+Searches backward from current line with nesting depth starting at 1.
+CLOSE-RE is the pattern for the corresponding closer (e.g. END IF for IF).
+Nested CLOSE-RE/OPEN-RE pairs are skipped to find the true matching opener.
+Self-closing one-liners (e.g. IF ... END IF on same line) are skipped."
+  (let ((case-fold-search t)
+        (depth 1)
+        (col 0)
+        (combined (concat "\\(?:" open-re "\\)\\|\\(?:" close-re "\\)")))
+    (save-excursion
+      (beginning-of-line)
+      (while (and (> depth 0)
+                  (re-search-backward combined nil t))
+        (unless (4gl--self-closing-line-p)
+          (if (looking-at close-re)
+              (setq depth (1+ depth))
+            (setq depth (1- depth)))))
+      (when (= depth 0)
         (back-to-indentation)
         (setq col (current-column))))
     col))
@@ -332,7 +378,7 @@ Works over TRAMP — the command runs on the remote host."
     (let ((case-fold-search t))
       (save-excursion
         (beginning-of-line)
-        (when (looking-at "^\\s-*\\(else\\|end\\s-\\|when\\b\\)")
+        (when (looking-at "^\\s-*\\(else\\|end\\s-\\|when\\b\\|otherwise\\b\\)")
           (4gl-indent))))))
 
 (require 'ansi-color)
