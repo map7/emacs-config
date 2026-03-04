@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: useEffect hook
+# key: useEffect
+# --
+useEffect(() => {
+  $1
+}, [$2]);

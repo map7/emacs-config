@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: Next.js API Route
+# key: napi
+# --
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method === '${1:GET}') {
+    $0
+    res.status(200).json({ $2 });
+  } else {
+    res.status(405).end();
+  }
+}

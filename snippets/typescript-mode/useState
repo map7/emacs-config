@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: useState hook
+# key: useState
+# --
+const [${1:state}, set${1:$(capitalize yas-text)}] = useState<${2:type}>(${3:initialValue});

@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: Next.js Page Component
+# key: npage
+# --
+import type { NextPage } from 'next';
+
+const ${1:PageName}: NextPage = () => {
+  return (
+    <div>
+      $0
+    </div>
+  );
+};
+
+export default ${1:PageName};

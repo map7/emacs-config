@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: React Functional Component
+# key: rfc
+# --
+import React from 'react';
+
+interface ${1:ComponentName}Props {
+  $2
+}
+
+const ${1:ComponentName} = ({ $3 }: ${1:ComponentName}Props) => {
+  return (
+    <div>
+      $0
+    </div>
+  );
+};
+
+export default ${1:ComponentName};

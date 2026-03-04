@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: React Functional Component (TSX)
+# key: rfc
+# --
+import React from 'react';
+
+const ${1:ComponentName} = () => {
+  return (
+    <div>
+      $0
+    </div>
+  );
+};
+
+export default ${1:ComponentName};

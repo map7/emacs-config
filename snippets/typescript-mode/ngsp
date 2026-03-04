@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: Next.js getServerSideProps
+# key: ngsp
+# --
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  return {
+    props: {
+      $1
+    },
+  };
+}
