@@ -20,8 +20,6 @@
 (electric-pair-mode 1)                    ; Enable the built in pair mode
 (delete-selection-mode 0)                 ; Selected text NOT will be overwritten when you start typing
 (global-auto-revert-mode t)               ; Auto-update buffer if file has changed on disk
-(setq split-height-threshold nil)          ; Never split horizontally (stacked)
-(setq split-width-threshold 0)             ; Always prefer vertical (side-by-side) splits
 
 ;; (add-hook 'before-save-hook
 ;; 	  'delete-trailing-whitespace)          ; Delete trailing whitespace on save
