@@ -44,3 +44,4 @@ straight
 /.chatgpt-shell.el
 /projects
 /request/
+/edraw-ui-state.config
