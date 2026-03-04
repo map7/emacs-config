@@ -14,7 +14,8 @@
 ;;(global-set-key [f1] 'rotate-windows)GG
 ;;(global-set-key [f2] 'gist-region-or-buffer)
 (global-set-key [f2] 'org-clock-report)
-(global-set-key [f3] 'twit)
+;(global-set-key [f3] 'twit)
+(global-set-key [f3] 'treemacs)
 (global-set-key [f4] 'magit-log-all)
 (global-set-key [f5] 'magit-status)
 (global-set-key [f6] 'eshell)
