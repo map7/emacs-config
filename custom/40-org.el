@@ -9,6 +9,15 @@
 (global-set-key (kbd "s-i") 'org-clock-in)
 (global-set-key (kbd "s-o") 'org-clock-out)
 
+;; Org-babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (python . t)
+   (shell . t)
+   (ruby . t)
+   (js . t)))
+
 ;; Org-mode options
 (add-hook 'org-mode-hook 'turn-on-visual-line-mode)
 (setq org-clock-out-remove-zero-time-clocks t)
