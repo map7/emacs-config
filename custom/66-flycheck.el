@@ -27,7 +27,7 @@
   :defer)
 
 (with-eval-after-load 'flycheck
-  (flycheck-disable-checker 'org-lint))
+  (add-to-list 'flycheck-disabled-checkers 'org-lint))
 
 ;;;; Takes too long to do the check.
 ;; (defun flycheck-org-lint-start (checker callback)
