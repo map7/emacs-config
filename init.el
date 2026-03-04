@@ -132,6 +132,7 @@
 (load "42-org-expiry.el")
 (load "43-revealjs.el")
 (load "44-org-publish.el")
+(load "45-org-easydraw.el")
 
 ;;--------------------------------------------------------------------------------
 ;;-Programming tools (50-69)
