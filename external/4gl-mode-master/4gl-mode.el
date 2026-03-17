@@ -282,7 +282,18 @@ Self-closing one-liners (e.g. IF ... END IF on same line) are skipped."
                  (format "%s in %s" identifier (match-string 1 line))
                  (xref-make-file-location file lnum 0))
                 results))))
-    (nreverse results)))
+    (setq results (nreverse results))
+    ;; If the current file has a match, jump there directly
+    (let ((cur-file (and (buffer-file-name) (expand-file-name (buffer-file-name))))
+          (local nil))
+      (when cur-file
+        (dolist (r results)
+          (let ((loc (xref-item-location r)))
+            (when (equal (xref-file-location-file loc) cur-file)
+              (push r local))))
+        (when (= (length local) 1)
+          (setq results local))))
+    results))
 
 (defconst 4gl--doc-base-url
   "https://aubit4gl.sourceforge.net/aubit4gldoc/4glreference/pages/"
