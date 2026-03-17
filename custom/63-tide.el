@@ -1,20 +1,32 @@
+(use-package exec-path-from-shell
+  :ensure t
+  :init
+  (setq exec-path-from-shell-shell-name "zsh")
+  (setq exec-path-from-shell-arguments '("-l")) ;; login shell
+  (exec-path-from-shell-initialize))
+
+;; Tree-sitter TypeScript modes (Emacs 29+ commonly)
+(use-package typescript-ts-mode
+  :mode (("\\.ts\\'"  . typescript-ts-mode)
+         ("\\.tsx\\'" . tsx-ts-mode)))
+
+;; If you don't have tree-sitter modes enabled, keep typescript-mode too:
 (use-package typescript-mode
-  :ensure t
-  :mode "\\.ts\\'")
+  :mode (("\\.ts\\'"  . typescript-mode)
+         ("\\.tsx\\'" . typescript-mode)))
 
-(use-package tide
-  :ensure t
-  :after (typescript-mode company flycheck)
-  :hook ((typescript-mode . tide-setup)
-         (typescript-mode . tide-hl-identifier-mode)
-         (typescript-mode . eldoc-mode)
-         (typescript-mode . company-mode)
-         (typescript-mode . flycheck-mode))
+(use-package eglot
+  :hook ((typescript-ts-mode . eglot-ensure)
+         (tsx-ts-mode        . eglot-ensure)
+         (typescript-mode    . eglot-ensure))
   :config
-  (setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (setq company-tooltip-align-annotations t)
-  (setq tide-format-options '(:insertSpaceAfterFunctionKeywordForAnonymousFunctions t :placeOpenBraceOnNewLineForFunctions nil))
+  ;; Prefer project-local language server if present
+  (add-to-list 'eglot-server-programs
+               '((typescript-ts-mode tsx-ts-mode typescript-mode)
+                 . ("typescript-language-server" "--stdio"))))
 
-  ;; Add node to the path
-  (setenv "PATH" (concat (getenv "PATH") ":~/n/bin"))
-  (setq exec-path (append exec-path '("~/n/bin"))))
+(use-package prettier-js
+  :hook ((typescript-ts-mode . prettier-js-mode)
+         (tsx-ts-mode        . prettier-js-mode)
+         (typescript-mode    . prettier-js-mode)))
+
