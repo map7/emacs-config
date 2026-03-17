@@ -6,8 +6,8 @@
 ;; C-c a s  = set TCP host
 ;; C-c a m  = open serial monitor
 
-(defvar arduino-board "esp32:esp32:esp32"
-  "FQBN for arduino-cli (e.g. \"arduino:avr:uno\", \"esp32:esp32:esp32\").")
+(defvar arduino-board "esp32:esp32:esp32c3"
+  "FQBN for arduino-cli (e.g. \"arduino:avr:uno\", \"esp32:esp32:esp32c3\").")
 
 (defvar arduino-tcp-host nil
   "TCP host for OTA uploads (e.g. \"192.168.1.100\").")
