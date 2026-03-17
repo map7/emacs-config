@@ -2,8 +2,7 @@
   :init
   (ido-mode 0)
   (ivy-mode 1)
-  (setq ivy-use-virtual-buffers t)
-  :defer 5)
+  (setq ivy-use-virtual-buffers t))
 
 (use-package counsel
   :defer 5
