@@ -2,6 +2,7 @@
   :defer 2
   :config
   (setq magit-log-arguments '("--max-count=30"))
+  (setq magit-completing-read-function 'ivy-completing-read)
   ;; C-c C-a to amend without any prompt
   (defun magit-just-amend ()
     (interactive)
