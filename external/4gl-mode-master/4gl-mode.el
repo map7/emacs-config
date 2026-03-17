@@ -397,7 +397,18 @@ Works over TRAMP — the command runs on the remote host."
   (keymap-local-set "C-c C-d" #'4gl-lookup-docs)
   (keymap-local-set "C-c C-c" #'4gl-compile))
 
+(defvar 4gl-per-mode-syntax-table
+  (let ((table (copy-syntax-table 4gl-mode-syntax-table)))
+    ;; In .per files, {} are punctuation, not comments
+    (modify-syntax-entry ?\{ "(}" table)
+    (modify-syntax-entry ?\} "){" table)
+    table)
+  "Syntax table for Informix .per files — braces are not comments.")
+
+(define-derived-mode 4gl-per-mode 4gl-mode "4gl-per"
+  :syntax-table 4gl-per-mode-syntax-table)
+
 (add-to-list 'auto-mode-alist '("\\.4gl\\'" . 4gl-mode))
-(add-to-list 'auto-mode-alist '("\\.per\\'" . 4gl-mode))
+(add-to-list 'auto-mode-alist '("\\.per\\'" . 4gl-per-mode))
 
 (provide '4gl-mode)
