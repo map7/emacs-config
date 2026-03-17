@@ -1,13 +1,73 @@
-;; arduino-mode
+;; arduino-mode with arduino-cli
+;;
+;; C-c a c  = compile
+;; C-c a u  = upload (USB serial)
+;; C-c a t  = upload over TCP (OTA)
+;; C-c a s  = set TCP host
+;; C-c a m  = open serial monitor
 
-;; M-x compile make upload
-;; C-c p c = compile
-;; C-c p c <type upload> = upload code to arduino
+(defvar arduino-board "esp32:esp32:esp32"
+  "FQBN for arduino-cli (e.g. \"arduino:avr:uno\", \"esp32:esp32:esp32\").")
+
+(defvar arduino-tcp-host nil
+  "TCP host for OTA uploads (e.g. \"192.168.1.100\").")
+
+(defvar arduino-tcp-port "3232"
+  "TCP port for OTA uploads.")
+
+(defvar arduino-serial-port "/dev/ttyUSB0"
+  "Serial port for USB uploads and monitoring.")
+
+(defun arduino-set-tcp-host (host)
+  "Set the TCP HOST for OTA uploads."
+  (interactive "sArduino TCP host (e.g. 192.168.1.100): ")
+  (setq arduino-tcp-host host)
+  (message "Arduino TCP host set to %s:%s" host arduino-tcp-port))
+
+(defun arduino-compile ()
+  "Compile the current Arduino sketch."
+  (interactive)
+  (let ((default-directory (arduino--sketch-dir)))
+    (compile (format "arduino-cli compile -b %s ." arduino-board))))
+
+(defun arduino-upload ()
+  "Upload to Arduino over USB serial."
+  (interactive)
+  (let ((default-directory (arduino--sketch-dir)))
+    (compile (format "arduino-cli upload -b %s -p %s ."
+                     arduino-board arduino-serial-port))))
+
+(defun arduino-upload-tcp ()
+  "Upload to Arduino over TCP (OTA)."
+  (interactive)
+  (unless arduino-tcp-host
+    (call-interactively #'arduino-set-tcp-host))
+  (let ((default-directory (arduino--sketch-dir)))
+    (compile (format "arduino-cli upload -b %s -p tcp://%s:%s ."
+                     arduino-board arduino-tcp-host arduino-tcp-port))))
+
+(defun arduino-serial-monitor ()
+  "Open serial monitor for the Arduino."
+  (interactive)
+  (let ((buf (get-buffer-create "*arduino-monitor*")))
+    (with-current-buffer buf (erase-buffer))
+    (start-process "arduino-monitor" buf
+                   "arduino-cli" "monitor" "-p" arduino-serial-port)
+    (display-buffer buf)))
+
+(defun arduino--sketch-dir ()
+  "Find the sketch directory (directory containing the .ino file)."
+  (or (locate-dominating-file default-directory
+        (lambda (dir)
+          (directory-files dir nil "\\.ino\\'" t)))
+      default-directory))
 
 (use-package arduino-mode
-  :init
-  (require 'cl)
-  (autoload 'arduino-mode "arduino-mode" "Arduino editing mode." t)
-  (add-to-list 'auto-mode-alist '("\.ino$" . arduino-mode))
-  :defer 5)
+  :mode "\\.ino\\'"
+  :bind (:map arduino-mode-map
+              ("C-c a c" . arduino-compile)
+              ("C-c a u" . arduino-upload)
+              ("C-c a t" . arduino-upload-tcp)
+              ("C-c a s" . arduino-set-tcp-host)
+              ("C-c a m" . arduino-serial-monitor)))
 
