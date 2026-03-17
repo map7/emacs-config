@@ -6,4 +6,5 @@
   (setq whisper-install-directory "~/src/whisper.cpp"
         whisper-model "base.en"
         whisper-language "en"
-        whisper-translate nil))
+        whisper-translate nil
+        whisper-use-threads 8))
