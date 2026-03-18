@@ -25,6 +25,10 @@
               (when (string-equal "jsx" (file-name-extension buffer-file-name))
                 (flycheck-mode +1))))
   (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))
-  
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-attr-indent-offset 2)
+
   :defer 5)
 
