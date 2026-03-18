@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: useCallback hook
+# key: useCallback
+# --
+const ${1:callback} = useCallback((${2}) => {
+  ${0}
+}, [${3}]);

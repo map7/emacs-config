@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: jest mock function
+# key: mock
+# --
+const ${1:mockFn} = jest.fn(${0});

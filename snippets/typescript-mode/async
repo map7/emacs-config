@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: async function
+# key: async
+# --
+async function ${1:name}(${2}): Promise<${3:void}> {
+  ${0}
+}

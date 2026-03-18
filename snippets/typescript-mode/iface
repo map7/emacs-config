@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: interface
+# key: iface
+# --
+interface ${1:Name} {
+  ${0}
+}

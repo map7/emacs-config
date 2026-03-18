@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: it async block
+# key: ita
+# --
+it('${1:should}', async () => {
+  ${0}
+});

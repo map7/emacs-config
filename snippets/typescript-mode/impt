@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: import for testing (Jest)
+# key: impt
+# --
+import { ${1:functionName} } from '${0}';

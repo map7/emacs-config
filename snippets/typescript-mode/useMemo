@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: useMemo hook
+# key: useMemo
+# --
+const ${1:value} = useMemo(() => {
+  ${0}
+}, [${2}]);

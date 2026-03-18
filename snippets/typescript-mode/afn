@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: arrow function
+# key: afn
+# --
+const ${1:name} = (${2}): ${3:void} => {
+  ${0}
+};

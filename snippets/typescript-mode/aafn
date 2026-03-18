@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: async arrow function
+# key: aafn
+# --
+const ${1:name} = async (${2}): Promise<${3:void}> => {
+  ${0}
+};

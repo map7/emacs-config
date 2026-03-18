@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: useRef hook
+# key: useRef
+# --
+const ${1:ref} = useRef<${2:HTMLElement}>(${3:null});

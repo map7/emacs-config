@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: for...of loop
+# key: forof
+# --
+for (const ${1:item} of ${2:items}) {
+  ${0}
+}
