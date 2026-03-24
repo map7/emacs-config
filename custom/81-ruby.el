@@ -42,7 +42,15 @@
   :hook ((enh-ruby-mode . rubocop-mode)
          (ruby-mode . rubocop-mode))
   :config
-  (setq rubocop-prefer-system-executable t))
+  (setq rubocop-prefer-system-executable t)
+  (let ((rubocop-bin (string-trim
+                      (shell-command-to-string "mise where ruby 2>/dev/null"))))
+    (when (not (string-empty-p rubocop-bin))
+      (setq rubocop-bin (expand-file-name "bin/rubocop" rubocop-bin))
+      (when (file-exists-p rubocop-bin)
+        (setq rubocop-check-command (concat rubocop-bin " --format emacs"))
+        (setq rubocop-autocorrect-command (concat rubocop-bin " -a --format emacs"))
+        (setq rubocop-format-command (concat rubocop-bin " -x --format emacs"))))))
 
 (use-package rake
   :ensure t
