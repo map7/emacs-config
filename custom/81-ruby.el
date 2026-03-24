@@ -35,3 +35,6 @@
   :ensure t
   :config
   (setq rake-completion-system 'ivy))
+
+(use-package rails-routes
+  :ensure t)
