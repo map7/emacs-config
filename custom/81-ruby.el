@@ -19,3 +19,9 @@
 (use-package rubocopfmt
   :hook
   (ruby-mode . rubocopfmt-mode))
+
+(use-package inf-ruby
+  :ensure t
+  :hook ((enh-ruby-mode . inf-ruby-minor-mode)
+         (ruby-mode . inf-ruby-minor-mode)
+         (compilation-filter . inf-ruby-auto-enter)))
