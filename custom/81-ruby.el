@@ -27,7 +27,9 @@
 
 (use-package rubocopfmt
   :hook
-  (ruby-mode . rubocopfmt-mode))
+  (ruby-mode . rubocopfmt-mode)
+  :config
+  (setq rubocopfmt-rubocop-command "rubocop"))
 
 (use-package inf-ruby
   :ensure t

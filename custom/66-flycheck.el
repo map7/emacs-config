@@ -17,7 +17,12 @@
   (global-flycheck-mode)
   :ensure t
   :config
-  (setq flycheck-ruby-rubocop-executable "rubocop")
+  (setq flycheck-ruby-rubocop-executable
+        (or (executable-find
+             (let ((dir (string-trim (shell-command-to-string "mise where ruby 2>/dev/null"))))
+               (when (not (string-empty-p dir))
+                 (expand-file-name "bin/rubocop" dir))))
+            "rubocop"))
   (setq flycheck-rubocoprc "~/.rubocop.yml")
   (setq flycheck-checker-error-threshold 2000)
 
