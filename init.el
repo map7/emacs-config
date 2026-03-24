@@ -144,7 +144,6 @@
 (load "53-magit.el")
 (load "54-yasnippet.el")
 (load "55-rinari.el")
-(load "56-rsense.el")
 (load "59-highlight-parentheses.el")
 (load "60-yafolding.el")
 (load "61-ruby-refactor.el")
