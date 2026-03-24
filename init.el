@@ -150,7 +150,6 @@
 (load "62-robe.el")
 (load "63-tide.el")
 (load "65-iedit.el")
-(load "64-rbenv.el")
 (load "66-flycheck.el")
 (load "67-tags.el")
 (load "68-seeing-is-believing.el")
