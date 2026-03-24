@@ -61,5 +61,20 @@
                 (append (default-value 'flycheck-disabled-checkers)
                         '(javascript-jshint javascript-jscs))))
 
+(use-package eslint-fix
+  :ensure t
+  :config
+  (defun my/setup-eslint-fix ()
+    "Set eslint-fix executable to project-local eslint and enable fix on save."
+    (let* ((root (locate-dominating-file
+                  (or (buffer-file-name) default-directory) "node_modules"))
+           (eslint (and root (expand-file-name "node_modules/.bin/eslint" root))))
+      (when (and eslint (file-executable-p eslint))
+        (setq-local eslint-fix-executable eslint)
+        (add-hook 'after-save-hook #'eslint-fix nil t))))
+  :hook ((typescript-ts-mode . my/setup-eslint-fix)
+         (tsx-ts-mode        . my/setup-eslint-fix)
+         (typescript-mode    . my/setup-eslint-fix)))
+
 (provide '63-tide)
 ;;; 63-tide.el ends here
