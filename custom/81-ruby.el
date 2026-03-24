@@ -40,7 +40,9 @@
 (use-package rubocop
   :ensure t
   :hook ((enh-ruby-mode . rubocop-mode)
-         (ruby-mode . rubocop-mode)))
+         (ruby-mode . rubocop-mode))
+  :config
+  (setq rubocop-prefer-system-executable t))
 
 (use-package rake
   :ensure t
