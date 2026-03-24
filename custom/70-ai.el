@@ -23,11 +23,25 @@
   (add-hook 'claude-code-process-environment-functions
             #'monet-start-server-function)
   (setq claude-code-display-window-fn #'claude-code-display-buffer-right)
+  (setq claude-code-program-switches '("--channels" "plugin:telegram@claude-plugins-official"))
   (monet-mode 1)
   (claude-code-mode)
   :bind-keymap ("C-c c" . claude-code-command-map)
   )
 
+(defun my/claude-code-eat-keep-at-bottom (windows)
+  "Keep Claude buffer scrolled to the bottom during output.
+WINDOWS is a list of windows or the symbol `buffer'."
+  (dolist (window windows)
+    (if (eq window 'buffer)
+        (goto-char (eat-term-display-cursor eat-terminal))
+      (let ((cursor-pos (eat-term-display-cursor eat-terminal)))
+        (set-window-point window cursor-pos)
+        (with-selected-window window
+          (goto-char cursor-pos)
+          (recenter -1))))))
+
+(advice-add 'claude-code--eat-synchronize-scroll :override #'my/claude-code-eat-keep-at-bottom)
 
 (defun claude-code-display-buffer-right (buffer)
   "Display the Claude Code BUFFER to the right of the current window."
