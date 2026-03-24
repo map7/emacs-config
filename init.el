@@ -174,6 +174,8 @@
 (load "85-yaml_mode.el")
 (load "87-javascript.el")
 (load "88-arduino_mode.el")
+(load "89-python.el")
+(load "89-rust.el")
 
 ;;--------------------------------------------------------------------------------
 ;;-EXWM, appearance and shortcut keys

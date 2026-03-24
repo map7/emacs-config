@@ -41,5 +41,5 @@
 (add-hook 'python-mode-hook #'my/ruff-format-on-save)
 (add-hook 'python-ts-mode-hook #'my/ruff-format-on-save)
 
-(provide '64-python)
-;;; 64-python.el ends here
+(provide '89-python)
+;;; 89-python.el ends here

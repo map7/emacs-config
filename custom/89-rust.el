@@ -33,5 +33,5 @@
   (add-to-list 'flycheck-checkers 'rust-clippy)
   (add-to-list 'flycheck-disabled-checkers 'rust-cargo))
 
-(provide '64-rust)
-;;; 64-rust.el ends here
+(provide '89-rust)
+;;; 89-rust.el ends here
