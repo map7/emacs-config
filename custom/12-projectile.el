@@ -7,10 +7,16 @@
   ;; Setup projectile-rails
   ;; This is stuffing around with tramp mode.
   (add-hook 'projectile-mode-hook 'projectile-rails-on)
-  
+
+  :bind (:map projectile-rails-mode-map
+         ("s-m" . projectile-rails-find-current-model)
+         ("s-v" . projectile-rails-find-current-view)
+         ("s-c" . projectile-rails-find-current-controller)
+         ("s-t" . projectile-rails-find-current-spec)
+         ("s-g" . projectile-rails-goto-file-at-point))
   :config
   (setq projectile-enable-caching t)
-  (setq projectile-completion-system 'grizzl)
+  (setq projectile-completion-system 'ivy)
   )
 
 ;; FIX hange issue with tramp. Tested this 16/02/2017 and it's fixed.
