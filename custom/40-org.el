@@ -8,6 +8,13 @@
                     '(:eval (if (buffer-modified-p) " ● " "   "))
                     " %b"
                     " %l:%c"
+                    '(:eval (when (org-clocking-p)
+                              (format "  [%s %s]"
+                                      (org-clock-get-clock-string)
+                                      (org-duration-from-minutes
+                                       (floor (org-time-convert-to-integer
+                                               (time-since org-clock-start-time))
+                                              60)))))
                     " %-")))
 (add-hook 'org-mode-hook #'my/org-mode-line-minimal)
 
