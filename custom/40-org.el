@@ -1,5 +1,16 @@
 (use-package org-attach-screenshot :ensure t :defer 5)
 
+;; Hide major/minor modes and git branch in org-mode
+(defun my/org-mode-line-minimal ()
+  "Simplify mode-line in org-mode buffers."
+  (setq-local mode-line-format
+              (list "%e"
+                    '(:eval (if (buffer-modified-p) " ● " "   "))
+                    " %b"
+                    " %l:%c"
+                    " %-")))
+(add-hook 'org-mode-hook #'my/org-mode-line-minimal)
+
 ;; Org mode shortcuts
 (global-set-key (kbd "C-c C-x C-v") 'do-org-show-all-inline-images)
 (global-set-key (kbd "C-c C-x C-r") 'org-clock-report)
