@@ -30,3 +30,8 @@
   :ensure t
   :hook ((enh-ruby-mode . rubocop-mode)
          (ruby-mode . rubocop-mode)))
+
+(use-package rake
+  :ensure t
+  :config
+  (setq rake-completion-system 'ivy))
