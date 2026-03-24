@@ -65,6 +65,16 @@ WINDOWS is a list of windows or the symbol `buffer'."
 ;;   (:repeat-map my-claude-code-map ("M" . claude-code-cycle-mode)))
 
 ;; --------------------------------------------------------------------------------
+;; Codeium - free AI inline completion (ghost text + Tab to accept)
+(use-package codeium
+  :vc (:url "https://github.com/Exafunction/codeium.el"
+       :rev :newest)
+  :init
+  (add-to-list 'completion-at-point-functions #'codeium-completion-at-point)
+  :config
+  (setq use-dialog-box nil))
+
+;; --------------------------------------------------------------------------------
 ;; c3po was the first interaction I got with ChatGPT in Emacs
 (use-package c3po
   :straight (:host github :repo "d1egoaz/c3po.el"))
