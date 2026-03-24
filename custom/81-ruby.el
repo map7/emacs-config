@@ -1,3 +1,12 @@
+;; Add mise ruby to exec-path
+(let ((dir (string-trim
+            (shell-command-to-string "mise where ruby 2>/dev/null"))))
+  (when (and (not (string-empty-p dir))
+             (file-directory-p (expand-file-name "bin" dir)))
+    (setq dir (expand-file-name "bin" dir))
+    (add-to-list 'exec-path dir)
+    (setenv "PATH" (concat dir ":" (getenv "PATH")))))
+
 (use-package ruby-end
   :init
   ;; (autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
