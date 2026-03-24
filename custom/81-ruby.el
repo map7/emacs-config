@@ -7,7 +7,7 @@
   (add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
   :defer
   :config
-  (require 'cl) ; If you don't have it already
+  (require 'cl-lib)
   (add-hook 'enh-ruby-mode-hook #'whitespace-cleanup)
   (setq ruby-bounce-deep-indent t)
   (setq ruby-hanging-brace-indent-level 2))
