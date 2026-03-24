@@ -13,9 +13,7 @@
 
 ;; Whenever a TODO entry is created, I want a timestamp
 ;; Advice org-insert-todo-heading to insert a created timestamp using org-expiry
-(defadvice org-insert-todo-heading (after mrb/created-timestamp-advice activate)
-  "Insert a CREATED property using org-expiry.el for TODO entries"
-  (mrb/insert-created-timestamp)
-)
-;; Make it active
-(ad-activate 'org-insert-todo-heading)
+(advice-add 'org-insert-todo-heading :after
+            (lambda (&rest _)
+              "Insert a CREATED property using org-expiry.el for TODO entries"
+              (mrb/insert-created-timestamp)))
