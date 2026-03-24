@@ -67,3 +67,27 @@
 
 (use-package ruby-hash-syntax
   :ensure t)
+
+(use-package ruby-interpolation
+  :ensure t
+  :hook ((enh-ruby-mode . ruby-interpolation-mode)
+         (ruby-mode . ruby-interpolation-mode)))
+
+(use-package company-inf-ruby
+  :ensure t
+  :config
+  (add-to-list 'company-backends 'company-inf-ruby))
+
+;; Solargraph LSP for Ruby (go-to-definition, completion, docs, diagnostics)
+(with-eval-after-load 'eglot
+  (let ((solargraph (let ((dir (string-trim (shell-command-to-string "mise where ruby 2>/dev/null"))))
+                      (when (not (string-empty-p dir))
+                        (let ((bin (expand-file-name "bin/solargraph" dir)))
+                          (when (file-exists-p bin) bin))))))
+    (when solargraph
+      (add-to-list 'eglot-server-programs
+                   `((enh-ruby-mode ruby-mode ruby-ts-mode) . (,solargraph "stdio")))))
+  (add-hook 'enh-ruby-mode-hook #'eglot-ensure)
+  (add-hook 'ruby-mode-hook #'eglot-ensure)
+  (add-hook 'ruby-ts-mode-hook #'eglot-ensure))
+
