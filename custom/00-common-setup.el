@@ -57,15 +57,4 @@
 ;; --------------------------------------------------------------------------------
 
 
-;; Fix error when rendering some pages
-(use-package auto-complete
-  :ensure t
-  :config
-  (require 'auto-complete-config)
-  (ac-config-default)
-  (global-auto-complete-mode t)
-  
-  ;; Optionally, configure sources for specific modes
-  (add-hook 'emacs-lisp-mode-hook
-            (lambda ()
-              (setq ac-sources '(ac-source-symbols ac-source-functions ac-source-variables)))))
+;; Completion is handled by company-mode (see 77-company-mode.el)
