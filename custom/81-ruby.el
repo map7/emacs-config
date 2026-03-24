@@ -7,9 +7,16 @@
     (add-to-list 'exec-path dir)
     (setenv "PATH" (concat dir ":" (getenv "PATH")))))
 
+;; Point enh-ruby-mode to mise ruby for fontification and indentation
+(let ((ruby-bin (let ((dir (string-trim (shell-command-to-string "mise where ruby 2>/dev/null"))))
+                  (when (not (string-empty-p dir))
+                    (let ((bin (expand-file-name "bin/ruby" dir)))
+                      (when (file-exists-p bin) bin))))))
+  (when ruby-bin
+    (setq enh-ruby-program ruby-bin)))
+
 (use-package ruby-end
   :init
-  ;; (autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
   (add-to-list 'auto-mode-alist
                '("\\(?:\\.rb\\|ru\\|rabl\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode))
   (add-hook 'enh-ruby-mode-hook (lambda () (ruby-end-mode)))
