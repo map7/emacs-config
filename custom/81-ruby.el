@@ -43,3 +43,6 @@
   :ensure t
   :hook ((enh-ruby-mode . ruby-tools-mode)
          (ruby-mode . ruby-tools-mode)))
+
+(use-package ruby-hash-syntax
+  :ensure t)
