@@ -25,3 +25,8 @@
   :hook ((enh-ruby-mode . inf-ruby-minor-mode)
          (ruby-mode . inf-ruby-minor-mode)
          (compilation-filter . inf-ruby-auto-enter)))
+
+(use-package rubocop
+  :ensure t
+  :hook ((enh-ruby-mode . rubocop-mode)
+         (ruby-mode . rubocop-mode)))
