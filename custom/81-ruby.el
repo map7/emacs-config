@@ -38,3 +38,8 @@
 
 (use-package rails-routes
   :ensure t)
+
+(use-package ruby-tools
+  :ensure t
+  :hook ((enh-ruby-mode . ruby-tools-mode)
+         (ruby-mode . ruby-tools-mode)))
