@@ -53,7 +53,6 @@
   (xterm-color-colorize-shell-command-output))
 
 (advice-add 'shell-command :after #'xterm-color-colorize-shell-command-output-advice)
-(advice-remove 'shell-command #'xterm-color-colorize-shell-command-output-advice)
 ;; --------------------------------------------------------------------------------
 
 
