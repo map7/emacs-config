@@ -86,12 +86,20 @@
   (add-to-list 'company-backends 'company-inf-ruby))
 
 ;; Solargraph LSP for Ruby (go-to-definition, completion, docs, diagnostics)
+(require 'cl-lib)
 (require 'eglot)
 (let ((solargraph (let ((dir (string-trim (shell-command-to-string "mise where ruby 2>/dev/null"))))
                     (when (not (string-empty-p dir))
                       (let ((bin (expand-file-name "bin/solargraph" dir)))
                         (when (file-exists-p bin) bin))))))
   (when solargraph
+    ;; Remove the built-in entry that uses bare "solargraph" (not on PATH)
+    (setq eglot-server-programs
+          (cl-remove-if (lambda (entry)
+                          (and (listp (car entry))
+                               (member 'ruby-mode (car entry))))
+                        eglot-server-programs))
+    ;; Add our entry with full path to mise solargraph
     (add-to-list 'eglot-server-programs
                  `((enh-ruby-mode ruby-mode ruby-ts-mode) . (,solargraph "stdio")))
     (add-hook 'enh-ruby-mode-hook #'eglot-ensure)
