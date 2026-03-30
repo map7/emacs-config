@@ -12,6 +12,7 @@
   :hook ((typescript-mode . prettier-js-mode)
          (js2-mode . prettier-js-mode)
          (web-mode . (lambda ()
-                       (when (member (file-name-extension buffer-file-name)
-                                     '("tsx" "jsx" "js" "ts"))
+                       (when (and buffer-file-name
+                                  (member (file-name-extension buffer-file-name)
+                                          '("tsx" "jsx" "js" "ts")))
                          (prettier-js-mode))))))

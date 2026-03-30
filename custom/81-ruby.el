@@ -34,7 +34,8 @@
 
 (use-package rubocopfmt
   :hook
-  (ruby-mode . rubocopfmt-mode)
+  (ruby-mode . (lambda () (when buffer-file-name (rubocopfmt-mode))))
+  (enh-ruby-mode . (lambda () (when buffer-file-name (rubocopfmt-mode))))
   :config
   (setq rubocopfmt-rubocop-command "rubocop"))
 
