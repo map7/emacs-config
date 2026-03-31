@@ -56,7 +56,10 @@
 (use-package ledger-mode :defer 5)
 (use-package markdown-mode :defer 5)
 (use-package org-noter :defer 5)
-(use-package paradox :defer 5)
+(use-package paradox :defer 5
+  :config
+  (unless (assoc-string "source" paradox--package-count)
+    (push '("source" . 0) paradox--package-count)))
 (use-package picpocket :defer 5 :bind ("M-p" . picpocket))
 (use-package sudo-edit :defer 5)
 (use-package switch-window :defer 5)
