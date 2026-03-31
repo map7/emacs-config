@@ -40,17 +40,69 @@
   ;; Wider title column for podcast names
   (setq elfeed-search-title-max-width 80))
 
-;; Play podcast enclosures with mpv
+;; mpv IPC socket for playback control
+(defvar my/mpv-socket (expand-file-name "mpv-socket" temporary-file-directory))
+(defvar my/mpv-process nil)
+
 (defun my/elfeed-play-enclosure-mpv ()
   "Play the first enclosure of the current elfeed entry with mpv."
   (interactive)
+  (my/mpv-stop)
   (let* ((entry (if (eq major-mode 'elfeed-show-mode)
                     elfeed-show-entry
                   (elfeed-search-selected :single)))
          (enclosures (elfeed-entry-enclosures entry)))
     (if enclosures
-        (start-process "mpv" nil "mpv" "--no-video" (caar enclosures))
+        (progn
+          (setq my/mpv-process
+                (start-process "mpv" nil "mpv" "--no-video"
+                               (format "--input-ipc-server=%s" my/mpv-socket)
+                               (caar enclosures)))
+          (message "Playing: %s" (elfeed-entry-title entry)))
       (message "No enclosures found for this entry."))))
+
+(defun my/mpv-send (command)
+  "Send a JSON COMMAND to the running mpv instance."
+  (when (file-exists-p my/mpv-socket)
+    (start-process "mpv-cmd" nil "socat" "-"
+                   (format "UNIX-CONNECT:%s" my/mpv-socket)
+                   :input (format "%s\n" (json-encode `((command . ,command)))))))
+
+(defun my/mpv-send-via-shell (command)
+  "Send a JSON COMMAND string to mpv via shell."
+  (when (file-exists-p my/mpv-socket)
+    (call-process-shell-command
+     (format "echo '%s' | socat - UNIX-CONNECT:%s"
+             (json-encode `((command . ,command)))
+             my/mpv-socket)
+     nil nil nil)))
+
+(defun my/mpv-pause-toggle ()
+  "Toggle pause/play on the current mpv podcast."
+  (interactive)
+  (my/mpv-send-via-shell '("cycle" "pause"))
+  (message "mpv: toggled pause"))
+
+(defun my/mpv-seek-forward ()
+  "Seek forward 30 seconds."
+  (interactive)
+  (my/mpv-send-via-shell '("seek" "30"))
+  (message "mpv: +30s"))
+
+(defun my/mpv-seek-backward ()
+  "Seek backward 10 seconds."
+  (interactive)
+  (my/mpv-send-via-shell '("seek" "-10"))
+  (message "mpv: -10s"))
+
+(defun my/mpv-stop ()
+  "Stop mpv playback."
+  (interactive)
+  (when (and my/mpv-process (process-live-p my/mpv-process))
+    (kill-process my/mpv-process))
+  (setq my/mpv-process nil)
+  (when (file-exists-p my/mpv-socket)
+    (delete-file my/mpv-socket)))
 
 (defun my/elfeed-download-enclosure ()
   "Download the first enclosure of the current elfeed entry."
@@ -75,10 +127,26 @@
 
 (with-eval-after-load 'elfeed-search
   (define-key elfeed-search-mode-map (kbd "P") #'my/elfeed-play-enclosure-mpv)
-  (define-key elfeed-search-mode-map (kbd "D") #'my/elfeed-download-enclosure))
+  (define-key elfeed-search-mode-map (kbd "D") #'my/elfeed-download-enclosure)
+  (define-key elfeed-search-mode-map (kbd "p") #'my/mpv-pause-toggle)
+  (define-key elfeed-search-mode-map (kbd "F") #'my/mpv-seek-forward)
+  (define-key elfeed-search-mode-map (kbd "B") #'my/mpv-seek-backward)
+  (define-key elfeed-search-mode-map (kbd "S") #'my/mpv-stop)
+  (define-key elfeed-search-mode-map (kbd "<XF86AudioPlay>") #'my/mpv-pause-toggle)
+  (define-key elfeed-search-mode-map (kbd "<XF86AudioStop>") #'my/mpv-stop))
 
 (with-eval-after-load 'elfeed-show
   (define-key elfeed-show-mode-map (kbd "P") #'my/elfeed-play-enclosure-mpv)
-  (define-key elfeed-show-mode-map (kbd "D") #'my/elfeed-download-enclosure))
+  (define-key elfeed-show-mode-map (kbd "D") #'my/elfeed-download-enclosure)
+  (define-key elfeed-show-mode-map (kbd "p") #'my/mpv-pause-toggle)
+  (define-key elfeed-show-mode-map (kbd "F") #'my/mpv-seek-forward)
+  (define-key elfeed-show-mode-map (kbd "B") #'my/mpv-seek-backward)
+  (define-key elfeed-show-mode-map (kbd "S") #'my/mpv-stop)
+  (define-key elfeed-show-mode-map (kbd "<XF86AudioPlay>") #'my/mpv-pause-toggle)
+  (define-key elfeed-show-mode-map (kbd "<XF86AudioStop>") #'my/mpv-stop))
+
+;; Global multimedia key bindings for mpv control
+(global-set-key (kbd "<XF86AudioPlay>") #'my/mpv-pause-toggle)
+(global-set-key (kbd "<XF86AudioStop>") #'my/mpv-stop)
 
 ;;; 38-elfeed.el ends here

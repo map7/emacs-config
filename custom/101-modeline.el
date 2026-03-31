@@ -87,7 +87,52 @@
        ;; == ERC, ORG Timer, etc ===
 	     'mode-line-misc-info
 
-       " "
+       ;; == Org-timer controls ==
+       '(:eval (when (and (derived-mode-p 'org-mode)
+                          (boundp 'org-timer-start-time)
+                          org-timer-start-time)
+                 (concat
+                  " "
+                  (propertize "⏯"
+                              'face '(:family "Noto Emoji")
+                              'help-echo "Pause/Resume org-timer"
+                              'mouse-face 'mode-line-highlight
+                              'local-map (let ((map (make-sparse-keymap)))
+                                           (define-key map [mode-line mouse-1] #'org-timer-pause-or-continue)
+                                           map))
+                  " "
+                  (propertize "⏹"
+                              'face '(:family "Noto Emoji")
+                              'help-echo "Stop org-timer"
+                              'mouse-face 'mode-line-highlight
+                              'local-map (let ((map (make-sparse-keymap)))
+                                           (define-key map [mode-line mouse-1] #'org-timer-stop)
+                                           map))
+                  " ")))
+
+       ;; == Podcast controls ==
+       '(:eval (when (and (boundp 'my/mpv-process)
+                          my/mpv-process
+                          (process-live-p my/mpv-process))
+                 (concat
+                  " "
+                  (propertize "⏯"
+                              'face '(:family "Noto Emoji")
+                              'help-echo "Pause/Resume"
+                              'mouse-face 'mode-line-highlight
+                              'local-map (let ((map (make-sparse-keymap)))
+                                           (define-key map [mode-line mouse-1] #'my/mpv-pause-toggle)
+                                           map))
+                  " "
+                  (propertize "⏹"
+                              'face '(:family "Noto Emoji")
+                              'help-echo "Stop"
+                              'mouse-face 'mode-line-highlight
+                              'local-map (let ((map (make-sparse-keymap)))
+                                           (define-key map [mode-line mouse-1] #'my/mpv-stop)
+                                           map))
+                  " ")))
+
        ;; == Date (day-month) & Time (24hr)==
        ;; '(:eval (propertize (format-time-string "%d-%b  %H:%M")))
        ))
