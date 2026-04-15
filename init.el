@@ -84,6 +84,12 @@
   (setq epa-pinentry-mode 'loopback))
 (use-package pass :defer 5)
 
+;; AI
+(use-package claude-code
+  :vc (:url "https://github.com/stevemolitor/claude-code.el"
+       :rev :newest
+       :branch "main"))
+
 ;; Other langs
 (use-package php-mode :defer 5)
 
