@@ -10,11 +10,18 @@
          ("M-x" . counsel-M-x)
          ("C-x C-f" . counsel-find-file)
          ("s-f" . counsel-git)
-         ("s-g" . counsel-git-grep)
+         ("s-g" . my/counsel-grep)
          ("s-&" . counsel-shell-command)
          ("C-s-l" . counsel-locate)
          )
   :config
+
+  (defun my/counsel-grep ()
+    "Run `counsel-git-grep' if in a git repo, otherwise `counsel-grep'."
+    (interactive)
+    (if (locate-dominating-file default-directory ".git")
+        (counsel-git-grep)
+      (counsel-grep)))
 
   ;; Display a history when running commands
   (defun counsel-shell-command ()
