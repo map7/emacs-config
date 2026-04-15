@@ -13,7 +13,7 @@
          ("s-v" . projectile-rails-find-current-view)
          ("s-c" . projectile-rails-find-current-controller)
          ("s-t" . projectile-rails-find-current-spec)
-         ("s-g" . projectile-rails-goto-file-at-point))
+)
   :config
   (setq projectile-enable-caching t)
   (setq projectile-completion-system 'ivy)
