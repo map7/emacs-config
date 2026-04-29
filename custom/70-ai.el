@@ -39,15 +39,19 @@ WINDOWS is a list of windows or the symbol `buffer'."
         (set-window-point window cursor-pos)
         (with-selected-window window
           (goto-char cursor-pos)
-          (recenter -1))))))
+          (recenter -4))))))
 
 (advice-add 'claude-code--eat-synchronize-scroll :override #'my/claude-code-eat-keep-at-bottom)
 
 (defun claude-code-display-buffer-right (buffer)
-  "Display the Claude Code BUFFER to the right of the current window."
-  (display-buffer buffer '((display-buffer-in-direction)
-                           (direction . right)
-                           (window-width . 0.5))))
+  "Display the Claude Code BUFFER to the right of the current window.
+If a window already exists to the right, reuse it instead of splitting."
+  (let ((right-window (window-in-direction 'right)))
+    (if right-window
+        (window--display-buffer buffer right-window 'reuse nil)
+      (display-buffer buffer '((display-buffer-in-direction)
+                               (direction . right)
+                               (window-width . 0.5))))))
 
 
 ;; (use-package claude-code :ensure t
