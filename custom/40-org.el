@@ -1,5 +1,10 @@
 (use-package org-attach-screenshot :ensure t :defer 5)
 
+;; Enable ODT export backend
+(with-eval-after-load 'org
+  (require 'ox-odt)
+  (setq org-odt-preferred-output-format "odt"))
+
 ;; Hide major/minor modes and git branch in org-mode
 (defun my/org-mode-line-minimal ()
   "Simplify mode-line in org-mode buffers."
