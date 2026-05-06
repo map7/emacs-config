@@ -1,19 +1,43 @@
-;; Add mise ruby to exec-path
-(let ((dir (string-trim
-            (shell-command-to-string "mise where ruby 2>/dev/null"))))
-  (when (and (not (string-empty-p dir))
-             (file-directory-p (expand-file-name "bin" dir)))
-    (setq dir (expand-file-name "bin" dir))
-    (add-to-list 'exec-path dir)
-    (setenv "PATH" (concat dir ":" (getenv "PATH")))))
+;; Resolve a mise-managed binary, preferring the currently-active version.
+;; Resolution happens on demand so a stale Emacs daemon doesn't keep pointing
+;; at a ruby version that mise has since removed.
+(defun my/mise-bin (name)
+  "Return absolute path to NAME from the currently-active mise ruby, or nil."
+  (let* ((dir (string-trim
+               (shell-command-to-string "mise where ruby 2>/dev/null")))
+         (bin (and (not (string-empty-p dir))
+                   (expand-file-name (concat "bin/" name) dir))))
+    (when (and bin (file-executable-p bin)) bin)))
 
-;; Point enh-ruby-mode to mise ruby for fontification and indentation
-(let ((ruby-bin (let ((dir (string-trim (shell-command-to-string "mise where ruby 2>/dev/null"))))
-                  (when (not (string-empty-p dir))
-                    (let ((bin (expand-file-name "bin/ruby" dir)))
-                      (when (file-exists-p bin) bin))))))
-  (when ruby-bin
-    (setq enh-ruby-program ruby-bin)))
+(defun my/ruby-refresh-paths ()
+  "Refresh exec-path / PATH / `enh-ruby-program' from current mise ruby.
+Run interactively after switching mise ruby versions."
+  (interactive)
+  (let* ((ruby (my/mise-bin "ruby"))
+         (bindir (and ruby (file-name-directory ruby))))
+    (when bindir
+      ;; Drop any stale mise ruby bin dirs, prepend the live one.
+      (setq exec-path
+            (cons bindir
+                  (cl-remove-if
+                   (lambda (p)
+                     (string-match-p "/mise/installs/ruby/" (or p "")))
+                   exec-path)))
+      (setenv "PATH"
+              (concat bindir ":"
+                      (mapconcat #'identity
+                                 (cl-remove-if
+                                  (lambda (p)
+                                    (string-match-p "/mise/installs/ruby/" p))
+                                  (split-string (or (getenv "PATH") "") ":" t))
+                                 ":")))
+      (setq enh-ruby-program ruby))))
+
+(require 'cl-lib)
+(my/ruby-refresh-paths)
+;; Re-resolve on each enh-ruby-mode activation so a long-lived daemon
+;; survives `mise use ruby@<new>` without restarting.
+(add-hook 'enh-ruby-mode-hook #'my/ruby-refresh-paths)
 
 (use-package ruby-end
   :init
@@ -51,14 +75,11 @@
          (ruby-mode . rubocop-mode))
   :config
   (setq rubocop-prefer-system-executable t)
-  (let ((rubocop-bin (string-trim
-                      (shell-command-to-string "mise where ruby 2>/dev/null"))))
-    (when (not (string-empty-p rubocop-bin))
-      (setq rubocop-bin (expand-file-name "bin/rubocop" rubocop-bin))
-      (when (file-exists-p rubocop-bin)
-        (setq rubocop-check-command (concat rubocop-bin " --format emacs"))
-        (setq rubocop-autocorrect-command (concat rubocop-bin " -a --format emacs"))
-        (setq rubocop-format-command (concat rubocop-bin " -x --format emacs"))))))
+  (let ((rubocop-bin (my/mise-bin "rubocop")))
+    (when rubocop-bin
+      (setq rubocop-check-command (concat rubocop-bin " --format emacs"))
+      (setq rubocop-autocorrect-command (concat rubocop-bin " -a --format emacs"))
+      (setq rubocop-format-command (concat rubocop-bin " -x --format emacs")))))
 
 (use-package rake
   :ensure t
@@ -89,10 +110,7 @@
 ;; Solargraph LSP for Ruby (go-to-definition, completion, docs, diagnostics)
 (require 'cl-lib)
 (require 'eglot)
-(let ((solargraph (let ((dir (string-trim (shell-command-to-string "mise where ruby 2>/dev/null"))))
-                    (when (not (string-empty-p dir))
-                      (let ((bin (expand-file-name "bin/solargraph" dir)))
-                        (when (file-exists-p bin) bin))))))
+(let ((solargraph (my/mise-bin "solargraph")))
   (when solargraph
     ;; Remove the built-in entry that uses bare "solargraph" (not on PATH)
     (setq eglot-server-programs
@@ -100,9 +118,13 @@
                           (and (listp (car entry))
                                (member 'ruby-mode (car entry))))
                         eglot-server-programs))
-    ;; Add our entry with full path to mise solargraph
+    ;; Use a function so the path is re-resolved each time eglot starts,
+    ;; surviving mise version changes in a long-lived daemon.
     (add-to-list 'eglot-server-programs
-                 `((enh-ruby-mode ruby-mode ruby-ts-mode) . (,solargraph "stdio")))
+                 `((enh-ruby-mode ruby-mode ruby-ts-mode)
+                   . ,(lambda (&optional _interactive)
+                        (list (or (my/mise-bin "solargraph") "solargraph")
+                              "stdio"))))
     (add-hook 'enh-ruby-mode-hook #'eglot-ensure)
     (add-hook 'ruby-mode-hook #'eglot-ensure)
     (add-hook 'ruby-ts-mode-hook #'eglot-ensure)))
