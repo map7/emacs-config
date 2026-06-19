@@ -91,7 +91,7 @@
            (sketch-name (file-name-nondirectory
                          (directory-file-name default-directory)))
            (build-dir "build"))
-      (compile (format "arduino-cli compile -b %s --output-dir %s . && python3 %s -i %s -p %s -f %s/%s.ino.bin"
+      (compile (format "arduino-cli compile -b %s --output-dir %s . && python3 %s -d -r -i %s -p %s -f %s/%s.ino.bin"
                        arduino-board
                        build-dir
                        (expand-file-name arduino-espota-script)
