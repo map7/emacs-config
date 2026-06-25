@@ -41,48 +41,47 @@
 
 ;;;; Package declarations
 (use-package transient)
-(use-package all-the-icons :defer 5)
-(use-package ansible :defer 5)
-(use-package clojure-mode :defer 5)
-(use-package crontab-mode :defer 5)
-(use-package circe :defer 5)
-(use-package company :defer 5)
-(use-package csv-mode :defer 5)
-(use-package crdt :defer 5)
-(use-package dired-open-with :defer 5)
-(use-package dumb-jump :defer 5)
-(use-package expand-region :defer 5)
-(use-package findr :defer 5)
-(use-package ledger-mode :defer 5)
-(use-package markdown-mode :defer 5)
-(use-package org-noter :defer 5)
-(use-package paradox :defer 5
-  :config
+(use-package all-the-icons)
+(use-package ansible)
+(use-package clojure-mode)
+(use-package crontab-mode)
+(use-package circe)
+(use-package company)
+(use-package csv-mode)
+(use-package crdt)
+(use-package dired-open-with)
+(use-package dumb-jump)
+(use-package expand-region)
+(use-package findr)
+(use-package ledger-mode)
+(use-package markdown-mode)
+(use-package org-noter)
+(use-package paradox  :config
   (unless (assoc-string "source" paradox--package-count)
     (push '("source" . 0) paradox--package-count)))
-(use-package picpocket :defer 5 :bind ("M-p" . picpocket))
-(use-package sudo-edit :defer 5)
-(use-package switch-window :defer 5)
-(use-package vterm :defer 5)
-(use-package tramp-term :defer 5)
-(use-package twittering-mode :defer 5)
-(use-package restclient :defer 5)
-(use-package xkcd :defer 5)
-(use-package dockerfile-mode :defer 5)
-(use-package disk-usage :defer 5)
-(use-package rg :defer 5)
-(use-package wgrep :defer 5)
+(use-package picpocket :bind ("M-p" . picpocket))
+(use-package sudo-edit)
+(use-package switch-window)
+(use-package vterm)
+(use-package tramp-term)
+(use-package twittering-mode)
+(use-package restclient)
+(use-package xkcd)
+(use-package dockerfile-mode)
+(use-package disk-usage)
+(use-package rg)
+(use-package wgrep)
 (use-package total-lines
   :config (global-total-lines-mode))
 
 ;; Passwords
-(use-package keepass-mode :defer 5)
+(use-package keepass-mode)
 (use-package pinentry
   :init
   (pinentry-start)
   :config
   (setq epa-pinentry-mode 'loopback))
-(use-package pass :defer 5)
+(use-package pass)
 
 ;; AI
 (use-package claude-code
@@ -91,17 +90,17 @@
        :branch "main"))
 
 ;; Other langs
-(use-package php-mode :defer 5)
+(use-package php-mode)
 
 ;; Ruby related
-(use-package enh-ruby-mode :defer 5)
-(use-package goto-gem :defer 5)
-(use-package ruby-refactor :defer 5)
+(use-package enh-ruby-mode)
+(use-package goto-gem)
+(use-package ruby-refactor)
 
 ;; Org related
-(use-package org-cliplink :defer 5)
-(use-package org-clock-csv :defer 5)
-(use-package org-clock-today :defer 5)
+(use-package org-cliplink)
+(use-package org-clock-csv)
+(use-package org-clock-today)
 
 ;;;; 4gl mode
 (add-to-list 'load-path (expand-file-name "external/4gl-mode-master" user-emacs-directory))
