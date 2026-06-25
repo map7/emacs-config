@@ -77,7 +77,7 @@
        
        ;; Faster option could be to use total-lines.el
        ; the below will look like e.g. "263/947,10  26%"
-       `((12 "%l" "/" (:eval (format "%d,%d" total-lines (1+ (current-column))))))
+       `((12 "%l" "/" (:eval (format "%d,%d" (or total-lines 0) (1+ (current-column))))))
 
        ;; == Git branch status ==
        '(vc-mode vc-mode)
