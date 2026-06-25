@@ -30,11 +30,10 @@
 
   :defer)
 
+;; `flycheck-disabled-checkers' is automatically buffer-local, so `add-to-list'
+;; would only affect the buffer current during init.  Modify the default value
+;; instead so org-lint is disabled in every buffer.
 (with-eval-after-load 'flycheck
-  ;; `flycheck-disabled-checkers' is automatically buffer-local (see
-  ;; `make-variable-buffer-local' in flycheck.el), so `add-to-list' here would
-  ;; only touch the current buffer's local value and leave the default at nil,
-  ;; letting org-lint still run in org buffers.  Modify the default instead.
   (setq-default flycheck-disabled-checkers
                 (cons 'org-lint (default-value 'flycheck-disabled-checkers))))
 
