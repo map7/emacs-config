@@ -53,6 +53,26 @@ If a window already exists to the right, reuse it instead of splitting."
                                (direction . right)
                                (window-width . 0.5))))))
 
+(defun my/claude-code-buffer-p (buffer)
+  "Return non-nil if BUFFER is a Claude Code eat terminal buffer."
+  (and (buffer-live-p buffer)
+       (string-match-p "\\*claude" (buffer-name buffer))))
+
+(defun my/claude-code-ensure-single-window (&optional _frame)
+  "Ensure each Claude Code buffer is shown in at most one window.
+Eat resizes its PTY to the smallest window showing the buffer, so a TUI
+displayed in multiple windows of different widths renders garbled output."
+  (dolist (buffer (buffer-list))
+    (when (my/claude-code-buffer-p buffer)
+      (let ((windows (get-buffer-window-list buffer nil t)))
+        (when (> (length windows) 1)
+          (dolist (win (cdr windows))
+            (with-selected-window win
+              (switch-to-buffer (other-buffer buffer t) nil t))))))))
+
+(add-hook 'window-configuration-change-hook
+          #'my/claude-code-ensure-single-window)
+
 
 ;; (use-package claude-code :ensure t
 ;;   :vc (:url "https://github.com/stevemolitor/claude-code.el" :rev :newest)
