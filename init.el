@@ -134,6 +134,7 @@
 (load "35-paperless.el")
 (load "36-nov.el")
 (load "38-elfeed.el")
+(load "19-youtube-music.el")
 (load "24-midi.el")
 
 ;;--------------------------------------------------------------------------------
