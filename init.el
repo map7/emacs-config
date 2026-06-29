@@ -542,10 +542,13 @@
                       diredful dired-details csv-mode coffee-mode
                       circe bpr ansible))
  '(package-vc-selected-packages
-   '((claude-code :url "https://github.com/stevemolitor/claude-code.el")))
+   '((youtube-music :url "https://github.com/emacsmirror/youtube-music")
+     (claude-code :url
+                  "https://github.com/stevemolitor/claude-code.el")))
  '(paperless-capture-directory "~/paperless/upload")
  '(paperless-root-directory "~/paperless/documents")
  '(paradox-automatically-star t)
+ '(paradox-github-token t)
  '(undo-tree-visualizer-default-face nil)
  '(xcb:debug t))
 (custom-set-faces
