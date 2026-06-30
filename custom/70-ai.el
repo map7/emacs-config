@@ -23,6 +23,12 @@
   (add-hook 'claude-code-process-environment-functions
             #'monet-start-server-function)
   (setq claude-code-display-window-fn #'claude-code-display-buffer-right)
+  ;; Disable the window-resize "optimization": it tracks window widths in a
+  ;; hash table to skip terminal resize signals, but that gets out of sync when
+  ;; splitting/unsplitting windows, leaving the eat buffer with garbled,
+  ;; overlapping text. Its own docstring says to set this nil if you hit display
+  ;; issues after window resizing.
+  (setq claude-code-optimize-window-resize nil)
   (setq claude-code-program-switches '("--channels" "plugin:telegram@claude-plugins-official"))
   (monet-mode 1)
   (claude-code-mode)
@@ -31,15 +37,28 @@
 
 (defun my/claude-code-eat-keep-at-bottom (windows)
   "Keep Claude buffer scrolled to the bottom during output.
-WINDOWS is a list of windows or the symbol `buffer'."
+WINDOWS is a list of windows or the symbol `buffer'.
+
+Anchors the prompt 4 lines from the bottom of the window.  Unlike the
+naive version this skips windows in `eat-emacs-mode' (read-only) so it
+doesn't yank point around while you're selecting or copying text, and
+only re-anchors when the cursor is at/near the end of the buffer so
+scrolling back through history isn't interrupted by new output."
   (dolist (window windows)
     (if (eq window 'buffer)
         (goto-char (eat-term-display-cursor eat-terminal))
-      (let ((cursor-pos (eat-term-display-cursor eat-terminal)))
-        (set-window-point window cursor-pos)
-        (with-selected-window window
-          (goto-char cursor-pos)
-          (recenter -4))))))
+      ;; Don't move point when in eat-emacs-mode (read-only browsing).
+      (when (not buffer-read-only)
+        (let ((cursor-pos (eat-term-display-cursor eat-terminal)))
+          (set-window-point window cursor-pos)
+          ;; Only re-anchor to the bottom when the cursor is at/near the
+          ;; end, or has scrolled out of view; otherwise leave the user's
+          ;; scroll position alone.
+          (when (or (>= cursor-pos (- (point-max) 2))
+                    (not (pos-visible-in-window-p cursor-pos window)))
+            (with-selected-window window
+              (goto-char cursor-pos)
+              (recenter -4))))))))
 
 (advice-add 'claude-code--eat-synchronize-scroll :override #'my/claude-code-eat-keep-at-bottom)
 
